@@ -4,7 +4,7 @@ toc: false
 about:
   id: hero-heading
   template: solana
-  image: logo/logo.png
+  image: /logo/logo.png
   # empty alt text to skip the logo
   image-alt: " "
   links:
