@@ -1,0 +1,42 @@
+---
+title: "About"
+---
+
+::: {.grid .column-page style="--bs-columns: 2;"}
+
+:::: { class='bordered'}
+
+## What is a Hub?
+
+{{< lipsum 1>}}
+
+::::
+
+:::: { class='bordered'}
+
+## Data Standards
+
+{{< lipsum 1>}}
+
+
+::::
+
+:::: { class='bordered'}
+
+## Software
+
+{{< lipsum 1>}}
+
+
+::::
+
+:::: { class='bordered'}
+
+## Development
+
+{{< lipsum 1>}}
+
+::::
+
+
+:::

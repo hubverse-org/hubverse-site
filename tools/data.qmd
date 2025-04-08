@@ -1,0 +1,32 @@
+---
+title: "Data Standards"
+---
+
+:::{.callout-tip}
+
+We have a [tool suite](software.qmd) that is designed to work with data from any
+hub.
+
+:::
+
+The core of the hubverse lies within [the data standards](https://github.com/hubverse-org/schemas#readme) that define
+the structure of model submission files.
+
+These standards are encoded in versioned [JSON schemas](https://json-schema.org).
+
+The current version is {{< var version >}}
+
+## Tasks
+
+```{=html}
+<script class='docson' src="../includes/docson/widget.js" data-schema="https://raw.githubusercontent.com/hubverse-org/schemas/main/{{< var version >}}/tasks-schema.json"></script>
+```
+
+
+## Admin
+
+```{=html}
+<script class='docson' src="../includes/docson/widget.js" data-schema="https://raw.githubusercontent.com/hubverse-org/schemas/main/{{< var version >}}/admin-schema.json"></script>
+```
+
+

@@ -1,0 +1,7 @@
+
+```{=html}
+<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100">
+   {{#.logo}}<img src="{{.logo}}" class="card-img-top logo" alt=' '>{{/.logo}}
+   <a href="community/hubs.qmd#{{.id}}" class="card-link">{{ .name }}</a>
+</div>
+```

@@ -1,0 +1,28 @@
+---
+title: "Active Hubs"
+---
+
+{{< include /community/_active-hubs.qmd >}}
+
+::: {.column-screen-inset}
+
+:::{#orgs .grid style='--bs-columns: 1; --bs-gap: 0.5em'}
+
+{{< partial /_partials/hub.qmd hubs.cdc id="cdc">}}
+
+{{< partial /_partials/hub.qmd hubs.ecdc id="ecdc">}}
+
+{{< partial /_partials/hub.qmd hubs.reichlab id="reichlab">}}
+
+{{< partial /_partials/hub.qmd hubs.cadph id="cadph">}}
+
+{{< partial /_partials/hub.qmd hubs.midas id="midas">}}
+
+{{< partial /_partials/hub.qmd hubs.hopkinsidd id="hopkinsidd">}}
+
+{{< partial /_partials/hub.qmd hubs.ai4casting id="ai4casting">}}
+
+:::
+
+:::
+

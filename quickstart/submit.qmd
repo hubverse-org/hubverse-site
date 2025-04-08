@@ -1,0 +1,27 @@
+---
+title: "Submit Model Output"
+---
+
+## Connect with the Hub Administrator
+
+They know what they want
+
+## Create your model metadata file
+
+Tell them what you are doing
+
+## Submit your model
+
+0. use [`hubValidations::submission_tmpl()`](https://hubverse-org.github.io/hubValidations/reference/submission_tmpl.html) to create a model output submission template.
+1. fork the repository
+2. upload your model submission into the `model-output/YOUR-ORG_MODEL/` folder
+3. party down
+
+## important packages
+
+As a modeler, you will find the following packages important:
+
+ - [hubData](https://hubverse-org.github.io/hubData) seamlessly access data from a local or remote hub
+ - [hubValidations](https://hubverse-org.github.io/hubValidations) create submisson template and validate your model. 
+
+

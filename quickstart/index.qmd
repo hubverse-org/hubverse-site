@@ -1,0 +1,26 @@
+---
+title: "What is a Modeling Hub?"
+---
+
+A modeling hub is a crowd-sourced modeling effort that removes barriers to 
+collaborative modeling through data standards and validations.
+
+```{mermaid}
+flowchart TD
+    admin([hub administrators])
+    schema[hubverse-org/schema]
+    modelers([modeling teams])
+    subgraph org/hub
+        hub-config
+        model-output[(model-output)]
+        target-data[(target-data)]
+    end
+    schema ~~~ admin
+    org/hub ~~~ admin
+    schema -.->|validates| hub-config
+    admin ==> hub-config
+    admin ==> target-data
+    modelers ==> model-output
+    hub-config -.->|validates| model-output
+
+```

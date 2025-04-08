@@ -1,0 +1,12 @@
+---
+title: "Analyze Data"
+---
+
+## important packages
+
+When analysing data from a hub, you will want the following packages:
+
+ - [hubData](https://hubverse-org.github.io/hubData) seamlessly access data from a local or remote hub
+ - [hubEnsembles](https://hubverse-org.github.io/hubEnsembles) combine models into an ensemble using built-in or custom methods
+ - [hubVis](https://hubverse-org.github.io/hubVis) visualize model output
+ - [hubEvals](https://hubverse-org.github.io/hubEvals) compare and evaluate models in an established hub

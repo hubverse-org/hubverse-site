@@ -1,0 +1,133 @@
+---
+title: "The Hubverse"
+toc: false
+about:
+  id: hero-heading
+  template: solana
+  image: logo/logo.png
+  # empty alt text to skip the logo
+  image-alt: " "
+  links:
+  - icon: people
+    text: Community
+    href: "community/index.qmd"
+  - icon: compass
+    text: Data Standards
+    href: "tools/data.qmd"
+  - icon: tools
+    text: Software
+    href: "tools/software.qmd"
+---
+
+:::{#hero-heading}
+
+## Improving public health outcomes with collaborative modeling
+
+Use the hubverse data standards and software to:
+
+ - [{{< fa handshake-simple >}} **Collaborate**]{.look-here} with modelers around the world
+ - [{{< fa retweet >}} **Share**]{.look-here} insights in real time
+ - [{{< fa person-chalkboard >}} **Inform**]{.look-here} critical decisions with **robust and validated** model outputs
+
+Would you like to [know more](quickstart/index.html)?
+
+:::
+
+:::{.column-page}
+
+## What is a Hub?
+
+A collaborative modeling hub is a **centralized data portal** for modeling
+challenges. The [**structured data standards**](tools/data.qmd) combined with
+[robust **hubverse software**](tools/software.qmd) facilitate **rapid
+validation** of model submissions.
+
+The robust and validated data feed downstream analyses, reports, and
+[**dashboards**](tools/dashboards.qmd) that provide **visualizations and
+evaluations** to support modelers and decision makers.
+
+```{mermaid}
+flowchart LR
+    subgraph validation
+    modelA --> hub((modeling hub))
+    modelB --> hub((modeling hub))
+    modelC --> hub((modeling hub))
+    hub
+    end
+    data[(model output data)]
+    hub --> data
+    subgraph dashboards
+    data --> evaluation
+    data --> visualization
+    data --> reports
+    end
+    reports --> decisions{decisions}
+    visualization --> decisions
+    evaluation --> decisions
+```
+
+:::
+
+::: {.grid .column-screen-inset style="--bs-columns: 2;"}
+
+
+:::: { class='bordered'}
+
+## Data Standards
+
+The core of the hubverse are the [**robust and flexible data standards**](tools/data.qmd) that
+allow administrators to write structured guidelines for model output submissions
+that can be easily validated.
+
+::::
+
+:::: { class='bordered'}
+
+## Software
+
+[Hubverse software](tools/software.qmd) is written in R and provides tools for
+all phases in the life cycle of a hub.
+
+ - {{< fa gear >}} **set up and manage** a hub with [hubAdmin](https://hubverse-org.github.io/hubAdmin)
+ - {{< fa check >}} **validate** model submissions with [hubValidations](https://github.com/hubverse-org/hubValidations)
+ - {{< fa download >}} **fetch model and target data** with [hubData](https://hubverse-org.github.io/hubData)
+ - {{< fa blender >}} **ensemble** models with [hubEnsembles](https://hubverse-org.github.org/hubEnsembles)
+ - {{< fa stethoscope >}} **evaluate** model performance with [hubEvals](https://hubverse-org.github.io/hubEvals)
+ - {{< fa chart-line >}} **visualize** forecasts with [hubViz](https://hubverse-org.github.io/hubVis)
+ - ... and more!
+
+All of these packages are available at [The Hubverse
+R-Universe](https://hubverse-org.r-universe.dev)
+
+::::
+:::
+
+
+{{< include /community/_active-hubs.qmd >}}
+
+::: {.column-screen-inset}
+
+## Organizations using the hubverse
+
+:::{#orgs .grid .text-center style='--bs-columns: 3; --bs-gap: 0.5em'}
+
+{{< partial /_partials/orgs.qmd hubs.cdc id="cdc">}}
+
+{{< partial /_partials/orgs.qmd hubs.ecdc id="ecdc">}}
+
+{{< partial /_partials/orgs.qmd hubs.reichlab id="reichlab">}}
+
+{{< partial /_partials/orgs.qmd hubs.cadph id="cadph">}}
+
+{{< partial /_partials/orgs.qmd hubs.midas id="midas">}}
+
+{{< partial /_partials/orgs.qmd hubs.hopkinsidd id="hopkinsidd">}}
+
+{{< partial /_partials/orgs.qmd hubs.ai4casting id="ai4casting">}}
+
+:::
+
+:::
+
+
+

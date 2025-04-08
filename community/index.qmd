@@ -1,0 +1,44 @@
+---
+title: "Community"
+---
+
+::: {.grid .column-page style="--bs-columns: 2;"}
+
+:::: {.bordered .biglist}
+
+## Stats
+
+ - {{< fa building-columns >}} 10 organizations
+ - {{< fa circle-nodes >}} 20 active hubs
+ - {{< fa people-line >}} 45 modeling groups
+
+::::
+
+:::: {.bordered}
+
+## Mailing List
+
+{{< lipsum 1>}}
+
+
+::::
+
+:::: {.bordered}
+
+## Monthly Meetings
+
+{{< lipsum 1>}}
+
+
+::::
+
+:::: {.bordered}
+
+## Slack
+
+{{< lipsum 1>}}
+
+::::
+
+
+:::

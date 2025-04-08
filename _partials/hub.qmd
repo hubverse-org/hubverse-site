@@ -1,0 +1,65 @@
+
+```{=html}
+<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100">
+    <h5 class="card-title org">
+      {{#.logo}}<img src="{{.logo}}" class="card-img-top logo" alt=' '>{{/.logo}}
+      {{ .name }}
+    </h5>
+    <hr>
+    <div class="grid" style='--bs-columns: 2'>
+        {{#hubs}}
+        <div class="card hub text-bg-light">
+            <div class="card-body h-100">
+                <h6 class="card-title">
+                {{ name }}
+                </h6>
+                <p class="card-text">
+                    {{{ description }}}
+                </p>
+                <p class="card-text">
+                    {{#license}}
+                    Licensed under the <strong>{{.license}}</strong>
+                    {{/license}}
+                    <br>
+                    {{#contact}}
+                    Contact: <a class="card-link" href="mailto:{{.contact}}">{{.contact}}</a>
+                    {{/contact}}
+                </p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                    <a class="card-link" href="https://github.com/{{.repo}}">
+                    <i class="fa-brands fa-github"></i>
+                    <span class="visually-hidden">{{name}} </span><span aria-hidden=true>Hub</span>
+                    </a>
+                    </li>
+                    {{#insights}}
+                    <li class="list-group-item">
+                    <a class="card-link" href="{{.forecasts}}">
+                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <span class="visually-hidden">{{name}} </span>Insights
+                    </a>
+                    </li>
+                    {{/insights}}
+                    {{#forecasts}}
+                    <li class="list-group-item">
+                    <a class="card-link" href="{{.forecasts}}">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="visually-hidden">{{name}} </span>Forecasts
+                    </a>
+                    </li>
+                    {{/forecasts}}
+                    {{#evals}}
+                    <li class="list-group-item">
+                    <a class="card-link" href="{{.evals}}">
+                    <i class="fa-solid fa-stethoscope"></i>
+                    <span class="visually-hidden">{{name}} </span>Evaluations
+                    </a>
+                    </li>
+                    {{/evals}}
+                </ul>
+            </div>
+        </div>
+        {{/hubs}}
+    </div>
+</div>
+```

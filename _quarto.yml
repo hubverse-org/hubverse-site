@@ -1,0 +1,45 @@
+project:
+  type: website
+website:
+  title: "The Hubverse"
+  navbar:
+    search: true
+    left:
+      - text: "Home"
+        href: index.qmd
+    right:
+      - text: "**Get Started**"
+        menu:
+        - quickstart/index.qmd
+        - quickstart/create.qmd
+        - quickstart/submit.qmd
+        - quickstart/analyze.qmd
+      - text: "Tools"
+        menu:
+        - text: "Data Standards"
+          href: tools/data.qmd
+        - text: "Software"
+          href: tools/software.qmd
+        - text: "Dashboards"
+          href: tools/dashboards.qmd
+      - text: "Community Support"
+        menu:
+        - community/index.qmd
+        - community/hubs.qmd
+        - text: "User Guide (external)"
+          href: https://hubverse.io/
+        - community/team.qmd
+format:
+  html:
+    anchor-sections: true
+    link-external-icon: true
+    breadcrumbs: true
+    theme:
+      - litera
+      # - brand
+    css: styles.css
+    toc: true
+brand: brand/_brand.yml
+resources: 
+ - logo/
+ - includes/

@@ -1,0 +1,19 @@
+```{=html}
+<div class="card person">
+  <img src="https://placecats.com/200/200" class="card-img-top"/>
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ name }}
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ role }}</h6>
+    <div class="card-text">
+      {{{ description }}}
+    </div>
+  </div>
+  <div class="card-footer">
+    {{#links}}
+    <a href="{{ .url }}" class="card-link"><i class="{{ .name }}"></i></a>
+    {{/links}}
+  </div>
+</div>
+```

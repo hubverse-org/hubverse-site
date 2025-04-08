@@ -1,0 +1,73 @@
+/* css styles */
+.about-entity {
+  padding: 1em;
+  background: aliceblue;
+}
+
+div.quarto-about-solana .about-entity .about-links {
+  padding-bottom: initial
+}
+
+div.person {
+  background-color: antiquewhite;
+}
+
+div.hub ul {
+  padding-left: initial;
+}
+div.hub li {
+  list-style: none;
+}
+
+div.org {
+  --bs-card-border-width: 0;
+  --bs-card-bg: #dbeefb;
+  padding: 0.5rem;
+}
+
+h5.org {
+  color: #000;
+}
+
+.card-img-top {
+  height: min-intrinsic;
+  object-fit: scale-down;
+}
+
+img.logo {
+  height: 40px;
+  object-fit: scale-down;
+}
+
+.bordered {
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+
+.showcase {
+  border-bottom: unset;
+  background: aqua;
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.card-body {
+  font-size: 14px
+}
+
+.page-buttons {
+  margin: auto;
+}
+
+.look-here {
+  background-color: antiquewhite;
+}
+
+
+:root {
+  --mermaid-fg-color--lightest: #fafafa;
+  --mermaid-node-bg-color: #dbeefb;
+  --mermaid-edge-color: #3c88be;
+  --mermaid-label-fg-color: #000000;
+}

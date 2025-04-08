@@ -1,0 +1,33 @@
+---
+title: "Create a Hub"
+---
+
+## Determine what you want to forecast
+
+You need to answer a few questions first:
+
+1. What are the quantities you want to forecast? your **modeling targets**
+2. What variables do you want to use for modeling? 
+3. What is the forecasting horizon (if any)?
+4. What kind of estimates do you expect to represent the value of the modeling target (e.g. quantile and mean values)? These are **output types**.
+4. How often do you want to take submissions? your **modeling rounds**
+
+By answering these questions, you will be able to determine your **modeling tasks**.
+A modeling task focuses on a single target and is made up of a unique
+combination of variables used for modeling and the output types. These variables
+are collectively known as **task IDs**.
+
+
+## Create your hub
+
+Follow the steps outlined in https://hubverse.io/en/latest/quickstart-hub-admin/intro.html to set up your very first hub.
+
+
+## important packages
+
+As an administrator, you might want to use these tools to help you administer
+your hub.
+
+ - [hubAdmin](https://hubverse-org.github.io/hubAdmin) provides tools for you to create a new hub
+ - [hubCI](https://hubverse-org.github.io/hubCI) allows you to set up automated check for your hub on github
+

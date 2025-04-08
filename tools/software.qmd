@@ -1,0 +1,41 @@
+---
+title: "Software"
+---
+
+:::{.callout-tip}
+
+Thanks to rigorous [data standards](data.qmd), our software works on any hub.
+
+:::
+
+## R packages
+
+```{mermaid}
+flowchart TD
+  subgraph core
+  hubUtils
+  end
+
+  subgraph validation
+  hubValidations
+  hubAdmin
+  end
+
+  subgraph data access
+  hubData
+  zoltr
+  end
+
+  hubValidations --> hubUtils
+  hubValidations --> hubData
+  hubValidations --> hubAdmin
+  hubAdmin --> hubUtils
+  hubData --> hubUtils
+  hubData --> zoltr
+
+  subgraph model-evaluation
+  hubEnsembles --> hubUtils
+  hubVis --> hubUtils
+  hubEvals --> hubUtils
+  end
+```
