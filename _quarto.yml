@@ -1,6 +1,7 @@
 project:
   type: website
 website:
+  favicon: logo/logo.png
   title: "The Hubverse"
   navbar:
     search: true
