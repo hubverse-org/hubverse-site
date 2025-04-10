@@ -17,6 +17,8 @@ website:
         - quickstart/create.qmd
         - quickstart/submit.qmd
         - quickstart/analyze.qmd
+        - "---"
+        - quickstart/support-consulting.md
       - text: "Tools"
         menu:
         - text: "Data Standards"
