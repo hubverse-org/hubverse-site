@@ -1,6 +1,6 @@
 
 ```{=html}
-<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100 g-col-12 g-col-lg-6">
+<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100 g-col-12 g-col-xl-6">
     <h5 class="card-title org">
       {{#.logo}}<img src="{{.logo}}" class="card-img-top logo" alt=' '>{{/.logo}}
       {{ .name }}
