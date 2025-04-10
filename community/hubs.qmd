@@ -9,7 +9,7 @@ title: "Active Hubs"
 
 ::: {.column-screen-inset}
 
-:::{#orgs .grid style='--bs-columns: 1; --bs-gap: 0.5em'}
+:::{#orgs .grid style='--bs-gap: 0.5em'}
 
 {{< partial /_partials/hub.qmd hubs.cdc id="cdc">}}
 

@@ -1,6 +1,6 @@
 
 ```{=html}
-<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100">
+<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100 g-col-12 g-col-sm-4 g-col-md-3 g-col-xl-2">
    {{#.logo}}<img src="{{.logo}}" class="card-img-top logo" alt=' '>{{/.logo}}
    <a href="community/hubs.qmd#{{.id}}" class="card-link">{{ .name }}</a>
 </div>

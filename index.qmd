@@ -39,7 +39,7 @@ Would you like to [know more](quickstart/index.html)?
 
 A collaborative modeling hub is a **centralized data portal** for modeling
 challenges. The [**structured data standards**](tools/data.qmd) combined with
-[robust **hubverse software**](tools/software.qmd) facilitate **rapid
+robust [**hubverse software**](tools/software.qmd) facilitate **rapid
 validation** of model submissions.
 
 The robust and validated data feed downstream analyses, reports, and
@@ -68,10 +68,10 @@ flowchart LR
 
 :::
 
-::: {.grid .column-screen-inset style="--bs-columns: 2;"}
+::: {.grid .column-screen-inset}
 
 
-:::: { class='bordered'}
+:::: {.g-col-12 .g-col-sm-12 .g-col-md-6  .bordered}
 
 ## Data Standards
 
@@ -81,7 +81,7 @@ that can be easily validated.
 
 ::::
 
-:::: { class='bordered'}
+:::: {.g-col-12 .g-col-sm-12 .g-col-md-6  .bordered}
 
 ## Software
 
@@ -109,7 +109,7 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 ## Organizations using the hubverse
 
-:::{#orgs .grid .text-center style='--bs-columns: 3; --bs-gap: 0.5em'}
+:::{#orgs .grid .text-center style='--bs-gap: 0.5em'}
 
 {{< partial /_partials/orgs.qmd hubs.cdc id="cdc">}}
 
