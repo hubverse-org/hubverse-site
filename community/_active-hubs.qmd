@@ -1,5 +1,25 @@
 ---
 hubs:
+#  <id>:
+#    logo: /includes/img/<logo>.png
+#    name: "Name of Organisation"
+#    hubs:
+#    # a list of hubs that require a name, description, contact, repo,
+#    # and license
+#      # --- REQUIRED ---
+#    - name: "Name of Hub"
+#      description: |
+#        A description that
+#        can span
+#        multiple lines
+#      contact: "hub-info@example.com"
+#      repo: "org/hub-name"
+#      license: "License Name (e.g MIT License)"
+#      # --- OPTIONAL ----
+#      aws: "aws-bucket-name"
+#      insights: https://reichlab.io/variant-nowcast-hub-dashboard/
+#      forecasts: https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html
+#      evals: https://reichlab.io/variant-nowcast-hub-dashboard/evals.html
   reichlab:
     logo: /includes/img/reichlab.png
     name: "Reich Lab (UMass)"
@@ -10,6 +30,7 @@ hubs:
       contact: nick@umass.edu
       repo: reichlab/variant-nowcast-hub
       license: MIT License
+      aws: "variant-nowcast-hub"
       insights: https://reichlab.io/variant-nowcast-hub-dashboard/
     - name: "Flu Metrocast Hub"
       description: |
@@ -103,6 +124,7 @@ hubs:
       contact: flusight@cdc.gov
       repo: cdcepi/FluSight-forecast-hub
       license: "MIT License"
+      aws: cdcepi-flusight-forecast-hub
       forecasts: https://reichlab.io/flusight-dashboard/forecast.html
       evals: https://reichlab.io/flusight-dashboard/eval.html
     - name: "COVID-19 Forecast Hub"
@@ -112,6 +134,7 @@ hubs:
       contact: covidhub@cdc.gov
       repo: CDCgov/covid19-forecast-hub
       license: Apache License 2.0
+      aws: covid19-forecast-hub
       forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
       evals: https://reichlab.io/covidhub-dashboard/eval.html
   ecdc:
