@@ -74,7 +74,7 @@ hubs:
       license: MIT License
       forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
   midas:
-    logo: /includes/img/midas.jpeg
+    logo: /includes/img/midas.png
     name: "MIDAS network"
     hubs:
     - name: "RSV Scenario Modeling Hub"
