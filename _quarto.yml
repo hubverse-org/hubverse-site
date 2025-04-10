@@ -3,6 +3,7 @@ project:
 website:
   favicon: logo/logo.png
   title: "The Hubverse"
+  site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
   navbar:
