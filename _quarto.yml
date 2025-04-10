@@ -31,7 +31,8 @@ website:
         - community/hubs.qmd
         - text: "User Guide (external)"
           href: https://hubverse.io/
-        - community/team.qmd
+        - text: "Contributors"
+          href: community/contributors.qmd
 format:
   html:
     anchor-sections: true
