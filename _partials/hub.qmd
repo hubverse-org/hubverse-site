@@ -34,7 +34,7 @@
                     </li>
                     {{#insights}}
                     <li class="list-group-item">
-                    <a class="card-link" href="{{.forecasts}}">
+                    <a class="card-link" href="{{.insights}}">
                     <i class="fa-solid fa-magnifying-glass-chart"></i>
                     <span class="visually-hidden">{{name}} </span>Insights
                     </a>
