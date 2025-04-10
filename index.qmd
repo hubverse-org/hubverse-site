@@ -10,13 +10,13 @@ about:
   links:
   - icon: people
     text: Community
-    href: "./community/index.qmd"
+    href: "community/index.qmd"
   - icon: compass
     text: Data Standards
-    href: "./tools/data.qmd"
+    href: "tools/data.qmd"
   - icon: tools
     text: Software
-    href: "./tools/software.qmd"
+    href: "tools/software.qmd"
 ---
 
 :::{#hero-heading}
