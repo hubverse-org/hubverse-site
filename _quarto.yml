@@ -8,10 +8,9 @@ website:
   repo-actions: [edit, source, issue]
   navbar:
     search: true
-    left:
+    right:
       - text: "Home"
         href: index.qmd
-    right:
       - text: "**Get Started**"
         menu:
         - quickstart/index.qmd
