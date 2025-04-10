@@ -4,7 +4,7 @@ title: "Software"
 
 :::{.callout-tip}
 
-Thanks to rigorous [data standards](data.qmd), our software works on any hub.
+Thanks to rigorous [data standards](/community/data.qmd), our software works on any hub.
 
 :::
 
@@ -39,3 +39,4 @@ flowchart TD
   hubEvals --> hubUtils
   end
 ```
+
