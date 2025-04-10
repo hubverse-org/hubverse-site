@@ -59,6 +59,8 @@ with open(output_file, "w") as file:
     last_index = len(contributor_list) - 1  # Get last index to avoid trailing '---'
 
     for i, (login, repo_set) in enumerate(contributor_list):
+        if login.startswith("dependabot"):
+            continue # skip if the contributor is a bot
         user_response = requests.get(f"{base_url}/users/{login}", headers=headers)
         if user_response.status_code != 200:
             file.write(
