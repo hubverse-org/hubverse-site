@@ -25,6 +25,10 @@ div.org {
   padding: 0.5rem;
 }
 
+div.data-foot {
+  background-color: #fffbea;
+}
+
 h5.org {
   color: #000;
 }

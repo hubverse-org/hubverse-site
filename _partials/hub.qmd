@@ -58,6 +58,11 @@
                     {{/evals}}
                 </ul>
             </div>
+            {{#.aws}}
+            <div class="data-foot card-footer">
+                <i class="fa-solid fa-database" aria-label="s3 data available"></i> <code>s3://{{.aws}}</code> <small><a href="https://hubverse-org.github.io/hubData/articles/connect_hub.html#connecting-to-a-hub-in-the-cloud"><i class="fa-solid fa-circle-info" aria-label="Find out how to connect to data in the cloud"></i></a></small>
+            </div>
+            {{/.aws}}
         </div>
         {{/hubs}}
     </div>
