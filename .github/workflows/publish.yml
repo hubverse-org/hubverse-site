@@ -19,7 +19,7 @@ jobs:
       - name: Generate team page
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/contributors.py
+        run: make contributors
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@9e48da27e184aa238fcb49f5db75469626d43adb #v2
