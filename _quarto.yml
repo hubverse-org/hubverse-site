@@ -32,7 +32,7 @@ website:
         - text: "User Guide (external)"
           href: https://hubverse.io/
         - text: "Contributors"
-          href: community/contributors.qmd
+          href: community/contributors.md
 format:
   html:
     anchor-sections: true
