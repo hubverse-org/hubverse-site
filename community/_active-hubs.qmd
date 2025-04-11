@@ -45,7 +45,7 @@ hubs:
       forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
       evals: https://reichlab.io/metrocast-dashboard/eval.html
   ai4casting:
-    logo: /includes/img/ai4casting.png
+    logo: '/logo/logo.png' # /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
     hubs:
     - name: "Hosptitalization Forecast Hub"
@@ -98,7 +98,7 @@ hubs:
       license: MIT License
       insights: https://fluscenariomodelinghub.org/viz.html
   hopkinsidd:
-    logo: /includes/img/hopkinsidd.png
+    logo: /logo/logo.png #/includes/img/hopkinsidd.png
     name: "Johns Hopkins University Infectious Disease Dynamics Group"
     hubs:
     - name: "US RSV Forecast Hub"
@@ -115,7 +115,7 @@ hubs:
       evals: https://rsvforecasthub.org/#Evaluation
   cdc:
     name: "US Centers for Disease Control"
-    logo: /includes/img/cdc.jpg
+    logo: /logo/logo.png #/includes/img/cdc.jpg
     hubs:
     - name: "FluSight Forecast Hub"
       description: |
@@ -139,7 +139,7 @@ hubs:
       evals: https://reichlab.io/covidhub-dashboard/eval.html
   ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
-    logo: /includes/img/ecdc.png
+    logo: /logo/logo.png #/includes/img/ecdc.png
     hubs:
     - name: "RespiCast Syndromic Indicators"
       contact: european.modelling.hub@ecdc.europa.eu
@@ -170,7 +170,7 @@ hubs:
       repo: european-modelling-hubs/RespiCompass
       insights: https://respicompass.ecdc.europa.eu/insights/
   cadph:
-    logo: /includes/img/cadph.png
+    logo: /logo/logo.png #/includes/img/cadph.png
     name: California Department of Public Health
     hubs:
     - name: West Nile Virus Forecasting Hub

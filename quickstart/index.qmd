@@ -2,25 +2,33 @@
 title: "What is a Modeling Hub?"
 ---
 
-A modeling hub is a crowd-sourced modeling effort that removes barriers to 
-collaborative modeling through data standards and validations.
+
+A collaborative modeling hub is a **centralized data portal** for modeling
+challenges. The [**structured data standards**](tools/data.qmd) combined with
+robust [**hubverse software**](tools/software.qmd) facilitate **rapid
+validation** of model submissions.
+
+The robust and validated data feed downstream analyses, reports, and
+[**dashboards**](tools/dashboards.qmd) that provide **visualizations and
+evaluations** to support modelers and decision makers.
 
 ```{mermaid}
-flowchart TD
-    admin([hub administrators])
-    schema[hubverse-org/schema]
-    modelers([modeling teams])
-    subgraph org/hub
-        hub-config
-        model-output[(model-output)]
-        target-data[(target-data)]
+flowchart LR
+    subgraph validation
+    modelA --> hub((modeling hub))
+    modelB --> hub((modeling hub))
+    modelC --> hub((modeling hub))
+    hub
     end
-    schema ~~~ admin
-    org/hub ~~~ admin
-    schema -.->|validates| hub-config
-    admin ==> hub-config
-    admin ==> target-data
-    modelers ==> model-output
-    hub-config -.->|validates| model-output
-
+    data[(model output data)]
+    hub --> data
+    subgraph dashboards
+    data --> evaluation
+    data --> visualization
+    data --> reports
+    end
+    reports --> decisions{decisions}
+    visualization --> decisions
+    evaluation --> decisions
 ```
+
