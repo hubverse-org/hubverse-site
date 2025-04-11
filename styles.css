@@ -8,7 +8,14 @@
 
 .about-entity {
   padding: 1em;
-  background: aliceblue;
+  background: ghostwhite;
+  h2 {
+    font-size: 1.8rem;
+    border-bottom: unset;
+  }
+  p,li,a {
+    font-size: 1.4rem;
+  }
 }
 
 div.quarto-about-solana .about-entity .about-links {
@@ -82,3 +89,4 @@ img.logo {
   --mermaid-edge-color: #3c88be;
   --mermaid-label-fg-color: #000000;
 }
+

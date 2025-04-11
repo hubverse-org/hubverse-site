@@ -175,6 +175,9 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <div id="quarto-announcement" data-announcement-id="85324bb8eab0463e82ab775127d0b522" class="alert alert-warning hidden"><i class="bi bi-cone-striped quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This page is currently under construction</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -205,29 +208,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A modeling hub is a crowd-sourced modeling effort that removes barriers to collaborative modeling through data standards and validations.</p>
+<p>A collaborative modeling hub is a <strong>centralized data portal</strong> for modeling challenges. The <a href="tools/data.qmd"><strong>structured data standards</strong></a> combined with robust <a href="tools/software.qmd"><strong>hubverse software</strong></a> facilitate <strong>rapid validation</strong> of model submissions.</p>
+<p>The robust and validated data feed downstream analyses, reports, and <a href="tools/dashboards.qmd"><strong>dashboards</strong></a> that provide <strong>visualizations and evaluations</strong> to support modelers and decision makers.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
-<pre class="mermaid mermaid-js">flowchart TD
-    admin([hub administrators])
-    schema[hubverse-org/schema]
-    modelers([modeling teams])
-    subgraph org/hub
-        hub-config
-        model-output[(model-output)]
-        target-data[(target-data)]
+<pre class="mermaid mermaid-js">flowchart LR
+    subgraph validation
+    modelA --&gt; hub((modeling hub))
+    modelB --&gt; hub((modeling hub))
+    modelC --&gt; hub((modeling hub))
+    hub
     end
-    schema ~~~ admin
-    org/hub ~~~ admin
-    schema -.-&gt;|validates| hub-config
-    admin ==&gt; hub-config
-    admin ==&gt; target-data
-    modelers ==&gt; model-output
-    hub-config -.-&gt;|validates| model-output
-
+    data[(model output data)]
+    hub --&gt; data
+    subgraph dashboards
+    data --&gt; evaluation
+    data --&gt; visualization
+    data --&gt; reports
+    end
+    reports --&gt; decisions{decisions}
+    visualization --&gt; decisions
+    evaluation --&gt; decisions
 </pre>
 </div>
 <p></p></figure><p></p>
