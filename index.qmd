@@ -20,6 +20,7 @@ toc: false
 ---
 
 
+<span hidden>{{< fa coins >}}</span>
 
 
 :::{.about-entity .column-page}

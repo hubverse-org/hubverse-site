@@ -12,6 +12,12 @@ website:
   site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
+  page-footer:
+    left:
+      - text: "Copyright 2025, Collaborative Modelling Consortium"
+    right:
+      - icon: github
+        href: funding.md
   navbar:
     search: true
     right:
