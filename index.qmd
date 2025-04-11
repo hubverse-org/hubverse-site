@@ -24,7 +24,7 @@ toc: false
 
 :::{.about-entity .column-page}
 
-![](/logo/logo-with-text.png){alt="The Hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
+![](/logo/logo-with-text.png){alt="The hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
 
 ## Improving public health outcomes with collaborative modeling {.subtitle}
 
@@ -43,7 +43,7 @@ Use the hubverse data standards and software to:
  - [{{< fa retweet >}} **Share**]{.look-here} insights in real time
  - [{{< fa person-chalkboard >}} **Inform**]{.look-here} critical decisions with **robust and validated** model outputs
 
-![](/includes/img/showcase.png)
+![](/includes/img/showcase.png){alt="screenshots of successful model submissions paired with screenshots of dashboards showing forecast and evaluation visualizations for the flusight hub"}
 
 **Would you like to [know more](quickstart/index.html)?**
 
@@ -68,7 +68,7 @@ that can be easily validated.
 
 ## Software
 
-[Hubverse software](tools/software.qmd) is written in R and provides tools for
+[hubverse software](tools/software.qmd) is written in R and provides tools for
 all phases in the life cycle of a hub.
 
  - {{< fa gear >}} **set up and manage** a hub with [hubAdmin](https://hubverse-org.github.io/hubAdmin)
@@ -79,7 +79,7 @@ all phases in the life cycle of a hub.
  - {{< fa chart-line >}} **visualize** forecasts with [hubViz](https://hubverse-org.github.io/hubVis)
  - ... and more!
 
-All of these packages are available at [The Hubverse
+All of these packages are available at [The hubverse
 R-Universe](https://hubverse-org.r-universe.dev)
 
 ::::

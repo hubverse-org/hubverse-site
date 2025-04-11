@@ -8,7 +8,7 @@ website:
     type: warning
     position: below-navbar
   favicon: logo/logo.png
-  title: "The Hubverse"
+  title: "The hubverse"
   site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
