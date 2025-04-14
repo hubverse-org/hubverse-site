@@ -52,6 +52,31 @@ The core of the hubverse are the [**robust and flexible data standards**](tools/
 allow administrators to write structured guidelines for model output submissions
 that can be easily validated.
 
+
+```{mermaid}
+sequenceDiagram
+  actor Modeler
+  participant Hub
+  participant hubverse schema
+  actor Admin
+  rect aliceblue
+      Admin->>Hub: define model tasks configuration
+      note left of Admin: hubAdmin::create_config()
+      hubverse schema->>Hub: validate configuration files
+      note right of Hub: hubAdmin::validate_config()
+  end
+  rect ghostwhite
+    Hub-->Modeler: Get submission template
+    note right of Modeler: hubValidations::submission_tmpl()
+    Modeler->>Hub: Submit model output
+    note left of Hub: hubValidations::validate_pr()
+    Hub->>Hub: validate model submission
+  end
+  Admin->>Hub: create ensembled model output
+  note left of Admin: hubEnsembles::simple_ensemble()
+
+```
+
 ::::
 
 :::: {.g-col-12 .g-col-sm-12 .g-col-md-6  .bordered}
