@@ -31,7 +31,15 @@ Use the hubverse data standards and software to:
 
 :::
 
+{{< include /community/_testimonials.qmd >}}
 
+::: {#testimonials .grid .column-screen-inset}
+
+{{< partial /_partials/testimonial.qmd alfa >}}
+
+{{< partial /_partials/testimonial.qmd beta >}}
+
+:::
 
 ::: {.grid .column-screen-inset}
 
