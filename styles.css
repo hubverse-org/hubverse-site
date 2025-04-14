@@ -1,4 +1,42 @@
 /* css styles */
+
+.testimonial {
+  margin: 0;
+  margin-top: 1rex;
+  background: antiquewhite;
+  border: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  blockquote {
+    border-left: .25rem solid #3C88BE;
+    p {
+      font: 1rem Georgia, serif;
+      font-style: italic;
+      color: #000000;
+    }
+  }
+  p {
+    font: 1.2rem Georgia, serif;
+    color: #5a5a5a;
+  }
+}
+/* 
+Allow an element to break out of its frame 
+ */
+.breakout {
+  left: -10%; /* shift the position of the element outside of the frame by 10%*/
+  max-width: 120%; /* allow the element to grow to 120% of the frame */
+  position: relative;
+}
+
+.breakin {
+  left: 10%;
+  right: 10%;
+  max-width: 80%;
+  position: relative;
+}
+
 .avatar {
   width: 50px;
   height: 50px;
@@ -15,6 +53,13 @@
   }
   p,li,a {
     font-size: 1.25rem;
+  }
+  .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
