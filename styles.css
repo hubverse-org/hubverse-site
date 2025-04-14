@@ -10,15 +10,17 @@
   align-items: center;
   blockquote {
     border-left: .25rem solid #3C88BE;
-    p {
-      font: 1rem Georgia, serif;
-      font-style: italic;
-      color: #000000;
-    }
+    font: 1rem Georgia, serif;
+    font-style: italic;
+    color: #000000;
   }
   p {
     font: 1.2rem Georgia, serif;
     color: #5a5a5a;
+  }
+  img {
+    max-height: 300px;
+    object-fit: none;
   }
 }
 /* 

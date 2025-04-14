@@ -2,13 +2,13 @@
 alfa:
   hub: Alfa Hub
   name: Dr. Alfa
-  img: https://placecats.com/400/400
+  img: https://placecats.com/300/300
   testimonial: |
     The Hubverse has been supporting the Alfa hub for years
 beta:
   hub: Beta Hub
   name: Dr. Beta
-  img: https://placecats.com/420/420
+  img: https://placecats.com/400/400
   testimonial: |
     We wanted to track the distribution of beta across metropolitan areas in the US. The Hubverse provided an easy way to get us quickly set up 
 ---

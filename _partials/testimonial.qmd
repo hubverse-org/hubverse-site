@@ -1,13 +1,13 @@
 ```{=html}
 <div class="card mb-3 g-col-12 g-col-sm-12 g-col-md-6 testimonial">
   <div class="grid">
-    <div class="g-col-6">
-      <img src="{{img}}" class="img-fluid rounded-start" alt="...">
+    <div class="g-col-5">
+      <img src="{{img}}" class="img-fluid rounded-start" alt=" ">
     </div>
-    <div class="g-col-6">
+    <div class="g-col-7">
       <div class="card-body">
         <h5 class="card-title">{{hub}}</h5>
-        <p class="card-text">{{{ testimonial }}}</p>
+        <blockquote class="card-text">{{{ testimonial }}}</blockquote>
         <p class="card-text"><small class="text-muted">&mdash; {{name}}</small></p>
       </div>
     </div>

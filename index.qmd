@@ -105,7 +105,6 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 ::: {.column-page}
 
-
 ## Organizations using the hubverse
 
 :::{#orgs .grid .text-center style='--bs-gap: 0.5em'}
@@ -127,6 +126,7 @@ R-Universe](https://hubverse-org.r-universe.dev)
 :::
 
 :::
+
 
 
 
