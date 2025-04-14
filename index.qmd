@@ -12,9 +12,10 @@ toc: false
 
 ::::{.breakin}
 <!-- [{{< fa people-line >}} community](/community/index.qmd){.btn .btn-outline-dark .ms-auto} -->
-[{{< fa people-pulling >}} community](/community/index.qmd){.btn .btn-outline-dark .ms-auto}
+[{{< fa people-pulling >}} Community](/community/index.qmd){.btn .btn-outline-dark .ms-auto}
 [{{< fa compass >}} Data Standards](/tools/data.qmd){.btn .btn-outline-dark .ms-auto}
 [{{< fa tools >}} Software](/tools/software.qmd){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Docs](https://hubverse.io/){.btn .btn-outline-dark .ms-auto}
 
 
 Use the hubverse data standards and software to:
