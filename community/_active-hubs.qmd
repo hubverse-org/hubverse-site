@@ -1,186 +1,178 @@
 ---
 hubs:
-#  <id>:
-#    logo: /includes/img/<logo>.png
-#    name: "Name of Organisation"
-#    hubs:
-#    # a list of hubs that require a name, description, contact, repo,
-#    # and license
-#      # --- REQUIRED ---
-#    - name: "Name of Hub"
-#      description: |
-#        A description that
-#        can span
-#        multiple lines
-#      contact: "hub-info@example.com"
-#      repo: "org/hub-name"
-#      license: "License Name (e.g MIT License)"
-#      # --- OPTIONAL ----
-#      aws: "aws-bucket-name"
-#      insights: https://reichlab.io/variant-nowcast-hub-dashboard/
-#      forecasts: https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html
-#      evals: https://reichlab.io/variant-nowcast-hub-dashboard/evals.html
+  #  <id>:
+  #    logo: /includes/img/<logo>.png
+  #    name: "Name of Organisation"
+  #    hubs:
+  #    # a list of hubs that require a name, description, contact, repo,
+  #    # and license
+  #      # --- REQUIRED ---
+  #    - name: "Name of Hub"
+  #      description: |
+  #        A description that
+  #        can span
+  #        multiple lines
+  #      contact: "hub-info@example.com"
+  #      repo: "org/hub-name"
+  #      license: "License Name (e.g MIT License)"
+  #      # --- OPTIONAL ----
+  #      aws: "aws-bucket-name"
+  #      insights: https://reichlab.io/variant-nowcast-hub-dashboard/
+  #      forecasts: https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html
+  #      evals: https://reichlab.io/variant-nowcast-hub-dashboard/evals.html
   reichlab:
     logo: /includes/img/reichlab.png
     name: "Reich Lab (UMass)"
     hubs:
-    - name: "Variant Nowcast Hub"
-      description: |
-        A repository to store COVID-19 variant nowcasts collected as a modeling hub.
-      contact: nick@umass.edu
-      repo: reichlab/variant-nowcast-hub
-      license: MIT License
-      aws: "variant-nowcast-hub"
-      insights: https://reichlab.io/variant-nowcast-hub-dashboard/
-    - name: "Flu Metrocast Hub"
-      description: |
-        The Flu MetroCast Hub is a modeling hub with the goal of
-        collecting city- and county-level forecasts of influenza
-        activity. The hub is led by the epiENGAGE team from UT-Austin
-        and UMass-Amherst, as a part of the CDC Insight Net program. 
-      contact: donga0223@gmail.com
-      aws: reichlab-flu-metrocast-hub
-      repo: reichlab/flu-metrocast
-      license: MIT License
-      forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
-      evals: https://reichlab.io/metrocast-dashboard/eval.html
+      - name: "Variant Nowcast Hub"
+        description: |
+          A repository to store COVID-19 variant nowcasts collected as a modeling hub.
+        contact: nick@umass.edu
+        repo: reichlab/variant-nowcast-hub
+        license: MIT License
+        aws: "variant-nowcast-hub"
+        insights: https://reichlab.io/variant-nowcast-hub-dashboard/
+      - name: "Flu Metrocast Hub"
+        description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
+        contact: donga0223@gmail.com
+        aws: reichlab-flu-metrocast-hub
+        repo: reichlab/flu-metrocast
+        license: MIT License
+        forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
+        evals: https://reichlab.io/metrocast-dashboard/eval.html
   ai4casting:
     logo: '/logo/logo.png' # /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
     hubs:
-    - name: "Hosptitalization Forecast Hub"
-      description: |
-        Public Health Ontario’s Ontario Respiratory Virus Tool Data
-        monitors the capacity of hospitals, helping policymakers and
-        health professionals gauge the burden of disease on the
-        healthcare system. It tracks real-time bed utilization,
-        enabling effective planning for resource allocation,
-        particularly during times of heightened disease outbreaks.
-      contact: skadam@uoguelph.ca
-      repo: ai4castinghub/hospitalization-forecast
-      license: MIT License
-      forecasts: https://4castinghub.uoguelph.ca/hospitalization/
-    - name: "RVDSS Forecast Hub"
-      description: |
-        RVDSS is a national surveillance system that collects and
-        reports data on the detection of respiratory viruses,
-        including RSV (Respiratory Syncytial Virus), SARS-CoV-2
-        (COVID-19), and Influenza. Through laboratory-confirmed
-        positive tests, the system helps track the spread of these
-        viruses, offering essential data to support public health
-        measures, pandemic preparedness, and disease control.
-      contact: skadam@uoguelph.ca
-      repo: ai4castinghub/rvdss-forecast
-      license: MIT License
-      forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
+      - name: "Hosptitalization Forecast Hub"
+        description: |
+          Public Health Ontario’s Ontario Respiratory Virus Tool Data
+          monitors the capacity of hospitals, helping policymakers and
+          health professionals gauge the burden of disease on the
+          healthcare system. It tracks real-time bed utilization,
+          enabling effective planning for resource allocation,
+          particularly during times of heightened disease outbreaks.
+        contact: skadam@uoguelph.ca
+        repo: ai4castinghub/hospitalization-forecast
+        license: MIT License
+        forecasts: https://4castinghub.uoguelph.ca/hospitalization/
+      - name: "RVDSS Forecast Hub"
+        description: |
+          RVDSS is a national surveillance system that collects and
+          reports data on the detection of respiratory viruses,
+          including RSV (Respiratory Syncytial Virus), SARS-CoV-2
+          (COVID-19), and Influenza. Through laboratory-confirmed
+          positive tests, the system helps track the spread of these
+          viruses, offering essential data to support public health
+          measures, pandemic preparedness, and disease control.
+        contact: skadam@uoguelph.ca
+        repo: ai4castinghub/rvdss-forecast
+        license: MIT License
+        forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
   midas:
     logo: /includes/img/midas.png
     name: "MIDAS network"
     hubs:
-    - name: "RSV Scenario Modeling Hub"
-      description: |
-        The goal of this RSV round is to expand on RSV modeling
-        capabilities developed last year by the Scenario Modeling Hub
-        to generate ensemble projections of RSV hospitalizations for
-        the 2024-25 season under different intervention scenarios. 
-      contact: scenariohub@midasnetwork.u
-      repo: midas-network/rsv-scenario-modeling-hub
-      license: MIT License
-      insights: https://rsvscenariomodelinghub.org/viz.html
-    - name: "Flu Scenario Modeling Hub"
-      description: |
-        A major output of the projection hub is ensemble estimates of
-        epidemic outcomes (e.g., infection, hospitalizations, and
-        deaths), for different time points, intervention scenarios,
-        and US jurisdictions.
-      contact: scenariohub@midasnetwork.u
-      repo: midas-network/flu-scenario-modeling-hub
-      license: MIT License
-      insights: https://fluscenariomodelinghub.org/viz.html
+      - name: "RSV Scenario Modeling Hub"
+        description: "The goal of this RSV round is to expand on RSV modeling\ncapabilities developed last year by the Scenario Modeling Hub\nto generate ensemble projections of RSV hospitalizations for\nthe 2024-25 season under different intervention scenarios. \n"
+        contact: scenariohub@midasnetwork.u
+        repo: midas-network/rsv-scenario-modeling-hub
+        license: MIT License
+        insights: https://rsvscenariomodelinghub.org/viz.html
+      - name: "Flu Scenario Modeling Hub"
+        description: |
+          A major output of the projection hub is ensemble estimates of
+          epidemic outcomes (e.g., infection, hospitalizations, and
+          deaths), for different time points, intervention scenarios,
+          and US jurisdictions.
+        contact: scenariohub@midasnetwork.u
+        repo: midas-network/flu-scenario-modeling-hub
+        license: MIT License
+        insights: https://fluscenariomodelinghub.org/viz.html
   hopkinsidd:
     logo: /logo/logo.png #/includes/img/hopkinsidd.png
     name: "Johns Hopkins University Infectious Disease Dynamics Group"
     hubs:
-    - name: "US RSV Forecast Hub"
-      description: |
-        This repository is designed to collect forecast data for the
-        2024-2025 RSV Forecast Hub run by Johns Hopkins University
-        Infectious Disease Dynamics Group. This project collects
-        forecasts for weekly new hospitalizations due to confirmed
-        RSV.
-      contact: shauntruelove@jhu.edu
-      repo: HopkinsIDD/rsv-forecast-hub
-      license: MIT License
-      forecasts: https://rsvforecasthub.org/#National_Forecast
-      evals: https://rsvforecasthub.org/#Evaluation
+      - name: "US RSV Forecast Hub"
+        description: |
+          This repository is designed to collect forecast data for the
+          2024-2025 RSV Forecast Hub run by Johns Hopkins University
+          Infectious Disease Dynamics Group. This project collects
+          forecasts for weekly new hospitalizations due to confirmed
+          RSV.
+        contact: shauntruelove@jhu.edu
+        repo: HopkinsIDD/rsv-forecast-hub
+        license: MIT License
+        forecasts: https://rsvforecasthub.org/#National_Forecast
+        evals: https://rsvforecasthub.org/#Evaluation
   cdc:
     name: "US Centers for Disease Control"
     logo: /logo/logo.png #/includes/img/cdc.jpg
     hubs:
-    - name: "FluSight Forecast Hub"
-      description: |
-        This project collects forecasts for weekly new
-        hospitalizations due to confirmed influenza.
-      contact: flusight@cdc.gov
-      repo: cdcepi/FluSight-forecast-hub
-      license: "MIT License"
-      aws: cdcepi-flusight-forecast-hub
-      forecasts: https://reichlab.io/flusight-dashboard/forecast.html
-      evals: https://reichlab.io/flusight-dashboard/eval.html
-    - name: "COVID-19 Forecast Hub"
-      description: |
-        A repository run by the US CDC to collect forecasts of weekly
-        incident COVID-19 hospital admissions.
-      contact: covidhub@cdc.gov
-      repo: CDCgov/covid19-forecast-hub
-      license: Apache License 2.0
-      aws: covid19-forecast-hub
-      forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
-      evals: https://reichlab.io/covidhub-dashboard/eval.html
+      - name: "FluSight Forecast Hub"
+        description: |
+          This project collects forecasts for weekly new
+          hospitalizations due to confirmed influenza.
+        contact: flusight@cdc.gov
+        repo: cdcepi/FluSight-forecast-hub
+        license: "MIT License"
+        aws: cdcepi-flusight-forecast-hub
+        forecasts: https://reichlab.io/flusight-dashboard/forecast.html
+        evals: https://reichlab.io/flusight-dashboard/eval.html
+      - name: "COVID-19 Forecast Hub"
+        description: |
+          A repository run by the US CDC to collect forecasts of weekly
+          incident COVID-19 hospital admissions.
+        contact: covidhub@cdc.gov
+        repo: CDCgov/covid19-forecast-hub
+        license: Apache License 2.0
+        aws: covid19-forecast-hub
+        forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
+        evals: https://reichlab.io/covidhub-dashboard/eval.html
   ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /logo/logo.png #/includes/img/ecdc.png
     hubs:
-    - name: "RespiCast Syndromic Indicators"
-      contact: european.modelling.hub@ecdc.europa.eu
-      description: |
-        The European Syndromic Indicators Forecasting Hub collates
-        weekly forecasts on Influenza-Like-Illness (ILI) and Acute
-        Respiratory Infection (ARI) incidence in EU/EEA countries.
-      repo: european-modelling-hubs/RespiCast-SyndromicIndicators
-      forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
-      evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-    - name: "European Covid-19 Forecasting Hub"
-      contact: european.modelling.hub@ecdc.europa.eu
-      description: |
-        The European Covid-19 Forecasting Hub collates weekly
-        forecasts on Covid-19 Hospital Admissions in EU/EEA countries.
-      repo: european-modelling-hubs/RespiCast-Covid19
-      forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=5
-      evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
-    - name: "RespiCompass - ECDC's Respiratory Diseases Scenario Hub"
-      contact: european.modelling.hub@ecdc.europa.eu
-      description: |
-        RespiCompass is a platform dedicated to hosting and sharing
-        scenario modelling results for respiratory pathogens. This
-        initiative is funded and led by the European Centre for
-        Disease Prevention and Control (ECDC). RespiCompass develops
-        and applies multi-model analyses through international
-        modelling collaboration.
-      repo: european-modelling-hubs/RespiCompass
-      insights: https://respicompass.ecdc.europa.eu/insights/
+      - name: "RespiCast Syndromic Indicators"
+        contact: european.modelling.hub@ecdc.europa.eu
+        description: |
+          The European Syndromic Indicators Forecasting Hub collates
+          weekly forecasts on Influenza-Like-Illness (ILI) and Acute
+          Respiratory Infection (ARI) incidence in EU/EEA countries.
+        repo: european-modelling-hubs/RespiCast-SyndromicIndicators
+        forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
+        evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
+      - name: "European Covid-19 Forecasting Hub"
+        contact: european.modelling.hub@ecdc.europa.eu
+        description: |
+          The European Covid-19 Forecasting Hub collates weekly
+          forecasts on Covid-19 Hospital Admissions in EU/EEA countries.
+        repo: european-modelling-hubs/RespiCast-Covid19
+        forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=5
+        evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
+      - name: "RespiCompass - ECDC's Respiratory Diseases Scenario Hub"
+        contact: european.modelling.hub@ecdc.europa.eu
+        description: |
+          RespiCompass is a platform dedicated to hosting and sharing
+          scenario modelling results for respiratory pathogens. This
+          initiative is funded and led by the European Centre for
+          Disease Prevention and Control (ECDC). RespiCompass develops
+          and applies multi-model analyses through international
+          modelling collaboration.
+        repo: european-modelling-hubs/RespiCompass
+        insights: https://respicompass.ecdc.europa.eu/insights/
   cadph:
     logo: /logo/logo.png #/includes/img/cadph.png
     name: California Department of Public Health
     hubs:
-    - name: West Nile Virus Forecasting Hub
-      contact: modeling@cdph.ca.gov
-      description: |
-        This is an open (by request) forecasting challenge to predict monthly
-        West Nile virus (WNV) total disease cases in select California counties
-        in 2024 in the months of May through December. This is the first
-        iteration of a California county-specific Forecasting Challenge.
-      repo: cdphmodeling/wnvca-2024
-      license: CC-BY 4.0 license
+      - name: West Nile Virus Forecasting Hub
+        contact: modeling@cdph.ca.gov
+        description: |
+          This is an open (by request) forecasting challenge to predict monthly
+          West Nile virus (WNV) total disease cases in select California counties
+          in 2024 in the months of May through December. This is the first
+          iteration of a California county-specific Forecasting Challenge.
+        repo: cdphmodeling/wnvca-2024
+        license: CC-BY 4.0 license
 ---
 
