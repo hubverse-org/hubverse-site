@@ -69,6 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -241,6 +244,38 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-standards" class="level2 g-col-12 g-col-sm-12 g-col-md-6 bordered">
 <h2 class="anchored" data-anchor-id="data-standards">Data Standards</h2>
 <p>The core of the hubverse are the <a href="./tools/data.html"><strong>robust and flexible data standards</strong></a> that allow administrators to write structured guidelines for model output submissions that can be easily validated.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+  actor Modeler
+  participant Hub
+  participant hubverse schema
+  actor Admin
+  rect aliceblue
+      Admin-&gt;&gt;Hub: define model tasks configuration
+      note left of Admin: hubAdmin::create_config()
+      hubverse schema-&gt;&gt;Hub: validate configuration files
+      note right of Hub: hubAdmin::validate_config()
+  end
+  rect ghostwhite
+    Hub--&gt;Modeler: Get submission template
+    note right of Modeler: hubValidations::submission_tmpl()
+    Modeler-&gt;&gt;Hub: Submit model output
+    note left of Hub: hubValidations::validate_pr()
+    Hub-&gt;&gt;Hub: validate model submission
+  end
+  Admin-&gt;&gt;Hub: create ensembled model output
+  note left of Admin: hubEnsembles::simple_ensemble()
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 </section>
 <section id="software" class="level2 g-col-12 g-col-sm-12 g-col-md-6 bordered">
 <h2 class="anchored" data-anchor-id="software">Software</h2>
