@@ -9,6 +9,11 @@
     <div class="grid">
         {{#hubs}}
         <div class="card hub text-bg-light g-col-12 g-col-sm-6">
+            {{#count}}
+            <div class="card-header">
+                {{.count}} models submitted
+            </div>
+            {{/count}}
             <div class="card-body h-100">
                 <h6 class="card-title">
                 {{ name }}
