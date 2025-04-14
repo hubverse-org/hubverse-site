@@ -13,13 +13,27 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
-
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@9e48da27e184aa238fcb49f5db75469626d43adb #v2
-      - name: Generate team page
+      - name: Get SDK Version from config
+        id: lookupSdkVersion
+        uses: mikefarah/yq@8bf425b4d1344db7cd469a8d10a390876e0c77fd # v4.45.1
+        with:
+          cmd: yq '.renutil.version' 'config.yml'
+      - name: Restore Cache
+        id: restore-cache
+        uses: actions/cache@v2
+        with:
+          path: ../renpy
+          key:  ${{ runner.os }}-sdk-${{ steps.lookupSdkVersion.outputs.result }}
+          restore-keys: |
+            ${{ runner.os }}-sdk
+      - name: Generate content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: make contributors
+        run: |
+          make contributors
+          make models
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@9e48da27e184aa238fcb49f5db75469626d43adb #v2

@@ -6,15 +6,20 @@ help: # Show help for each of the Makefile recipes.
 
 community/contributors.md: scripts/contributors.py # update contributors file
 	python scripts/contributors.py
+community/_active-hubs.qmd: scripts/update-model-counts.sh
 
 .PHONY: preview
 
-preview: community/contributors.md # update contributors file and preview
+preview: community/contributors.md community/_active-hubs.qmd # update contributors file and preview
 	quarto preview
 
 .PHONY: contributors
 
 contributors: community/contributors.md # generate contributors page
+
+.PHONY: models
+
+models: community/_active-hubs.qmd # generate models page
 
 
 
