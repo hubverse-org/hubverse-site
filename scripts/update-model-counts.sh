@@ -32,10 +32,11 @@ hub_file="${1:-community/_active-hubs.qmd}"
 mapfile -t hubs < <(yq --front-matter=extract '.hubs[].hubs[] | .repo' "${hub_file}")
 
 selector='[.[] | select((.type == "dir"))] | length'
+re='^[0-9]+$'
 for hub in "${hubs[@]}"; do
   # 1. Use the GitHub API to count the number of directories in `model-output`
   n=$(gh api "/repos/${hub}/contents/model-output" --jq "$selector")
-  if [[ $(grep -c '^\d*$' <<< $n) -gt 0 ]]; then
+  if [[ "${n}" =~ $re ]]; then
     echo "${hub} has ${n} models"
     # 2. Use yq to update that number in the frontmatter
     #    -i                      update file in place
