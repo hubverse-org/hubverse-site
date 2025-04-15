@@ -10,7 +10,7 @@ community/contributors.md: scripts/contributors.py
 
 community/_active-hubs.qmd: scripts/update-model-counts.sh
 	@echo Updating model counts...
-	bash scripts/update-model-counts.sh
+	bash -x scripts/update-model-counts.sh
 
 .PHONY: preview
 
