@@ -12,6 +12,11 @@ community/_active-hubs.qmd: scripts/update-model-counts.sh
 	@echo Updating model counts...
 	bash scripts/update-model-counts.sh
 
+.PHONY: render
+
+render: community/contributors.md community/_active-hubs.qmd # update contributors file and render to HTML 
+	quarto render
+
 .PHONY: preview
 
 preview: community/contributors.md community/_active-hubs.qmd # update contributors file and preview
