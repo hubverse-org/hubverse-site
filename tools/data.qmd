@@ -15,18 +15,3 @@ the structure of model submission files.
 These standards are encoded in versioned [JSON schemas](https://json-schema.org).
 
 The current version is {{< var version >}}
-
-## Tasks
-
-```{=html}
-<script class='docson' src="../includes/docson/widget.js" data-schema="https://raw.githubusercontent.com/hubverse-org/schemas/main/{{< var version >}}/tasks-schema.json"></script>
-```
-
-
-## Admin
-
-```{=html}
-<script class='docson' src="../includes/docson/widget.js" data-schema="https://raw.githubusercontent.com/hubverse-org/schemas/main/{{< var version >}}/admin-schema.json"></script>
-```
-
-
