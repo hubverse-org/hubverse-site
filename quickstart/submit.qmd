@@ -2,6 +2,12 @@
 title: "Submit Model Output"
 ---
 
+
+[{{< fa circle-info >}} Create Model Metadata](https://hubverse.io/en/latest/user-guide/model-metadata.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa file-export >}} Create Model Submission](https://hubverse.io/en/latest/user-guide/model-output.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa file-circle-check >}} Validate Model Submission](https://hubverse-org.github.io/hubValidations/articles/validate-submission.html){.btn .btn-outline-dark .ms-auto}
+
+
 ## Connect with the Hub Administrator
 
 They know what they want

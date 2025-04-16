@@ -2,6 +2,10 @@
 title: "Create a Hub"
 ---
 
+
+[{{< fa compass-drafting >}} Follow the Quickstart Guide](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Hub Configuration Files](https://hubverse.io/en/latest/user-guide/hub-config.html){.btn .btn-outline-dark .ms-auto}
+
 ## Determine what you want to forecast
 
 You need to answer a few questions first:
@@ -20,10 +24,10 @@ are collectively known as **task IDs**.
 
 ## Create your hub
 
-Follow the steps outlined in https://hubverse.io/en/latest/quickstart-hub-admin/intro.html to set up your very first hub.
+Follow the steps outlined in [the quickstart guide](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html) to set up your very first hub.
 
 
-## important packages
+## Important packages
 
 As an administrator, you might want to use these tools to help you administer
 your hub.
