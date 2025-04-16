@@ -8,6 +8,114 @@ Thanks to rigorous [data standards](/tools/data.qmd), our software works on any 
 
 :::
 
+[{{< fa book >}} Documentation](https://hubverse.io/en/latest/user-guide/software.html){.btn .btn-outline-dark .ms-auto}
+
+The hubverse has a wide range of software packages designed to help you **adminsiter hubs**, **validate** and **evaluate** model outputs, **access hub data**, **ensemble** and **visualize** models.
+
+
+## Hub Access
+
+:::{.panel-tabset}
+
+### Get information about a hub
+
+[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
+
+The **hubUtils** package provides utilities that give you useful information about a hub:
+
+ - fetch a hub [**configuration file**](https://hubverse.io/en/latest/user-guide/hub-config.html) with [`hubUtils::read_config()`](https://hubverse-org.github.io/hubUtils/reference/read_config.html)
+ - get the submission **timezone** with [`hubUtils::get_hub_timezone()`](https://hubverse-org.github.io/hubUtils/reference/get_hub_timezone.html)
+ - find out what the submission **rounds** are with [`hubUtils::get_round_ids()`](https://hubverse-org.github.io/hubUtils/reference/get_round_idx.html)
+ - **task ID names** with [`hubUtils::get_task_id_names()`](https://hubverse-org.github.io/hubUtils/reference/get_task_id_names.html)
+
+### Access hub data
+
+
+[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubData](https://hubverse-org.github.io/hubData){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubEnsembles](https://hubverse-org.github.io/hubEnsembles){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubViz](https://hubverse-org.github.io/hubViz){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubEvals](https://hubverse-org.github.io/hubEvals){.btn .btn-outline-info .ms-auto}
+[{{< fa book >}} Accessing data from a hub](https://hubverse-org.github.io/hubData/articles/connect_hub.html){.btn .btn-outline-dark .ms-auto}
+
+ - **connect to hub data** with [`hubData::connect_hub()`](https://hubverse-org.github.io/hubData/reference/connect_hub.html)
+ - **connect to a hub on S3** with [`hubData::s3_bucket() |> hubdata::connect_hub()`](https://hubverse-org.github.io/hubData/reference/s3_bucket.html)
+ - **transform** your existing data with [`hubUtils::as_model_out_tbl()`](https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html)
+:::
+
+
+## Do more
+
+:::{.panel-tabset}
+
+
+### Submit a model
+
+[{{< fa box-open >}} hubValidations](https://hubverse-org.github.io/hubValidations){.btn .btn-outline-info .ms-auto}
+[{{< fa book >}} Model Metadata](https://hubverse.io/en/latest/user-guide/model-metadata.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Writing model output to a hub](https://hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub){.btn .btn-outline-dark .ms-auto}
+
+::::{.callout-important}
+
+You should contact the hubverse administrator before submitting your model to a
+hub. They will ask you to provide metadata for your model.
+
+::::
+
+ - Create a **submission template** with [`hubValidations::submission_tmpl()`](https://hubverse-org.github.io/hubValidations/reference/submission_tmpl.html)
+ - **Validate** your submission with [`hubValidaitons::validate_submission()`](https://hubverse-org.github.io/hubValidations/reference/validate_submission.html)
+
+::::{.callout-tip collapse="true"}
+
+#### TIP: A lightweight way to clone a hub
+
+A modelling hub hosted on GitHub will grow in size over time and it often can
+take up several hundreds of megabytes or several gigabytes of space. **To reduce
+the size of a hub on your local machine**, you can use [git sparse
+checkout](https://git-scm.com/docs/git-sparse-checkout). Here's an example
+using the FluSight Forecast Hub, but only checking out the model outputs for 
+the `FluSight-baseline` model:
+
+```bash
+git init FluSight-Forecast-Hub
+cd FluSight-Forecast-Hub
+git remote add origin https://github.com/cdcepi/FluSight-Forecast-Hub.git
+git sparse-checkout set --no-cone '/*' 'model-output/FluSight-baseline*' '!/model-output'
+git pull origin main
+```
+
+Now when you run `git status`, you will see that you only have a fraction of the files on your local machine:
+
+```bash
+git status
+# On branch main
+# You are in a sparse checkout with 14% of tracked files present.
+#
+# nothing to commit, working tree clean
+```
+
+::::
+
+### Administer a hub {#admin}
+
+[{{< fa box-open >}} hubAdmin](https://hubverse-org.github.io/hubAdmin){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubCI](https://hubverse-org.github.io/hubCI){.btn .btn-outline-info .ms-auto}
+
+[{{< fa forward-fast >}} quickstart](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa wrench >}} Setting up a hub](https://hubverse-org.github.io/hubAdmin/articles/hub-setup.html){.btn .btn-outline-dark .ms-auto}
+
+[{{< fa book >}} Defining Model Tasks](https://hubverse.io/en/latest/user-guide/tasks.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Building a Dashboard](https://hubverse.io/en/latest/user-guide/dashboards.html#quickstart-building-a-dashboard){.btn .btn-outline-dark .ms-auto}
+
+
+
+
+### Develop
+
+A developer
+
+:::
+
 ## R packages
 
 ```{mermaid}
@@ -39,4 +147,7 @@ flowchart TD
   hubEvals --> hubUtils
   end
 ```
+
+## Python Packages
+
 
