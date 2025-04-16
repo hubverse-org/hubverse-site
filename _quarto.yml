@@ -16,8 +16,8 @@ website:
     left:
       - text: "Copyright 2025, Collaborative Modelling Consortium"
     right:
-      - icon: github
-        href: funding.md
+      - href: funding.md
+      - href: contact.qmd
   navbar:
     search: true
     right:

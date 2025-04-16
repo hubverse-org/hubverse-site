@@ -102,6 +102,10 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 ## Organizations using the hubverse
 
+
+Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us about your hub!](/contact.qmd){.btn .btn-outline-dark .ms-auto}
+
+
 :::{#orgs .grid .text-center style='--bs-gap: 0.5em'}
 
 {{< partial /_partials/orgs.qmd hubs.cdc id="cdc">}}
