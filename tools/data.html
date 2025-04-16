@@ -69,6 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -182,8 +185,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#example" id="toc-example" class="nav-link active" data-scroll-target="#example">Example</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">How it works</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/tools/data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/tools/data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -220,11 +230,64 @@ Tip
 <p>We have a <a href="../tools/software.html">tool suite</a> that is designed to work with data from any hub.</p>
 </div>
 </div>
-<p>The core of the hubverse lies within <a href="https://github.com/hubverse-org/schemas#readme">the data standards</a> that define the structure of model submission files.</p>
-<p>These standards are encoded in versioned <a href="https://json-schema.org">JSON schemas</a>.</p>
-<p>The current version is v5.0.0</p>
+<p><a href="https://hubverse.io/en/latest/user-guide/hub-config.html#model-tasks-schema" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-compass-drafting" aria-label="compass-drafting"></i> Model Tasks Schema</a> <a href="https://hubverse.io/en/latest/user-guide/target-data.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-bullseye" aria-label="bullseye"></i> Target Data Formats</a> <a href="https://hubverse.io/en/latest/user-guide/model-output.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-file-circle-check" aria-label="file-circle-check"></i> Model Output Formats</a></p>
+<p>The core of the hubverse are the <strong>robust and flexible data standards</strong> that allow administrators to write <strong>structured guidelines</strong> for tabular model output submissions that can be <strong>easily validated, ensembled, and visualized</strong>.</p>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p>In a simplified example from the <a href="https://github.com/cdcepi/FluSight-forecast-hub/">US CDC FluSight Forecasting Challenge</a>, which provides <a href="https://github.com/cdcepi/FluSight-forecast-hub/tree/main/model-output#readme">instructions in the <code>model-output</code> folder</a>.</p>
+<ol type="1">
+<li>They ask modelers to submit <em>weekly</em> <em>quantile outputs</em> of <em>incident influenza hospitalizations</em> from nowcast predictions for the <em>horizons</em> of the previous week, the current week, and the next three weeks. The predictions should be performed for one or more of the continental US and the 50 US states and territories. All this information is encoded in <a href="https://github.com/cdcepi/FluSight-forecast-hub/blob/c24e390459a1d2bf52771f6514920ba3d8dea347/hub-config/tasks.json#L157-L335">a structured configuration file</a>.</li>
+<li>Modeling teams who want to submit the outputs of their models can use <a href="https://hubverse.io/en/latest/user-guide/model-output.html#submission-template">the <strong>submission template</strong> from <code>hubValidations</code></a> to get started and then <a href="https://docs.github.com/articles/about-pull-requests">submit a pull request</a> to the hub.</li>
+<li>When the pull request is recieved, <a href="https://hubverse-org.github.io/hubValidations/articles/validate-pr.html">hubValdations <strong>automatically validates the submission</strong></a> and the model output is added to the hub</li>
+<li>The hub administrator can create an ensemble</li>
+<li>Downstream tools like <a href="https://hubverse.io/en/latest/user-guide/dashboards.html">dashboards</a> can visualize the data</li>
+</ol>
+</section>
+<section id="how-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-works">How it works</h2>
+<p>Each hub starts with a file called <code>tasks.json</code> that defines <a href="https://hubverse.io/en/latest/user-guide/tasks.html"><strong>model tasks</strong></a> and <strong>frequency of submission</strong>. The structure of this file is defined by <a href="https://hubverse.io/en/latest/user-guide/dashboards.html">the hubverse model tasks schema</a>.</p>
+<p>The <code>tasks.json</code> file is responsible for validation of all model submissions and ensures that data are inter-operable.</p>
+<p>A model task defines the expected content of a tabular model submission against one or more modeling targets. It includes three properties:</p>
+<ol type="1">
+<li><a href="https://hubverse.io/en/latest/user-guide/tasks.html#usage-of-task-id-variables"><strong>Task ID variables</strong></a>: a collection of variables and their expected values used for modeling efforts (for example: <code>target</code> (incident hospitalizations), <code>location</code> (Massachusettes), <code>reference_date</code> (2025-04-16), and <code>horizon</code> (-1))</li>
+<li><a href="https://hubverse.io/en/latest/user-guide/tasks.html#output-types"><strong>Output types</strong></a>: The method modelers should use to summarize the results of their modeling efforts (for example: the <code>quantile</code> probabilities <code>0.01, 0.025, 0.5, 0.975,    0.99</code>)</li>
+<li><a href="https://hubverse.io/en/latest/user-guide/tasks.html#target-metadata"><strong>Target metadata</strong></a>: The caracteristics of the value modelers are trying to predict (for example, incident hospitalizations represent weekly step-ahead continuous count data)</li>
+</ol>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+  actor Modeler
+  participant Hub
+  participant hubverse schema
+  actor Admin
+  rect aliceblue
+      Admin-&gt;&gt;Hub: define model tasks configuration
+      note left of Admin: hubAdmin::create_config()
+      hubverse schema-&gt;&gt;Hub: validate configuration files
+      note right of Hub: hubAdmin::validate_config()
+  end
+  rect ghostwhite
+    Hub--&gt;Modeler: Get submission template
+    note right of Modeler: hubValidations::submission_tmpl()
+    Modeler-&gt;&gt;Hub: Submit model output
+    note left of Hub: hubValidations::validate_pr()
+    Hub-&gt;&gt;Hub: validate model submission
+  end
+  Admin-&gt;&gt;Hub: create ensembled model output
+  note left of Admin: hubEnsembles::simple_ensemble()
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -658,7 +721,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/tools/data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/tools/data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/tools/data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/tools/data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
