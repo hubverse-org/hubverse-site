@@ -37,6 +37,12 @@
                     <span class="visually-hidden">{{name}} </span><span aria-hidden=true>Hub</span>
                     </a>
                     </li>
+                    <li class="list-group-item">
+                    <a class="card-link" href="https://github.com/{{.repo}}/tree/HEAD/model-output#readme">
+                    <i class="fa-solid fa-book"></i>
+                    Submission Instructions
+                    </a>
+                    </li>
                     {{#insights}}
                     <li class="list-group-item">
                     <a class="card-link" href="{{.insights}}">
