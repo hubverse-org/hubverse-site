@@ -69,9 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -212,33 +209,11 @@ ul.task-list li input[type="checkbox"] {
 
 <p>A collaborative modeling hub is a <strong>centralized data portal</strong> for modeling challenges. The <a href="../tools/data.html"><strong>structured data standards</strong></a> combined with robust <a href="../tools/software.html"><strong>hubverse software</strong></a> facilitate <strong>rapid validation</strong> of model submissions.</p>
 <p>The robust and validated data feed downstream analyses, reports, and <a href="../tools/dashboards.html"><strong>dashboards</strong></a> that provide <strong>visualizations and evaluations</strong> to support modelers and decision makers.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    subgraph validation
-    modelA --&gt; hub((modeling hub))
-    modelB --&gt; hub((modeling hub))
-    modelC --&gt; hub((modeling hub))
-    hub
-    end
-    data[(model output data)]
-    hub --&gt; data
-    subgraph dashboards
-    data --&gt; evaluation
-    data --&gt; visualization
-    data --&gt; reports
-    end
-    reports --&gt; decisions{decisions}
-    visualization --&gt; decisions
-    evaluation --&gt; decisions
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../includes/img/hub-modeler-flow.png" class="img-fluid figure-img"></p>
+<figcaption>A hub contains validated submissions from modeling teams. Each team is free to use any method they like to create their models as long as they submit in a standard tabular hubverse format. Hub data is used downstream for evaluations, visualizations, and more</figcaption>
+</figure>
 </div>
 
 
