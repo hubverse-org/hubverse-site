@@ -18,6 +18,9 @@ The core of the hubverse are the **robust and flexible data standards** that
 allow administrators to write **structured guidelines** for tabular model
 output submissions that can be **easily validated, ensembled, and visualized**.
 
+![A hub contains validated submissions from modeling teams. Each team is free to use any method they like to create their models as long as they submit in a standard tabular hubverse format. Hub data is used downstream for evaluations, visualizations, and more](/includes/img/hub-modeler-flow.png){alt='diagram showing the three steps of a model submission to a hub. Model team C creates a model submission from a distribution, which is validated by the hub tasks.json and then accepted and merged into the model outputs. There are two other model teams that have created models via different processes that have already been included in the hub. The hub admin sits inside the hub and has created the tasks.json and target data. The resulting hub data is used to generate evaluations (heatmap) and visualizations (line chart)'}
+
+
 ## Example
 
 In a simplified example from the [US CDC FluSight Forecasting
