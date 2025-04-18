@@ -8,9 +8,9 @@ title: "Community"
 
 ## Stats
 
- - {{< fa building-columns >}} 10 organizations
- - {{< fa circle-nodes >}} 20 active hubs
- - {{< fa people-line >}} 45 modeling groups
+ - {{< fa building-columns >}} 8 organizations
+ - {{< fa circle-nodes >}} 13 active hubs
+ - {{< fa people-line >}} more than 100 models
 
 ::::
 
