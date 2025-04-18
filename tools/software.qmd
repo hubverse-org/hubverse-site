@@ -17,6 +17,21 @@ The hubverse has a wide range of software packages designed to help you **admins
 
 :::{.panel-tabset}
 
+### Access hub data
+
+
+[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubData](https://hubverse-org.github.io/hubData){.btn .btn-outline-info .ms-auto}
+[{{< fa book >}} Accessing data from a hub](https://hubverse-org.github.io/hubData/articles/connect_hub.html){.btn .btn-outline-dark .ms-auto}
+
+You can connect to any hub with the **hubUtils** and **hubData** packages and
+be assured that all the data within the hub are **validated** against
+the [**hub data standards**](/tools/data.qmd).
+
+ - **connect to hub data** with [`hubData::connect_hub()`](https://hubverse-org.github.io/hubData/reference/connect_hub.html)
+ - **connect to a hub on S3** with [`hubData::s3_bucket()`](https://hubverse-org.github.io/hubData/reference/s3_bucket.html)
+ - **transform** your existing data with [`hubUtils::as_model_out_tbl()`](https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html)
+
 ### Get information about a hub
 
 [{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
@@ -28,19 +43,6 @@ The **hubUtils** package provides utilities that give you useful information abo
  - find out what the submission **rounds** are with [`hubUtils::get_round_ids()`](https://hubverse-org.github.io/hubUtils/reference/get_round_idx.html)
  - **task ID names** with [`hubUtils::get_task_id_names()`](https://hubverse-org.github.io/hubUtils/reference/get_task_id_names.html)
 
-### Access hub data
-
-
-[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
-[{{< fa box-open >}} hubData](https://hubverse-org.github.io/hubData){.btn .btn-outline-info .ms-auto}
-[{{< fa box-open >}} hubEnsembles](https://hubverse-org.github.io/hubEnsembles){.btn .btn-outline-info .ms-auto}
-[{{< fa box-open >}} hubViz](https://hubverse-org.github.io/hubViz){.btn .btn-outline-info .ms-auto}
-[{{< fa box-open >}} hubEvals](https://hubverse-org.github.io/hubEvals){.btn .btn-outline-info .ms-auto}
-[{{< fa book >}} Accessing data from a hub](https://hubverse-org.github.io/hubData/articles/connect_hub.html){.btn .btn-outline-dark .ms-auto}
-
- - **connect to hub data** with [`hubData::connect_hub()`](https://hubverse-org.github.io/hubData/reference/connect_hub.html)
- - **connect to a hub on S3** with [`hubData::s3_bucket() |> hubdata::connect_hub()`](https://hubverse-org.github.io/hubData/reference/s3_bucket.html)
- - **transform** your existing data with [`hubUtils::as_model_out_tbl()`](https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html)
 :::
 
 
@@ -96,6 +98,16 @@ git status
 
 ::::
 
+### Analyze data {#analyze}
+
+[{{< fa box-open >}} hubEnsembles](https://hubverse-org.github.io/hubEnsembles){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubVis](https://hubverse-org.github.io/hubVis){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubEvals](https://hubverse-org.github.io/hubEvals){.btn .btn-outline-info .ms-auto}
+
+ - **create a simple ensemble** with [`hubEnsembles::simple_ensemble()`](https://hubverse-org.github.io/hubEnsembles/reference/simple_ensemble.html)
+ - **evaluate model performance** with [`hubEvals::plot_step_ahead_model()`](https://hubverse-org.github.io/hubEvals/reference/score_model_out.html)
+ - **visualize model projections** with [`hubVis::plot_step_ahead_model()`](https://hubverse-org.github.io/hubVis/reference/plot_step_ahead_model_output.html)
+
 ### Administer a hub {#admin}
 
 [{{< fa box-open >}} hubAdmin](https://hubverse-org.github.io/hubAdmin){.btn .btn-outline-info .ms-auto}
@@ -115,39 +127,4 @@ git status
 A developer
 
 :::
-
-## R packages
-
-```{mermaid}
-flowchart TD
-  subgraph core
-  hubUtils
-  end
-
-  subgraph validation
-  hubValidations
-  hubAdmin
-  end
-
-  subgraph data access
-  hubData
-  zoltr
-  end
-
-  hubValidations --> hubUtils
-  hubValidations --> hubData
-  hubValidations --> hubAdmin
-  hubAdmin --> hubUtils
-  hubData --> hubUtils
-  hubData --> zoltr
-
-  subgraph model-evaluation
-  hubEnsembles --> hubUtils
-  hubVis --> hubUtils
-  hubEvals --> hubUtils
-  end
-```
-
-## Python Packages
-
 

@@ -9,7 +9,6 @@ hub.
 
 :::
 
-
 [{{< fa compass-drafting >}} Model Tasks Schema](https://hubverse.io/en/latest/user-guide/hub-config.html#model-tasks-schema){.btn .btn-outline-dark .ms-auto}
 [{{< fa bullseye >}} Target Data Formats](https://hubverse.io/en/latest/user-guide/target-data.html){.btn .btn-outline-dark .ms-auto}
 [{{< fa file-circle-check>}} Model Output Formats](https://hubverse.io/en/latest/user-guide/model-output.html){.btn .btn-outline-dark .ms-auto}
@@ -20,31 +19,9 @@ output submissions that can be **easily validated, ensembled, and visualized**.
 
 ![The data standards for each hub are represented as configuration files defined by the hubverse schema. These configuration files are the source of truth for the hub](/includes/img/hub-data-config.png){alt='diagram showing hubverse-org/schemas pointing to both tasks.json and admin.json. tasks.json points to model output and target data with the label "data validation". admin.json points to a box that shows contact information, file formats, and data storage'}
 
-## Example
+## Understanding Model Tasks
 
-In a simplified example from the [US CDC FluSight Forecasting
-Challenge](https://github.com/cdcepi/FluSight-forecast-hub/), which provides
-[instructions in the `model-output`
-folder](https://github.com/cdcepi/FluSight-forecast-hub/tree/main/model-output#readme).
-
-1. They ask modelers to submit _weekly_ _quantile outputs_ of _incident
-influenza hospitalizations_ from nowcast predictions for the _horizons_ of the
-previous week, the current week, and the next three weeks. The predictions
-should be performed for one or more of the continental US and the 50 US states
-and territories. All this information is encoded in [a structured configuration file](https://github.com/cdcepi/FluSight-forecast-hub/blob/c24e390459a1d2bf52771f6514920ba3d8dea347/hub-config/tasks.json#L157-L335).
-2. Modeling teams who want to submit the outputs of their models can use [the
-**submission template** from
-`hubValidations`](https://hubverse.io/en/latest/user-guide/model-output.html#submission-template)
-to get started and then [submit a pull
-request](https://docs.github.com/articles/about-pull-requests) to the hub.
-3. When the pull request is recieved, [hubValdations **automatically validates the submission**](https://hubverse-org.github.io/hubValidations/articles/validate-pr.html) and the model output is added to the hub
-4. The hub administrator can create an ensemble
-5. Downstream tools like [dashboards](https://hubverse.io/en/latest/user-guide/dashboards.html) can visualize the data
-
-
-## How it works
-
-Each hub starts with a file called `tasks.json` that defines [**model tasks**](https://hubverse.io/en/latest/user-guide/tasks.html) and **frequency of submission**. The structure of this file is defined by [the hubverse model tasks schema](https://hubverse.io/en/latest/user-guide/dashboards.html).
+Each hub starts with a file called `hub-config/tasks.json` that defines [**model tasks**](https://hubverse.io/en/latest/user-guide/tasks.html) and **frequency of submission**. The structure of this file is defined by [the hubverse model tasks schema](https://hubverse.io/en/latest/user-guide/dashboards.html).
 
 The `tasks.json` file is responsible for validation of all model submissions
 and ensures that data are inter-operable.
@@ -61,36 +38,39 @@ three properties:
 2. [**Output
    types**](https://hubverse.io/en/latest/user-guide/tasks.html#output-types):
    The method modelers should use to summarize the results of their modeling
-   efforts (for example: the `quantile` probabilities `0.01, 0.025, 0.5, 0.975,
-   0.99`)
+   efforts (for example: the `quantile` probabilities 0.01, 0.025, 0.5, 0.975, 0.99)
 3. [**Target
    metadata**](https://hubverse.io/en/latest/user-guide/tasks.html#target-metadata):
    The caracteristics of the value modelers are trying to predict (for example,
    incident hospitalizations represent weekly step-ahead continuous count data)
 
+## Model Output
 
+Model outputs are _provided by modeling teams_. The hubverse does not limit how
+models are constructed or what software they are run in. The only requirement is
+that the model output must be in a tabular format (specified in the hub's
+`admin.json` file).
 
-```{mermaid}
-sequenceDiagram
-  actor Modeler
-  participant Hub
-  participant hubverse schema
-  actor Admin
-  rect aliceblue
-      Admin->>Hub: define model tasks configuration
-      note left of Admin: hubAdmin::create_config()
-      hubverse schema->>Hub: validate configuration files
-      note right of Hub: hubAdmin::validate_config()
-  end
-  rect ghostwhite
-    Hub-->Modeler: Get submission template
-    note right of Modeler: hubValidations::submission_tmpl()
-    Modeler->>Hub: Submit model output
-    note left of Hub: hubValidations::validate_pr()
-    Hub->>Hub: validate model submission
-  end
-  Admin->>Hub: create ensembled model output
-  note left of Admin: hubEnsembles::simple_ensemble()
+The model output format is a tabluar representation of model output defined by
+the [Model Tasks](#model-tasks) for a given hub. You can find examples of model
+output and more in the [model output formats
+page](https://hubverse.io/en/latest/user-guide/model-output.html) of the
+official documentation.
 
-```
+## Target Data
 
+The target data are represented in two files: `time-series` and
+`oracle-outputs`[^1]. Each data format is
+useful for different purposes (see table below). Modelers will most often
+estimate model parameters by fitting to the raw data in time series format.
+
+| Data Format   | Model Estimation | Plotting | Evaluation |
+|:--------------|:-----------------|:---------|:-----------|
+| Time series   | ✅               | ✅       |            |
+| Oracle output |                  | ✅       | ✅         |
+: Common uses for target time series and oracle output data. A ✅
+indicates which data formats are most commonly used for each purpose.
+
+You can read more in the [target data page](https://hubverse.io/en/latest/user-guide/target-data.html) of the official documentation.
+
+[^1]: oracle outputs are generated from time series
