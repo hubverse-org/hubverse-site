@@ -116,7 +116,7 @@ hubs:
           able to inform action to reduce these heterogeneities. Additional research topics 
           may follow. 
         contact: scenariohub@midasnetwork.us
-        repo: https://github.com/midas-network/covid19-smh-research/
+        repo: midas-network/covid19-smh-research/
         license: MIT License
         count: 7
   hopkinsidd:
