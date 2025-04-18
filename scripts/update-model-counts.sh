@@ -35,9 +35,9 @@ selector='[.[] | select((.type == "dir"))] | length'
 re='^[0-9]+$'
 for hub in "${hubs[@]}"; do
   # 1. Use the GitHub API to count the number of directories in `model-output`
-  n=$(gh api "/repos/${hub}/contents/model-output" --jq "$selector")
+  n=$(gh api "/repos/${hub%/}/contents/model-output" --jq "$selector")
   if [[ "${n}" =~ $re && "${n}" -gt 0 ]]; then
-    echo "${hub} has ${n} models"
+    echo "${hub%/} has ${n} models"
     # 2. Use yq to update that number in the frontmatter
     #    -i                      update file in place
     #    --front-matter=process  process the frontmatter, but leave the rest of
@@ -49,7 +49,7 @@ for hub in "${hubs[@]}"; do
     #    `|=` (assignment): https://mikefarah.gitbook.io/yq/operators/assign-update
     yq -i --front-matter=process '
     with(.hubs[].hubs[];
-      select(.repo == "'"${hub}"'") | .count |= '"${n}"'
+      select(.repo == "'"${hub%/}"'") | .count |= '"${n}"'
     )' "${hub_file}"
   else
     echo "${hub} has an unknown number of models"
