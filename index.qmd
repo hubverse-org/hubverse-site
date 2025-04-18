@@ -34,18 +34,10 @@ Use the hubverse data standards and software to:
 
 {{< include /community/_testimonials.qmd >}}
 
-::: {#testimonials .grid .column-screen-inset}
-
-{{< partial /_partials/testimonial.qmd alfa >}}
-
-{{< partial /_partials/testimonial.qmd beta >}}
-
-:::
-
 ::: {.grid .column-screen-inset}
 
 
-:::: {.g-col-12 .g-col-sm-12 .g-col-md-6  .bordered}
+:::: {.g-col-12 .g-col-sm-12 .g-col-md-6}
 
 ## Data Standards
 
@@ -53,33 +45,24 @@ The core of the hubverse are the [**robust and flexible data standards**](tools/
 allow administrators to write structured guidelines for model output submissions
 that can be easily validated.
 
-
-```{mermaid}
-sequenceDiagram
-  actor Modeler
-  participant Hub
-  actor Admin
-  rect ghostwhite
-    Hub-->Modeler: Get submission template
-    note right of Modeler: hubValidations::submission_tmpl()
-    Modeler->>Hub: Submit model output
-    Hub->>Hub: validation
-    note right of Hub: hubValidations::validate_pr()
-  end
-  Admin->>Hub: create ensembled model output
-  note left of Admin: hubEnsembles::simple_ensemble()
-```
-
+<figure class="figure grid">
+    <img src="/includes/img/hub-data-config.png" class="figure-img img-fluid g-col-12" alt="diagram showing hubverse-org/schemas pointing to both tasks.json and admin.json. tasks.json points to model output and target data with the label 'data validation'. admin.json points to a box that shows contact information, file formats, and data storage">
+    <figcaption class="figure-caption">
+    The data standards for each hub are represented as configuration files defined by the hubverse schema. These configuration files are the source of truth for the hub
+    </figcaption>
+</figure>
 
 
 ::::
 
-:::: {.g-col-12 .g-col-sm-12 .g-col-md-6  .bordered}
+:::: {.g-col-12 .g-col-sm-12 .g-col-md-6}
 
 ## Software
 
 [hubverse software](tools/software.qmd) is written in R and provides tools for
 all phases in the life cycle of a hub.
+
+:::{ style="font-size: 1.4rem;"}
 
  - {{< fa gear >}} **set up and manage** a hub with [hubAdmin](https://hubverse-org.github.io/hubAdmin)
  - {{< fa check >}} **validate** model submissions with [hubValidations](https://github.com/hubverse-org/hubValidations)
@@ -89,10 +72,22 @@ all phases in the life cycle of a hub.
  - {{< fa chart-line >}} **visualize** forecasts with [hubViz](https://hubverse-org.github.io/hubVis)
  - ... and more!
 
+:::
+
 All of these packages are available at [The hubverse
 R-Universe](https://hubverse-org.r-universe.dev)
 
 ::::
+:::
+
+## Testimonials {#testimonials .column-screen-inset}
+
+:::{.grid}
+
+{{< partial /_partials/testimonial.qmd alfa >}}
+
+{{< partial /_partials/testimonial.qmd beta >}}
+
 :::
 
 
