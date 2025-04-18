@@ -36,7 +36,7 @@ re='^[0-9]+$'
 for hub in "${hubs[@]}"; do
   # 1. Use the GitHub API to count the number of directories in `model-output`
   n=$(gh api "/repos/${hub}/contents/model-output" --jq "$selector")
-  if [[ "${n}" =~ $re ]]; then
+  if [[ "${n}" =~ $re && "${n}" -gt 0 ]]; then
     echo "${hub} has ${n} models"
     # 2. Use yq to update that number in the frontmatter
     #    -i                      update file in place
