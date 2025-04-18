@@ -211,12 +211,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-standards" class="level2 g-col-12 g-col-sm-12 g-col-md-6">
 <h2 class="anchored" data-anchor-id="data-standards">Data Standards</h2>
 <p>The core of the hubverse are the <a href="./tools/data.html"><strong>robust and flexible data standards</strong></a> that allow administrators to write structured guidelines for model output submissions that can be easily validated.</p>
-<figure class="figure grid">
-<img src="./includes/img/hub-data-config.png" class="figure-img img-fluid g-col-12" alt="diagram showing hubverse-org/schemas pointing to both tasks.json and admin.json. tasks.json points to model output and target data with the label 'data validation'. admin.json points to a box that shows contact information, file formats, and data storage">
-<figcaption class="figure-caption">
-The data standards for each hub are represented as configuration files defined by the hubverse schema. These configuration files are the source of truth for the hub
-</figcaption>
+<!-- NOTE: If we do not include the grid class in this figure, it inherits the parent column sized class and outgrows its container -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./includes/img/hub-data-config.png" class="grid img-fluid figure-img"></p>
+<figcaption>The data standards for each hub are represented as configuration files defined by the hubverse schema. These configuration files are the source of truth for the hub</figcaption>
 </figure>
+</div>
 </section>
 <section id="software" class="level2 g-col-12 g-col-sm-12 g-col-md-6">
 <h2 class="anchored" data-anchor-id="software">Software</h2>
