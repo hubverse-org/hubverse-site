@@ -69,9 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -210,7 +207,37 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="breakin"><strong>Would you like to <a href="quickstart/index.html">know more</a>?</strong></span></p>
 </section>
 </div>
-<div id="testimonials" class="grid column-screen-inset">
+<div class="grid column-screen-inset">
+<section id="data-standards" class="level2 g-col-12 g-col-sm-12 g-col-md-6">
+<h2 class="anchored" data-anchor-id="data-standards">Data Standards</h2>
+<p>The core of the hubverse are the <a href="./tools/data.html"><strong>robust and flexible data standards</strong></a> that allow administrators to write structured guidelines for model output submissions that can be easily validated.</p>
+<figure class="figure grid">
+<img src="./includes/img/hub-data-config.png" class="figure-img img-fluid g-col-12" alt="diagram showing hubverse-org/schemas pointing to both tasks.json and admin.json. tasks.json points to model output and target data with the label 'data validation'. admin.json points to a box that shows contact information, file formats, and data storage">
+<figcaption class="figure-caption">
+The data standards for each hub are represented as configuration files defined by the hubverse schema. These configuration files are the source of truth for the hub
+</figcaption>
+</figure>
+</section>
+<section id="software" class="level2 g-col-12 g-col-sm-12 g-col-md-6">
+<h2 class="anchored" data-anchor-id="software">Software</h2>
+<p><a href="./tools/software.html">hubverse software</a> is written in R and provides tools for all phases in the life cycle of a hub.</p>
+<div style="font-size: 1.4rem;">
+<ul>
+<li><i class="fa-solid fa-gear" aria-label="gear"></i> <strong>set up and manage</strong> a hub with <a href="https://hubverse-org.github.io/hubAdmin">hubAdmin</a></li>
+<li><i class="fa-solid fa-check" aria-label="check"></i> <strong>validate</strong> model submissions with <a href="https://github.com/hubverse-org/hubValidations">hubValidations</a></li>
+<li><i class="fa-solid fa-download" aria-label="download"></i> <strong>fetch model and target data</strong> with <a href="https://hubverse-org.github.io/hubData">hubData</a></li>
+<li><i class="fa-solid fa-blender" aria-label="blender"></i> <strong>ensemble</strong> models with <a href="https://hubverse-org.github.org/hubEnsembles">hubEnsembles</a></li>
+<li><i class="fa-solid fa-stethoscope" aria-label="stethoscope"></i> <strong>evaluate</strong> model performance with <a href="https://hubverse-org.github.io/hubEvals">hubEvals</a></li>
+<li><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> <strong>visualize</strong> forecasts with <a href="https://hubverse-org.github.io/hubVis">hubViz</a></li>
+<li>… and more!</li>
+</ul>
+</div>
+<p>All of these packages are available at <a href="https://hubverse-org.r-universe.dev">The hubverse R-Universe</a></p>
+</section>
+</div>
+<section id="testimonials" class="level2 column-screen-inset">
+<h2 class="anchored" data-anchor-id="testimonials">Testimonials</h2>
+<div class="grid">
 <div class="card mb-3 g-col-12 g-col-sm-12 g-col-md-6 testimonial">
   <div class="grid">
     <div class="g-col-5">
@@ -240,50 +267,7 @@ ul.task-list li input[type="checkbox"] {
   </div>
 </div>
 </div>
-<div class="grid column-screen-inset">
-<section id="data-standards" class="level2 g-col-12 g-col-sm-12 g-col-md-6 bordered">
-<h2 class="anchored" data-anchor-id="data-standards">Data Standards</h2>
-<p>The core of the hubverse are the <a href="./tools/data.html"><strong>robust and flexible data standards</strong></a> that allow administrators to write structured guidelines for model output submissions that can be easily validated.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">sequenceDiagram
-  actor Modeler
-  participant Hub
-  actor Admin
-  rect ghostwhite
-    Hub--&gt;Modeler: Get submission template
-    note right of Modeler: hubValidations::submission_tmpl()
-    Modeler-&gt;&gt;Hub: Submit model output
-    Hub-&gt;&gt;Hub: validation
-    note right of Hub: hubValidations::validate_pr()
-  end
-  Admin-&gt;&gt;Hub: create ensembled model output
-  note left of Admin: hubEnsembles::simple_ensemble()
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
 </section>
-<section id="software" class="level2 g-col-12 g-col-sm-12 g-col-md-6 bordered">
-<h2 class="anchored" data-anchor-id="software">Software</h2>
-<p><a href="./tools/software.html">hubverse software</a> is written in R and provides tools for all phases in the life cycle of a hub.</p>
-<ul>
-<li><i class="fa-solid fa-gear" aria-label="gear"></i> <strong>set up and manage</strong> a hub with <a href="https://hubverse-org.github.io/hubAdmin">hubAdmin</a></li>
-<li><i class="fa-solid fa-check" aria-label="check"></i> <strong>validate</strong> model submissions with <a href="https://github.com/hubverse-org/hubValidations">hubValidations</a></li>
-<li><i class="fa-solid fa-download" aria-label="download"></i> <strong>fetch model and target data</strong> with <a href="https://hubverse-org.github.io/hubData">hubData</a></li>
-<li><i class="fa-solid fa-blender" aria-label="blender"></i> <strong>ensemble</strong> models with <a href="https://hubverse-org.github.org/hubEnsembles">hubEnsembles</a></li>
-<li><i class="fa-solid fa-stethoscope" aria-label="stethoscope"></i> <strong>evaluate</strong> model performance with <a href="https://hubverse-org.github.io/hubEvals">hubEvals</a></li>
-<li><i class="fa-solid fa-chart-line" aria-label="chart-line"></i> <strong>visualize</strong> forecasts with <a href="https://hubverse-org.github.io/hubVis">hubViz</a></li>
-<li>… and more!</li>
-</ul>
-<p>All of these packages are available at <a href="https://hubverse-org.r-universe.dev">The hubverse R-Universe</a></p>
-</section>
-</div>
 <section id="organizations-using-the-hubverse" class="level2 column-page">
 <h2 class="anchored" data-anchor-id="organizations-using-the-hubverse">Organizations using the hubverse</h2>
 <p>Do you have a hub, but it’s not listed? <a href="./contact.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-question-circle" aria-label="question-circle"></i> Tell us about your hub!</a></p>

@@ -103,9 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -226,8 +223,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#hub-access" id="toc-hub-access" class="nav-link active" data-scroll-target="#hub-access">Hub Access</a></li>
   <li><a href="#do-more" id="toc-do-more" class="nav-link" data-scroll-target="#do-more">Do more</a></li>
-  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages">R packages</a></li>
-  <li><a href="#python-packages" id="toc-python-packages" class="nav-link" data-scroll-target="#python-packages">Python Packages</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/tools/software.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/tools/software.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -271,9 +266,18 @@ Tip
 <section id="hub-access" class="level2">
 <h2 class="anchored" data-anchor-id="hub-access">Hub Access</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Get information about a hub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Access hub data</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Access hub data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Get information about a hub</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a> <a href="https://hubverse-org.github.io/hubData" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubData</a> <a href="https://hubverse-org.github.io/hubData/articles/connect_hub.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Accessing data from a hub</a></p>
+<p>You can connect to any hub with the <strong>hubUtils</strong> and <strong>hubData</strong> packages and be assured that all the data within the hub are <strong>validated</strong> against the <a href="../tools/data.html"><strong>hub data standards</strong></a>.</p>
+<ul>
+<li><strong>connect to hub data</strong> with <a href="https://hubverse-org.github.io/hubData/reference/connect_hub.html"><code>hubData::connect_hub()</code></a></li>
+<li><strong>connect to a hub on S3</strong> with <a href="https://hubverse-org.github.io/hubData/reference/s3_bucket.html"><code>hubData::s3_bucket()</code></a></li>
+<li><strong>transform</strong> your existing data with <a href="https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html"><code>hubUtils::as_model_out_tbl()</code></a></li>
+</ul>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a></p>
 <p>The <strong>hubUtils</strong> package provides utilities that give you useful information about a hub:</p>
 <ul>
@@ -283,21 +287,13 @@ Tip
 <li><strong>task ID names</strong> with <a href="https://hubverse-org.github.io/hubUtils/reference/get_task_id_names.html"><code>hubUtils::get_task_id_names()</code></a></li>
 </ul>
 </div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a> <a href="https://hubverse-org.github.io/hubData" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubData</a> <a href="https://hubverse-org.github.io/hubEnsembles" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubEnsembles</a> <a href="https://hubverse-org.github.io/hubViz" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubViz</a> <a href="https://hubverse-org.github.io/hubEvals" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubEvals</a> <a href="https://hubverse-org.github.io/hubData/articles/connect_hub.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Accessing data from a hub</a></p>
-<ul>
-<li><strong>connect to hub data</strong> with <a href="https://hubverse-org.github.io/hubData/reference/connect_hub.html"><code>hubData::connect_hub()</code></a></li>
-<li><strong>connect to a hub on S3</strong> with <a href="https://hubverse-org.github.io/hubData/reference/s3_bucket.html"><code>hubData::s3_bucket() |&gt; hubdata::connect_hub()</code></a></li>
-<li><strong>transform</strong> your existing data with <a href="https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html"><code>hubUtils::as_model_out_tbl()</code></a></li>
-</ul>
-</div>
 </div>
 </div>
 </section>
 <section id="do-more" class="level2">
 <h2 class="anchored" data-anchor-id="do-more">Do more</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Submit a model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Administer a hub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Develop</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Submit a model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Analyze data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Administer a hub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Develop</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <p><a href="https://hubverse-org.github.io/hubValidations" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubValidations</a> <a href="https://hubverse.io/en/latest/user-guide/model-metadata.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Model Metadata</a> <a href="https://hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Writing model output to a hub</a></p>
@@ -347,59 +343,23 @@ TIP: A lightweight way to clone a hub
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><a href="https://hubverse-org.github.io/hubEnsembles" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubEnsembles</a> <a href="https://hubverse-org.github.io/hubVis" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubVis</a> <a href="https://hubverse-org.github.io/hubEvals" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubEvals</a></p>
+<ul>
+<li><strong>create a simple ensemble</strong> with <a href="https://hubverse-org.github.io/hubEnsembles/reference/simple_ensemble.html"><code>hubEnsembles::simple_ensemble()</code></a></li>
+<li><strong>evaluate model performance</strong> with <a href="https://hubverse-org.github.io/hubEvals/reference/score_model_out.html"><code>hubEvals::plot_step_ahead_model()</code></a></li>
+<li><strong>visualize model projections</strong> with <a href="https://hubverse-org.github.io/hubVis/reference/plot_step_ahead_model_output.html"><code>hubVis::plot_step_ahead_model()</code></a></li>
+</ul>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p><a href="https://hubverse-org.github.io/hubAdmin" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubAdmin</a> <a href="https://hubverse-org.github.io/hubCI" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubCI</a></p>
 <p><a href="https://hubverse.io/en/latest/quickstart-hub-admin/intro.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-forward-fast" aria-label="forward-fast"></i> quickstart</a> <a href="https://hubverse-org.github.io/hubAdmin/articles/hub-setup.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-wrench" aria-label="wrench"></i> Setting up a hub</a></p>
 <p><a href="https://hubverse.io/en/latest/user-guide/tasks.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Defining Model Tasks</a> <a href="https://hubverse.io/en/latest/user-guide/dashboards.html#quickstart-building-a-dashboard" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Building a Dashboard</a></p>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <p>A developer</p>
 </div>
 </div>
 </div>
-</section>
-<section id="r-packages" class="level2">
-<h2 class="anchored" data-anchor-id="r-packages">R packages</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  subgraph core
-  hubUtils
-  end
-
-  subgraph validation
-  hubValidations
-  hubAdmin
-  end
-
-  subgraph data access
-  hubData
-  zoltr
-  end
-
-  hubValidations --&gt; hubUtils
-  hubValidations --&gt; hubData
-  hubValidations --&gt; hubAdmin
-  hubAdmin --&gt; hubUtils
-  hubData --&gt; hubUtils
-  hubData --&gt; zoltr
-
-  subgraph model-evaluation
-  hubEnsembles --&gt; hubUtils
-  hubVis --&gt; hubUtils
-  hubEvals --&gt; hubUtils
-  end
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-</section>
-<section id="python-packages" class="level2">
-<h2 class="anchored" data-anchor-id="python-packages">Python Packages</h2>
 
 
 </section>
