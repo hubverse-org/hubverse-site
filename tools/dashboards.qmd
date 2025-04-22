@@ -1,42 +1,35 @@
 ---
-title: "About"
+title: "Dashboards"
 ---
 
-::: {.grid .column-page style="--bs-columns: 2;"}
+[{{< fa book >}} Get started with dashboards](https://hubverse.io/en/latest/user-guide/dashboards.html){.btn .btn-outline-dark .ms-auto}
 
-:::: { class='bordered'}
+## Introduction
 
-## What is a Hub?
+The hubverse dashboard is an expermiental landing page and plug-and-play
+visualization for hub data. Each dashboard is an independent repository for any
+given hub.
 
-{{< lipsum 1>}}
-
-::::
-
-:::: { class='bordered'}
-
-## Data Standards
-
-{{< lipsum 1>}}
+Some examples of dashboards are:
 
 
-::::
+| Hub | Dashboard |
+| --- | --------- |
+| [flu-metrocast](https://github.com/reichlab/flu-metrocast) | <https://reichlab.io/metrocast-dashboard> |
+| [FluSight-forecast-hub](https://github.com/cdcepi/FluSight-Forecast-hub) | <https://reichlab.io/flusight-dashboard> |
+| [COVID-19 Forecast Hub](https://github.com/CDCgov/covid19-forecast-hub) | <https://reichlab.io/covidhub-dashboard> |
+| [variant-nowcast-hub](https://github.com/reichlab/variant-nowcast-hub) | <https://reichlab.io/variant-nowcast-hub-dashboard> |
 
-:::: { class='bordered'}
+Some example 
 
-## Software
+:::{.callout-note}
 
-{{< lipsum 1>}}
+The current iteration of the dashboard is intended for modelers and hub
+administrators, who are more likely to be familiar with modeling exercise and
+evaluation methods.
 
-
-::::
-
-:::: { class='bordered'}
-
-## Development
-
-{{< lipsum 1>}}
-
-::::
-
+This is not yet intended for use by decision-makers as there is more
+information here than they may want or need.
 
 :::
+

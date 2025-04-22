@@ -2,7 +2,6 @@
 title: "What is a Modeling Hub?"
 ---
 
-
 A collaborative modeling hub is a **centralized data portal** for modeling
 challenges. The [**structured data standards**](/tools/data.qmd) combined with
 robust [**hubverse software**](/tools/software.qmd) facilitate **rapid

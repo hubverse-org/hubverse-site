@@ -74,3 +74,24 @@ indicates which data formats are most commonly used for each purpose.
 You can read more in the [target data page](https://hubverse.io/en/latest/user-guide/target-data.html) of the official documentation.
 
 [^1]: oracle outputs are generated from time series
+
+## Data Storage (GitHub, AWS)
+
+All hub data are stored within the hub itself and submissions are commonly
+managed through GitHub.
+
+The hubverse team currently provides cloud hosting for hubs. A "cloud-enabled"
+hub is one that mirrors its data and configuration to an Amazon Web Services
+(AWS) S3 bucket. By default, the current hub directories are synced in
+near-real-time to AWS:
+
+- auxiliary-data
+- hub-config
+- model-abstracts
+- model-metadata
+- model-output
+- target-data
+
+If you are interested in storing your data on AWS S3, please consult the [AWS
+onboarding
+guide](https://hubverse.io/en/latest/developer/cloud-onboarding.html)
