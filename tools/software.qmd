@@ -46,7 +46,7 @@ The hubverse has a wide range of software packages designed to help you **admins
 
 ### Develop
 
-A developer
+{{< include /includes/_snippets/develop.qmd >}}
 
 :::
 

@@ -29,6 +29,7 @@ website:
         - quickstart/create.qmd
         - quickstart/submit.qmd
         - quickstart/analyze.qmd
+        - quickstart/develop.qmd
         - "---"
         - quickstart/support-consulting.md
       - text: "Tools"

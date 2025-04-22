@@ -1,0 +1,31 @@
+[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubDevs](https://hubverse-org.github.io/hubDevs){.btn .btn-outline-info .ms-auto}
+[{{< fa book >}} Developer Guide](https://hubverse.io/en/latest/developer/index.html){.btn .btn-outline-dark .ms-auto}
+
+If you want to help contribute code to the hubverse, it is important to consult
+[the developer guide](https://hubverse.io/en/latest/developer/index.html).
+
+#### Contributing to existing software
+
+To contribute to exisiting software packages, be sure to read the contribution 
+guide for the package you want to contribute to. You can find this guide in the
+`CONTRIBUTING.html` page of any package website. Most of these are identical,
+but there are caveats, 
+For example [the hubUtils contributing
+guide](https://hubverse-org.github.io/hubUtils/CONTRIBUTING.html) has a section
+on synchronizing with the schemas and [the hubValidations contributing
+guide](https://hubverse-org.github.io/hubValidations/CONTRIBUTING.html) has a
+section on submitting new check functions.
+
+#### Creating new packages
+
+The `hubDevs` package provides tools to help you get started creating a hubverse
+package.
+
+Note that nearly all hubverse R packages depend on the `hubUtils` package in
+some way.
+
+ - **create a new package** with[ `hubDevs::create_hubdev_pkg()`](https://hubverse-org.github.io/hubDevs/reference/create_hubdev_pkg.html)
+ - **set up a COC and contribution guide** with[ `hubDevs::use_hubdev_community()`](https://hubverse-org.github.io/hubDevs/reference/use_hubdev_community.html)
+ - **set up a documentation site** with[ `hubDevs::use_hubdev_pkgdown()`](https://hubverse-org.github.io/hubDevs/reference/use_hubdev_pkgdown.html)
+ - **set up a github repository** with[ `hubDevs::use_hubdev_github()`](https://hubverse-org.github.io/hubDevs/reference/use_hubdev_github.html)
