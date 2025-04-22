@@ -4,15 +4,15 @@ title: "Analyze Data"
 
 ## Access hub data
 
-{{< include /includes/_snippets/access.qmd >}}
+{{< include /_snippets/access.qmd >}}
 
 ## Get information about a hub
 
-{{< include /includes/_snippets/hub-info.qmd >}}
+{{< include /_snippets/hub-info.qmd >}}
 
 ## Analyze hub data
 
-{{< include /includes/_snippets/analyze.qmd >}}
+{{< include /_snippets/analyze.qmd >}}
 
 ## Important packages
 

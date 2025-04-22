@@ -6,7 +6,7 @@ When you want to submit a model to a hub, a good first place to start is
 the README section in the `model-output/` folder for [any given
 hub](/community/hubs.qmd)
 
-{{< include /includes/_snippets/model-submission.qmd >}}
+{{< include /_snippets/model-submission.qmd >}}
 
 ## important packages
 

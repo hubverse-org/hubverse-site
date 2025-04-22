@@ -19,11 +19,11 @@ The hubverse has a wide range of software packages designed to help you **admins
 
 ### Access hub data
 
-{{< include /includes/_snippets/access.qmd >}}
+{{< include /_snippets/access.qmd >}}
 
 ### Get information about a hub
 
-{{< include /includes/_snippets/hub-info.qmd >}}
+{{< include /_snippets/hub-info.qmd >}}
 
 :::
 
@@ -34,19 +34,19 @@ The hubverse has a wide range of software packages designed to help you **admins
 
 ### Submit a model
 
-{{< include /includes/_snippets/model-submission.qmd >}}
+{{< include /_snippets/model-submission.qmd >}}
 
 ### Analyze data {#analyze}
 
-{{< include /includes/_snippets/analyze.qmd >}}
+{{< include /_snippets/analyze.qmd >}}
 
 ### Administer a hub {#admin}
 
-{{< include /includes/_snippets/create.qmd >}}
+{{< include /_snippets/create.qmd >}}
 
 ### Develop
 
-{{< include /includes/_snippets/develop.qmd >}}
+{{< include /_snippets/develop.qmd >}}
 
 :::
 

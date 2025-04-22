@@ -34,10 +34,10 @@ using heavily:
    using a bit of a hack and saving complex metadata in separate, content-less
    files that live in `_data/`. For example, both `community/hubs.qmd` and
    `index.qmd` use `_data/active-hubs.qmd` to populate the community list.
-3. **reusable snippets live in [`includes/_snippets/`](includes/_snippets)**;
+3. **reusable snippets live in [`_snippets/`](includes/_snippets)**;
    Information relevant to software is also relevant to data, so I am writing 
-   shared piecies of markdown in `includes/_snippets` and re-using them with the
-   `{{< include /includes/_snippets/snippet-to-include.qmd >}}` directive. 
+   shared piecies of markdown in `_snippets` and re-using them with the
+   `{{< include /_snippets/snippet-to-include.qmd >}}` directive. 
 4. To avoid a further overly complex setup, I am not using computations inside
    the quarto documents.
 

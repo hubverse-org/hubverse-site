@@ -23,7 +23,7 @@ are collectively known as **task IDs**.
 
 ## Create your hub
 
-{{< include /includes/_snippets/create.qmd >}}
+{{< include /_snippets/create.qmd >}}
 
 ## Important packages
 
