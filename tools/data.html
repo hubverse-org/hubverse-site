@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-d4d76bf8491c20bad77d141916dc28e1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-16fb397360ac6373c2344189e05b0de0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-20bec5dd6b4765711cbca3fd2df8130c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -194,6 +194,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#understanding-model-tasks" id="toc-understanding-model-tasks" class="nav-link active" data-scroll-target="#understanding-model-tasks">Understanding Model Tasks</a></li>
   <li><a href="#model-output" id="toc-model-output" class="nav-link" data-scroll-target="#model-output">Model Output</a></li>
   <li><a href="#target-data" id="toc-target-data" class="nav-link" data-scroll-target="#target-data">Target Data</a></li>
+  <li><a href="#data-storage-github-aws" id="toc-data-storage-github-aws" class="nav-link" data-scroll-target="#data-storage-github-aws">Data Storage (GitHub, AWS)</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/tools/data.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/tools/data.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -285,6 +286,20 @@ Tip
 </tbody>
 </table>
 <p>You can read more in the <a href="https://hubverse.io/en/latest/user-guide/target-data.html">target data page</a> of the official documentation.</p>
+</section>
+<section id="data-storage-github-aws" class="level2">
+<h2 class="anchored" data-anchor-id="data-storage-github-aws">Data Storage (GitHub, AWS)</h2>
+<p>All hub data are stored within the hub itself and submissions are commonly managed through GitHub.</p>
+<p>The hubverse team currently provides cloud hosting for hubs. A “cloud-enabled” hub is one that mirrors its data and configuration to an Amazon Web Services (AWS) S3 bucket. By default, the current hub directories are synced in near-real-time to AWS:</p>
+<ul>
+<li>auxiliary-data</li>
+<li>hub-config</li>
+<li>model-abstracts</li>
+<li>model-metadata</li>
+<li>model-output</li>
+<li>target-data</li>
+</ul>
+<p>If you are interested in storing your data on AWS S3, please consult the <a href="https://hubverse.io/en/latest/developer/cloud-onboarding.html">AWS onboarding guide</a></p>
 
 
 </section>
