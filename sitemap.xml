@@ -1,75 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/tools/software.html</loc>
-    <lastmod>2025-04-22T18:32:06.279Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/tools/dashboards.html</loc>
-    <lastmod>2025-04-22T18:32:06.279Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/about.html</loc>
-    <lastmod>2025-04-22T18:32:06.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/funding.html</loc>
-    <lastmod>2025-04-22T18:32:06.271Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/index.html</loc>
-    <lastmod>2025-04-22T18:32:06.278Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/support-consulting.html</loc>
-    <lastmod>2025-04-22T18:32:06.278Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/develop.html</loc>
-    <lastmod>2025-04-22T18:32:06.278Z</lastmod>
+    <loc>https://hubverse-org.github.io/hubverse-site/community/contributors.html</loc>
+    <lastmod>2025-04-22T18:39:28.987Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse-org.github.io/hubverse-site/community/index.html</loc>
-    <lastmod>2025-04-22T18:32:06.270Z</lastmod>
+    <lastmod>2025-04-22T18:39:11.881Z</lastmod>
   </url>
   <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/LICENSE.html</loc>
-    <lastmod>2025-04-22T18:32:06.262Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/contribute.html</loc>
-    <lastmod>2025-04-22T18:32:06.271Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/contact.html</loc>
-    <lastmod>2025-04-22T18:32:06.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/community/contributors.html</loc>
-    <lastmod>2025-04-22T18:32:20.119Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/community/hubs.html</loc>
-    <lastmod>2025-04-22T18:32:06.270Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/analyze.html</loc>
-    <lastmod>2025-04-22T18:32:06.278Z</lastmod>
+    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/support-consulting.html</loc>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse-org.github.io/hubverse-site/quickstart/create.html</loc>
-    <lastmod>2025-04-22T18:32:06.278Z</lastmod>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
   </url>
   <url>
-    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/submit.html</loc>
-    <lastmod>2025-04-22T18:32:06.278Z</lastmod>
+    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/index.html</loc>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/contact.html</loc>
+    <lastmod>2025-04-22T18:39:11.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/LICENSE.html</loc>
+    <lastmod>2025-04-22T18:39:11.873Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse-org.github.io/hubverse-site/index.html</loc>
-    <lastmod>2025-04-22T18:32:06.277Z</lastmod>
+    <lastmod>2025-04-22T18:39:11.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/tools/dashboards.html</loc>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse-org.github.io/hubverse-site/tools/data.html</loc>
-    <lastmod>2025-04-22T18:32:06.279Z</lastmod>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/tools/software.html</loc>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/funding.html</loc>
+    <lastmod>2025-04-22T18:39:11.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/about.html</loc>
+    <lastmod>2025-04-22T18:39:11.880Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/contribute.html</loc>
+    <lastmod>2025-04-22T18:39:11.881Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/submit.html</loc>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/develop.html</loc>
+    <lastmod>2025-04-22T18:39:11.890Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/quickstart/analyze.html</loc>
+    <lastmod>2025-04-22T18:39:11.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse-org.github.io/hubverse-site/community/hubs.html</loc>
+    <lastmod>2025-04-22T18:39:11.881Z</lastmod>
   </url>
 </urlset>
