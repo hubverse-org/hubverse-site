@@ -24,6 +24,7 @@
   }
   img {
     height: fit-content;
+    max-height: 400px;
     object-fit: cover;
   }
 }
