@@ -87,7 +87,7 @@ div.hub li {
 
 div.org {
   --bs-card-border-width: 0;
-  --bs-card-bg: #dbeefb;
+  --bs-card-bg: ghostwhite;
   padding: 0.5rem;
 }
 
