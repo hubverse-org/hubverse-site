@@ -14,6 +14,8 @@ Building off of systems designed for influenza forecasting challenges led by the
  - [German Hospitalization Nowcast Hub](https://github.com/KITmetricslab/hospitalization-nowcast-hub)
  - [US Influenza FluSight 2022 Challenge](https://github.com/cdcepi/Flusight-forecast-data)
 
+The hubverse provides tools and a unified framework for aggregating, visualizing, and evaluating forecasts. Although infectious disease forecasting motivated the development of these tools, the approach is meant to be versatile so that the hubverse can be used for other types of forecasts.
+
 ## History
 
 
@@ -40,11 +42,7 @@ Chretien, J. P., George, D., Shaman, J., Chitale, R. A., & McKenzie, F. E. (2014
 
 At the same time, various efforts were made to aggregate and evaluate forecasts for infectious diseases to better address the challenges they pose from a public health perspective. Below is a timeline of some of the major "hubs" developed since 2013.
 
-### Timeline showing various major infectious disease forecasting "hubs"
-
-![Figure credits: Alex Vespignani and Nicole Samay.](/includes/img/hub-timeline.png){alt="A timeline (2013 to 2023) indicating the years when various major infectious disease forecasting hubs have been active."}
-
-The hubverse provides tools and a unified framework for aggregating, visualizing, and evaluating forecasts. Although infectious disease forecasting motivated the development of these tools, the approach is meant to be versatile so that the hubverse can be used for other types of forecasts.
+![Timeline showing various major infectious disease forecasting hubs. Figure credits: Alex Vespignani and Nicole Samay.](/includes/img/hub-timeline.png){alt="A timeline (2013 to 2023) indicating the years when various major infectious disease forecasting hubs have been active."}
 
 ### Motivation
 
