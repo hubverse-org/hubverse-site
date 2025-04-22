@@ -1,8 +1,0 @@
-[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
-
-The **hubUtils** package provides utilities that give you useful information about a hub:
-
- - fetch a hub [**configuration file**](https://hubverse.io/en/latest/user-guide/hub-config.html) with [`hubUtils::read_config()`](https://hubverse-org.github.io/hubUtils/reference/read_config.html)
- - get the submission **timezone** with [`hubUtils::get_hub_timezone()`](https://hubverse-org.github.io/hubUtils/reference/get_hub_timezone.html)
- - find out what the submission **rounds** are with [`hubUtils::get_round_ids()`](https://hubverse-org.github.io/hubUtils/reference/get_round_idx.html)
- - **task ID names** with [`hubUtils::get_task_id_names()`](https://hubverse-org.github.io/hubUtils/reference/get_task_id_names.html)
