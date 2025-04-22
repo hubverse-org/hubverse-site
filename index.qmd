@@ -3,6 +3,25 @@ title-block-style: none
 toc: false
 ---
 
+:::::::::::::::::::: {.content-hidden}
+
+HI THERE! Everything inside this `.content-hidden` block is a comment and will
+not be included in the rendered document. I am using these to talk about build
+elements that are not relevant to the final HTML document.
+
+NOTE: the `include` directives below are needed to load the metadata that are used
+      to populate the testimonials and orgs sections below. The ultimate effect
+      of these includes is to sort out the metadata blocks so that the YAML
+      header of this file remains managable and so that these data can be shared
+      across several files (e.g. for community/hubs.qmd).
+      You can find documentation for that directive at
+      <https://quarto.org/docs/authoring/includes.html>.
+
+::::::::::::::::::::
+
+{{< include /community/_testimonials.qmd >}}
+{{< include /community/_active-hubs.qmd >}}
+
 
 :::{.about-entity .column-page}
 
@@ -31,8 +50,6 @@ Use the hubverse data standards and software to:
 [**Would you like to [know more](quickstart/index.html)?**]{.breakin}
 
 :::
-
-{{< include /community/_testimonials.qmd >}}
 
 ::: {.grid .column-screen-inset}
 
@@ -88,7 +105,6 @@ R-Universe](https://hubverse-org.r-universe.dev)
 :::
 
 
-{{< include /community/_active-hubs.qmd >}}
 
 ::: {.column-page}
 

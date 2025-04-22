@@ -26,11 +26,13 @@ using heavily:
 1. I am using [quarto partials](http://pkg.garrickadenbuie.com/quarto-partials/)
    to give me templating. All of the templates live in `_partials/`. Examples
    of pages that use partials are `index.qmd` and `community/hubs.qmd`
-2. Because partials use the metadata (stuff at the top of the qmd file), but not
-   variables, I am using a bit of a hack and saving complex metadata in
-   separate, content-less files that start with an underscore. For example,
-   both `community/hubs.qmd` and `index.qmd` use `community/_active-hubs.qmd`
-   to populate the community list.
+2. To provide data for the partials, I am using [quarto
+   includes](https://quarto.org/docs/authoring/includes.html). Because partials
+   use the metadata (stuff at the top of the qmd file), but not variables, I am
+   using a bit of a hack and saving complex metadata in separate, content-less
+   files that start with an underscore. For example, both `community/hubs.qmd`
+   and `index.qmd` use `community/_active-hubs.qmd` to populate the community
+   list.
 3. To avoid an overly complex setup, I am not using computations inside the
    quarto documents.
 
