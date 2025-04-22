@@ -40,14 +40,21 @@ website:
           href: tools/software.qmd
         - text: "Dashboards"
           href: tools/dashboards.qmd
-      - text: "Community Support"
+      - text: "About"
         menu:
-        - community/index.qmd
+        - text: "{{< fa people-pulling >}} Community"
+        - text: "Get Involved"
+          href: community/index.qmd
         - community/hubs.qmd
-        - text: "User Guide (external)"
-          href: https://hubverse.io/
         - text: "Contributors"
           href: community/contributors.md
+        - text: "---"
+        - text: "{{< fa book >}} Resources"
+        - text: "Funding"
+          href: "funding.md"
+        - "terminology.qmd"
+        - text: "User Guide (external) {{< fa arrow-up-right-from-square >}}"
+          href: https://hubverse.io/
 format:
   html:
     anchor-sections: true
