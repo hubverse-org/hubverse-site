@@ -8,7 +8,7 @@
       <div class="card-body">
         <h5 class="card-title">{{hub}}</h5>
         <blockquote class="card-text">{{{ testimonial }}}</blockquote>
-        <p class="card-text"><small class="text-muted">&mdash; {{name}}{{#org}} ({{{org}}}){{/org}}</small></p>
+        <p class="card-text"><small class="text-muted">&mdash; {{name}}{{#org}}<br>(<a class="card-link" href="/community/hubs.html#{{slug}}">{{{.name}}}</a>){{/org}}</small></p>
       </div>
     </div>
   </div>

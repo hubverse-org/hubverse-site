@@ -1,7 +1,9 @@
 ---
 hmsc:
   hub: West Nile Virus Forecasting Hub
-  org: '[California Department of Public Health](/community/hubs.html#cadph)'
+  org:
+    slug: cadph
+    name: California Department of Public Health
   name: Dr. Héctor M. Sánchez C
   img: /includes/img/HMSC.png
   testimonial: |
