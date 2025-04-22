@@ -14,17 +14,17 @@
   align-items: center;
   blockquote {
     border-left: .25rem solid #3C88BE;
-    font: 1rem Georgia, serif;
+    font-size: 1rem;
     font-style: italic;
     color: #000000;
   }
   p {
-    font: 1.2rem Georgia, serif;
+    font-size: 1.2rem;
     color: #5a5a5a;
   }
   img {
-    max-height: 300px;
-    object-fit: none;
+    height: fit-content;
+    object-fit: cover;
   }
 }
 /* 

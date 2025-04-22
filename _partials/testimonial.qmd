@@ -8,7 +8,7 @@
       <div class="card-body">
         <h5 class="card-title">{{hub}}</h5>
         <blockquote class="card-text">{{{ testimonial }}}</blockquote>
-        <p class="card-text"><small class="text-muted">&mdash; {{name}}</small></p>
+        <p class="card-text"><small class="text-muted">&mdash; {{name}} ({{{hub}}})</small></p>
       </div>
     </div>
   </div>

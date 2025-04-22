@@ -198,7 +198,7 @@ hubs:
         insights: https://respicompass.ecdc.europa.eu/insights/
         count: 14
   cadph:
-    logo: /logo/logo.png #/includes/img/cadph.png
+    logo: /includes/img/cadph.png
     name: California Department of Public Health
     hubs:
       - name: West Nile Virus Forecasting Hub

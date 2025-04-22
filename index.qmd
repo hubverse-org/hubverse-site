@@ -73,6 +73,7 @@ all phases in the life cycle of a hub.
 All of these packages are available at [The hubverse
 R-Universe](https://hubverse-org.r-universe.dev)
 
+
 ::::
 :::
 
@@ -80,7 +81,7 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 :::{.grid}
 
-{{< partial /_partials/testimonial.qmd alfa >}}
+{{< partial /_partials/testimonial.qmd hmsc >}}
 
 {{< partial /_partials/testimonial.qmd beta >}}
 

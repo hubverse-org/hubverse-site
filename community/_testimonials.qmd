@@ -1,4 +1,15 @@
 ---
+hmsc:
+  hub: West Nile Virus Forecasting Hub
+  org: '[California Department of Public Health](/community/hubs.html#cadph)'
+  name: Dr. Héctor M. Sánchez C
+  img: /includes/img/HMSC.png
+  testimonial: |
+    We wanted to launch the first West Nile Virus Forecasting
+    Challenge in the state of California to support existing efforts in reducing
+    disease prevalence. **The Hubverse tools have been a crucial component in our
+    setup** as they allow for standard submission formats and validations, which
+    encourage participation and collaborations from external teams.
 alfa:
   hub: Alfa Hub
   name: Dr. Alfa
