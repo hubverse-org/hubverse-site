@@ -1,0 +1,30 @@
+[{{< fa box-open >}} hubAdmin](https://hubverse-org.github.io/hubAdmin){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubCI](https://hubverse-org.github.io/hubCI){.btn .btn-outline-info .ms-auto}
+
+
+#### Creating a hub
+
+[{{< fa forward-fast >}} quickstart](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa wrench >}} Setting up a hub](https://hubverse-org.github.io/hubAdmin/articles/hub-setup.html){.btn .btn-outline-dark .ms-auto}
+
+[{{< fa book >}} Defining model tasks](https://hubverse.io/en/latest/user-guide/tasks.html){.btn .btn-outline-dark .ms-auto}
+
+To create a hub, you can start with [the hubTemplate](https://github.com/hubverse-org/hubTemplate).
+
+Be sure to read 
+
+ 1. Click the "Use this template" in the top right corner of the page and
+    choose a name for your hub.
+ 2. Modify the `hub-config/admin.json` file with general information about the hub
+ 3. Modify the `hub-config/tasks.json` file with information about the model tasks
+ 4. Update the `README.md` with general hub data access information
+ 5. Update the `model-outputs/README.md` with instructions for modelers
+
+
+#### Setting up a dashboard
+
+[{{< fa book >}} Building a dashboard](https://hubverse.io/en/latest/user-guide/dashboards.html#quickstart-building-a-dashboard){.btn .btn-outline-dark .ms-auto}
+
+To set up a dashboard, follow the instructions in the [hub dashboard template](https://github.com/hubverse-org/hub-dashboard-template#readme).
+
+

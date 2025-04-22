@@ -2,7 +2,19 @@
 title: "Analyze Data"
 ---
 
-## important packages
+## Access hub data
+
+{{< include /includes/_snippets/access.qmd >}}
+
+## Get information about a hub
+
+{{< include /includes/_snippets/hub-info.qmd >}}
+
+## Analyze hub data
+
+{{< include /includes/_snippets/analyze.qmd >}}
+
+## Important packages
 
 When analysing data from a hub, you will want the following packages:
 

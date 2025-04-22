@@ -2,26 +2,7 @@
 title: "Submit Model Output"
 ---
 
-
-[{{< fa circle-info >}} Create Model Metadata](https://hubverse.io/en/latest/user-guide/model-metadata.html){.btn .btn-outline-dark .ms-auto}
-[{{< fa file-export >}} Create Model Submission](https://hubverse.io/en/latest/user-guide/model-output.html){.btn .btn-outline-dark .ms-auto}
-[{{< fa file-circle-check >}} Validate Model Submission](https://hubverse-org.github.io/hubValidations/articles/validate-submission.html){.btn .btn-outline-dark .ms-auto}
-
-
-## Connect with the Hub Administrator
-
-They know what they want
-
-## Create your model metadata file
-
-Tell them what you are doing
-
-## Submit your model
-
-0. use [`hubValidations::submission_tmpl()`](https://hubverse-org.github.io/hubValidations/reference/submission_tmpl.html) to create a model output submission template.
-1. fork the repository
-2. upload your model submission into the `model-output/YOUR-ORG_MODEL/` folder
-3. party down
+{{< include /includes/_snippets/model-submission.qmd >}}
 
 ## important packages
 

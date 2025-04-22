@@ -1,0 +1,11 @@
+[{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
+[{{< fa box-open >}} hubData](https://hubverse-org.github.io/hubData){.btn .btn-outline-info .ms-auto}
+[{{< fa book >}} Accessing data from a hub](https://hubverse-org.github.io/hubData/articles/connect_hub.html){.btn .btn-outline-dark .ms-auto}
+
+You can connect to any hub with the **hubUtils** and **hubData** packages and
+be assured that all the data within the hub are **validated** against
+the [**hub data standards**](/tools/data.qmd).
+
+ - **connect to hub data** with [`hubData::connect_hub()`](https://hubverse-org.github.io/hubData/reference/connect_hub.html)
+ - **connect to a hub on S3** with [`hubData::s3_bucket()`](https://hubverse-org.github.io/hubData/reference/s3_bucket.html)
+ - **transform** your existing data with [`hubUtils::as_model_out_tbl()`](https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html)
