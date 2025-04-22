@@ -187,7 +187,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#important-packages" id="toc-important-packages" class="nav-link active" data-scroll-target="#important-packages">important packages</a></li>
+  <li><a href="#access-hub-data" id="toc-access-hub-data" class="nav-link active" data-scroll-target="#access-hub-data">Access hub data</a></li>
+  <li><a href="#get-information-about-a-hub" id="toc-get-information-about-a-hub" class="nav-link" data-scroll-target="#get-information-about-a-hub">Get information about a hub</a></li>
+  <li><a href="#analyze-hub-data" id="toc-analyze-hub-data" class="nav-link" data-scroll-target="#analyze-hub-data">Analyze hub data</a></li>
+  <li><a href="#important-packages" id="toc-important-packages" class="nav-link" data-scroll-target="#important-packages">Important packages</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/quickstart/analyze.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/quickstart/analyze.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -213,8 +216,38 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="access-hub-data" class="level2">
+<h2 class="anchored" data-anchor-id="access-hub-data">Access hub data</h2>
+<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a> <a href="https://hubverse-org.github.io/hubData" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubData</a> <a href="https://hubverse-org.github.io/hubData/articles/connect_hub.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Accessing data from a hub</a></p>
+<p>You can connect to any hub with the <strong>hubUtils</strong> and <strong>hubData</strong> packages and be assured that all the data within the hub are <strong>validated</strong> against the <a href="../tools/data.html"><strong>hub data standards</strong></a>.</p>
+<ul>
+<li><strong>connect to hub data</strong> with <a href="https://hubverse-org.github.io/hubData/reference/connect_hub.html"><code>hubData::connect_hub()</code></a></li>
+<li><strong>connect to a hub on S3</strong> with <a href="https://hubverse-org.github.io/hubData/reference/s3_bucket.html"><code>hubData::s3_bucket()</code></a></li>
+<li><strong>transform</strong> your existing data with <a href="https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html"><code>hubUtils::as_model_out_tbl()</code></a></li>
+</ul>
+</section>
+<section id="get-information-about-a-hub" class="level2">
+<h2 class="anchored" data-anchor-id="get-information-about-a-hub">Get information about a hub</h2>
+<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a></p>
+<p>The <strong>hubUtils</strong> package provides utilities that give you useful information about a hub:</p>
+<ul>
+<li>fetch a hub <a href="https://hubverse.io/en/latest/user-guide/hub-config.html"><strong>configuration file</strong></a> with <a href="https://hubverse-org.github.io/hubUtils/reference/read_config.html"><code>hubUtils::read_config()</code></a></li>
+<li>get the submission <strong>timezone</strong> with <a href="https://hubverse-org.github.io/hubUtils/reference/get_hub_timezone.html"><code>hubUtils::get_hub_timezone()</code></a></li>
+<li>find out what the submission <strong>rounds</strong> are with <a href="https://hubverse-org.github.io/hubUtils/reference/get_round_idx.html"><code>hubUtils::get_round_ids()</code></a></li>
+<li><strong>task ID names</strong> with <a href="https://hubverse-org.github.io/hubUtils/reference/get_task_id_names.html"><code>hubUtils::get_task_id_names()</code></a></li>
+</ul>
+</section>
+<section id="analyze-hub-data" class="level2">
+<h2 class="anchored" data-anchor-id="analyze-hub-data">Analyze hub data</h2>
+<p><a href="https://hubverse-org.github.io/hubEnsembles" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubEnsembles</a> <a href="https://hubverse-org.github.io/hubVis" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubVis</a> <a href="https://hubverse-org.github.io/hubEvals" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubEvals</a></p>
+<ul>
+<li><strong>create a simple ensemble</strong> with <a href="https://hubverse-org.github.io/hubEnsembles/reference/simple_ensemble.html"><code>hubEnsembles::simple_ensemble()</code></a></li>
+<li><strong>evaluate model performance</strong> with <a href="https://hubverse-org.github.io/hubEvals/reference/score_model_out.html"><code>hubEvals::plot_step_ahead_model()</code></a></li>
+<li><strong>visualize model projections</strong> with <a href="https://hubverse-org.github.io/hubVis/reference/plot_step_ahead_model_output.html"><code>hubVis::plot_step_ahead_model()</code></a></li>
+</ul>
+</section>
 <section id="important-packages" class="level2">
-<h2 class="anchored" data-anchor-id="important-packages">important packages</h2>
+<h2 class="anchored" data-anchor-id="important-packages">Important packages</h2>
 <p>When analysing data from a hub, you will want the following packages:</p>
 <ul>
 <li><a href="https://hubverse-org.github.io/hubData">hubData</a> seamlessly access data from a local or remote hub</li>

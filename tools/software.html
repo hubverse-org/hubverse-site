@@ -296,7 +296,8 @@ Tip
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Submit a model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Analyze data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Administer a hub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Develop</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p><a href="https://hubverse-org.github.io/hubValidations" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubValidations</a> <a href="https://hubverse.io/en/latest/user-guide/model-metadata.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Model Metadata</a> <a href="https://hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Writing model output to a hub</a></p>
+<p><a href="https://hubverse-org.github.io/hubValidations" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubValidations</a></p>
+<p><a href="https://hubverse.io/en/latest/user-guide/model-metadata.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Model metadata</a> <a href="https://hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Writing model output to a hub</a> <a href="https://hubverse-org.github.io/hubValidations/articles/validate-submission.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-file-circle-check" aria-label="file-circle-check"></i> Validate model submission</a></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -352,8 +353,25 @@ TIP: A lightweight way to clone a hub
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <p><a href="https://hubverse-org.github.io/hubAdmin" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubAdmin</a> <a href="https://hubverse-org.github.io/hubCI" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubCI</a></p>
+<section id="creating-a-hub" class="level4">
+<h4 class="anchored" data-anchor-id="creating-a-hub">Creating a hub</h4>
 <p><a href="https://hubverse.io/en/latest/quickstart-hub-admin/intro.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-forward-fast" aria-label="forward-fast"></i> quickstart</a> <a href="https://hubverse-org.github.io/hubAdmin/articles/hub-setup.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-wrench" aria-label="wrench"></i> Setting up a hub</a></p>
-<p><a href="https://hubverse.io/en/latest/user-guide/tasks.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Defining Model Tasks</a> <a href="https://hubverse.io/en/latest/user-guide/dashboards.html#quickstart-building-a-dashboard" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Building a Dashboard</a></p>
+<p><a href="https://hubverse.io/en/latest/user-guide/tasks.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Defining model tasks</a></p>
+<p>To create a hub, you can start with <a href="https://github.com/hubverse-org/hubTemplate">the hubTemplate</a>.</p>
+<p>Be sure to read</p>
+<ol type="1">
+<li>Click the “Use this template” in the top right corner of the page and choose a name for your hub.</li>
+<li>Modify the <code>hub-config/admin.json</code> file with general information about the hub</li>
+<li>Modify the <code>hub-config/tasks.json</code> file with information about the model tasks</li>
+<li>Update the <code>README.md</code> with general hub data access information</li>
+<li>Update the <code>model-outputs/README.md</code> with instructions for modelers</li>
+</ol>
+</section>
+<section id="setting-up-a-dashboard" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-a-dashboard">Setting up a dashboard</h4>
+<p><a href="https://hubverse.io/en/latest/user-guide/dashboards.html#quickstart-building-a-dashboard" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Building a dashboard</a></p>
+<p>To set up a dashboard, follow the instructions in the <a href="https://github.com/hubverse-org/hub-dashboard-template#readme">hub dashboard template</a>.</p>
+</section>
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <p>A developer</p>
