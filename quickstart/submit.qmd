@@ -2,12 +2,17 @@
 title: "Submit Model Output"
 ---
 
+When you want to submit a model to a hub, a good first place to start is
+the README section in the `model-output/` folder for [any given
+hub](/community/hubs.qmd)
+
 {{< include /includes/_snippets/model-submission.qmd >}}
 
 ## important packages
 
 As a modeler, you will find the following packages important:
 
+ - [hubUtils](https://hubverse-org.github.io/hubData) access important information about the hub
  - [hubData](https://hubverse-org.github.io/hubData) seamlessly access data from a local or remote hub
  - [hubValidations](https://hubverse-org.github.io/hubValidations) create submisson template and validate your model. 
 
