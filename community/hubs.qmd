@@ -11,7 +11,7 @@ ready to analyze in hubverse format.
 Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us about your hub!](/contact.qmd){.btn .btn-outline-dark .ms-auto}
 :::
 
-{{< include /community/_active-hubs.qmd >}}
+{{< include /_data/active-hubs.qmd >}}
 
 ::: {.column-screen-inset}
 

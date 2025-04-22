@@ -19,9 +19,9 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 
 ::::::::::::::::::::
 
-{{< include /community/_testimonials.qmd >}}
-{{< include /community/_active-hubs.qmd >}}
+{{< include /_data/testimonials.qmd >}}
 
+{{< include /_data/active-hubs.qmd >}}
 
 :::{.about-entity .column-page}
 
