@@ -50,9 +50,9 @@ website:
           href: community/contributors.md
         - text: "---"
         - text: "{{< fa book >}} Resources"
+        - "about.qmd"
         - text: "Funding"
           href: "funding.md"
-        - "terminology.qmd"
         - text: "User Guide (external) {{< fa arrow-up-right-from-square >}}"
           href: https://hubverse.io/
 format:
