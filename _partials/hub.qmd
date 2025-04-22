@@ -1,10 +1,14 @@
 
 ```{=html}
-<div {{#.id}}id="{{.id}}"{{/.id}} class="card org h-100 g-col-12 g-col-xl-6">
-    <h5 class="card-title org">
+<div class="card org h-100 g-col-12 g-col-xl-6">
+    <h5 {{#.id}}id="{{.id}}"{{/.id}} class="card-title org">
       {{#.logo}}<img src="{{.logo}}" class="card-img-top logo" alt=' '>{{/.logo}}
       {{ .name }}
     </h5>
+    <div class="card-body">
+    {{#.description}}
+      {{{.description}}}
+    {{/.description}}
     <hr>
     <div class="grid">
         {{#hubs}}
@@ -76,6 +80,7 @@
             {{/.aws}}
         </div>
         {{/hubs}}
+    </div>
     </div>
 </div>
 ```

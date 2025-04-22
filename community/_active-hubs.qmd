@@ -3,6 +3,9 @@ hubs:
   #  <id>:
   #    logo: /includes/img/<logo>.png
   #    name: "Name of Organisation"
+  #    description: |
+  #      A description of the organization,
+  #      which can include mission and funding.
   #    hubs:
   #    # a list of hubs that require a name, description, contact, repo,
   #    # and license
