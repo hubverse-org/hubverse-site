@@ -76,7 +76,7 @@ hubs:
         license: MIT License
         forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
         count: 10
-  midas:
+  smhct:
     logo: /includes/img/smh_logo.png
     name: "Scenario Modeling Hub Coordination Team"
     hubs:
