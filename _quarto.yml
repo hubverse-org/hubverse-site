@@ -9,6 +9,7 @@ website:
     position: below-navbar
   favicon: logo/logo.png
   title: "The hubverse"
+  site-url: "https://hubverse-org.github.io"
   site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
