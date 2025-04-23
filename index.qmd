@@ -100,8 +100,6 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 {{< partial /_partials/testimonial.qmd hmsc >}}
 
-{{< partial /_partials/testimonial.qmd beta >}}
-
 :::
 
 

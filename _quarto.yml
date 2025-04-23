@@ -12,12 +12,6 @@ website:
   site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
-  page-footer:
-    left:
-      - text: "Copyright 2025, Collaborative Modelling Consortium"
-    right:
-      - href: funding.md
-      - href: contact.qmd
   navbar:
     search: true
     right:
@@ -36,7 +30,8 @@ website:
         - icon: braces
           href: quickstart/develop.qmd
         - "---"
-        - quickstart/support-consulting.md
+        - icon: headset
+          href: quickstart/support-consulting.md
       - text: "Tools"
         menu:
         - text: "Data Standards"
@@ -65,6 +60,14 @@ website:
         - text: "Funding"
           href: "funding.md"
         - "contact.qmd"
+  page-footer:
+    left:
+      - icon: c-circle
+        text: "Copyright 2025, Collaborative Modelling Consortium"
+    right:
+      - href: funding.md
+      - href: contact.qmd
+      - href: about.qmd
 format:
   html:
     anchor-sections: true
