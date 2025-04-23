@@ -257,7 +257,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#structure-of-the-repository" id="toc-structure-of-the-repository" class="nav-link active" data-scroll-target="#structure-of-the-repository">Structure of the repository</a></li>
+  <li><a href="#concepts-to-know-for-editing-these-documents" id="toc-concepts-to-know-for-editing-these-documents" class="nav-link active" data-scroll-target="#concepts-to-know-for-editing-these-documents">Concepts to know for editing these documents</a></li>
+  <li><a href="#structure-of-the-repository" id="toc-structure-of-the-repository" class="nav-link" data-scroll-target="#structure-of-the-repository">Structure of the repository</a></li>
   <li><a href="#how-to-add-a-testimonial" id="toc-how-to-add-a-testimonial" class="nav-link" data-scroll-target="#how-to-add-a-testimonial">How to add a testimonial</a></li>
   <li><a href="#how-to-add-a-hub-or-organization" id="toc-how-to-add-a-hub-or-organization" class="nav-link" data-scroll-target="#how-to-add-a-hub-or-organization">How to add a hub or organization</a>
   <ul class="collapse">
@@ -311,6 +312,21 @@ Important
 </div>
 <p>The goal of this website is to provide general, high-level information about the hubverse and to point to existing resources such as documentaiton and vignettes.</p>
 <p>This website is built on GitHub with <a href="https://quarto.org">quarto</a> and uses an extended version of Pandoc’s <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a>. All pages will have links to edit the page, view source, and report an issue on the side bar or the footer of the page. If you see a problem with a page, please click <strong>Report an issue</strong> and describe what should be fixed.</p>
+<section id="concepts-to-know-for-editing-these-documents" class="level2">
+<h2 class="anchored" data-anchor-id="concepts-to-know-for-editing-these-documents">Concepts to know for editing these documents</h2>
+<p>There are superstructures in this site that are useful to know. Here are links to different concepts that are used to generate this site.</p>
+<ul>
+<li><a href="https://quarto.org/docs/authoring/markdown-basics.html">quarto markdown syntax</a></li>
+<li><a href="https://quarto.org/docs/authoring/callouts">quarto callout blocks</a> (used like admonitions in myst)</li>
+<li><a href="https://quarto.org/docs/authoring/article-layout">quarto article layout</a></li>
+<li><a href="https://quarto.org/docs/authoring/variables.html">quarto variables</a> (<code>{{&lt; var ... &gt;}}</code> and <code>{{&lt; meta ... &gt;}}</code>)</li>
+<li><a href="https://quarto.org/docs/authoring/includes.html">quarto includes directive</a> (<code>{{&lt; include ... &gt;}}</code>)</li>
+<li><a href="https://pkg.garrickadenbuie.com/quarto-partials/">quarto partials extension</a> (<code>{{&lt; partial ... &gt;}}</code>)</li>
+<li><a href="https://quarto-ext.github.io/fontawesome/">quarto font awesome extension</a> (<code>{{&lt; fa ... &gt;}}</code>)</li>
+<li>Defining a grid with <a href="https://getbootstrap.com/docs/5.3/layout/css-grid/">bootstrap CSS grid</a></li>
+<li>Working with <a href="https://getbootstrap.com/docs/5.3/components/card/">bootstrap cards</a></li>
+</ul>
+</section>
 <section id="structure-of-the-repository" class="level2">
 <h2 class="anchored" data-anchor-id="structure-of-the-repository">Structure of the repository</h2>
 <p>The structure of the website is dictated by <code>_quarto.yml</code>.</p>
@@ -520,7 +536,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/hubverse-org\.github\.io\/hubverse-site\/");
+      var filterRegex = new RegExp("https:\/\/hubverse-org\.github\.io");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

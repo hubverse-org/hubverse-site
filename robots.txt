@@ -1,1 +1,1 @@
-Sitemap: https://hubverse-org.github.io/hubverse-site/sitemap.xml
+Sitemap: https://hubverse-org.github.io/sitemap.xml
