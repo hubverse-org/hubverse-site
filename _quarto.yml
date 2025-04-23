@@ -25,20 +25,28 @@ website:
         href: index.qmd
       - text: "**Get Started**"
         menu:
-        - quickstart/index.qmd
-        - quickstart/create.qmd
-        - quickstart/submit.qmd
-        - quickstart/analyze.qmd
-        - quickstart/develop.qmd
+        - icon: question-circle
+          href: quickstart/index.qmd
+        - icon: diagram-3
+          href: quickstart/create.qmd
+        - icon: file-earmark-arrow-up
+          href: quickstart/submit.qmd
+        - icon: graph-up
+          href: quickstart/analyze.qmd
+        - icon: braces
+          href: quickstart/develop.qmd
         - "---"
         - quickstart/support-consulting.md
       - text: "Tools"
         menu:
         - text: "Data Standards"
+          icon: compass
           href: tools/data.qmd
         - text: "Software"
+          icon: tools
           href: tools/software.qmd
         - text: "Dashboards"
+          icon: speedometer
           href: tools/dashboards.qmd
       - text: "About"
         menu:
