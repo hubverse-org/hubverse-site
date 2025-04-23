@@ -40,7 +40,7 @@ To add a hub or organization to the website, you should edit
 [\_data/active-hubs.qmd](_data/active-hubs.qmd).
 
 You can read
-[\_data/README.md](https://github.com/hubverse-org/hubverse-site/_data/README.md)
+[\_data/README.md](_data/README.md)
 for more information about
 formatting.
 
