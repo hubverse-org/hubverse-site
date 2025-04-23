@@ -4,7 +4,7 @@ title: "Contributing to the hubverse site"
 
 :::{.callout-important}
 
-It is best to [view this page on GitHub](https://github.com/hubverse-org/hubverse-site/CONTRIBUTING.md) so that the links point to the correct pages.
+It is best to [view this page on GitHub](https://github.com/hubverse-org/hubverse-site/blob/HEAD/CONTRIBUTING.md) so that the links point to the correct pages.
 
 :::
 
