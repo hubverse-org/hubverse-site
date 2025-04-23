@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>How To Contribute – The hubverse</title>
+<title>Contributing to the hubverse site – The hubverse</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -198,6 +232,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./contact.html">
  <span class="dropdown-text">Contact</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./CONTRIBUTING.html">
+ <span class="dropdown-text">Contributing to the hubverse site</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -219,22 +257,28 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#use-and-test-our-software-and-tools" id="toc-use-and-test-our-software-and-tools" class="nav-link active" data-scroll-target="#use-and-test-our-software-and-tools">Use and test our software and tools</a></li>
-  <li><a href="#file-issues" id="toc-file-issues" class="nav-link" data-scroll-target="#file-issues">File issues</a></li>
-  <li><a href="#contribute-code" id="toc-contribute-code" class="nav-link" data-scroll-target="#contribute-code">Contribute code</a></li>
-  <li><a href="#start-to-run-a-hub" id="toc-start-to-run-a-hub" class="nav-link" data-scroll-target="#start-to-run-a-hub">Start to run a hub</a></li>
-  <li><a href="#join-the-development-team" id="toc-join-the-development-team" class="nav-link" data-scroll-target="#join-the-development-team">Join the development team</a></li>
-  <li><a href="#become-hubverse-community-member" id="toc-become-hubverse-community-member" class="nav-link" data-scroll-target="#become-hubverse-community-member">Become hubverse community member</a></li>
-  <li><a href="#governance" id="toc-governance" class="nav-link" data-scroll-target="#governance">Governance</a></li>
+  <li><a href="#how-to-add-a-testimonial" id="toc-how-to-add-a-testimonial" class="nav-link active" data-scroll-target="#how-to-add-a-testimonial">How to add a testimonial</a></li>
+  <li><a href="#how-to-add-a-hub-or-organization" id="toc-how-to-add-a-hub-or-organization" class="nav-link" data-scroll-target="#how-to-add-a-hub-or-organization">How to add a hub or organization</a>
+  <ul class="collapse">
+  <li><a href="#adding-an-organization" id="toc-adding-an-organization" class="nav-link" data-scroll-target="#adding-an-organization">Adding an organization</a></li>
+  <li><a href="#adding-a-hub-to-your-organization" id="toc-adding-a-hub-to-your-organization" class="nav-link" data-scroll-target="#adding-a-hub-to-your-organization">Adding a hub to your organization</a></li>
+  </ul></li>
+  <li><a href="#software-used" id="toc-software-used" class="nav-link" data-scroll-target="#software-used">Software used</a>
+  <ul class="collapse">
+  <li><a href="#required-software" id="toc-required-software" class="nav-link" data-scroll-target="#required-software">Required software</a></li>
+  <li><a href="#used-in-production" id="toc-used-in-production" class="nav-link" data-scroll-target="#used-in-production">Used in production</a></li>
+  <li><a href="#optional-software" id="toc-optional-software" class="nav-link" data-scroll-target="#optional-software">Optional software</a></li>
+  </ul></li>
+  <li><a href="#pre-computed-content" id="toc-pre-computed-content" class="nav-link" data-scroll-target="#pre-computed-content">Pre-computed content</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/contribute.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/CONTRIBUTING.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/CONTRIBUTING.md" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How To Contribute</h1>
+<h1 class="title">Contributing to the hubverse site</h1>
 </div>
 
 
@@ -251,42 +295,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The Consortium of Infectious Disease Modeling Hubs built the hubverse collaboratively, and we benefit from your contributions.</p>
-<section id="use-and-test-our-software-and-tools" class="level2">
-<h2 class="anchored" data-anchor-id="use-and-test-our-software-and-tools">Use and test our software and tools</h2>
-<p>The hubverse was created for teams to develop and set up collaborative modeling hubs easily, and we benefit from having groups use these tools and tell us about them.</p>
+<p>This website is built on GitHub with <a href="https://quarto.org">quarto</a> and uses an extended version of Pandoc’s <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a>.</p>
+<p>All pages will have links to edit the page, view source, and report an issue on the side bar or the footer of the page. If you see a problem with a page, please click <strong>Report an issue</strong> and describe what should be fixed.</p>
+<section id="how-to-add-a-testimonial" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-add-a-testimonial">How to add a testimonial</h2>
+<p>If you want to add a testimonial, thank you! There are two steps to adding a testimonial:</p>
+<ol type="1">
+<li>add a 300x300 or larger image to the <code>includes/img</code> folder</li>
+<li>add your information to <a href="_data/testimonials.qmd">_data/testimonials.qmd</a> and link your image with <code>/includes/img/name-of-img.png</code> (the first slash is important!)</li>
+<li>update <a href="./index.html">index.qmd</a> with your testimonial.</li>
+</ol>
 </section>
-<section id="file-issues" class="level2">
-<h2 class="anchored" data-anchor-id="file-issues">File issues</h2>
-<p>Let us know if something is not working for you or if something could improve. This could be a bug in the code, a case where the tools are not appropriate for your use case, a problem with the documentation, or something else. Issues can be filed in any of <a href="https://github.com/hubverse-org">the hubverse repositories</a>. You are also welcome to <a href="https://github.com/orgs/hubverse-org/discussions">join the discussion</a> on any existing issue in any of the hubverse repositories.</p>
+<section id="how-to-add-a-hub-or-organization" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-add-a-hub-or-organization">How to add a hub or organization</h2>
+<p>To add a hub or organization to the website, you should edit <a href="_data/active-hubs.qmd">_data/active-hubs.qmd</a>.</p>
+<p>You can read <a href="_data/README.md">_data/README.md</a> for more information</p>
+<section id="adding-an-organization" class="level3">
+<h3 class="anchored" data-anchor-id="adding-an-organization">Adding an organization</h3>
+<p>There is a template of the required fields at the top of the file. You can duplicate this template and update it to match your organization.</p>
+<p>The next step is to edit [community/hubs.qmd] and add your organization to the list based on the slug you chose.</p>
 </section>
-<section id="contribute-code" class="level2">
-<h2 class="anchored" data-anchor-id="contribute-code">Contribute code</h2>
-<p>If you want to contribute to <em>the hubverse</em>, please see the <a href="https://hubverse-org.github.io/hubUtils/CONTRIBUTING.html">guidelines for contributing</a>.</p>
+<section id="adding-a-hub-to-your-organization" class="level3">
+<h3 class="anchored" data-anchor-id="adding-a-hub-to-your-organization">Adding a hub to your organization</h3>
+<p>To add a hub, find your organization in the list and then add a hub with the following fields:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">org</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">[</span><span class="at">...</span><span class="kw">]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">hubs</span><span class="kw">:</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="kw">[</span><span class="at">...</span><span class="kw">]</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"Name of Hub"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">        description</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>          A description that</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>          can span</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>          multiple lines</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">contact</span><span class="kw">:</span><span class="at"> </span><span class="st">"hub-info@example.com"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"org/hub-name"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">"License Name (e.g MIT License)"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">        # --- OPTIONAL ----</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">aws</span><span class="kw">:</span><span class="at"> </span><span class="st">"aws-bucket-name"</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">insights</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">forecasts</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">evals</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/evals.html</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="notes" class="level4">
+<h4 class="anchored" data-anchor-id="notes">Notes</h4>
+<ol type="1">
+<li>the <code>repo</code> key must be a slug, not a URL.</li>
+<li>the <code>forecasts</code> key points to a forecast visualization. If you do not have this, omit it.</li>
+<li>the <code>evals</code> key points to a evaluations visualization. If you do not have this, omit it.</li>
+<li>the <code>insights</code> key points to a page that contains insights that are not reflected in <code>forecasts</code> or <code>evals</code></li>
+</ol>
 </section>
-<section id="start-to-run-a-hub" class="level2">
-<h2 class="anchored" data-anchor-id="start-to-run-a-hub">Start to run a hub</h2>
-<p>If you want to use <em>the hubverse</em> to run a hub, please consider joining our monthly “community hubverse meetings”. During these meetings, we provide general updates from a broad mix of developers and public health representatives running hubs or thinking about starting to run hubs.</p>
-<p>To join the “community hubverse meeting,” please send an email to the <a href="mailto:hubverse+owner@groups.io">hubverse group</a>, including your name, email, and a few sentences about how you would like to use the hubverse.</p>
 </section>
-<section id="join-the-development-team" class="level2">
-<h2 class="anchored" data-anchor-id="join-the-development-team">Join the development team</h2>
-<p>If you are an experienced programmer interested in joining the development team, we have “development meetings” on all Wednesdays except the first Wednesday of the month. These meetings are for technical updates and discussions about ongoing development tasks.</p>
-<p>To join the development team, please <a href="mailto:hubverse+owner@groups.io">send an email to the hubverse group</a>, including your name, email, and a few sentences about what you can contribute to the development team.</p>
 </section>
-<section id="become-hubverse-community-member" class="level2">
-<h2 class="anchored" data-anchor-id="become-hubverse-community-member">Become hubverse community member</h2>
-<p>This group is used to announce new features in the hubverse to the user community. If you would like to become a hubverse community member, go to <a href="https://groups.io/g/hubverse">hubverse@groups.io</a> and click on the <strong>+Apply for Membership in this group</strong> at the bottom left-hand side of the page.</p>
-</section>
-<section id="governance" class="level2">
-<h2 class="anchored" data-anchor-id="governance">Governance</h2>
-<p>The governing body of the <a href="who-we-are.md">Consortium of Infectious Disease Modeling Hubs</a> is the Coding Council, which comprises of any community member attending one of the periodic virtual meetings. This council generally serves as a deliberative body, discussing and setting directions for new conceptual and software development. Typically, decisions about design and prioritization are made through consensus at the Coding Council level. If differences cannot be solved by consensus, then decisions are passed to the Steering Committee, which comprises three members. Members of the Steering Committee serve one-year terms, with elections occurring in July of each calendar year. Members of the Coding Council may nominate themselves or others to serve on the Steering Committee, and a closed-ballot vote is taken if more than three individuals are nominated. The highest three vote-getters serve on the council.</p>
-<p>On July 10, 2024, the following members of the steering committee were elected:</p>
+<section id="software-used" class="level2">
+<h2 class="anchored" data-anchor-id="software-used">Software used</h2>
+<section id="required-software" class="level3">
+<h3 class="anchored" data-anchor-id="required-software">Required software</h3>
+<p>The following software is required to work on this website</p>
 <ul>
-<li>Evan Ray, US Forecast Hub</li>
-<li>Lucie Contamin, University of Pittsburgh, MIDAS</li>
-<li>Anna Krystalli, R-RSE</li>
+<li><a href="https://quarto.org">quarto</a> builds the site</li>
+<li><a href="https://git-scm.com">git</a> tracks changes</li>
 </ul>
+</section>
+<section id="used-in-production" class="level3">
+<h3 class="anchored" data-anchor-id="used-in-production">Used in production</h3>
+<p>The following software is used in production for the <a href="#pre-computed-content">pre-computed content</a>, but is not absolutely necessary to build the website.</p>
+<ul>
+<li><a href="https://python.org">Python</a> &gt;= 3.9 is needed to generate the contributors page</li>
+<li>BASH is needed to update the model counts</li>
+<li><a href="https://cli.github.com">gh</a> is needed to fetch the data to update the model counts</li>
+<li><a href="https://github.com/mikefarah/yq/#install">yq</a> is needed to update the model counts</li>
+</ul>
+</section>
+<section id="optional-software" class="level3">
+<h3 class="anchored" data-anchor-id="optional-software">Optional software</h3>
+<ul>
+<li>Make is optional for generating the site via the Makefile.</li>
+</ul>
+</section>
+</section>
+<section id="pre-computed-content" class="level2">
+<h2 class="anchored" data-anchor-id="pre-computed-content">Pre-computed content</h2>
+<p>There are currently two pages that contain pre-computed content:</p>
+<ol type="1">
+<li><code>community/contributors.md</code> is generated by <a href="scripts/contributors.py">scripts/contributors.py</a>. This script auto-generates a list of contributors to hubverse github repositories. It requires Python and was written by Alvaro J. Castro Rivadeneira and modified by Zhian Kamvar for this site.</li>
+<li><code>_data/active-hubs.qmd</code> is updated by <a href="scripts/update-model-counts.sh">scripts/update-model-counts.sh</a>. This script uses the GitHub API to update model counts for known hubs. It requires BASH, <a href="https://github.com/mikefarah/yq/#install">yq</a>, and <a href="https://cli.github.com">gh</a> and was written by Zhian Kamvar.</li>
+</ol>
+<p>Both of these are integrated into <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a>.</p>
+<p>If this becomes too burdensome, these scripts could be all ported to python an run using <a href="https://quarto.org/docs/projects/scripts.html">quarto project scripts</a>.</p>
 
 
 </section>
@@ -725,7 +820,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/contribute.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/contribute.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/CONTRIBUTING.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/CONTRIBUTING.md" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
