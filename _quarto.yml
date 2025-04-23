@@ -60,6 +60,7 @@ website:
         - text: "Funding"
           href: "funding.md"
         - "contact.qmd"
+        - "CONTRIBUTING.md"
   page-footer:
     left:
       - icon: c-circle
