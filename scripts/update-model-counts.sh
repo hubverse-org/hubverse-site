@@ -26,7 +26,7 @@ if ! command -v gh &> /dev/null; then
 fi
 
 # grab the hub file or fallback to the default
-hub_file="${1:-community/_active-hubs.qmd}"
+hub_file="${1:-_data/active-hubs.qmd}"
 
 # get array of hub repo locations from the file
 mapfile -t hubs < <(yq --front-matter=extract '.hubs[].hubs[] | .repo' "${hub_file}")

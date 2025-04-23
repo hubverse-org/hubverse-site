@@ -8,18 +8,18 @@ community/contributors.md: scripts/contributors.py
 	@echo Updating contributors page...
 	python scripts/contributors.py
 
-community/_active-hubs.qmd: scripts/update-model-counts.sh
+_data/active-hubs.qmd: scripts/update-model-counts.sh
 	@echo Updating model counts...
 	bash scripts/update-model-counts.sh
 
 .PHONY: render
 
-render: community/contributors.md community/_active-hubs.qmd # update contributors file and render to HTML 
+render: community/contributors.md _data/active-hubs.qmd # update contributors file and render to HTML 
 	quarto render
 
 .PHONY: preview
 
-preview: community/contributors.md community/_active-hubs.qmd # update contributors file and preview
+preview: community/contributors.md _data/active-hubs.qmd # update contributors file and preview
 	quarto preview
 
 .PHONY: contributors
@@ -28,7 +28,7 @@ contributors: community/contributors.md # generate contributors page (requires p
 
 .PHONY: models
 
-models: community/_active-hubs.qmd # generate models page (requires BASH, yq, and gh)
+models: _data/active-hubs.qmd # generate models page (requires BASH, yq, and gh)
 
 
 
