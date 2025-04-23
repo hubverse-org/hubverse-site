@@ -8,15 +8,54 @@ It is best to [view this page on GitHub](https://github.com/hubverse-org/hubvers
 
 :::
 
+The goal of this website is to provide general, high-level information about the hubverse and to point to existing resources such as documentaiton and vignettes.
+
 This website is built on GitHub with [quarto](https://quarto.org) and uses an
 extended version of Pandoc's [markdown
-syntax](https://quarto.org/docs/authoring/markdown-basics.html).
-
+syntax](https://quarto.org/docs/authoring/markdown-basics.html). 
 All pages will have links to edit the page, view source, and report an issue
 on the side bar or the footer of the page. If you see a problem with a page, 
 please click **Report an issue** and describe what should be fixed.
 
-If you want to 
+
+## Structure of the repository
+
+The structure of the website is dictated by `_quarto.yml`.
+
+The repository contains three major content folders that represent sections of
+the website:
+
+ - `community/` for all pages related to community information
+ - `tools/` for general information about open source tools
+ - `quickstart/` for task-based wayfinding and information
+
+All markdown and quarto documents at the root of the repository are included in
+the site.
+
+These are supported by _auxiliary content_ folders:
+
+ - `includes/img` contains images that are used in the pages. These images are
+   always referenced with a leading slash like so `/includes/img/showcase.png`
+ - `logo/` is a special folder that contains the hubverse logo
+ - `brand/` contains a directive that allows us to use the logo in the site
+    icons and allow us to use partials.
+ - `_partials/` contains HTML templates that are used for formatting the more
+   complex parts of the site including testimonials and hub layouts. These are
+   controlled by the quarto paritals extension
+ - `_snippets/` contains shared markdown content that can be used with the quarto
+  includes directive
+ - `_data/` contains yaml-only quarto documents that serve as as data for the
+   `_partials`. Examples are in the readme for that folder.
+
+Finally, there are _build process_ files and folders:
+
+ - `scripts/` are scripts that are run on GitHub actions before the site is built
+ - `_extensions` contain quarto extensions that provide shortcuts for writing
+   content. We use the font awesome and partials extensions. 
+ - `Makefile` is a helper that allows us to port the build process anywhere
+ - `.github/workflows/publish.yml` runs all the scripts and publishes the quarto
+   site to gh pages.
+
 
 ## How to add a testimonial
 
@@ -49,7 +88,7 @@ formatting.
 There is a template of the required fields at the top of the file. You can
 duplicate this template and update it to match your organization.
 
-The next step is to edit [community/hubs.qmd] and add your organization to the
+The next step is to edit [community/hubs.qmd](community/hubs.qmd) and add your organization to the
 list based on the slug you chose.
 
 ### Adding a hub to your organization
