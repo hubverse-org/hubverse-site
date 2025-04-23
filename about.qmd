@@ -16,6 +16,14 @@ Building off of systems designed for influenza forecasting challenges led by the
 
 The hubverse provides tools and a unified framework for aggregating, visualizing, and evaluating forecasts. Although infectious disease forecasting motivated the development of these tools, the approach is meant to be versatile so that the hubverse can be used for other types of forecasts.
 
+## Scope
+
+Several groups that have worked on supporting and developing the modeling hubs came together in 2022 to initiate a community-driven effort to generalize hub-related tools that were developed “on the go” during the first two years of the COVID-19 pandemic.
+
+The Consortium of Infectious Disease Modeling Hubs aims to develop a central open-source suite of tools for creating, hosting, maintaining, and running a modeling hub. While the motivating applications focused on predictive time-series-style modeling of outbreaks, the tools developed as part of this effort are designed to be more general and could be used for other purposes, e.g., for aggregating estimates of parameters of interest.
+
+The ultimate goal of this project is to provide a suite of portable and open-source resources that could be relatively easily adapted by new modeling hubs without duplicating efforts.
+
 ## History
 
 
@@ -80,4 +88,14 @@ Back row (L-R): Becky Sweger, Nick Reich, Kimberlyn Roosa, Martha Zorn, Matt Cor
 Front row (L-R): Evan Ray, Melissa Kerr, Rebecca Borchering, Emily Howerton, Lucie Contamin, Anna Krystalli
 ](/includes/img/hubverse-retreat.png){alt='Photo of smiling people standing in the sunshine in front of the entrance to Arnold Hall, an old brick building.'}
 
+## How to cite
 
+A citation for _the hubverse_ should look like the example below. 
+
+:::{.callout-note}
+
+### Citation
+
+The Consortium of Infectious Disease Modeling Hubs. The hubverse: open tools for collaborative modeling. GitHub release {{< var version >}}, {{< var version_date >}} URL: https://github.com/hubverse-org
+
+:::
