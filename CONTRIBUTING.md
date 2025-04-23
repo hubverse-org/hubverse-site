@@ -2,6 +2,12 @@
 title: "Contributing to the hubverse site"
 ---
 
+:::{.callout-important}
+
+It is best to [view this page on GitHub](https://github.com/hubverse-org/hubverse-site/CONTRIBUTING.md) so that the links point to the correct pages.
+
+:::
+
 This website is built on GitHub with [quarto](https://quarto.org) and uses an
 extended version of Pandoc's [markdown
 syntax](https://quarto.org/docs/authoring/markdown-basics.html).
