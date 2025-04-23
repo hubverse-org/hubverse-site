@@ -17,6 +17,20 @@ All pages will have links to edit the page, view source, and report an issue
 on the side bar or the footer of the page. If you see a problem with a page, 
 please click **Report an issue** and describe what should be fixed.
 
+## Concepts to know for editing these documents
+
+There are superstructures in this site that are useful to know. Here are
+links to different concepts that are used to generate this site.
+
+ - [quarto markdown syntax](https://quarto.org/docs/authoring/markdown-basics.html)
+ - [quarto callout blocks](https://quarto.org/docs/authoring/callouts) (used like admonitions in myst)
+ - [quarto article layout](https://quarto.org/docs/authoring/article-layout)
+ - [quarto variables](https://quarto.org/docs/authoring/variables.html) (`{{< var ... >}}` and `{{< meta ... >}}`)
+ - [quarto includes directive](https://quarto.org/docs/authoring/includes.html) (`{{< include ... >}}`)
+ - [quarto partials extension](https://pkg.garrickadenbuie.com/quarto-partials/) (`{{< partial ... >}}`)
+ - [quarto font awesome extension](https://quarto-ext.github.io/fontawesome/) (`{{< fa ... >}}`)
+ - Defining a grid with [bootstrap CSS grid](https://getbootstrap.com/docs/5.3/layout/css-grid/)
+ - Working with [bootstrap cards](https://getbootstrap.com/docs/5.3/components/card/)
 
 ## Structure of the repository
 

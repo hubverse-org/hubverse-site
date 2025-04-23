@@ -1,28 +1,32 @@
 ---
 hubs:
-  #  <id>:
-  #    logo: /includes/img/<logo>.png
-  #    name: "Name of Organisation"
-  #    description: |
-  #      A description of the organization,
-  #      which can include mission and funding.
-  #    hubs:
-  #    # a list of hubs that require a name, description, contact, repo,
-  #    # and license
-  #      # --- REQUIRED ---
-  #    - name: "Name of Hub"
-  #      description: |
-  #        A description that
-  #        can span
-  #        multiple lines
-  #      contact: "hub-info@example.com"
-  #      repo: "org/hub-name"
-  #      license: "License Name (e.g MIT License)"
-  #      # --- OPTIONAL ----
-  #      aws: "aws-bucket-name"
-  #      insights: https://reichlab.io/variant-nowcast-hub-dashboard/
-  #      forecasts: https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html
-  #      evals: https://reichlab.io/variant-nowcast-hub-dashboard/evals.html
+  # NOTE: to add a new organization:
+  # 1. copy and paste this example
+  # 2. replace the `example:` key with a slug for your organization
+  # 3. update the values below
+  example:
+    logo: /includes/img/example-logo.png
+    name: "Example Organization"
+    description: |
+      A description of the organization,
+      which can include mission and funding.
+    hubs:
+    # a list of hubs that require a name, description, contact, repo, and license
+      # --- REQUIRED ---
+    - name: "Name of Hub"
+      description: |
+        A description that
+        can span
+        multiple lines
+      # from admin.json
+      contact: "hub-info@example.com"
+      repo: "example-org/hub-name" # must be slug, not URL
+      license: "License Name (e.g MIT License)"
+      # --- OPTIONAL ----
+      aws: "aws-bucket-name" # from your admin.json
+      insights: https://example.org/hub-insights/
+      forecasts: https://example.org/hub-insights/forecasts.html
+      evals: https://example.org/hub-insights/evals.html
   reichlab:
     logo: /includes/img/reichlab.png
     name: "Reich Lab (UMass)"
@@ -37,7 +41,11 @@ hubs:
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
         count: 6
       - name: "Flu Metrocast Hub"
-        description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
+        description: |
+          The Flu MetroCast Hub is a modeling hub with the goal of
+          collecting city- and county-level forecasts of influenza
+          activity. The hub is led by the epiENGAGE team from UT-Austin
+          and UMass-Amherst, as a part of the CDC Insight Net program. 
         contact: donga0223@gmail.com
         aws: reichlab-flu-metrocast-hub
         repo: reichlab/flu-metrocast
