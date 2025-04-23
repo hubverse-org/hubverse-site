@@ -10,6 +10,19 @@ The hubverse dashboard is an expermiental landing page and plug-and-play
 visualization for hub data. Each dashboard is an independent repository for any
 given hub.
 
+:::{#fig-dashboards .column-screen layout-ncol=2}
+
+![forecasts](/includes/img/dashboard-forecast.png){alt="forecast dashboard"}
+
+![evaluations](/includes/img/dashboard-eval-heat.png){alt="evaluation dashboard"}
+
+Forecast and Evaluation dashboards for the FluSight forecast hub.
+:::
+
+
+## Examples
+
+
 Some examples of dashboards are:
 
 
