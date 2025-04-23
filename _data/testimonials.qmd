@@ -9,7 +9,7 @@ hmsc:
   testimonial: |
     We wanted to launch the first West Nile Virus Forecasting
     Challenge in the state of California to support existing efforts in reducing
-    disease prevalence. **The Hubverse tools have been a crucial component in our
+    disease prevalence. **The hubverse tools have been a crucial component in our
     setup** as they allow for standard submission formats and validations, which
     encourage participation and collaborations from external teams.
 alfa:
@@ -17,11 +17,11 @@ alfa:
   name: Dr. Alfa
   img: https://placecats.com/300/300
   testimonial: |
-    The Hubverse has been supporting the Alfa hub for years
+    The hubverse has been supporting the Alfa hub for years
 beta:
   hub: Beta Hub
   name: Dr. Beta
   img: https://placecats.com/400/400
   testimonial: |
-    We wanted to track the distribution of beta across metropolitan areas in the US. The Hubverse provided an easy way to get us quickly set up 
+    We wanted to track the distribution of beta across metropolitan areas in the US. The hubverse provided an easy way to get us quickly set up 
 ---

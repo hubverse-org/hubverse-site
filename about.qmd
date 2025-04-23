@@ -70,7 +70,7 @@ In working on collaborative forecasting, our principal objectives have been to
 
 
 
-### Hubverse retreat
+### hubverse retreat
 
 Our second annual "hubverse retreat" was held June 3--7, 2024 at the University of Massachusetts, Amherst. This year’s retreat focused on the future of hubs in the cloud, dashboarding, and the archiving of hub data using hubverse standards.
 

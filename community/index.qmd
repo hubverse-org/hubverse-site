@@ -6,8 +6,8 @@ title: "Community"
 
 ### Mailing list
 
-This group is used to announce new features in the Hubverse to the user
-community. If you would like to become a Hubverse community member, go to
+This group is used to announce new features in the hubverse to the user
+community. If you would like to become a hubverse community member, go to
 [the hubverse mailing list](https://groups.io/g/hubverse) and click on the
 **+Apply for Membership in this group** at the bottom left-hand side of the
 page.
