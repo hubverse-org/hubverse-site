@@ -30,7 +30,7 @@ testimonial:
 2. update [index.qmd](index.qmd) with your testimonial.
 
 You can read
-[\_data/README.md](https://github.com/hubverse-org/hubverse-site/_data/README.md)
+[\_data/README.md](_data/README.md)
 for more information about
 formatting.
 
