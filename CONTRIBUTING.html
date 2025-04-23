@@ -257,7 +257,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-add-a-testimonial" id="toc-how-to-add-a-testimonial" class="nav-link active" data-scroll-target="#how-to-add-a-testimonial">How to add a testimonial</a></li>
+  <li><a href="#structure-of-the-repository" id="toc-structure-of-the-repository" class="nav-link active" data-scroll-target="#structure-of-the-repository">Structure of the repository</a></li>
+  <li><a href="#how-to-add-a-testimonial" id="toc-how-to-add-a-testimonial" class="nav-link" data-scroll-target="#how-to-add-a-testimonial">How to add a testimonial</a></li>
   <li><a href="#how-to-add-a-hub-or-organization" id="toc-how-to-add-a-hub-or-organization" class="nav-link" data-scroll-target="#how-to-add-a-hub-or-organization">How to add a hub or organization</a>
   <ul class="collapse">
   <li><a href="#adding-an-organization" id="toc-adding-an-organization" class="nav-link" data-scroll-target="#adding-an-organization">Adding an organization</a></li>
@@ -308,9 +309,35 @@ Important
 <p>It is best to <a href="https://github.com/hubverse-org/hubverse-site/blob/HEAD/CONTRIBUTING.md">view this page on GitHub</a> so that the links point to the correct pages.</p>
 </div>
 </div>
-<p>This website is built on GitHub with <a href="https://quarto.org">quarto</a> and uses an extended version of Pandoc’s <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a>.</p>
-<p>All pages will have links to edit the page, view source, and report an issue on the side bar or the footer of the page. If you see a problem with a page, please click <strong>Report an issue</strong> and describe what should be fixed.</p>
-<p>If you want to</p>
+<p>The goal of this website is to provide general, high-level information about the hubverse and to point to existing resources such as documentaiton and vignettes.</p>
+<p>This website is built on GitHub with <a href="https://quarto.org">quarto</a> and uses an extended version of Pandoc’s <a href="https://quarto.org/docs/authoring/markdown-basics.html">markdown syntax</a>. All pages will have links to edit the page, view source, and report an issue on the side bar or the footer of the page. If you see a problem with a page, please click <strong>Report an issue</strong> and describe what should be fixed.</p>
+<section id="structure-of-the-repository" class="level2">
+<h2 class="anchored" data-anchor-id="structure-of-the-repository">Structure of the repository</h2>
+<p>The structure of the website is dictated by <code>_quarto.yml</code>.</p>
+<p>The repository contains three major content folders that represent sections of the website:</p>
+<ul>
+<li><code>community/</code> for all pages related to community information</li>
+<li><code>tools/</code> for general information about open source tools</li>
+<li><code>quickstart/</code> for task-based wayfinding and information</li>
+</ul>
+<p>All markdown and quarto documents at the root of the repository are included in the site.</p>
+<p>These are supported by <em>auxiliary content</em> folders:</p>
+<ul>
+<li><code>includes/img</code> contains images that are used in the pages. These images are always referenced with a leading slash like so <code>/includes/img/showcase.png</code></li>
+<li><code>logo/</code> is a special folder that contains the hubverse logo</li>
+<li><code>brand/</code> contains a directive that allows us to use the logo in the site icons and allow us to use partials.</li>
+<li><code>_partials/</code> contains HTML templates that are used for formatting the more complex parts of the site including testimonials and hub layouts. These are controlled by the quarto paritals extension</li>
+<li><code>_snippets/</code> contains shared markdown content that can be used with the quarto includes directive</li>
+<li><code>_data/</code> contains yaml-only quarto documents that serve as as data for the <code>_partials</code>. Examples are in the readme for that folder.</li>
+</ul>
+<p>Finally, there are <em>build process</em> files and folders:</p>
+<ul>
+<li><code>scripts/</code> are scripts that are run on GitHub actions before the site is built</li>
+<li><code>_extensions</code> contain quarto extensions that provide shortcuts for writing content. We use the font awesome and partials extensions.</li>
+<li><code>Makefile</code> is a helper that allows us to port the build process anywhere</li>
+<li><code>.github/workflows/publish.yml</code> runs all the scripts and publishes the quarto site to gh pages.</li>
+</ul>
+</section>
 <section id="how-to-add-a-testimonial" class="level2">
 <h2 class="anchored" data-anchor-id="how-to-add-a-testimonial">How to add a testimonial</h2>
 <p>If you want to add a testimonial, thank you! There are two steps to adding a testimonial:</p>
@@ -328,7 +355,7 @@ Important
 <section id="adding-an-organization" class="level3">
 <h3 class="anchored" data-anchor-id="adding-an-organization">Adding an organization</h3>
 <p>There is a template of the required fields at the top of the file. You can duplicate this template and update it to match your organization.</p>
-<p>The next step is to edit [community/hubs.qmd] and add your organization to the list based on the slug you chose.</p>
+<p>The next step is to edit <a href="./community/hubs.html">community/hubs.qmd</a> and add your organization to the list based on the slug you chose.</p>
 </section>
 <section id="adding-a-hub-to-your-organization" class="level3">
 <h3 class="anchored" data-anchor-id="adding-a-hub-to-your-organization">Adding a hub to your organization</h3>
