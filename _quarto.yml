@@ -47,6 +47,12 @@ website:
         - text: "Dashboards"
           icon: speedometer
           href: tools/dashboards.qmd
+        - text: "---"
+        - text: "{{< fa book >}} Resources"
+        - "terminology.qmd"
+        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
+          href: https://hubverse.io/
+        - "CONTRIBUTING.md"
       - text: "About"
         menu:
         - icon: info-circle-fill
@@ -58,6 +64,7 @@ website:
         - community/hubs.qmd
         - text: "Contributors"
           href: community/contributors.md
+        - "contact.qmd"
         - text: "---"
         - text: "{{< fa book >}} Resources"
         - "terminology.qmd"
@@ -65,7 +72,6 @@ website:
           href: https://hubverse.io/
         - text: "Funding"
           href: "funding.md"
-        - "contact.qmd"
         - "CONTRIBUTING.md"
   page-footer:
     left:
