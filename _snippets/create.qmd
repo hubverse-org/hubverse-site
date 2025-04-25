@@ -10,8 +10,6 @@
 
 To create a hub, you can start with [the hubTemplate](https://github.com/hubverse-org/hubTemplate).
 
-Be sure to read 
-
  1. Click the "Use this template" in the top right corner of the page and
     choose a name for your hub.
  2. Modify the `hub-config/admin.json` file with general information about the hub
