@@ -33,7 +33,6 @@ Some examples of dashboards are:
 | [COVID-19 Forecast Hub](https://github.com/CDCgov/covid19-forecast-hub) | <https://reichlab.io/covidhub-dashboard> |
 | [variant-nowcast-hub](https://github.com/reichlab/variant-nowcast-hub) | <https://reichlab.io/variant-nowcast-hub-dashboard> |
 
-Some example 
 
 :::{.callout-note}
 
