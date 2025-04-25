@@ -78,9 +78,9 @@ all phases in the life cycle of a hub.
 :::{ style="font-size: 1.4rem;"}
 
  - {{< fa gear >}} **set up and manage** a hub with [hubAdmin](https://hubverse-org.github.io/hubAdmin)
- - {{< fa check >}} **validate** model submissions with [hubValidations](https://github.com/hubverse-org/hubValidations)
+ - {{< fa check >}} **validate** model submissions with [hubValidations](https://hubverse-org.github.io/hubValidations)
  - {{< fa download >}} **fetch model and target data** with [hubData](https://hubverse-org.github.io/hubData)
- - {{< fa blender >}} **ensemble** models with [hubEnsembles](https://hubverse-org.github.org/hubEnsembles)
+ - {{< fa blender >}} **ensemble** models with [hubEnsembles](https://hubverse-org.github.io/hubEnsembles)
  - {{< fa stethoscope >}} **evaluate** model performance with [hubEvals](https://hubverse-org.github.io/hubEvals)
  - {{< fa chart-line >}} **visualize** forecasts with [hubViz](https://hubverse-org.github.io/hubVis)
  - ... and more!
