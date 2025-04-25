@@ -17,6 +17,7 @@ The core of the hubverse are the **robust and flexible data standards** that
 allow administrators to write **structured guidelines** for tabular model
 output submissions that can be **easily validated, ensembled, and visualized**.
 
+
 ![The data standards for each hub are represented as configuration files defined by the hubverse schema. These configuration files are the source of truth for the hub](/includes/img/hub-data-config.png){alt='diagram showing hubverse-org/schemas pointing to both tasks.json and admin.json. tasks.json points to model output and target data with the label "data validation". admin.json points to a box that shows contact information, file formats, and data storage'}
 
 ## Understanding Model Tasks
@@ -59,8 +60,8 @@ official documentation.
 
 ## Target Data
 
-The target data are represented in two files: `time-series` and
-`oracle-outputs`[^1]. Each data format is
+The target data are represented in two files: [`time-series`](https://hubverse.io/en/latest/user-guide/target-data.html#time-series) and
+[`oracle-outputs`](https://hubverse.io/en/latest/user-guide/target-data.html#oracle-output)[^1]. Each data format is
 useful for different purposes (see table below). Modelers will most often
 estimate model parameters by fitting to the raw data in time series format.
 
