@@ -27,7 +27,7 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 
 ![](/logo/logo-with-text.png){alt="The hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
 
-## Improving public health outcomes with collaborative modeling {.subtitle}
+## Improving public health outcomes through collaborative modeling {.subtitle}
 
 ::::{.breakin}
 <!-- [{{< fa people-line >}} community](/community/index.qmd){.btn .btn-outline-dark .ms-auto} -->
@@ -47,7 +47,7 @@ Use the hubverse data standards and software to:
 
 ![](/includes/img/showcase.png){.breakout alt="screenshots of successful model submissions paired with screenshots of dashboards showing forecast and evaluation visualizations for the flusight hub"}
 
-[**Would you like to [know more](quickstart/index.html)?**]{.breakin}
+[**Get started with [**a gentle introduction to modeling hubs**](quickstart/index.html).**]{.breakin}
 
 :::
 
@@ -59,8 +59,8 @@ Use the hubverse data standards and software to:
 ## Data Standards
 
 The core of the hubverse are the [**robust and flexible data standards**](tools/data.qmd) that
-allow administrators to write structured guidelines for model output submissions
-that can be easily validated.
+allow administrators to write **structured guidelines** for tabular model
+output submissions that can be **easily validated, ensembled, and visualized**.
 
 <!-- NOTE: If we do not include the grid class in this figure, it inherits the parent column sized class and outgrows its container -->
 
@@ -72,7 +72,7 @@ that can be easily validated.
 
 ## Software
 
-[hubverse software](tools/software.qmd) is written in R and provides tools for
+[**hubverse software**](tools/software.qmd) is written in R and provides tools for
 all phases in the life cycle of a hub.
 
 :::{ style="font-size: 1.4rem;"}
