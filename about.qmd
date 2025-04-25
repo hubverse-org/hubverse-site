@@ -4,6 +4,12 @@ title: "About the hubverse"
 
 The Consortium of Infectious Disease Modeling Hubs brings together groups working on developing and running modeling hubs in different outbreak prediction settings in collaboration with national and international health agencies, such as the US and European Centers for Disease Control and Prevention.
 
+![
+The Consortium of Infectious Disease Modeling Hubs (June 2024). Back row (L-R): Becky Sweger, Nick Reich, Kimberlyn Roosa, Martha Zorn, Matt Cornell\
+Front row (L-R): Evan Ray, Melissa Kerr, Rebecca Borchering, Emily Howerton, Lucie Contamin, Anna Krystalli
+](/includes/img/hubverse-retreat.png){alt='Photo of smiling people standing in the sunshine in front of the entrance to Arnold Hall, an old brick building.'}
+
+
 The initial modeling hubs were developed to provide nowcasts, forecasts, or scenario projections of outbreaks. While the infrastructure we created to support these efforts is readily generalizable to other applications, we note that these motivating examples were for applications that focused on (a) predictive modeling and (b) outbreak settings.
 
 Building off of systems designed for influenza forecasting challenges led by the US CDC, the [Reich Lab at UMass-Amherst](https://reichlab.io/), in collaboration with the [US CDC](https://www.cdc.gov/), developed the [US COVID-19 Forecast Hub](https://covid19forecasthub.org/) in early 2020 to support COVID-19 forecasting efforts. This infrastructure was later adapted for use by several other modeling hubs:
@@ -27,7 +33,7 @@ The ultimate goal of this project is to provide a suite of portable and open-sou
 ## History
 
 
-:::{.callout-info}
+:::{.callout-note}
 
 ### Reference
 
@@ -82,11 +88,6 @@ In working on collaborative forecasting, our principal objectives have been to
 
 Our second annual "hubverse retreat" was held June 3--7, 2024 at the University of Massachusetts, Amherst. This year’s retreat focused on the future of hubs in the cloud, dashboarding, and the archiving of hub data using hubverse standards.
 
-
-![
-Back row (L-R): Becky Sweger, Nick Reich, Kimberlyn Roosa, Martha Zorn, Matt Cornell\
-Front row (L-R): Evan Ray, Melissa Kerr, Rebecca Borchering, Emily Howerton, Lucie Contamin, Anna Krystalli
-](/includes/img/hubverse-retreat.png){alt='Photo of smiling people standing in the sunshine in front of the entrance to Arnold Hall, an old brick building.'}
 
 ## How to cite
 
