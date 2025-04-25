@@ -1,5 +1,6 @@
 [{{< fa box-open >}} hubAdmin](https://hubverse-org.github.io/hubAdmin){.btn .btn-outline-info .ms-auto}
 [{{< fa box-open >}} hubCI](https://hubverse-org.github.io/hubCI){.btn .btn-outline-info .ms-auto}
+[{{< fa compass-drafting >}} hubTemplate](https://github.com/hubverse-org/hubTemplate){.btn .btn-outline-info .ms-auto}
 
 
 #### Creating a hub
