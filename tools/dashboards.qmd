@@ -2,9 +2,18 @@
 title: "Dashboards"
 ---
 
-[{{< fa book >}} Get started with dashboards](https://hubverse.io/en/latest/user-guide/dashboards.html){.btn .btn-outline-dark .ms-auto}
-
 ## Introduction
+
+:::{.callout-note}
+
+The current iteration of the dashboard is intended for modelers and hub
+administrators, who are more likely to be familiar with modeling exercise and
+evaluation methods.
+
+This is not yet intended for use by decision-makers as there is more
+information here than they may want or need.
+
+:::
 
 The hubverse dashboard is an expermiental landing page and plug-and-play
 visualization for hub data. Each dashboard is an independent repository for any
@@ -19,6 +28,7 @@ given hub.
 Forecast and Evaluation dashboards for the FluSight forecast hub.
 :::
 
+[{{< fa book >}} Get started with dashboards](https://hubverse.io/en/latest/user-guide/dashboards.html){.btn .btn-outline-dark .ms-auto}
 
 ## Examples
 
@@ -33,16 +43,5 @@ Some examples of dashboards are:
 | [COVID-19 Forecast Hub](https://github.com/CDCgov/covid19-forecast-hub) | <https://reichlab.io/covidhub-dashboard> |
 | [variant-nowcast-hub](https://github.com/reichlab/variant-nowcast-hub) | <https://reichlab.io/variant-nowcast-hub-dashboard> |
 
-Some example 
 
-:::{.callout-note}
-
-The current iteration of the dashboard is intended for modelers and hub
-administrators, who are more likely to be familiar with modeling exercise and
-evaluation methods.
-
-This is not yet intended for use by decision-makers as there is more
-information here than they may want or need.
-
-:::
 

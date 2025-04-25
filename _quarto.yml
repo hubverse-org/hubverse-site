@@ -8,7 +8,7 @@ website:
     type: warning
     position: below-navbar
   favicon: logo/logo.png
-  title: "The hubverse"
+  title: "hubverse"
   site-url: "https://hubverse-org.github.io"
   site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
@@ -33,6 +33,9 @@ website:
         - "---"
         - icon: headset
           href: quickstart/support-consulting.md
+        - icon: book
+          text: "Documentation {{< fa arrow-up-right-from-square >}}"
+          href: https://hubverse.io/
       - text: "Tools"
         menu:
         - text: "Data Standards"
@@ -44,23 +47,31 @@ website:
         - text: "Dashboards"
           icon: speedometer
           href: tools/dashboards.qmd
+        - text: "---"
+        - text: "{{< fa book >}} Resources"
+        - "terminology.qmd"
+        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
+          href: https://hubverse.io/
+        - "CONTRIBUTING.md"
       - text: "About"
         menu:
+        - icon: info-circle-fill
+          href: "about.qmd"
+        - text: "---"
         - text: "{{< fa people-pulling >}} Community"
         - text: "Get Involved"
           href: community/index.qmd
         - community/hubs.qmd
         - text: "Contributors"
           href: community/contributors.md
+        - "contact.qmd"
         - text: "---"
         - text: "{{< fa book >}} Resources"
-        - "about.qmd"
         - "terminology.qmd"
-        - text: "User Guide (external) {{< fa arrow-up-right-from-square >}}"
+        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://hubverse.io/
         - text: "Funding"
           href: "funding.md"
-        - "contact.qmd"
         - "CONTRIBUTING.md"
   page-footer:
     left:

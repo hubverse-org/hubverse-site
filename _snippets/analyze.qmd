@@ -3,6 +3,7 @@
 [{{< fa box-open >}} hubVis](https://hubverse-org.github.io/hubVis){.btn .btn-outline-info .ms-auto}
 
  - **create a simple ensemble** with [`hubEnsembles::simple_ensemble()`](https://hubverse-org.github.io/hubEnsembles/reference/simple_ensemble.html)
+ - **create a linear pool ensemble** with [`hubEnsembles::linear_pool()`](https://hubverse-org.github.io/hubEnsembles/reference/linear_pool.html)
  - **evaluate model performance** with [`hubEvals::score_model_out()`](https://hubverse-org.github.io/hubEvals/reference/score_model_out.html)
  - **visualize model projections** with [`hubVis::plot_step_ahead_model()`](https://hubverse-org.github.io/hubVis/reference/plot_step_ahead_model_output.html)
 

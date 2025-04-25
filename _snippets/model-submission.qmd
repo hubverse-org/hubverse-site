@@ -1,8 +1,3 @@
-[{{< fa box-open >}} hubValidations](https://hubverse-org.github.io/hubValidations){.btn .btn-outline-info .ms-auto}
-
-[{{< fa book >}} Model metadata](https://hubverse.io/en/latest/user-guide/model-metadata.html){.btn .btn-outline-dark .ms-auto}
-[{{< fa book >}} Writing model output to a hub](https://hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub){.btn .btn-outline-dark .ms-auto}
-[{{< fa file-circle-check >}} Validate model submission](https://hubverse-org.github.io/hubValidations/articles/validate-submission.html){.btn .btn-outline-dark .ms-auto}
 
 ::::{.callout-important}
 
@@ -11,8 +6,14 @@ hub. They will ask you to provide metadata for your model.
 
 ::::
 
+[{{< fa box-open >}} hubValidations](https://hubverse-org.github.io/hubValidations){.btn .btn-outline-info .ms-auto}
+
  - Create a **submission template** with [`hubValidations::submission_tmpl()`](https://hubverse-org.github.io/hubValidations/reference/submission_tmpl.html)
  - **Validate** your submission with [`hubValidaitons::validate_submission()`](https://hubverse-org.github.io/hubValidations/reference/validate_submission.html)
+
+[{{< fa book >}} Model metadata](https://hubverse.io/en/latest/user-guide/model-metadata.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Writing model output to a hub](https://hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub){.btn .btn-outline-dark .ms-auto}
+[{{< fa file-circle-check >}} Validate model submission](https://hubverse-org.github.io/hubValidations/articles/validate-submission.html){.btn .btn-outline-dark .ms-auto}
 
 ::::{.callout-tip collapse="true"}
 

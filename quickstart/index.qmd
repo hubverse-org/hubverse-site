@@ -4,6 +4,15 @@ title: "What is a Modeling Hub?"
 
 ## Introduction
 
+A collaborative modeling hub is a **centralized data portal** for modeling
+challenges. The [**structured data standards**](/tools/data.qmd) combined with
+robust [**hubverse software**](/tools/software.qmd) facilitate **rapid
+validation, ensembling, visualization, and evaluation** of model submissions.
+
+The robust and validated data feed downstream analyses, reports, and
+[**dashboards**](/tools/dashboards.qmd) that provide **visualizations and
+evaluations** to support modelers and decision makers.
+
 :::{.callout-tip}
 
 ### Ready to get started?
@@ -15,14 +24,6 @@ title: "What is a Modeling Hub?"
 
 :::
 
-A collaborative modeling hub is a **centralized data portal** for modeling
-challenges. The [**structured data standards**](/tools/data.qmd) combined with
-robust [**hubverse software**](/tools/software.qmd) facilitate **rapid
-validation** of model submissions.
-
-The robust and validated data feed downstream analyses, reports, and
-[**dashboards**](/tools/dashboards.qmd) that provide **visualizations and
-evaluations** to support modelers and decision makers.
 
 ![A hub contains validated submissions from modeling teams. Each team is free to use any method they like to create their models as long as they submit in a standard tabular hubverse format. Hub data is used downstream for evaluations, visualizations, and more](/includes/img/hub-modeler-flow.png){alt='diagram showing the three steps of a model submission to a hub. Model team C creates a model submission from a distribution, which is validated by the hub tasks.json and then accepted and merged into the model outputs. There are two other model teams that have created models via different processes that have already been included in the hub. The hub admin sits inside the hub and has created the tasks.json and target data. The resulting hub data is used to generate evaluations (heatmap) and visualizations (line chart)'}
 

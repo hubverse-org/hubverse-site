@@ -1,5 +1,6 @@
 [{{< fa box-open >}} hubAdmin](https://hubverse-org.github.io/hubAdmin){.btn .btn-outline-info .ms-auto}
 [{{< fa box-open >}} hubCI](https://hubverse-org.github.io/hubCI){.btn .btn-outline-info .ms-auto}
+[{{< fa compass-drafting >}} hubTemplate](https://github.com/hubverse-org/hubTemplate){.btn .btn-outline-info .ms-auto}
 
 
 #### Creating a hub
@@ -9,8 +10,6 @@
 [{{< fa book >}} Defining model tasks](https://hubverse.io/en/latest/user-guide/tasks.html){.btn .btn-outline-dark .ms-auto}
 
 To create a hub, you can start with [the hubTemplate](https://github.com/hubverse-org/hubTemplate).
-
-Be sure to read 
 
  1. Click the "Use this template" in the top right corner of the page and
     choose a name for your hub.

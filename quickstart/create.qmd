@@ -1,18 +1,14 @@
 ---
-title: "Create a Hub"
+title: "Create a hub"
 ---
 
-
-[{{< fa compass-drafting >}} Follow the quickstart guide](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
-[{{< fa book >}} Hub configuration files](https://hubverse.io/en/latest/user-guide/hub-config.html){.btn .btn-outline-dark .ms-auto}
-
-## Determine what you want to forecast
+## Determine what model output you want to collect
 
 You need to answer a few questions first:
 
-1. What are the quantities you want to forecast? your **modeling targets**
-2. What variables do you want to use for modeling? 
-3. What is the forecasting horizon (if any)?
+1. What quantities do you want to collect? These are your **modeling targets**
+2. What variables do you want to use for modeling? These are your **modeling task IDs**
+3. What is the modeling horizon (if any)?
 4. What kind of estimates do you expect to represent the value of the modeling target (e.g. quantile and mean values)? These are **output types**.
 4. How often do you want to take submissions? your **modeling rounds**
 
@@ -20,6 +16,9 @@ By answering these questions, you will be able to determine your **modeling task
 A modeling task focuses on a single target and is made up of a unique
 combination of variables used for modeling and the output types. These variables
 are collectively known as **task IDs**.
+
+[{{< fa compass-drafting >}} Follow the quickstart guide](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Hub configuration files](https://hubverse.io/en/latest/user-guide/hub-config.html){.btn .btn-outline-dark .ms-auto}
 
 ## Create your hub
 
