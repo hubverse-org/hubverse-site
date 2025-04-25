@@ -34,7 +34,7 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 [{{< fa people-pulling >}} Community](/community/index.qmd){.btn .btn-outline-dark .ms-auto}
 [{{< fa compass >}} Data Standards](/tools/data.qmd){.btn .btn-outline-dark .ms-auto}
 [{{< fa tools >}} Software](/tools/software.qmd){.btn .btn-outline-dark .ms-auto}
-[{{< fa book >}} Docs](https://hubverse.io/){.btn .btn-outline-dark .ms-auto}
+[{{< fa circle-info >}} About](/about.qmd){.btn .btn-outline-dark .ms-auto}
 
 
 Use the hubverse data standards and software to:
@@ -87,7 +87,7 @@ all phases in the life cycle of a hub.
 
 :::
 
-All of these packages are available at [The hubverse
+All of these packages are available at [the hubverse
 R-Universe](https://hubverse-org.r-universe.dev)
 
 
