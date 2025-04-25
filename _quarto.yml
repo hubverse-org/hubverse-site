@@ -33,6 +33,9 @@ website:
         - "---"
         - icon: headset
           href: quickstart/support-consulting.md
+        - icon: book
+          text: "Documentation {{< fa arrow-up-right-from-square >}}"
+          href: https://hubverse.io/
       - text: "Tools"
         menu:
         - text: "Data Standards"
@@ -46,6 +49,9 @@ website:
           href: tools/dashboards.qmd
       - text: "About"
         menu:
+        - icon: info-circle-fill
+          href: "about.qmd"
+        - text: "---"
         - text: "{{< fa people-pulling >}} Community"
         - text: "Get Involved"
           href: community/index.qmd
@@ -54,9 +60,8 @@ website:
           href: community/contributors.md
         - text: "---"
         - text: "{{< fa book >}} Resources"
-        - "about.qmd"
         - "terminology.qmd"
-        - text: "User Guide (external) {{< fa arrow-up-right-from-square >}}"
+        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://hubverse.io/
         - text: "Funding"
           href: "funding.md"
