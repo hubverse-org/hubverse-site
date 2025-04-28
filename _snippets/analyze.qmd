@@ -2,6 +2,9 @@
 [{{< fa box-open >}} hubEvals](https://hubverse-org.github.io/hubEvals){.btn .btn-outline-info .ms-auto}
 [{{< fa box-open >}} hubVis](https://hubverse-org.github.io/hubVis){.btn .btn-outline-info .ms-auto}
 
+You can use the **hubEnsembles**, **hubEvals**, and **hubVis** R packages to do
+any of the following:
+
  - **create a simple ensemble** with [`hubEnsembles::simple_ensemble()`](https://hubverse-org.github.io/hubEnsembles/reference/simple_ensemble.html)
  - **create a linear pool ensemble** with [`hubEnsembles::linear_pool()`](https://hubverse-org.github.io/hubEnsembles/reference/linear_pool.html)
  - **evaluate model performance** with [`hubEvals::score_model_out()`](https://hubverse-org.github.io/hubEvals/reference/score_model_out.html)

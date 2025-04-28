@@ -2,7 +2,7 @@
 [{{< fa box-open >}} hubData](https://hubverse-org.github.io/hubData){.btn .btn-outline-info .ms-auto}
 [{{< fa book >}} Accessing data from a hub](https://hubverse-org.github.io/hubData/articles/connect_hub.html){.btn .btn-outline-dark .ms-auto}
 
-You can connect to any hub with the **hubUtils** and **hubData** packages and
+You can connect to any hub with the **hubUtils** and **hubData** R packages and
 be assured that all the data within the hub are **validated** against
 the [**hub data standards**](/tools/data.qmd).
 
