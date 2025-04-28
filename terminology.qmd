@@ -86,12 +86,9 @@ representing the outcomes of multiple efforts.
   can be found in the documentaiton.
 
 
+## Prediction Terminology
 
-
-
-## Prediction Terminology 
-
-![Figure credits: Alex Vespignani and Nicole Samay.](/includes/img/horizon-nomenclature.png){#horizons_nomenclature fig-alt='Figure illustrating the
+![Figure credits: Alex Vespignani and Nicole Samay of the [Scenario Modeling Hub](https://covid19scenariomodelinghub.org/index.html)](/includes/img/horizon-nomenclature.png){#horizons_nomenclature fig-alt='Figure illustrating the
 difference between nowcasts, forecasts, and projections showing a timeline of
 weekly incident case counts from February 2020 to early March 2021 with
 projections from April to September 2021. The range from the graph\'s beginning
