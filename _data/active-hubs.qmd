@@ -50,7 +50,7 @@ hubs:
         evals: https://reichlab.io/metrocast-dashboard/eval.html
         count: 7
   ai4casting:
-    logo: '/logo/logo.png' # /includes/img/ai4casting.png
+    logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
     hubs:
       - name: "Hosptitalization Forecast Hub"
@@ -112,7 +112,7 @@ hubs:
         license: MIT License
         count: 7
   hopkinsidd:
-    logo: /logo/logo.png #/includes/img/hopkinsidd.png
+    logo: /includes/img/hopkinsidd.png
     name: "Johns Hopkins University Infectious Disease Dynamics Group"
     hubs:
       - name: "US RSV Forecast Hub"
