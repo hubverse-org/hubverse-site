@@ -8,6 +8,8 @@ hub. They will ask you to provide metadata for your model.
 
 [{{< fa box-open >}} hubValidations](https://hubverse-org.github.io/hubValidations){.btn .btn-outline-info .ms-auto}
 
+Useful tools are available in the **hubValidations** R package.
+
  - Create a **submission template** with [`hubValidations::submission_tmpl()`](https://hubverse-org.github.io/hubValidations/reference/submission_tmpl.html)
  - **Validate** your submission with [`hubValidaitons::validate_submission()`](https://hubverse-org.github.io/hubValidations/reference/validate_submission.html)
 
