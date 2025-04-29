@@ -114,11 +114,11 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 :::{#orgs .grid .text-center style='--bs-gap: 0.5em'}
 
-{{< partial /_partials/orgs.qmd hubs.cdc id="cdc">}}
+{{< partial /_partials/orgs.qmd hubs.uscdc id="uscdc">}}
 
 {{< partial /_partials/orgs.qmd hubs.ecdc id="ecdc">}}
 
-{{< partial /_partials/orgs.qmd hubs.reichlab id="reichlab">}}
+{{< partial /_partials/orgs.qmd hubs.epiengage id="epiengage">}}
 
 {{< partial /_partials/orgs.qmd hubs.cadph id="cadph">}}
 

@@ -17,11 +17,11 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 :::{#orgs .grid style='--bs-gap: 0.5em'}
 
-{{< partial /_partials/hub.qmd hubs.cdc id="cdc">}}
+{{< partial /_partials/hub.qmd hubs.uscdc id="uscdc">}}
 
 {{< partial /_partials/hub.qmd hubs.smhct id="smhct">}}
 
-{{< partial /_partials/hub.qmd hubs.reichlab id="reichlab">}}
+{{< partial /_partials/hub.qmd hubs.epiengage id="epiengage">}}
 
 {{< partial /_partials/hub.qmd hubs.ai4casting id="ai4casting">}}
 
