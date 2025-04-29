@@ -1,6 +1,6 @@
 name: Testimonial
 description: Submit a testimonial for the front page.
-title: "[Testimonial]: "
+title: "[Testimonial]"
 labels: ['testimonial']
 body:
   - type: markdown
@@ -14,15 +14,17 @@ body:
     validations:
       required: true
   - type: textarea
+    id: testimonial
     attributes:
-      label: testimonial
+      label: Testimonial
       description: Your testimonial. Please keep this to one or two sentences
       placeholder: The hubverse helped me find and contribute to collaborative modelling challenges.
     validations:
       required: true
   - type: textarea
+    id: img
     attributes:
-      label: img
+      label: Profile Picture
       description: Drag and drop or provide a link to a 300x300 or larger image you want associated with your testimonial.
     validations:
       required: false
