@@ -1,0 +1,56 @@
+name: Testimonial
+description: Submit a testimonial for the front page.
+title: "[Testimonial]: "
+labels: ['testimonial']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us about your experience with the hubverse in 1-2 short sentences.
+  - type: input
+    attributes:
+      label: Name of your hub
+      description: The name of your hub in plain text (no links).
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: testimonial
+      description: Your testimonial. Please keep this to one or two sentences
+      placeholder: The hubverse helped me find and contribute to collaborative modelling challenges.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: img
+      description: Drag and drop or provide a link to a 300x300 or larger image you want associated with your testimonial.
+    required: false
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: a name you would like displayed with your testimonial
+    validations:
+      required: true
+  - type: dropdown
+    id: org
+    attributes:
+      label: What organization do you associate with?
+      description: 
+      options:
+      - epiENGAGE
+      - AI4Casting
+      - Scenerio Modeling Hub Coordination Team
+      - Johns Hopkins University Infectious Disease Dynamics Group
+      - US Centers for Disease Control
+      - European Centre for Disease Prevention and Control
+      - California Department of Public Health
+      - Not listed (comment below)
+    validations:
+      required: true
+  - type: input
+    id: unknown
+    attributes:
+      label: If you do not associate with one of the organizations above, please write it here.
+    validations:
+      required: false
