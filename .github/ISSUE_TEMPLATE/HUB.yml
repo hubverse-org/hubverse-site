@@ -1,0 +1,121 @@
+name: Organization/Hub
+description: Add your organization or hub to our growing list of available hubs.
+title: "[Organization/Hub]"
+labels: ['org/hub']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us about your organization or hub
+  - type: input
+    attributes:
+      label: Name of your hub
+      description: The name of your hub in plain text (no links).
+    validations:
+      required: true
+  - type: dropdown
+    id: org
+    attributes:
+      label: What organization do you associate with?
+      description: 
+      options:
+      - epiENGAGE
+      - AI4Casting
+      - Scenerio Modeling Hub Coordination Team
+      - Johns Hopkins University Infectious Disease Dynamics Group
+      - US Centers for Disease Control
+      - European Centre for Disease Prevention and Control
+      - California Department of Public Health
+      - Not listed (comment below)
+    validations:
+      required: true
+  - type: input
+    id: org-name
+    attributes:
+      label: (if not listed) organization name
+      description: The name of your organization
+    validations:
+      required: false
+  - type: input
+    id: org-description
+    attributes:
+      label: (if not listed) a short description of your organization
+    validations:
+      required: false
+  - type: textarea
+    id: logo 
+    attributes:
+      label: Organization Logo
+      description: Drag and drop or provide a link to an organization logo we can display on the site.
+    validations:
+      required: false
+  - type: input
+    id: name
+    attributes:
+      label: Hub name
+      description: The name of the hub
+    validations:
+      required: true
+  - type: input
+    id: github
+    attributes:
+      label: GitHub slug
+      description: The github slug of your hub without the https://github.com part
+      placeholder: reichlab/variant-nowcast-hub
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Contact
+      description: contact information for your hub (you can find this in hub-config/admin.json)
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: License
+      description: License for your hub
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: License
+      description: License for your hub
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Provide a short description of your hub
+    validations:
+      required: true
+  - type: input
+    id: aws
+    attributes:
+      label: AWS bucket source
+      description: provide the slug to an AWS bucket where people can access hub data
+    validations:
+      required: false
+  - type: input
+    id: forecasts
+    attributes:
+      label: Forecast dashboard
+      description: If you have a forecast dashboard for your hub, place the URL here
+      placeholder: https://reichlab.io/flusight-dashboard/forecasts.html
+    validations:
+      required: false
+  - type: input
+    id: evals
+    attributes:
+      label: Evaluations dashboard
+      description: If you have a evaluation dashboard for your hub, place the URL here
+      placeholder: https://reichlab.io/flusight-dashboard/evals.html
+    validations:
+      required: false
+  - type: input
+    id: insights
+    attributes:
+      label: Insights
+      description: If you have a dashboard, but it cannot be strictly categorized as "evals" or "forecasts", you can place the URL here. 
+    validations:
+      required: false
