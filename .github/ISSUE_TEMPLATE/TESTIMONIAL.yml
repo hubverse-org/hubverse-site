@@ -24,7 +24,8 @@ body:
     attributes:
       label: img
       description: Drag and drop or provide a link to a 300x300 or larger image you want associated with your testimonial.
-    required: false
+    validations:
+      required: false
   - type: input
     id: name
     attributes:
