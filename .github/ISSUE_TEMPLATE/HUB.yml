@@ -7,12 +7,6 @@ body:
     attributes:
       value: |
         Tell us about your organization or hub
-  - type: input
-    attributes:
-      label: Name of your hub
-      description: The name of your hub in plain text (no links).
-    validations:
-      required: true
   - type: dropdown
     id: org
     attributes:
