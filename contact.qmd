@@ -2,8 +2,18 @@
 title: "Contact"
 ---
 
+## Mailing List
+
 - If you want to learn more about our work and attend our open monthly community meetings, please join our [email listserv](https://groups.io/g/hubverse). We send occasional updates (1-2 times per month) on our activities and the agenda for our monthly meetings.
 - To reach out directly, please [send a message to the hubverse group](mailto:hubverse+owner@groups.io).
-- If you encounter a problem with this website, please [file an issue in the hubverse-site repository](https://github.com/hubverse-org/hubverse-site/issues).
+
+## Website
+
+- If you want to submit your organization or hub to the list of active hubs, please use our [organization submission form](https://github.com/hubverse-org/hubverse-site/issues/new?template=HUB.yml)
+- If you want to submit a testimonial to display on the front page, please use our [testimonial submission form](https://github.com/hubverse-org/hubverse-site/issues/new?template=TESTIMONIAL.yml)
+- If you encounter a problem with this website, please [file an issue in the hubverse-site repository](https://github.com/hubverse-org/hubverse-site/issues/new?template=bug_report.md).
+
+## Contributions
+
 - If you encounter difficulties with our software or tools, please [file an issue in the appropriate repository](/community/index.qmd#file-issues).
 - If you are an interested in contributing to _the hubverse_, please visit the [community page](/community/index.qmd).
