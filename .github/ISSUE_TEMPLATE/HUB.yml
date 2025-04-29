@@ -39,7 +39,7 @@ body:
   - type: textarea
     id: logo 
     attributes:
-      label: Organization Logo
+      label: (if not listed) organization logo
       description: Drag and drop or provide a link to an organization logo we can display on the site.
     validations:
       required: false
