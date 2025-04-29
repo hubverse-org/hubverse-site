@@ -27,9 +27,9 @@ hubs:
         insights: https://example.org/hub-insights/
         forecasts: https://example.org/hub-insights/forecasts.html
         evals: https://example.org/hub-insights/evals.html
-  reichlab:
-    logo: /includes/img/reichlab.png
-    name: "Reich Lab (UMass)"
+  epiengage:
+    logo: /includes/img/epiengage.png
+    name: "epiENGAGE"
     hubs:
       - name: "Variant Nowcast Hub"
         description: |
@@ -128,9 +128,9 @@ hubs:
         forecasts: https://rsvforecasthub.org/#National_Forecast
         evals: https://rsvforecasthub.org/#Evaluation
         count: 9
-  cdc:
+  uscdc:
     name: "US Centers for Disease Control"
-    logo: /logo/logo.png #/includes/img/cdc.jpg
+    logo: /includes/img/cdc.jpg
     hubs:
       - name: "FluSight Forecast Hub"
         description: |
@@ -156,7 +156,7 @@ hubs:
         count: 18
   ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
-    logo: /logo/logo.png #/includes/img/ecdc.png
+    logo: /includes/img/ecdc.png
     hubs:
       - name: "RespiCast Syndromic Indicators"
         contact: european.modelling.hub@ecdc.europa.eu
