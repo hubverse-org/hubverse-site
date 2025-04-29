@@ -70,12 +70,6 @@ body:
       description: License for your hub
     validations:
       required: true
-  - type: input
-    attributes:
-      label: License
-      description: License for your hub
-    validations:
-      required: true
   - type: textarea
     id: description
     attributes:
