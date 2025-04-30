@@ -28,11 +28,9 @@ hubs:
       forecasts: https://example.org/hub-insights/forecasts.html
       evals: https://example.org/hub-insights/evals.html
   hubverse:
-    logo: /includes/img/example-logo.png
+    logo: /logo/logo-with-text.png
     name: "The hubverse"
     hubs:
-    # a list of hubs that require a name, description, contact, repo, and license
-      # --- REQUIRED ---
     - name: "Archival FluSight hub (2015--2019)"
       description: |
         original FluSight Forecast submissions (https://github.com/cdcepi/FluSight-forecasts), reformatted to align with the hubverse format. 
