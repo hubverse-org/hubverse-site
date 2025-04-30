@@ -27,7 +27,7 @@ hubs:
       insights: https://example.org/hub-insights/
       forecasts: https://example.org/hub-insights/forecasts.html
       evals: https://example.org/hub-insights/evals.html
- hubverse:
+  hubverse:
     logo: /includes/img/example-logo.png
     name: "The hubverse"
     hubs:
