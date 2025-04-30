@@ -27,6 +27,21 @@ hubs:
       insights: https://example.org/hub-insights/
       forecasts: https://example.org/hub-insights/forecasts.html
       evals: https://example.org/hub-insights/evals.html
+ hubverse:
+    logo: /includes/img/example-logo.png
+    name: "The hubverse"
+    hubs:
+    # a list of hubs that require a name, description, contact, repo, and license
+      # --- REQUIRED ---
+    - name: "Archival FluSight hub (2015--2019)"
+      description: |
+        original FluSight Forecast submissions (https://github.com/cdcepi/FluSight-forecasts), reformatted to align with the hubverse format. 
+      # from admin.json
+      contact: "Luke.Mullany@jhuapl.edu"
+      repo: "hubverse-org/flusight_hub_archive" # must be slug, not URL
+      license: "MIT License"
+      # --- OPTIONAL ----
+      aws: "uscdc-flusight-hub-v1" # from your admin.json
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
