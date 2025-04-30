@@ -1,7 +1,8 @@
 ---
-title: "Active Hubs"
+title: "List of Hubs"
 ---
 
+## Current Hubs
 
 The hubs listed below are all active and have **open source data** available and
 ready to analyze in hubverse format.
@@ -31,6 +32,18 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 {{< partial /_partials/hub.qmd hubs.hopkinsidd id="hopkinsidd">}}
 
+
+:::
+
+:::
+
+## Archival Hubs
+
+::: {.column-screen-inset}
+
+:::{#orgs .grid style='--bs-gap: 0.5em'}
+
+{{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
 
 :::
 
