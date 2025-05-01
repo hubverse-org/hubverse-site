@@ -166,7 +166,7 @@ hubs:
         aws: covid19-forecast-hub
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
-        count: 18
+        count: 19
   ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
