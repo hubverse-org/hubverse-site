@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - docs-redirect.html
 website:
   announcement:
     icon: cone-striped
