@@ -17,8 +17,8 @@ A modeling task focuses on a single target and is made up of a unique
 combination of variables used for modeling and the output types. These variables
 are collectively known as **task IDs**.
 
-[{{< fa compass-drafting >}} Follow the quickstart guide](https://hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
-[{{< fa book >}} Hub configuration files](https://hubverse.io/en/latest/user-guide/hub-config.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa compass-drafting >}} Follow the quickstart guide](https://docs.hubverse.io/en/latest/quickstart-hub-admin/intro.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Hub configuration files](https://docs.hubverse.io/en/latest/user-guide/hub-config.html){.btn .btn-outline-dark .ms-auto}
 
 ## Create your hub
 
