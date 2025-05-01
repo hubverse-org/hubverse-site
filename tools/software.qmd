@@ -8,7 +8,7 @@ Thanks to rigorous [data standards](/tools/data.qmd), our software works on any 
 
 :::
 
-[{{< fa book >}} Full list of hubverse software](https://hubverse.io/en/latest/user-guide/software.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Full list of hubverse software](https://docs.hubverse.io/en/latest/user-guide/software.html){.btn .btn-outline-dark .ms-auto}
 
 The hubverse has a wide range of software packages designed to help you **administer hubs**, **validate** and **evaluate** model outputs, **access hub data**, **ensemble** and **visualize** models.
 

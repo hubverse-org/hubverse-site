@@ -82,7 +82,7 @@ representing the outcomes of multiple efforts.
 : a collection of conditions, assumptions, and potentially [targets](#target)
   that are used to parameterize a model task. These represent columns in the 
   [model output](#model-output). A more [detailed explanation of task ID
-  variables](https://hubverse.io/en/latest/user-guide/tasks.html#task-id-variables)
+  variables](https://docs.hubverse.io/en/latest/user-guide/tasks.html#task-id-variables)
   can be found in the documentaiton.
 
 

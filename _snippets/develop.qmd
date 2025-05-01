@@ -1,9 +1,9 @@
 [{{< fa box-open >}} hubUtils](https://hubverse-org.github.io/hubUtils){.btn .btn-outline-info .ms-auto}
 [{{< fa box-open >}} hubDevs](https://hubverse-org.github.io/hubDevs){.btn .btn-outline-info .ms-auto}
-[{{< fa book >}} Developer Guide](https://hubverse.io/en/latest/developer/index.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Developer Guide](https://docs.hubverse.io/en/latest/developer/index.html){.btn .btn-outline-dark .ms-auto}
 
 If you want to help contribute code to the hubverse, it is important to consult
-[the developer guide](https://hubverse.io/en/latest/developer/index.html).
+[the developer guide](https://docs.hubverse.io/en/latest/developer/index.html).
 
 #### Contributing to existing software
 
