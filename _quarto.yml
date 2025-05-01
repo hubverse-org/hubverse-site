@@ -4,11 +4,11 @@ project:
     - docs-redirect.html
 website:
   announcement:
-    icon: cone-striped
+    icon: baloon #megaphone
     dismissable: true
-    content: "This page is currently under construction"
-    type: warning
-    position: below-navbar
+    content: "Welcome to the new hubverse site. If you have any comments, feel free to [provide feedback](https://github.com/hubverse-org/hubverse-site/issues/new)"
+    type: info
+    position: above-navbar
   favicon: logo/logo.png
   title: "hubverse"
   site-url: "https://hubverse.io"
