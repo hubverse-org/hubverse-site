@@ -28,7 +28,7 @@ given hub.
 Forecast and Evaluation dashboards for the FluSight forecast hub.
 :::
 
-[{{< fa book >}} Get started with dashboards](https://hubverse.io/en/latest/user-guide/dashboards.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa book >}} Get started with dashboards](https://docs.hubverse.io/en/latest/user-guide/dashboards.html){.btn .btn-outline-dark .ms-auto}
 
 ## Examples
 
