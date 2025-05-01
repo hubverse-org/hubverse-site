@@ -30,8 +30,8 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 ## Improving public health outcomes through collaborative modeling {.subtitle}
 
 ::::{.breakin}
-<!-- [{{< fa people-line >}} community](/community/index.qmd){.btn .btn-outline-dark .ms-auto} -->
-[{{< fa people-pulling >}} Community](/community/index.qmd){.btn .btn-outline-dark .ms-auto}
+[{{< fa people-line >}} community](/community/index.qmd){.btn .btn-outline-dark .ms-auto}
+<!-- [{{< fa people-pulling >}} Community](/community/index.qmd){.btn .btn-outline-dark .ms-auto} -->
 [{{< fa compass >}} Data Standards](/tools/data.qmd){.btn .btn-outline-dark .ms-auto}
 [{{< fa tools >}} Software](/tools/software.qmd){.btn .btn-outline-dark .ms-auto}
 [{{< fa circle-info >}} About](/about.qmd){.btn .btn-outline-dark .ms-auto}

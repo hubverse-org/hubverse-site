@@ -59,7 +59,7 @@ website:
         - icon: info-circle-fill
           href: "about.qmd"
         - text: "---"
-        - text: "{{< fa people-pulling >}} Community"
+        - text: "{{< fa people-line >}} Community"
         - text: "Get Involved"
           href: community/index.qmd
         - community/hubs.qmd
