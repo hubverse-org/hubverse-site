@@ -12,7 +12,6 @@ website:
   favicon: logo/logo.png
   title: "hubverse"
   site-url: "https://hubverse.io"
-  site-path: "/hubverse-site/"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
   navbar:
