@@ -35,7 +35,7 @@ website:
           href: quickstart/support-consulting.md
         - icon: book
           text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://hubverse.io/
+          href: https://docs.hubverse.io/
       - text: "Tools"
         menu:
         - text: "Data Standards"
@@ -51,7 +51,7 @@ website:
         - text: "{{< fa book >}} Resources"
         - "terminology.qmd"
         - text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://hubverse.io/
+          href: https://docs.hubverse.io/
         - "CONTRIBUTING.md"
       - text: "About"
         menu:
@@ -69,7 +69,7 @@ website:
         - text: "{{< fa book >}} Resources"
         - "terminology.qmd"
         - text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://hubverse.io/
+          href: https://docs.hubverse.io/
         - text: "Funding"
           href: "funding.md"
         - "CONTRIBUTING.md"
