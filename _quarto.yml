@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - docs-redirect.html
 website:
   announcement:
     icon: cone-striped
@@ -9,8 +11,7 @@ website:
     position: below-navbar
   favicon: logo/logo.png
   title: "hubverse"
-  site-url: "https://hubverse-org.github.io"
-  site-path: "/hubverse-site/"
+  site-url: "https://hubverse.io"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
   repo-actions: [edit, source, issue]
   navbar:
@@ -35,7 +36,7 @@ website:
           href: quickstart/support-consulting.md
         - icon: book
           text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://hubverse.io/
+          href: https://docs.hubverse.io/
       - text: "Tools"
         menu:
         - text: "Data Standards"
@@ -51,7 +52,7 @@ website:
         - text: "{{< fa book >}} Resources"
         - "terminology.qmd"
         - text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://hubverse.io/
+          href: https://docs.hubverse.io/
         - "CONTRIBUTING.md"
       - text: "About"
         menu:
@@ -69,7 +70,7 @@ website:
         - text: "{{< fa book >}} Resources"
         - "terminology.qmd"
         - text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://hubverse.io/
+          href: https://docs.hubverse.io/
         - text: "Funding"
           href: "funding.md"
         - "CONTRIBUTING.md"

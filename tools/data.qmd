@@ -9,9 +9,9 @@ hub.
 
 :::
 
-[{{< fa compass-drafting >}} Model Tasks Schema](https://hubverse.io/en/latest/user-guide/hub-config.html#model-tasks-schema){.btn .btn-outline-dark .ms-auto}
-[{{< fa bullseye >}} Target Data Formats](https://hubverse.io/en/latest/user-guide/target-data.html){.btn .btn-outline-dark .ms-auto}
-[{{< fa file-circle-check>}} Model Output Formats](https://hubverse.io/en/latest/user-guide/model-output.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa compass-drafting >}} Model Tasks Schema](https://docs.hubverse.io/en/latest/user-guide/hub-config.html#model-tasks-schema){.btn .btn-outline-dark .ms-auto}
+[{{< fa bullseye >}} Target Data Formats](https://docs.hubverse.io/en/latest/user-guide/target-data.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa file-circle-check>}} Model Output Formats](https://docs.hubverse.io/en/latest/user-guide/model-output.html){.btn .btn-outline-dark .ms-auto}
 
 The core of the hubverse are the **robust and flexible data standards** that
 allow administrators to write **structured guidelines** for tabular model
@@ -22,7 +22,7 @@ output submissions that can be **easily validated, ensembled, and visualized**.
 
 ## Understanding Model Tasks
 
-Each hub starts with a file called `hub-config/tasks.json` that defines [**model tasks**](https://hubverse.io/en/latest/user-guide/tasks.html) and **frequency of submission**. The structure of this file is defined by [the hubverse model tasks schema](https://hubverse.io/en/latest/user-guide/dashboards.html).
+Each hub starts with a file called `hub-config/tasks.json` that defines [**model tasks**](https://docs.hubverse.io/en/latest/user-guide/tasks.html) and **frequency of submission**. The structure of this file is defined by [the hubverse model tasks schema](https://docs.hubverse.io/en/latest/user-guide/dashboards.html).
 
 The `tasks.json` file is responsible for validation of all model submissions
 and ensures that data are inter-operable.
@@ -32,16 +32,16 @@ tabular model submission against one or more modeling targets. It includes
 three properties:
 
 1. [**Task ID
-   variables**](https://hubverse.io/en/latest/user-guide/tasks.html#usage-of-task-id-variables):
+   variables**](https://docs.hubverse.io/en/latest/user-guide/tasks.html#usage-of-task-id-variables):
    a collection of variables and their expected values used for modeling
    efforts (for example: `target` (incident hospitalizations), `location`
    (Massachusettes), `reference_date` (2025-04-16), and `horizon` (-1))
 2. [**Output
-   types**](https://hubverse.io/en/latest/user-guide/tasks.html#output-types):
+   types**](https://docs.hubverse.io/en/latest/user-guide/tasks.html#output-types):
    The method modelers should use to summarize the results of their modeling
    efforts (for example: the `quantile` probabilities 0.01, 0.025, 0.5, 0.975, 0.99)
 3. [**Target
-   metadata**](https://hubverse.io/en/latest/user-guide/tasks.html#target-metadata):
+   metadata**](https://docs.hubverse.io/en/latest/user-guide/tasks.html#target-metadata):
    The caracteristics of the value modelers are trying to predict (for example,
    incident hospitalizations represent weekly step-ahead continuous count data)
 
@@ -55,13 +55,13 @@ that the model output must be in a tabular format (specified in the hub's
 The model output format is a tabluar representation of model output defined by
 the [Model Tasks](#model-tasks) for a given hub. You can find examples of model
 output and more in the [model output formats
-page](https://hubverse.io/en/latest/user-guide/model-output.html) of the
+page](https://docs.hubverse.io/en/latest/user-guide/model-output.html) of the
 official documentation.
 
 ## Target Data
 
-The target data are represented in two files: [`time-series`](https://hubverse.io/en/latest/user-guide/target-data.html#time-series) and
-[`oracle-outputs`](https://hubverse.io/en/latest/user-guide/target-data.html#oracle-output)[^1]. Each data format is
+The target data are represented in two files: [`time-series`](https://docs.hubverse.io/en/latest/user-guide/target-data.html#time-series) and
+[`oracle-outputs`](https://docs.hubverse.io/en/latest/user-guide/target-data.html#oracle-output)[^1]. Each data format is
 useful for different purposes (see table below). Modelers will most often
 estimate model parameters by fitting to the raw data in time series format.
 
@@ -72,7 +72,7 @@ estimate model parameters by fitting to the raw data in time series format.
 : Common uses for target time series and oracle output data. A ✅
 indicates which data formats are most commonly used for each purpose.
 
-You can read more in the [target data page](https://hubverse.io/en/latest/user-guide/target-data.html) of the official documentation.
+You can read more in the [target data page](https://docs.hubverse.io/en/latest/user-guide/target-data.html) of the official documentation.
 
 [^1]: oracle outputs are generated from time series
 
@@ -95,4 +95,4 @@ near-real-time to AWS:
 
 If you are interested in storing your data on AWS S3, please consult the [AWS
 onboarding
-guide](https://hubverse.io/en/latest/developer/cloud-onboarding.html)
+guide](https://docs.hubverse.io/en/latest/developer/cloud-onboarding.html)
