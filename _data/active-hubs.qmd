@@ -284,7 +284,6 @@ hubs:
           email: sloo2@jhmi.edu
         - name: Matthew Mietchen
           email: mietchen@unc.edu
-      license: Not Licensed
       insights: https://www.respilens.com/
       count: 2
 ---
