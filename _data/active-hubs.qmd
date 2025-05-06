@@ -133,7 +133,7 @@ hubs:
           immunity, and dominant subtypes over the course of each influenza 
           season. 
         contact: 
-        - name: COVID-19 Scenario Modeling Hub
+        - name: Flu Scenario Modeling Hub
           email: scenariohub@midasnetwork.us
         repo: midas-network/flu-scenario-modeling-hub
         license: MIT License
@@ -144,7 +144,7 @@ hubs:
           The RSV Scenario Modeling Hub aims to project the impacts of new vaccines 
           and monoclonal antibodies over the course of each RSV season. 
         contact: 
-        - name: COVID-19 Scenario Modeling Hub
+        - name: RSV Scenario Modeling Hub
           email: scenariohub@midasnetwork.us
         repo: midas-network/rsv-scenario-modeling-hub
         license: MIT License
@@ -159,7 +159,7 @@ hubs:
           able to inform action to reduce these heterogeneities. Additional research topics 
           may follow. 
         contact: 
-        - name: COVID-19 Scenario Modeling Hub
+        - name: COVID-19 Scenario Modeling Hub - Research
           email: scenariohub@midasnetwork.us
         repo: midas-network/covid19-smh-research
         license: MIT License
