@@ -20,13 +20,14 @@ hubs:
         multiple lines
       # from admin.json
       contact: "hub-info@example.com"
-      repo: "example-org/hub-name" # must be slug, not URL
       license: "License Name (e.g MIT License)"
       # --- OPTIONAL ----
+      # repo: "example-org/hub-name" # must be slug, not URL
       aws: "aws-bucket-name" # from your admin.json
       insights: https://example.org/hub-insights/
       forecasts: https://example.org/hub-insights/forecasts.html
       evals: https://example.org/hub-insights/evals.html
+      count: 5 # number of models submitted (this is automatically updated if your hub is public)
   hubverse:
     logo: /logo/logo-with-text.png
     name: "The hubverse"

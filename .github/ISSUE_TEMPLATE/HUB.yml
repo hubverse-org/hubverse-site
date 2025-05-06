@@ -54,10 +54,10 @@ body:
     id: github
     attributes:
       label: GitHub slug
-      description: The github slug of your hub without the https://github.com part
+      description: The github slug of your hub without the https://github.com part. If your hub is private, you may skip this.
       placeholder: reichlab/variant-nowcast-hub
     validations:
-      required: true
+      required: false
   - type: input
     attributes:
       label: Contact
