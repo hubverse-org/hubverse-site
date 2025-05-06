@@ -121,13 +121,14 @@ org:
           can span
           multiple lines
         contact: "hub-info@example.com"
-        repo: "org/hub-name"
         license: "License Name (e.g MIT License)"
         # --- OPTIONAL ----
+        repo: "example-org/hub-name" # must be slug, not URL
         aws: "aws-bucket-name"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
         forecasts: https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html
         evals: https://reichlab.io/variant-nowcast-hub-dashboard/evals.html
+        count: 5 # number of models submitted (this is automatically updated if your hub is public)
 ```
 
 #### Notes

@@ -11,7 +11,7 @@ hubs:
       A description of the organization,
       which can include mission and funding.
     hubs:
-    # a list of hubs that require a name, description, contact, repo, and license
+    # a list of hubs that require a name, description, contact, and license
       # --- REQUIRED ---
     - name: "Name of Hub"
       description: |
@@ -22,7 +22,7 @@ hubs:
       contact: "hub-info@example.com"
       license: "License Name (e.g MIT License)"
       # --- OPTIONAL ----
-      # repo: "example-org/hub-name" # must be slug, not URL
+      repo: "example-org/hub-name" # must be slug, not URL
       aws: "aws-bucket-name" # from your admin.json
       insights: https://example.org/hub-insights/
       forecasts: https://example.org/hub-insights/forecasts.html
@@ -236,5 +236,18 @@ hubs:
         repo: cdphmodeling/wnvca-2024
         license: CC-BY 4.0 license
         count: 25
+  accidda:
+    logo: /includes/img/ACCIDDALogoBigWithSubs.png
+    name: Atlantic Coast Center for Infectious Disease Dynamics and Analytics
+    description: |
+      The Atlantic Coast Center for Infectious Disease Dynamics and Analytics devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
+    hubs:
+    - name: NC DHHS / ACCIDDA Forecasting Collaboration
+      description: |
+        Flu Forecasts for NC DHHS. Two models (influpaint + a mechanistic dual strain model). Similar than Flusight but using state health data for Flu, COVID-19 and RSV as targets instead. We run a lean hubverse structure, where most of our repository is hubverse compliant but not all. It allows us to leverage the amazing hubverse tools which have been instrumental in this collaboration.
+      contact: sloo2@jhmi.edu
+      license: Private
+      insights: https://www.respilens.com/
+      count: 2
 ---
 
