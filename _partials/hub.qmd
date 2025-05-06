@@ -34,6 +34,7 @@
                     {{/contact}}
                 </p>
                 <ul class="list-group list-group-flush">
+                    {{#repo}}
                     <li class="list-group-item">
                     <a class="card-link" href="https://github.com/{{.repo}}">
                     <i class="fa-brands fa-github"></i>
@@ -46,6 +47,13 @@
                     Submission Instructions
                     </a>
                     </li>
+                    {{/repo}}
+                    {{^repo}}
+                    <li class="list-group-item">
+                    <i class="fa-solid fa-lock"></i>
+                    <span class="visually-hidden">{{name}} </span><span aria-hidden=true>Private Hub</span>
+                    </li>
+                    {{/repo}}
                     {{#insights}}
                     <li class="list-group-item">
                     <a class="card-link" href="{{.insights}}">
