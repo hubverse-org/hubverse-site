@@ -120,7 +120,7 @@ hubs:
          of changes in behavior and control, new variants, and vaccination 
          over a 3-month to 2-year time period, depending on the round. 
         contact: 
-        - name: COVID-19 Scenario Modeling Hub
+        - name: Scenario Modeling Hub Coordination Team
           email: scenariohub@midasnetwork.us
         repo: midas-network/covid19-scenario-modeling-hub
         license: MIT License
@@ -133,7 +133,7 @@ hubs:
           immunity, and dominant subtypes over the course of each influenza 
           season. 
         contact: 
-        - name: Flu Scenario Modeling Hub
+        - name: Scenario Modeling Hub Coordination Team
           email: scenariohub@midasnetwork.us
         repo: midas-network/flu-scenario-modeling-hub
         license: MIT License
@@ -144,7 +144,7 @@ hubs:
           The RSV Scenario Modeling Hub aims to project the impacts of new vaccines 
           and monoclonal antibodies over the course of each RSV season. 
         contact: 
-        - name: RSV Scenario Modeling Hub
+        - name: Scenario Modeling Hub Coordination Team
           email: scenariohub@midasnetwork.us
         repo: midas-network/rsv-scenario-modeling-hub
         license: MIT License
@@ -159,7 +159,7 @@ hubs:
           able to inform action to reduce these heterogeneities. Additional research topics 
           may follow. 
         contact: 
-        - name: COVID-19 Scenario Modeling Hub - Research
+        - name: Scenario Modeling Hub Coordination Team
           email: scenariohub@midasnetwork.us
         repo: midas-network/covid19-smh-research
         license: MIT License
