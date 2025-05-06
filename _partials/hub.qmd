@@ -30,7 +30,9 @@
                     {{/license}}
                     <br>
                     {{#contact}}
-                    Contact: <a class="card-link" href="mailto:{{.contact}}">{{.contact}}</a>
+                    <p class="card-text">
+                        Contact: <a class="card-link" href="mailto:{{email}}">{{name}}</a>
+                    </p>
                     {{/contact}}
                 </p>
                 <ul class="list-group list-group-flush">
