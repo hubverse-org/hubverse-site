@@ -246,7 +246,7 @@ hubs:
       description: |
         Flu Forecasts for NC DHHS. Two models (influpaint + a mechanistic dual strain model). Similar than Flusight but using state health data for Flu, COVID-19 and RSV as targets instead. We run a lean hubverse structure, where most of our repository is hubverse compliant but not all. It allows us to leverage the amazing hubverse tools which have been instrumental in this collaboration.
       contact: sloo2@jhmi.edu
-      license: Private
+      license: Not Licensed
       insights: https://www.respilens.com/
       count: 2
 ---
