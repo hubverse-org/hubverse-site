@@ -11,7 +11,7 @@ hubs:
       A description of the organization,
       which can include mission and funding.
     hubs:
-      # a list of hubs that require a name, description, contact, repo, and license
+      # a list of hubs that require a name, description, contact, and license
       # --- REQUIRED ---
       - name: "Name of Hub"
         description: |
@@ -19,10 +19,12 @@ hubs:
           can span
           multiple lines
         # from admin.json
-        contact: "hub-info@example.com"
+        contact:
+          - name: "hub-info-person"
+            email: "hub-info@example.com"
         license: "License Name (e.g MIT License)"
         # --- OPTIONAL ----
-        # repo: "example-org/hub-name" # must be slug, not URL
+        repo: "example-org/hub-name" # must be slug, not URL
         aws: "aws-bucket-name" # from your admin.json
         insights: https://example.org/hub-insights/
         forecasts: https://example.org/hub-insights/forecasts.html
@@ -35,7 +37,9 @@ hubs:
       - name: "Archival FluSight hub (2015--2019)"
         description: "original FluSight Forecast submissions (https://github.com/cdcepi/FluSight-forecasts), reformatted to align with the hubverse format. \n"
         # from admin.json
-        contact: "Luke.Mullany@jhuapl.edu"
+        contact:
+          - name: "Luke Mullany"
+            email: "Luke.Mullany@jhuapl.edu"
         repo: "hubverse-org/flusight_hub_archive" # must be slug, not URL
         license: "MIT License"
         # --- OPTIONAL ----
@@ -48,7 +52,9 @@ hubs:
       - name: "Variant Nowcast Hub"
         description: |
           A repository to store COVID-19 variant nowcasts collected as a modeling hub.
-        contact: nick@umass.edu
+        contact:
+          - name: Nick Reich
+            email: nick@umass.edu
         repo: reichlab/variant-nowcast-hub
         license: MIT License
         aws: "variant-nowcast-hub"
@@ -56,7 +62,9 @@ hubs:
         count: 6
       - name: "Flu Metrocast Hub"
         description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
-        contact: donga0223@gmail.com
+        contact:
+          - name: "Dongah Kim"
+            email: donga0223@gmail.com
         aws: reichlab-flu-metrocast-hub
         repo: reichlab/flu-metrocast
         license: MIT License
@@ -75,7 +83,9 @@ hubs:
           healthcare system. It tracks real-time bed utilization,
           enabling effective planning for resource allocation,
           particularly during times of heightened disease outbreaks.
-        contact: skadam@uoguelph.ca
+        contact:
+          - name: Siddhesh Suresh Kadam
+            email: skadam@uoguelph.ca
         repo: ai4castinghub/hospitalization-forecast
         license: MIT License
         forecasts: https://4castinghub.uoguelph.ca/hospitalization/
@@ -89,7 +99,9 @@ hubs:
           positive tests, the system helps track the spread of these
           viruses, offering essential data to support public health
           measures, pandemic preparedness, and disease control.
-        contact: skadam@uoguelph.ca
+        contact:
+          - name: Siddhesh Suresh Kadam
+            email: skadam@uoguelph.ca
         repo: ai4castinghub/rvdss-forecast
         license: MIT License
         forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
@@ -100,28 +112,36 @@ hubs:
     hubs:
       - name: "COVID-19 Scenario Modeling Hub"
         description: "The COVID-19 Scenario Modeling Hub aims to examine the impact \nof changes in behavior and control, new variants, and vaccination \nover a 3-month to 2-year time period, depending on the round. \n"
-        contact: scenariohub@midasnetwork.us
+        contact:
+          - name: Scenario Modeling Hub Coordination Team
+            email: scenariohub@midasnetwork.us
         repo: midas-network/covid19-scenario-modeling-hub
         license: MIT License
         insights: https://covid19scenariomodelinghub.org/
         count: 2
       - name: "Flu Scenario Modeling Hub"
         description: "The Flu Scenario Modeling Hub aims to anticipate the impact of \nchanges in vaccination coverage and effectiveness, prior population \nimmunity, and dominant subtypes over the course of each influenza \nseason. \n"
-        contact: scenariohub@midasnetwork.us
+        contact:
+          - name: Scenario Modeling Hub Coordination Team
+            email: scenariohub@midasnetwork.us
         repo: midas-network/flu-scenario-modeling-hub
         license: MIT License
         insights: https://fluscenariomodelinghub.org
         count: 15
       - name: "RSV Scenario Modeling Hub"
         description: "The RSV Scenario Modeling Hub aims to project the impacts of new vaccines \nand monoclonal antibodies over the course of each RSV season. \n"
-        contact: scenariohub@midasnetwork.us
+        contact:
+          - name: Scenario Modeling Hub Coordination Team
+            email: scenariohub@midasnetwork.us
         repo: midas-network/rsv-scenario-modeling-hub
         license: MIT License
         insights: https://rsvscenariomodelinghub.org
         count: 17
       - name: "COVID-19 Scenario Modeling Hub - Research"
         description: "The COVID-19 Research Scenario Modeling Hub intended to encourage modeling to \naddress specific COVID-19 research questions. Specific focus areas in the pipeline \ninclude revisiting whether we could have projected the heterogeneities observed \nduring early stages of the pandemic and whether better modeling may have been \nable to inform action to reduce these heterogeneities. Additional research topics \nmay follow. \n"
-        contact: scenariohub@midasnetwork.us
+        contact:
+          - name: Scenario Modeling Hub Coordination Team
+            email: scenariohub@midasnetwork.us
         repo: midas-network/covid19-smh-research
         license: MIT License
         count: 7
@@ -136,7 +156,9 @@ hubs:
           Infectious Disease Dynamics Group. This project collects
           forecasts for weekly new hospitalizations due to confirmed
           RSV.
-        contact: shauntruelove@jhu.edu
+        contact:
+          - name: Shaun Truelove
+            email: shauntruelove@jhu.edu
         repo: HopkinsIDD/rsv-forecast-hub
         license: MIT License
         forecasts: https://rsvforecasthub.org/#National_Forecast
@@ -150,7 +172,9 @@ hubs:
         description: |
           This project collects forecasts for weekly new
           hospitalizations due to confirmed influenza.
-        contact: flusight@cdc.gov
+        contact:
+          - name: FluSight Forecast Hub
+            email: flusight@cdc.gov
         repo: cdcepi/FluSight-forecast-hub
         license: "MIT License"
         aws: cdcepi-flusight-forecast-hub
@@ -161,7 +185,9 @@ hubs:
         description: |
           A repository run by the US CDC to collect forecasts of weekly
           incident COVID-19 hospital admissions.
-        contact: covidhub@cdc.gov
+        contact:
+          - name: COVID-19 Forecast Hub
+            email: covidhub@cdc.gov
         repo: CDCgov/covid19-forecast-hub
         license: Apache License 2.0
         aws: covid19-forecast-hub
@@ -173,7 +199,9 @@ hubs:
     logo: /includes/img/ecdc.png
     hubs:
       - name: "RespiCast Syndromic Indicators"
-        contact: european.modelling.hub@ecdc.europa.eu
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
         description: |
           The European Syndromic Indicators Forecasting Hub collates
           weekly forecasts on Influenza-Like-Illness (ILI) and Acute
@@ -183,7 +211,9 @@ hubs:
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
         count: 23
       - name: "European Covid-19 Forecasting Hub"
-        contact: european.modelling.hub@ecdc.europa.eu
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
         description: |
           The European Covid-19 Forecasting Hub collates weekly
           forecasts on Covid-19 Hospital Admissions in EU/EEA countries.
@@ -192,7 +222,9 @@ hubs:
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
         count: 13
       - name: "RespiCompass - ECDC's Respiratory Diseases Scenario Hub"
-        contact: european.modelling.hub@ecdc.europa.eu
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
         description: |
           RespiCompass is a platform dedicated to hosting and sharing
           scenario modelling results for respiratory pathogens. This
@@ -208,7 +240,9 @@ hubs:
     name: California Department of Public Health
     hubs:
       - name: West Nile Virus Forecasting Hub
-        contact: modeling@cdph.ca.gov
+        contact:
+          - name: West Nile Virus Forecasting Hub
+            email: modeling@cdph.ca.gov
         description: |
           This is an open (by request) forecasting challenge to predict monthly
           West Nile virus (WNV) total disease cases in select California counties
@@ -217,5 +251,21 @@ hubs:
         repo: cdphmodeling/wnvca-2024
         license: CC-BY 4.0 license
         count: 25
+  accidda:
+    logo: /includes/img/ACCIDDALogoBigWithSubs.png
+    name: Atlantic Coast Center for Infectious Disease Dynamics and Analytics
+    description: |
+      The Atlantic Coast Center for Infectious Disease Dynamics and Analytics devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
+    hubs:
+      - name: NC DHHS / ACCIDDA Forecasting Collaboration
+        description: |
+          Flu Forecasts for NC DHHS. Two models (influpaint + a mechanistic dual strain model). Similar than Flusight but using state health data for Flu, COVID-19 and RSV as targets instead. We run a lean hubverse structure, where most of our repository is hubverse compliant but not all. It allows us to leverage the amazing hubverse tools which have been instrumental in this collaboration.
+        contact:
+          - name: Sara Loo
+            email: sloo2@jhmi.edu
+          - name: Matthew Mietchen
+            email: mietchen@unc.edu
+        insights: https://www.respilens.com/
+        count: 2
 ---
 
