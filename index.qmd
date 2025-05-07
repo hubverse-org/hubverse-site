@@ -130,6 +130,8 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 {{< partial /_partials/orgs.qmd hubs.hubverse id="hubverse">}}
 
+{{< partial /_partials/orgs.qmd hubs.accidda id="accidda">}}
+
 
 :::
 
