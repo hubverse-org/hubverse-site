@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: main
   schedule:
-    cron: '5 14 * * 5'
+    - cron: '5 14 * * 5' # every Friday at 14:05 UTC == 09:05 EST (10:05 EDT)
 
 name: Quarto Publish
 
