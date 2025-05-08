@@ -118,7 +118,7 @@ hubs:
         repo: midas-network/covid19-scenario-modeling-hub
         license: MIT License
         insights: https://covid19scenariomodelinghub.org/
-        count: 2
+        count: 4
       - name: "Flu Scenario Modeling Hub"
         description: "The Flu Scenario Modeling Hub aims to anticipate the impact of \nchanges in vaccination coverage and effectiveness, prior population \nimmunity, and dominant subtypes over the course of each influenza \nseason. \n"
         contact:
@@ -180,7 +180,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 69
+        count: 70
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
