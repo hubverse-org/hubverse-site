@@ -2,6 +2,10 @@ on:
   workflow_dispatch:
   push:
     branches: main
+  pull_request:
+    branches: main
+  schedule:
+    - cron: '5 14 * * 5' # every Friday at 14:05 UTC == 09:05 EST (10:05 EDT)
 
 name: Quarto Publish
 
@@ -29,7 +33,22 @@ jobs:
           make contributors
           make models
 
+      - name: Test
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: quarto-dev/quarto-actions/render@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+        with:
+          to: html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          path: "${{ github.workspace }}/_site"
+
       - name: Render and Publish
+        if: ${{ github.event_name != 'pull_request' }}
         uses: quarto-dev/quarto-actions/publish@9e48da27e184aa238fcb49f5db75469626d43adb #v2
         with:
           target: gh-pages
