@@ -74,6 +74,8 @@ website:
         - text: "Funding"
           href: "funding.md"
         - "CONTRIBUTING.md"
+      - text: "{{< fa book >}} Docs {{< fa arrow-up-right-from-square >}}"
+        href: https://docs.hubverse.io/
   page-footer:
     left:
       - icon: c-circle
