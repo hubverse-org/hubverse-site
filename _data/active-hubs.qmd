@@ -213,6 +213,14 @@ hubs:
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
         count: 18
+      - name: "Paraguay Forecast Hub"
+        description: |
+          The Paraguay Forecast Hub is designed to collect forecast data for weekly 
+          new severe acute respiratory infection (SARI) hospitalizations during 2024 
+          influenza season in Paraguay.
+        contact: 
+        - name: Paraguay Forecast Hub
+          email: opp8@cdc.gov
   ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
