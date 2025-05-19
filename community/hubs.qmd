@@ -4,7 +4,7 @@ title: "List of Hubs"
 
 ## Current Hubs
 
-The hubs listed below are all active and have **open source data** available and
+The hubs listed below are all active. Many of these hubs have **open source data** available and
 ready to analyze in hubverse format.
 
 ::: {.callout-tip appearance="simple"}
