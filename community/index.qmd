@@ -2,6 +2,11 @@
 title: "Community"
 ---
 
+![
+The Consortium of Infectious Disease Modeling Hubs (June 2023). Back row (L-R): Kath Sherratt, Lucie Contamin, Nick Reich, Matthew Biggerstaff, Rebecca Borchering, Martha Zorn\
+Front row (L-R): Anna Krystalli, Evan Ray
+](/includes/img/hubverse-retreat-2023.jpg){alt='Photo of smiling and laughing people standing in the sunshine in front of a lawn with trees and a brick building in the background.'}
+
 ## Get Involved
 
 ### Mailing list
