@@ -1,6 +1,11 @@
 <script>
   const path = window.location.pathname;
-  if (
+
+  if (path.includes("/overview/history.html")) {
+    window.location.href = "https://hubverse.io/about.html#history";
+  }
+
+  else if (
     path.startsWith("/en/latest") ||
     path.startsWith("/en/stable") ||
     path.includes("/en/")
@@ -8,3 +13,4 @@
     window.location.href = "https://docs.hubverse.io" + path;
   }
 </script>
+
