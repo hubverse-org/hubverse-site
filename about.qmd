@@ -5,7 +5,8 @@ title: "About the hubverse"
 The Consortium of Infectious Disease Modeling Hubs brings together groups working on developing and running modeling hubs in different outbreak prediction settings in collaboration with national and international health agencies, such as the US and European Centers for Disease Control and Prevention.
 
 ![
-The Consortium of Infectious Disease Modeling Hubs (June 2024). Back row (L-R): Becky Sweger, Nick Reich, Kimberlyn Roosa, Martha Zorn, Matt Cornell\
+The Consortium of Infectious Disease Modeling Hubs (June 2024).\
+Back row (L-R): Becky Sweger, Nick Reich, Kimberlyn Roosa, Martha Zorn, Matt Cornell\
 Front row (L-R): Evan Ray, Melissa Kerr, Rebecca Borchering, Emily Howerton, Lucie Contamin, Anna Krystalli
 ](/includes/img/hubverse-retreat.png){alt='Photo of smiling people standing in the sunshine in front of the entrance to Arnold Hall, an old brick building.'}
 
