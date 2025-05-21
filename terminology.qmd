@@ -71,7 +71,7 @@ representing the outcomes of multiple efforts.
 
 [Task]{#task}
 : a definition of the goals of a modeling effort, possibly including
-  conditions, assumptions, and [targets](#target) (colectively known as [task
+  conditions, assumptions, and [targets](#target) (collectively known as [task
   ID variables](#taskid)). Some tasks may be fixed across [rounds](#round),
   such as for forecast hubs that regularly solicit predictions for a set time
   horizon in the near-term future. Other tasks may be more variable; for
