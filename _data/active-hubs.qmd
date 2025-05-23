@@ -57,7 +57,7 @@ hubs:
           email: nick@umass.edu
         repo: reichlab/variant-nowcast-hub
         license: MIT License
-        aws: "variant-nowcast-hub"
+        aws: "covid-variant-nowcast-hub"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
         count: 6
       - name: "Flu Metrocast Hub"
