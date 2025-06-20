@@ -193,7 +193,7 @@ hubs:
         aws: covid19-forecast-hub
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
-        count: 19
+        count: 20
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
         contact:
