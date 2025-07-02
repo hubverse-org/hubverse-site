@@ -225,7 +225,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-Covid19
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=5
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
-        count: 14
+        count: 15
       - name: "RespiCompass - ECDC's Respiratory Diseases Scenario Hub"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
