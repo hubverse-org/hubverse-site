@@ -3,12 +3,20 @@
 
   if (
     (
-      path.startsWith("/en/latest") || 
+      path.startsWith("/en/latest") ||
       path.startsWith("/en/stable")
-    ) && 
+    ) &&
     path.includes("overview/history.html")
   ) {
     window.location.href = "https://hubverse.io/about.html#history";
+  } else if (
+    (
+      path.startsWith("/en/latest") ||
+      path.startsWith("/en/stable")
+    ) &&
+    path.includes("overview/contributors.html")
+  ) {
+    window.location.href = "https://hubverse.io/community/contributors.html";
   } else if (
     path.startsWith("/en/latest") ||
     path.startsWith("/en/stable") ||
