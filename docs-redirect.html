@@ -20,7 +20,7 @@
 
 
 
-  if (isDev || isLatestOrStable) {
+  if (isDev || (isVersionedPath && isLatestOrStable)) {
     for (const [key, url] of Object.entries(redirects)) {
       if (path.includes(key)) {
         // console.log("🔀 Redirecting to:", url);
