@@ -18,20 +18,20 @@
   const isVersionedPath = versionedPathRegex.test(path);
   const isLatestOrStable = path.startsWith("/en/latest") || path.startsWith("/en/stable");
 
-  let redirected = false;
+
 
   if (isDev || (isVersionedPath && isLatestOrStable)) {
     for (const [key, url] of Object.entries(redirects)) {
       if (path.includes(key)) {
         // console.log("🔀 Redirecting to:", url);
         window.location.href = url;
-        redirected = true;
+
         break;
       }
     }
   }
 
-  if (!redirected && isVersionedPath) {
+  if (isVersionedPath) {
     const fallback = "https://docs.hubverse.io" + path;
     // console.log("🔀 Redirecting to fallback docs:", fallback);
     window.location.href = fallback;
