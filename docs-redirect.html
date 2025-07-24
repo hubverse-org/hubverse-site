@@ -17,11 +17,11 @@
 
   // Match /en/latest/, /en/stable/, or /en/x.y.z/ (version)
   const versionedPathRegex = /^\/en\/(\d+\.\d+\.\d+|latest|stable)\//;
-  const isValidBasePath = isDev || versionedPathRegex.test(path);
 
   let redirected = false;
 
-  if (isValidBasePath) {
+
+  if (isDev || versionedPathRegex.test(path)) {
     // Only perform special redirects for 'latest' and 'stable'
     const isLatestOrStable = path.startsWith("/en/latest") || path.startsWith("/en/stable");
 
