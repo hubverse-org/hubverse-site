@@ -1,35 +1,27 @@
 <script>
   const path = window.location.pathname;
 
-  if (
-    (
-      path.startsWith("/en/latest") ||
-      path.startsWith("/en/stable")
-    ) &&
-    path.includes("overview/history.html")
-  ) {
-    window.location.href = "https://hubverse.io/about.html#history";
-  } else if (
-    (
-      path.startsWith("/en/latest") ||
-      path.startsWith("/en/stable")
-    ) &&
-    path.includes("overview/contributors.html")
-  ) {
-    window.location.href = "https://hubverse.io/community/contributors.html";
-  } else if (
-    (
-      path.startsWith("/en/latest") ||
-      path.startsWith("/en/stable")
-    ) &&
-    path.includes("overview/contribute.html")
-  ) {
-    window.location.href = "https://hubverse.io/community/";
-  } else if (
-    path.startsWith("/en/latest") ||
-    path.startsWith("/en/stable") ||
-    path.includes("/en/")
-  ) {
+  const baseMatch =
+    path.startsWith("/en/latest") || path.startsWith("/en/stable");
+
+  const redirects = {
+    "overview/history.html": "https://hubverse.io/about.html#history",
+    "overview/contributors.html": "https://hubverse.io/community/contributors.html",
+    "overview/contribute.html": "https://hubverse.io/community/",
+    "overview/who-we-are.html": "https://hubverse.io/about/",
+    "overview/scope.html": "https://hubverse.io/about.html#scope"
+  };
+
+  if (baseMatch) {
+    for (const [key, url] of Object.entries(redirects)) {
+      if (path.includes(key)) {
+        window.location.href = url;
+        break;
+      }
+    }
+  }
+
+  if (baseMatch || path.includes("/en/")) {
     window.location.href = "https://docs.hubverse.io" + path;
   }
 </script>
