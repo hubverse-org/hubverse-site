@@ -1,7 +1,7 @@
 <script>
   const path = window.location.pathname;
 
-  const baseMatch =
+  const isValidBasePath =
     path.startsWith("/en/latest") || path.startsWith("/en/stable");
 
   const redirects = {
@@ -12,16 +12,16 @@
     "overview/scope.html": "https://hubverse.io/about.html#scope"
   };
 
-  if (baseMatch) {
+  if (isValidBasePath) {
     for (const [key, url] of Object.entries(redirects)) {
       if (path.includes(key)) {
         window.location.href = url;
-        break;
+        return;
       }
     }
   }
 
-  if (baseMatch || path.includes("/en/")) {
+  if (isValidBasePath || path.includes("/en/")) {
     window.location.href = "https://docs.hubverse.io" + path;
   }
 </script>
