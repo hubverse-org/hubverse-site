@@ -15,18 +15,23 @@
     "overview/scope.html": "https://hubverse.io/about.html#scope"
   };
 
+  let redirected = false;
+
   if (isValidBasePath) {
     for (const [key, url] of Object.entries(redirects)) {
       if (path.includes(key)) {
         console.log("🔀 Redirecting to:", url);
         window.location.href = url;
+        redirected = true;
         break;
       }
     }
   }
 
-  if (isValidBasePath || path.includes("/en/")) {
-    console.log("🔀 Redirecting to fallback docs:", path);
-    window.location.href = "https://docs.hubverse.io" + path;
+  if (!redirected && (isValidBasePath || path.includes("/en/"))) {
+    const fallback = "https://docs.hubverse.io" + path;
+    console.log("🔀 Redirecting to fallback docs:", fallback);
+    window.location.href = fallback;
   }
 </script>
+
