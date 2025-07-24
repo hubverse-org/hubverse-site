@@ -2,8 +2,9 @@
   const path = window.location.pathname;
   const isDev = window.location.hostname === "localhost";
 
-  console.log("🔍 docs-redirect script loaded");
-  console.log("🚧 Current path:", path);
+  // Use console.log for debugging:
+  // console.log("🔍 docs-redirect script loaded");
+  // console.log("🚧 Current path:", path);
 
   const redirects = {
     "overview/history.html": "https://hubverse.io/about.html#history",
@@ -23,7 +24,7 @@
     if (isLatestOrStable) {
       for (const [key, url] of Object.entries(redirects)) {
         if (path.includes(key)) {
-          console.log("🔀 Redirecting to:", url);
+          // console.log("🔀 Redirecting to:", url);
           window.location.href = url;
           redirected = true;
           break;
@@ -34,7 +35,7 @@
 
   if (!redirected && isVersionedPath) {
     const fallback = "https://docs.hubverse.io" + path;
-    console.log("🔀 Redirecting to fallback docs:", fallback);
+    // console.log("🔀 Redirecting to fallback docs:", fallback);
     window.location.href = fallback;
   }
 </script>
