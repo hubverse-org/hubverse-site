@@ -93,6 +93,8 @@ format:
       - litera
     css: styles.css
     toc: true
+    includes:
+      before-body: docs-redirect.html
 brand: brand/_brand.yml
 resources:
  - logo/
