@@ -28,7 +28,7 @@
     if (isLatestOrStable) {
       for (const [key, url] of Object.entries(redirects)) {
         if (path.includes(key)) {
-          console.log("🔀 Redirecting to:", url);
+          // console.log("🔀 Redirecting to:", url);
           window.location.href = url;
           redirected = true;
           break;
@@ -40,7 +40,7 @@
   // fallback redirect to versioned docs site
   if (!redirected && versionedPathRegex.test(path)) {
     const fallback = "https://docs.hubverse.io" + path;
-    console.log("🔀 Redirecting to fallback docs:", fallback);
+    // console.log("🔀 Redirecting to fallback docs:", fallback);
     window.location.href = fallback;
   }
 </script>
