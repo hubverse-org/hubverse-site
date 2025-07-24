@@ -4,6 +4,9 @@
   const isValidBasePath =
     isDev || path.startsWith("/en/latest") || path.startsWith("/en/stable");
 
+  console.log("🔍 docs-redirect script loaded");
+  console.log("🚧 Current path:", path);
+
   const redirects = {
     "overview/history.html": "https://hubverse.io/about.html#history",
     "overview/contributors.html": "https://hubverse.io/community/contributors.html",
@@ -15,15 +18,14 @@
   if (isValidBasePath) {
     for (const [key, url] of Object.entries(redirects)) {
       if (path.includes(key)) {
-        console.log("Redirecting to:", url);
+        console.log("🔀 Redirecting to:", url);
         window.location.href = url;
-        return;
       }
     }
   }
 
   if (isValidBasePath || path.includes("/en/")) {
+    console.log("🔀 Redirecting to fallback docs:", path);
     window.location.href = "https://docs.hubverse.io" + path;
   }
 </script>
-
