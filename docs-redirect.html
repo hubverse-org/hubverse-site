@@ -1,8 +1,8 @@
 <script>
   const path = window.location.pathname;
-
+  const isDev = window.location.hostname === "localhost";
   const isValidBasePath =
-    path.startsWith("/en/latest") || path.startsWith("/en/stable");
+    isDev || path.startsWith("/en/latest") || path.startsWith("/en/stable");
 
   const redirects = {
     "overview/history.html": "https://hubverse.io/about.html#history",
@@ -15,6 +15,7 @@
   if (isValidBasePath) {
     for (const [key, url] of Object.entries(redirects)) {
       if (path.includes(key)) {
+        console.log("Redirecting to:", url);
         window.location.href = url;
         return;
       }
