@@ -17,9 +17,9 @@ title: "Terminology"
 [Configuration file]{#config}
 : a file that is required to define specific aspects of a [modeling
   hub](#modeling-hub) such as administrative information (contact information,
-  license, time zone, data storage availablility) and information concerning
-  [model tasks](#model-tasks). These files are constructed by the hub
-  administrator using the [hubverse schema](/tools/data.qmd).
+  license, time zone, data storage availability) and information concerning
+  [model tasks](#model-tasks). The hub administrator constructs these files
+  using the [hubverse schema](/tools/data.qmd).
 
 [Metadata]{#metadata}
 : a file or series of files with structured information describing the general
@@ -83,7 +83,7 @@ representing the outcomes of multiple efforts.
   that are used to parameterize a model task. These represent columns in the 
   [model output](#model-output). A more [detailed explanation of task ID
   variables](https://docs.hubverse.io/en/latest/user-guide/tasks.html#task-id-variables)
-  can be found in the documentaiton.
+  can be found in the documentation.
 
 
 ## Prediction Terminology
@@ -113,12 +113,12 @@ shows the models\' confidence intervals.'}
 
 
 [Scenario projection]{#scenario-projection}
-: model output that provides estimates of future observations of future trends conditional on specific assumptions about a given scenario. Scenario projects are challenging to evaluate against future observed data since the assumptions under which scenarios were generated likely will never have been exactly met. See the [horizons nomenclature image above](#horizons_nomenclature).
+: model output that provides estimates of future observations of future trends, conditional on specific assumptions about a given scenario. Scenario projects are challenging to evaluate against future observed data since the assumptions under which scenarios were generated are unlikely to have been exactly met. See the [horizons nomenclature image above](#horizons_nomenclature).
 
 
 ## Abbreviations
 
-The hubverse code often has abbreviations which may not be familiar to users. This page provides a list of abbreviations and their meanings. Let us know if we missed any by [filing an issue on the hubverse site GitHub repository](https://github.com/hubverse-org/hubverse-site/issues).
+The hubverse code often has abbreviations that may not be familiar to users. This page provides a list of abbreviations and their meanings. Let us know if we missed any by [filing an issue on the hubverse site GitHub repository](https://github.com/hubverse-org/hubverse-site/issues).
 
 | abbreviation | meaning
 | ------------ | ------- |
