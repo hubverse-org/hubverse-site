@@ -14,12 +14,12 @@ _data/active-hubs.qmd: scripts/update-model-counts.sh
 
 .PHONY: render
 
-render: community/contributors.md _data/active-hubs.qmd # update contributors file and render to HTML 
+render: community/contributors.md _data/active-hubs.qmd terms.qmd # update files and render to HTML 
 	quarto render
 
 .PHONY: preview
 
-preview: community/contributors.md _data/active-hubs.qmd # update contributors file and preview
+preview: community/contributors.md _data/active-hubs.qmd terms.qmd # update files and preview
 	quarto preview
 
 .PHONY: contributors
@@ -30,5 +30,12 @@ contributors: community/contributors.md # generate contributors page (requires p
 
 models: _data/active-hubs.qmd # generate models page (requires BASH, yq, and gh)
 
+.PHONY: terms
 
+terms: terms.qmd # generate terms page (requires python)
+
+
+termns.qmd: scripts/update_terms.py
+	@echo Updating terms page...
+	python scripts/update_terms.py
 
