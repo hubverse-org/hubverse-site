@@ -8,8 +8,6 @@ MODEL_TASKS_URL = "https://docs.hubverse.io/en/latest/user-guide/tasks.html"
 DEST_FILE = "terminology.qmd"
 
 def fetch_markdown(url):
-    resp = requests.get(url)
-    resp.raise_for_status()
     try:
         resp = requests.get(url)
         resp.raise_for_status()
