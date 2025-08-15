@@ -84,21 +84,12 @@ def process_definitions(md):
 
     return md.strip()
 
-def process_abbreviations(md):
-    # Replace the issue link
-    md = md.replace(
-        "[filing an issue on the hubDocs GitHub repository](https://github.com/hubverse-org/hubDocs/issues)",
-        "[filing an issue on the hubverse site GitHub repository](https://github.com/hubverse-org/hubverse-site/issues)"
-    )
-    return md
-
 def main():
     # Fetch both markdown files
     abbr_md = fetch_markdown(ABBR_URL)
     defs_md = fetch_markdown(DEFS_URL)
 
-    # Process both
-    abbr_md = process_abbreviations(abbr_md)
+    # Process definitions
     defs_md = process_definitions(defs_md)
 
     # Add Quarto YAML header
