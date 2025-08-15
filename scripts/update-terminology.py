@@ -10,7 +10,12 @@ DEST_FILE = "terminology.qmd"
 def fetch_markdown(url):
     resp = requests.get(url)
     resp.raise_for_status()
-    return resp.text
+    try:
+        resp = requests.get(url)
+        resp.raise_for_status()
+        return resp.text
+    except requests.RequestException as e:
+        raise RuntimeError(f"Failed to fetch URL '{url}': {e}") from e
 
 def process_definitions(md):
     # Remove the top-level header
