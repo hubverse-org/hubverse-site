@@ -4,6 +4,7 @@ import re
 # Source URLs
 ABBR_URL = "https://raw.githubusercontent.com/hubverse-org/hubDocs/main/docs/source/overview/abbreviations.md"
 DEFS_URL = "https://raw.githubusercontent.com/hubverse-org/hubDocs/main/docs/source/overview/terminology.md"
+MODEL_TASKS_URL = "https://docs.hubverse.io/en/latest/user-guide/tasks.html"
 DEST_FILE = "terminology.qmd"
 
 def fetch_markdown(url):
