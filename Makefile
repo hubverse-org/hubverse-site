@@ -12,9 +12,9 @@ _data/active-hubs.qmd: scripts/update-model-counts.sh
 	@echo Updating model counts...
 	bash scripts/update-model-counts.sh
 
-terminology.qmd: scripts/update_terminology.py
+terminology.qmd: scripts/update-terminology.py
 	@echo Updating terminology page...
-	python scripts/update_terminology.py
+	python scripts/update-terminology.py
 
 .PHONY: render
 
