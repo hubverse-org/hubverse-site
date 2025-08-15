@@ -85,12 +85,16 @@ def process_definitions(md):
 
     return md.strip()
 
+def process_abbreviations(md):
+    return md
+
 def main():
     # Fetch both markdown files
     abbr_md = fetch_markdown(ABBR_URL)
     defs_md = fetch_markdown(DEFS_URL)
 
-    # Process definitions
+    # Process both
+    abbr_md = process_abbreviations(abbr_md)
     defs_md = process_definitions(defs_md)
 
     # Add Quarto YAML header
