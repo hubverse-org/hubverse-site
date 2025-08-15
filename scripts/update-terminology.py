@@ -18,7 +18,7 @@ def process_definitions(md):
     # 1. Transform "Modeling Tasks Terminology" section
     md = re.sub(
         r"\(model-tasks\)=\s*## Modeling Tasks Terminology\s*\n\[.*?Learn more about modeling tasks.*?\]\(.*?\)\s*",
-        "## Modeling Tasks Terminology {#model-tasks}\n\n[{{< fa book >}} Learn more about modeling tasks](https://docs.hubverse.io/en/latest/user-guide/tasks.html){.btn .btn-outline-dark .ms-auto}\n\n",
+        f"## Modeling Tasks Terminology {{#model-tasks}}\n\n[{{< fa book >}} Learn more about modeling tasks]({MODEL_TASKS_URL}){{.btn .btn-outline-dark .ms-auto}}\n\n",
         md,
         flags=re.DOTALL
     )
