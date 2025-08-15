@@ -34,7 +34,6 @@ jobs:
           make models
           make terminology
 
-
       - name: Test
         if: ${{ github.event_name == 'pull_request' }}
         uses: quarto-dev/quarto-actions/render@9e48da27e184aa238fcb49f5db75469626d43adb #v2
