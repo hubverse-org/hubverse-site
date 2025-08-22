@@ -17,9 +17,9 @@ website:
   navbar:
     search: true
     right:
-      - text: "Home"
+      - text: "![](logo/logo.png){.nav-logo} Home"
         href: index.qmd
-      - text: "**Get Started**"
+      - text: "{{< fa diagram-project >}} **Get Started**"
         menu:
         - icon: question-circle
           href: quickstart/index.qmd
@@ -34,10 +34,7 @@ website:
         - "---"
         - icon: headset
           href: quickstart/support-consulting.md
-        - icon: book
-          text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://docs.hubverse.io/
-      - text: "Tools"
+      - text: "{{< fa tools >}} Tools"
         menu:
         - text: "Data Standards"
           icon: compass
@@ -48,34 +45,25 @@ website:
         - text: "Dashboards"
           icon: speedometer
           href: tools/dashboards.qmd
-        - text: "---"
-        - text: "{{< fa book >}} Resources"
-        - "terminology.qmd"
-        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://docs.hubverse.io/
-        - "CONTRIBUTING.md"
-      - text: "About"
+      - text: "{{< fa people-line >}} Community"
         menu:
-        - icon: info-circle-fill
-          href: "about.qmd"
-        - text: "---"
-        - text: "{{< fa people-line >}} Community"
-        - text: "Get Involved"
+        - text: "Community"
           href: community/index.qmd
         - community/hubs.qmd
         - text: "Contributors"
           href: community/contributors.md
         - "contact.qmd"
         - text: "---"
-        - text: "{{< fa book >}} Resources"
+        - icon: info-circle-fill
+          href: "about.qmd"
+      - text: "{{< fa book >}} Resources"
+        menu:
         - "terminology.qmd"
         - text: "Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
         - text: "Funding"
           href: "funding.md"
         - "CONTRIBUTING.md"
-      - text: "{{< fa book >}} Docs {{< fa arrow-up-right-from-square >}}"
-        href: https://docs.hubverse.io/
   page-footer:
     left:
       - icon: c-circle
