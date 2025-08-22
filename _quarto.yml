@@ -17,9 +17,9 @@ website:
   navbar:
     search: true
     right:
-      - text: "![](logo/logo.png){.nav-logo} Home"
+      - text: "Home"
         href: index.qmd
-      - text: "{{< fa diagram-project >}} **Get Started**"
+      - text: "**Get Started**"
         menu:
         - icon: question-circle
           href: quickstart/index.qmd
@@ -34,7 +34,7 @@ website:
         - "---"
         - icon: headset
           href: quickstart/support-consulting.md
-      - text: "{{< fa tools >}} Tools"
+      - text: "Tools"
         menu:
         - text: "Data Standards"
           icon: compass
@@ -45,25 +45,30 @@ website:
         - text: "Dashboards"
           icon: speedometer
           href: tools/dashboards.qmd
-      - text: "{{< fa people-line >}} Community"
+      - text: "Community"
         menu:
-        - text: "Community"
+        - text: "{{< fa people-line >}} Community"
           href: community/index.qmd
-        - community/hubs.qmd
-        - text: "Contributors"
+        - text: "{{< fa list >}} List of hubs"
+          href: "community/hubs.qmd"
+        - text: "{{< fa pencil >}} Contributors"
           href: community/contributors.md
-        - "contact.qmd"
+        - text: "{{< fa address-card >}} Contact"
+          href: "contact.qmd"
         - text: "---"
         - icon: info-circle-fill
           href: "about.qmd"
-      - text: "{{< fa book >}} Resources"
+      - text: "Resources"
         menu:
-        - "terminology.qmd"
-        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
+        - icon: book
+          href: "terminology.qmd"
+        - text: "{{< fa book >}} Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
-        - text: "Funding"
+        - text: "{{< fa money-bill-1 >}} Funding"
           href: "funding.md"
-        - "CONTRIBUTING.md"
+        - icon: github
+          text: "Contributing to the site"
+          href: "CONTRIBUTING.md"
   page-footer:
     left:
       - icon: c-circle
