@@ -34,9 +34,6 @@ website:
         - "---"
         - icon: headset
           href: quickstart/support-consulting.md
-        - icon: book
-          text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://docs.hubverse.io/
       - text: "Tools"
         menu:
         - text: "Data Standards"
@@ -48,34 +45,30 @@ website:
         - text: "Dashboards"
           icon: speedometer
           href: tools/dashboards.qmd
-        - text: "---"
-        - text: "{{< fa book >}} Resources"
-        - "terminology.qmd"
-        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
-          href: https://docs.hubverse.io/
-        - "CONTRIBUTING.md"
-      - text: "About"
+      - text: "Community"
         menu:
+        - text: "{{< fa people-line >}} Community"
+          href: community/index.qmd
+        - text: "{{< fa list >}} List of hubs"
+          href: "community/hubs.qmd"
+        - text: "{{< fa pencil >}} Contributors"
+          href: community/contributors.md
+        - text: "{{< fa address-card >}} Contact"
+          href: "contact.qmd"
+        - text: "---"
         - icon: info-circle-fill
           href: "about.qmd"
-        - text: "---"
-        - text: "{{< fa people-line >}} Community"
-        - text: "Get Involved"
-          href: community/index.qmd
-        - community/hubs.qmd
-        - text: "Contributors"
-          href: community/contributors.md
-        - "contact.qmd"
-        - text: "---"
-        - text: "{{< fa book >}} Resources"
-        - "terminology.qmd"
-        - text: "Documentation {{< fa arrow-up-right-from-square >}}"
+      - text: "Resources"
+        menu:
+        - icon: book
+          href: "terminology.qmd"
+        - text: "{{< fa book >}} Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
-        - text: "Funding"
+        - text: "{{< fa money-bill-1 >}} Funding"
           href: "funding.md"
-        - "CONTRIBUTING.md"
-      - text: "{{< fa book >}} Docs {{< fa arrow-up-right-from-square >}}"
-        href: https://docs.hubverse.io/
+        - icon: github
+          text: "Contributing to the site"
+          href: "CONTRIBUTING.md"
   page-footer:
     left:
       - icon: c-circle
