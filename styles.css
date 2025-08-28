@@ -134,6 +134,12 @@ img.logo {
   background-color: antiquewhite;
 }
 
+.navbar .nav-logo {
+  height: 28px;   /* adjust as needed */
+  width: auto;
+  object-fit: scale-down;
+}
+
 
 :root {
   --mermaid-fg-color--lightest: #fafafa;
