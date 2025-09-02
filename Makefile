@@ -10,7 +10,7 @@ contributors: # always generate contributors page (requires python)
 	@echo Updating contributors page...
 	python scripts/update-contributors.py
 
-models: _data/active-hubs.qmd # generate models page (requires BASH, yq, and gh)
+models: # generate models page (requires BASH, yq, and gh)
 	@echo Updating model counts...
 	bash scripts/update-model-counts.sh
 
