@@ -22,7 +22,7 @@ output submissions that can be **easily validated, ensembled, and visualized**.
 
 ## Understanding Model Tasks
 
-Each hub starts with a file called `hub-config/tasks.json` that defines [**model tasks**](https://docs.hubverse.io/en/latest/user-guide/tasks.html) and **frequency of submission**. The structure of this file is defined by [the hubverse model tasks schema](https://docs.hubverse.io/en/latest/user-guide/dashboards.html).
+Each hub starts with a file called `hub-config/tasks.json` that defines [**model tasks**](https://docs.hubverse.io/en/latest/user-guide/tasks.html) and **frequency of submission**. The structure of this file is defined by [the hubverse model tasks schema](https://docs.hubverse.io/en/latest/user-guide/hub-config.html#model-tasks-schema).
 
 The `tasks.json` file is responsible for validation of all model submissions
 and ensures that data are inter-operable.

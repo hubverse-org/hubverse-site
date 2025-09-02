@@ -69,6 +69,9 @@ website:
         - icon: github
           text: "Contributing to the site"
           href: "CONTRIBUTING.md"
+        - "---"
+        - icon: headset
+          href: quickstart/support-consulting.md
   page-footer:
     left:
       - icon: c-circle
