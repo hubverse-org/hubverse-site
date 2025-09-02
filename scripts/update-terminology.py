@@ -89,7 +89,7 @@ def process_definitions(md):
     return md.strip()
 
 def process_abbreviations(md):
-    # No processing needed for abbreviations; the markdown is already in the desired format.
+    # No processing needed for abbreviations; the markdown is already in the desired format (previously used).
     return md
 
 def main():
