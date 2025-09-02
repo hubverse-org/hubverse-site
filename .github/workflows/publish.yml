@@ -30,9 +30,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          make -B contributors
+          make contributors
           make models
-          make -B terminology
+          make terminology
 
       - name: Test
         if: ${{ github.event_name == 'pull_request' }}
