@@ -5,7 +5,7 @@ help: # Show help for each of the Makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
 .PHONY: contributors
-contributors: # always generate contributors page (requires python)
+contributors: # generate contributors page (requires python)
 	@echo Updating contributors page...
 	python scripts/update-contributors.py
 
@@ -15,7 +15,7 @@ models: # generate models page (requires BASH, yq, and gh)
 	bash scripts/update-model-counts.sh
 
 .PHONY: terminology
-terminology: # always generate terminology page (requires python)
+terminology: # generate terminology page (requires python)
 	@echo Updating terminology page...
 	python scripts/update-terminology.py
 
