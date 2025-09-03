@@ -64,7 +64,7 @@ website:
           href: "terminology.qmd"
         - text: "{{< fa book >}} Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
-        - text: "{{< fa money-bill-1 >}} Funding"
+        - text: "{{< fa coins >}} Funding"
           href: "funding.md"
         - icon: github
           text: "Contributing to the site"
