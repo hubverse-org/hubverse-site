@@ -127,7 +127,7 @@ hubs:
         repo: midas-network/flu-scenario-modeling-hub
         license: MIT License
         insights: https://fluscenariomodelinghub.org
-        count: 5
+        count: 6
       - name: "RSV Scenario Modeling Hub"
         description: "The RSV Scenario Modeling Hub aims to project the impacts of new vaccines \nand monoclonal antibodies over the course of each RSV season. \n"
         contact:
