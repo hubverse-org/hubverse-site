@@ -1,79 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hubverse.io/contact.html</loc>
-    <lastmod>2025-09-19T14:10:31.659Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/index.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/community/index.html</loc>
-    <lastmod>2025-09-19T14:10:31.659Z</lastmod>
-  </url>
-  <url>
     <loc>https://hubverse.io/about.html</loc>
-    <lastmod>2025-09-19T14:10:31.659Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/quickstart/analyze.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/quickstart/submit.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/quickstart/support-consulting.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
+    <lastmod>2025-09-26T14:11:04.915Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse.io/tools/dashboards.html</loc>
-    <lastmod>2025-09-19T14:10:31.710Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/tools/software.html</loc>
-    <lastmod>2025-09-19T14:10:31.710Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/funding.html</loc>
-    <lastmod>2025-09-19T14:10:31.660Z</lastmod>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse.io/terminology.html</loc>
-    <lastmod>2025-09-19T14:11:02.536Z</lastmod>
+    <lastmod>2025-09-26T14:11:48.422Z</lastmod>
   </url>
   <url>
-    <loc>https://hubverse.io/CONTRIBUTING.html</loc>
-    <lastmod>2025-09-19T14:10:31.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/tools/data.html</loc>
-    <lastmod>2025-09-19T14:10:31.710Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/LICENSE.html</loc>
-    <lastmod>2025-09-19T14:10:31.652Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/quickstart/create.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
-  </url>
-  <url>
-    <loc>https://hubverse.io/quickstart/develop.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
+    <loc>https://hubverse.io/quickstart/analyze.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse.io/quickstart/index.html</loc>
-    <lastmod>2025-09-19T14:10:31.709Z</lastmod>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/quickstart/support-consulting.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/community/index.html</loc>
+    <lastmod>2025-09-26T14:11:04.915Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse.io/community/contributors.html</loc>
-    <lastmod>2025-09-19T14:10:57.056Z</lastmod>
+    <lastmod>2025-09-26T14:11:41.379Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/funding.html</loc>
+    <lastmod>2025-09-26T14:11:04.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/CONTRIBUTING.html</loc>
+    <lastmod>2025-09-26T14:11:04.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/LICENSE.html</loc>
+    <lastmod>2025-09-26T14:11:04.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/index.html</loc>
+    <lastmod>2025-09-26T14:11:04.962Z</lastmod>
   </url>
   <url>
     <loc>https://hubverse.io/community/hubs.html</loc>
-    <lastmod>2025-09-19T14:10:31.659Z</lastmod>
+    <lastmod>2025-09-26T14:11:04.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/contact.html</loc>
+    <lastmod>2025-09-26T14:11:04.915Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/quickstart/submit.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/quickstart/develop.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/quickstart/create.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/tools/data.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hubverse.io/tools/software.html</loc>
+    <lastmod>2025-09-26T14:11:04.963Z</lastmod>
   </url>
 </urlset>
