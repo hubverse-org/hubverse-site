@@ -66,6 +66,8 @@ website:
           href: https://docs.hubverse.io/
         - text: "{{< fa coins >}} Funding"
           href: "funding.md"
+        - text: "{{< fa person-chalkboard >}} Presentations"
+          href: "presentations.md"
         - icon: github
           text: "Contributing to the site"
           href: "CONTRIBUTING.md"
