@@ -1,0 +1,77 @@
+// includes/poppins.scss
+
+/*-- scss:rules --*/
+/* Local Poppins font-face declarations.
+   Use font-display: swap for better performance and to avoid FOIT. */
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-600-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-700-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src:
+    url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-400-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src:
+    url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-600-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-700-italic.woff2") format("woff2");
+}
+
+/*-- scss:defaults --*/
+/* Bootstrap variable overrides: set sans-serif families to Poppins first.
+   Also set headings and code font if desired. */
+
+$web-font-path: "No"; // Prevent Bootstrap from referencing external web fonts
+
+$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans", "DejaVu Sans", "Cantarell", "Open Sans", "Tahoma", "Geneva", sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+/* Optional: make headings use Poppins explicitly (Bootstrap uses $headings-font-family) */
+$headings-font-family: $font-family-sans-serif;
+
+/* Optional: tune font sizes/weights if desired
+$font-weight-base: 400;
+$headings-font-weight: 600;
+*/
+
