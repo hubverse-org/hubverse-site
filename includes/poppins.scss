@@ -1,9 +1,20 @@
 // includes/poppins.scss
 
+/*-- scss:defaults --*/
+/* Bootstrap variable overrides: set sans-serif families to Poppins first.
+   Also set headings and code font if desired. */
+/* Disable any Bootstrap web font path to avoid remote loads */
+$web-font-path: "No";  // Prevent Bootstrap from referencing external web fonts
+
+/* Make Poppins the Bootstrap base + sans stack */
+$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans", "DejaVu Sans", "Cantarell", "Open Sans", "Tahoma", "Geneva", sans-serif;
+$font-family-base: $font-family-sans-serif;
+$headings-font-family: $font-family-sans-serif;
+
 /*-- scss:rules --*/
+/* Local @font-face declarations (use absolute path from site root) */
 /* Local Poppins font-face declarations.
    Use font-display: swap for better performance and to avoid FOIT. */
-
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -58,20 +69,28 @@
     url("/includes/fonts/poppins_5.2.7/webfonts/poppins-latin-700-italic.woff2") format("woff2");
 }
 
-/*-- scss:defaults --*/
-/* Bootstrap variable overrides: set sans-serif families to Poppins first.
-   Also set headings and code font if desired. */
-
-$web-font-path: "No"; // Prevent Bootstrap from referencing external web fonts
-
-$font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans", "DejaVu Sans", "Cantarell", "Open Sans", "Tahoma", "Geneva", sans-serif;
-$font-family-base: $font-family-sans-serif;
-
 /* Optional: make headings use Poppins explicitly (Bootstrap uses $headings-font-family) */
 $headings-font-family: $font-family-sans-serif;
 
 /* Optional: tune font sizes/weights if desired
 $font-weight-base: 400;
 $headings-font-weight: 600;
+*/
+
+/* One authoritative body rule to unify everything */
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans", "DejaVu Sans", "Cantarell", "Open Sans", "Tahoma", "Geneva", sans-serif;
+}
+
+/* If styles.css or theme re-sets components later, you can reinforce:
+.lead,
+blockquote,
+.navbar,
+.dropdown-menu,
+.list-group,
+.card,
+.table {
+  font-family: inherit;
+}
 */
 

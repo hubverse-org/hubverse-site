@@ -1,5 +1,19 @@
 /* css styles */
 
+/* Force Poppins across content (reinforces theme variables) */
+body,
+.quarto-article,
+.page-content,
+.content,
+main {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", "Nimbus Sans", "DejaVu Sans", "Cantarell", "Open Sans", "Tahoma", "Geneva", sans-serif;
+}
+
+/* Markdown elements inherit body font */
+p, li, blockquote, dd, dt {
+  font-family: inherit;
+}
+
 .biglist {
   font-size: 1.6rem;
 }
@@ -12,30 +26,34 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  blockquote {
-    border-left: .25rem solid #3C88BE;
-    font-size: 1rem;
-    font-style: italic;
-    color: #000000;
-  }
-  p {
-    font-size: 1.2rem;
-    color: #5a5a5a;
-  }
-  img {
-    height: fit-content;
-    max-height: 400px;
-    object-fit: cover;
-  }
 }
-/*
-Allow an element to break out of its frame 
- */
+
+/* Unnested child selectors for .testimonial */
+.testimonial blockquote {
+  border-left: .25rem solid #3C88BE;
+  font-size: 1rem;
+  font-style: italic;
+  color: #000000;
+}
+
+.testimonial p {
+  font-size: 1.2rem;
+  color: #5a5a5a;
+}
+
+.testimonial img {
+  height: fit-content;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* Allow an element to break out of its frame */
 .breakout {
-  left: -10%; /* shift the position of the element outside of the frame by 10%*/
-  max-width: 120%; /* allow the element to grow to 120% of the frame */
+  left: -10%;
+  max-width: 120%;
   position: relative;
 }
+/**/
 
 .breakin {
   left: 10%;
@@ -54,20 +72,26 @@ Allow an element to break out of its frame
 .about-entity {
   padding: 1em;
   background: ghostwhite;
-  h2 {
-    font-size: 1.8rem;
-    border-bottom: unset;
-  }
-  p,li,a {
-    font-size: 1.25rem;
-  }
-  .subtitle {
-    margin-left: auto;
-    margin-right: auto;
-    display: grid;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+}
+
+/* Unnested children of .about-entity */
+.about-entity h2 {
+  font-size: 1.8rem;
+  border-bottom: unset;
+}
+
+.about-entity p,
+.about-entity li,
+.about-entity a {
+  font-size: 1.25rem;
+}
+
+.about-entity .subtitle {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 div.quarto-about-solana .about-entity .about-links {
