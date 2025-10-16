@@ -89,6 +89,7 @@ format:
     breadcrumbs: true
     theme:
       - litera
+      - includes/poppins.scss
     css: styles.css
     toc: true
     includes:
