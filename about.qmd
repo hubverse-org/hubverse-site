@@ -89,7 +89,7 @@ In working on collaborative forecasting, our principal objectives have been to
 
 <img src="/includes/img/hubverse-retreat-2023-1.jpg" alt="Photo of nine smiling people standing on stairs leading to the front entrance to a building." class="inline-photo">
 
-The first "hubverse retreat" was held June5--9, 2023 at the University of Massachusetts, Amherst. It focused on laying the groundwork for the hubverse, including documentation, Zoltar integration, and software development.
+The first "hubverse retreat" was held June 5--9, 2023 at the University of Massachusetts, Amherst. It focused on laying the groundwork for the hubverse, including documentation, Zoltar integration, and software development.
 
 <img src="/includes/img/hubverse-retreat-2024-1.jpg" alt="Photo of eleven smiling people standing on stairs leading to the front entrance to a building called Arnold." class="inline-photo">
 
