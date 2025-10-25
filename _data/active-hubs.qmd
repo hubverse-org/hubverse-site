@@ -221,6 +221,14 @@ hubs:
         contact: 
         - name: Paraguay Forecast Hub
           email: opp8@cdc.gov
+      - name: "WHO FluNet Hub"
+        description: |
+          An effort to produce -1 to 4 week ahead forecasts using the World Health 
+          Organization FluNet surveillance data for Australia, Brazil, Chile, South 
+          Africa, and Thailand.
+        contact: 
+        - name: WHO FluNet Hub
+          email: opp8@cdc.gov
   ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
