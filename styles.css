@@ -171,3 +171,24 @@ img.logo {
   --mermaid-label-fg-color: #000000;
 }
 
+/* Inline images placed before paragraphs */
+.inline-photo {
+  display: block;          /* each image on its own line */
+  width: 800px;            /* set a consistent visual size; adjust to 320–420px as needed */
+  max-width: 100%;         /* don’t overflow on narrow screens */
+  aspect-ratio: 4 / 3;     /* keep a consistent box; change to 1/1 for square, or remove if not desired */
+  height: auto;            /* allow natural height; overridden by aspect-ratio box */
+  object-fit: cover;       /* crop to fill the box nicely regardless of source dimensions */
+  margin: 0 0 0.75rem 0;   /* whitespace below the image */
+  border-radius: 4px;      /* optional rounding */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06); /* subtle outline; optional */
+}
+
+/* On very narrow screens, let the image be a bit smaller */
+@media (max-width: 640px) {
+  .inline-photo {
+    width: 300px;
+    aspect-ratio: 4 / 3;
+  }
+}
+
