@@ -244,7 +244,7 @@ hubs:
           modelling collaboration.
         repo: european-modelling-hubs/RespiCompass
         insights: https://respicompass.ecdc.europa.eu/insights/
-        count: 14
+        count: 1
   cadph:
     logo: /includes/img/cadph.png
     name: California Department of Public Health
