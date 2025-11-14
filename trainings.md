@@ -17,6 +17,7 @@ Notably, the training also offers a [**local hub playground session**](https://n
 # AMPH Forecast Suite
 
 The [AMPH Forecast Suite]( https://accidda.github.io/AMPH_Forecast_Suite/index.html) is an R package developed by the Atlantic Coast Center for Infectious Disease Dynamics and Analytics (ACCIDDA) that offers a complete toolkit for building infectious disease forecasting pipelines and hubs. It streamlines the process of working with multiple forecasting packages, including Hubverse packages, by:
+
 * Installing and managing dependencies for essential forecasting packages
 * Establishing an appropriate directory structure
 * Retrieving and preparing data for use in forecasting models
