@@ -68,6 +68,8 @@ website:
           href: "funding.md"
         - text: "{{< fa person-chalkboard >}} Presentations"
           href: "presentations.md"
+        - text: "{{< fa person-chalkboard >}} Training"
+          href: "trainings.md"
         - icon: github
           text: "Contributing to the site"
           href: "CONTRIBUTING.md"
