@@ -118,7 +118,6 @@ with open(output_file, "w", encoding="utf-8") as file:
             f"{bio_output}{location_output}\n\n"
             f"Repositories contributed to: {repo_text}.\n\n"
         )
-        
         # Add '---' separator only if it's NOT the last contributor
         if i != last_index:
             file.write("---\n\n")
