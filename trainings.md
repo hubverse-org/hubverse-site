@@ -1,4 +1,6 @@
-# Trainings
+---
+title: '{{< fa laptop-code >}} Trainings'
+---
 
 The following trainings and courses on forecasting/modeling use hubverse data standards and software:
 
