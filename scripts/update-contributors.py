@@ -107,7 +107,6 @@ with open(output_file, "w", encoding="utf-8") as file:
             # If blog doesn't start with http:// or https://, prepend https://
             blog = f"https://{blog}"
         blog_output = f"({blog})" if blog else "" # Don't include parentheses if `blog` is empty
-        
         # Avoid adding period if `bio` or `location` is empty
         bio_output = f" {bio}." if bio else ""
         location_output = f" {location}." if location else ""
