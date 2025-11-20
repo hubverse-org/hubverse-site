@@ -58,9 +58,16 @@ for repo in repos:
         # If contributors endpoint fails for a specific repo, continue
         continue
 
-# Shuffle contributors randomly
-contributor_list = list(contributors.items())
+# Filter bots before shuffling and computing last_index
+contributor_list = [
+    (login, repo_set)
+    for login, repo_set in contributors.items()
+    if not login.startswith("dependabot")
+]
 random.shuffle(contributor_list)
+
+# Compute last_index using only the entries that will be written to avoid trailing '---'
+last_index = len(contributor_list) - 1
 
 # Fetch user details and generate output
 output_dir = "community"
@@ -75,12 +82,7 @@ with open(output_file, "w", encoding="utf-8") as file:
     )
     file.write("# Contributors to hubverse repositories\n\nThese are the contributors to hubverse repositories in random order.\n\n")
 
-    last_index = len(contributor_list) - 1  # Get last index to avoid trailing '---'
-
     for i, (login, repo_set) in enumerate(contributor_list):
-        if login.startswith("dependabot"):
-            continue  # skip bots
-
         user_resp = requests.get(f"{base_url}/users/{login}", headers=headers)
         if user_resp.status_code != 200:
             file.write(
@@ -88,6 +90,9 @@ with open(output_file, "w", encoding="utf-8") as file:
                 f"- [{login}](https://github.com/{login}) - "
                 f"Failed to fetch additional details. (Error {user_resp.status_code})\n"
             )
+            # Separator only if not the last written contributor
+            if i != last_index:
+                file.write("---\n\n")
             continue  # Skip if user data fetch fails
 
         user_data = user_resp.json()
