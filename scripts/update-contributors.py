@@ -101,7 +101,6 @@ with open(output_file, "w", encoding="utf-8") as file:
 
         # Only include square brackets around name if `blog` is not empty
         name_output = f"[{name}]" if name and blog else name
-        
         # Only include the blog link if it's not empty
         if blog and not blog.startswith(("http://", "https://")):
             # If blog doesn't start with http:// or https://, prepend https://
