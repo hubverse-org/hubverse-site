@@ -17,11 +17,11 @@ headers = {
 }
 
 def get_paginated(url, params=None):
-    """Yield items from all pages."""
+    """Yield items from all pages without recreating the params dict each loop."""
     if params is None:
         params = {}
-    # Use highest allowed page size to reduce requests
-    params = {**params, "per_page": 100}
+    # Set per_page once; do not rebuild params each iteration
+    params.setdefault("per_page", 100)
     page = 1
     while True:
         params["page"] = page
