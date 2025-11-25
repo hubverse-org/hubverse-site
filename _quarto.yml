@@ -73,6 +73,8 @@ website:
         - icon: github
           text: "Contributing to the site"
           href: "CONTRIBUTING.md"
+        - text: "{{< fa quote-left >}} How to cite"
+          href: "cite.qmd"
         - "---"
         - icon: headset
           href: quickstart/support-consulting.md
