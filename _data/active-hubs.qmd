@@ -89,7 +89,7 @@ hubs:
         repo: ai4castinghub/hospitalization-forecast
         license: MIT License
         forecasts: https://4castinghub.uoguelph.ca/hospitalization/
-        count: 6
+        count: 11
       - name: "RVDSS Forecast Hub"
         description: |
           RVDSS is a national surveillance system that collects and
@@ -105,7 +105,7 @@ hubs:
         repo: ai4castinghub/rvdss-forecast
         license: MIT License
         forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
-        count: 9
+        count: 14
   smhct:
     logo: /includes/img/smh_logo.png
     name: "Scenario Modeling Hub Coordination Team"
@@ -230,7 +230,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-Covid19
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=5
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
-        count: 17
+        count: 18
       - name: "RespiCompass - ECDC's Respiratory Diseases Scenario Hub"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
