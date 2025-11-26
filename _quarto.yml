@@ -47,13 +47,13 @@ website:
           href: tools/dashboards.qmd
       - text: "Community"
         menu:
-        - text: "{{< fa people-line >}} Community"
+        - text: "{{< fa people-line >}} &nbsp;Community"
           href: community/index.qmd
-        - text: "{{< fa list >}} List of hubs"
+        - text: "{{< fa list >}} &nbsp;&nbsp;List of hubs"
           href: "community/hubs.qmd"
-        - text: "{{< fa pencil >}} Contributors"
+        - text: "{{< fa pencil >}} &nbsp;&nbsp;Contributors"
           href: community/contributors.md
-        - text: "{{< fa address-card >}} Contact"
+        - text: "{{< fa address-card >}} &nbsp;&nbsp;Contact"
           href: "contact.qmd"
         - text: "---"
         - icon: info-circle-fill
@@ -62,14 +62,16 @@ website:
         menu:
         - icon: book
           href: "terminology.qmd"
-        - text: "{{< fa book >}} Documentation {{< fa arrow-up-right-from-square >}}"
+        - text: "{{< fa book >}} &nbsp;&nbsp;Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
-        - text: "{{< fa coins >}} Funding"
+        - text: "{{< fa coins >}} &nbsp;&nbsp;Funding"
           href: "funding.md"
-        - text: "{{< fa person-chalkboard >}} Presentations"
+        - text: "{{< fa person-chalkboard >}} &nbsp;Presentations"
           href: "presentations.md"
-        - text: "{{< fa laptop-code >}} Trainings"
+        - text: "{{< fa laptop-code >}} &nbsp;Trainings"
           href: "trainings.md"
+        - text: "{{< fa quote-left >}} &nbsp;&nbsp;How to cite"
+          href: "cite.qmd"
         - icon: github
           text: "Contributing to the site"
           href: "CONTRIBUTING.md"
