@@ -59,7 +59,7 @@ hubs:
         license: MIT License
         aws: "covid-variant-nowcast-hub"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
-        count: 9
+        count: 10
       - name: "Flu Metrocast Hub"
         description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
         contact:
@@ -180,7 +180,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 83
+        count: 85
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
@@ -193,7 +193,7 @@ hubs:
         aws: covid19-forecast-hub
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
-        count: 21
+        count: 22
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
         contact:
