@@ -136,7 +136,7 @@ hubs:
         repo: midas-network/rsv-scenario-modeling-hub
         license: MIT License
         insights: https://rsvscenariomodelinghub.org
-        count: 17
+        count: 18
       - name: "COVID-19 Scenario Modeling Hub - Research"
         description: "The COVID-19 Research Scenario Modeling Hub intended to encourage modeling to \naddress specific COVID-19 research questions. Specific focus areas in the pipeline \ninclude revisiting whether we could have projected the heterogeneities observed \nduring early stages of the pandemic and whether better modeling may have been \nable to inform action to reduce these heterogeneities. Additional research topics \nmay follow. \n"
         contact:
@@ -244,7 +244,7 @@ hubs:
           modelling collaboration.
         repo: european-modelling-hubs/RespiCompass
         insights: https://respicompass.ecdc.europa.eu/insights/
-        count: 14
+        count: 10
   cadph:
     logo: /includes/img/cadph.png
     name: California Department of Public Health
