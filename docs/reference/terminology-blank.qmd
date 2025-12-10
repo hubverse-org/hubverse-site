@@ -1,0 +1,6 @@
+---
+title: "Terminology"
+---
+
+This is a placeholder page. It is automatically regenerated with `scripts/update-terminology.py`
+
