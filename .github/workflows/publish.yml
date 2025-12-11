@@ -19,6 +19,12 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install Python dependencies
+        run: pip install -r requirements/requirements.txt
       - name: Install YQ
         env:
           VERSION: v4.45.1
