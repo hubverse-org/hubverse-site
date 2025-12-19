@@ -56,7 +56,7 @@ This will generate the [pre-computed content](#pre-computed-content) and run
 `quarto render` to generate the static site. Note, that it does require Python,
 bash, yq, and gh to work.
 
-If you are using this, know that the changes to `community/contributors.md` and
-to `terminology.qmd` are temporary and you should not commit those files
-
+If you are using this, know that the changes to `community/contributors.md`,
+to `terminology.qmd`, and to `cite.qmd` are temporary and you should not commit 
+those files.
 

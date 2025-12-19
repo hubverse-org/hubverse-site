@@ -2,13 +2,5 @@
 title: "How to cite"
 ---
 
-A citation for _the hubverse_ should look like the example below. 
-
-:::{.callout-note}
-
-### Citation
-
-The Consortium of Infectious Disease Modeling Hubs. The hubverse: open tools for collaborative modeling. GitHub release {{< var version >}}, {{< var version_date >}} URL: https://github.com/hubverse-org
-
-:::
+This is a placeholder page. It is automatically regenerated with `scripts/update-cite.py`
 
