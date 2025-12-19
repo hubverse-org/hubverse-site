@@ -70,7 +70,7 @@ hubs:
         license: MIT License
         forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
         evals: https://reichlab.io/metrocast-dashboard/eval.html
-        count: 7
+        count: 12
   ai4casting:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
@@ -89,7 +89,7 @@ hubs:
         repo: ai4castinghub/hospitalization-forecast
         license: MIT License
         forecasts: https://4castinghub.uoguelph.ca/hospitalization/
-        count: 11
+        count: 12
       - name: "RVDSS Forecast Hub"
         description: |
           RVDSS is a national surveillance system that collects and
@@ -180,7 +180,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 86
+        count: 87
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
