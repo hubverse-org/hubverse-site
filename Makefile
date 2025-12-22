@@ -19,11 +19,16 @@ terminology: # generate terminology page (requires python)
 	@echo Updating terminology page...
 	python scripts/update-terminology.py
 
+.PHONY: cite
+cite: # generate cite page (requires python)
+	@echo Updating cite page...
+	python scripts/update-cite.py
+
 .PHONY: render
-render: contributors models terminology # update files and render to HTML 
+render: contributors models terminology cite # update files and render to HTML 
 	quarto render
 
 .PHONY: preview
-preview: contributors models terminology # update files and preview
+preview: contributors models terminology cite # update files and preview
 	quarto preview
 
