@@ -39,6 +39,7 @@ jobs:
           make contributors
           make models
           make terminology
+          make cite
 
       - name: Test
         if: ${{ github.event_name == 'pull_request' }}
