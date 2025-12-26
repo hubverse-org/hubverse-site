@@ -219,7 +219,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 25
+        count: 26
       - name: "European Covid-19 Forecasting Hub"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
