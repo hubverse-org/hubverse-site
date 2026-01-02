@@ -1,5 +1,3 @@
-# scripts/update-cite.py
-
 import re
 import requests
 
@@ -113,7 +111,7 @@ title: "How to cite"
 ---
 
 <!--
-This page should not be edited directly as it is automatically regenerated with `scripts/update-cite.py`
+This page should not be edited directly as it is automatically regenerated with `scripts/update_cite.py`
 The content is drawn from this source:
 https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/cite.md
 Any edits to citation content should be made on the hubDocs repository.

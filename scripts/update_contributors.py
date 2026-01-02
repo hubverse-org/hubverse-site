@@ -39,7 +39,7 @@ output_file = f"{output_dir}/contributors.md"
 with open(output_file, "w", encoding="utf-8") as file:
     file.write(
         "<!--\n"
-        "This page should not be edited directly as it is automatically regenerated with `scripts/update-contributors.py`\n"
+        "This page should not be edited directly as it is automatically regenerated with `scripts/update_contributors.py`\n"
         "-->\n\n"
     )
     file.write("# Contributors to hubverse repositories\n\nThese are the contributors to hubverse repositories in random order.\n\n")
