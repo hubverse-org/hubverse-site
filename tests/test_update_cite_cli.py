@@ -1,3 +1,4 @@
+import requests
 import types
 import io
 import os
@@ -13,7 +14,7 @@ class DummyResponse:
         self.status_code = status_code
     def raise_for_status(self):
         if self.status_code >= 400:
-            raise Exception(f"HTTP {self.status_code}")
+            raise requests.HTTPError(f"HTTP {self.status_code}")
 
 def test_fetch_markdown_success(monkeypatch):
     def fake_get(url, timeout=30):
