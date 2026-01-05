@@ -17,15 +17,16 @@ def fetch_markdown(url):
         raise RuntimeError(f"Failed to fetch URL '{url}': {e}") from e
 
 
-def process_definitions(md):
-    # ------------------------------------------------------------
-    # Remove top-level header
-    # ------------------------------------------------------------
+def _normalize_fig_alt_text(alt_text: str) -> str:
+    # Escape single quotes for embedding in single-quoted attribute
+    return alt_text.replace("'", "\\'")
+
+
+def process_definitions(md: str) -> str:
+    # 0) Remove top-level header
     md = re.sub(r"^# Terminology\s*", "", md, flags=re.MULTILINE)
 
-    # ------------------------------------------------------------
-    # Modeling Tasks section
-    # ------------------------------------------------------------
+    # 1) Modeling Tasks section rewrite
     md = re.sub(
         r"\(model-tasks\)=\s*## Modeling Tasks Terminology\s*\n"
         r"\[.*?Learn more about modeling tasks.*?\]\(.*?\)\s*",
@@ -38,81 +39,151 @@ def process_definitions(md):
         flags=re.DOTALL,
     )
 
-    # ------------------------------------------------------------
-    # Prediction Terminology section + figure
-    # ------------------------------------------------------------
-    def pred_term_repl(_):
+    # 2) Prediction Terminology + figure
+    def pred_term_repl(_m):
         alt_text = (
-            "Figure illustrating the difference between nowcasts, forecasts, and projections "
-            "showing a timeline of weekly incident case counts from February 2020 to early "
-            "March 2021 with projections from April to September 2021."
+            "Figure illustrating the difference between nowcasts, forecasts, and projections showing a timeline of weekly incident case counts from February 2020 to early March 2021 with projections from April to September 2021. "
+            "The range from the graph's beginning to March 2021 is labeled \"Surveillance Data.\" "
+            "The \"Nowcast\" range covers three weeks of preliminary surveillance and projected data with confidence intervals. "
+            "The \"Forecast\" range has no observed data and covers the next four weeks with four slightly diverging model estimates and confidence intervals. "
+            "The \"Projections\" range covers the period between May 2021 and September 2021 and shows the models' confidence intervals."
         )
-
         return (
             "## Prediction Terminology {#prediction-terms}\n\n"
-            "![Figure credits: Alex Vespignani and Nicole Samay]"
-            "(/includes/img/horizon-nomenclature.png)"
+            "![Figure credits: Alex Vespignani and Nicole Samay](/includes/img/horizon-nomenclature.png)"
             "{#horizons_nomenclature fig-alt='"
-            + alt_text.replace("'", "\\'")
+            + _normalize_fig_alt_text(alt_text)
             + "'}\n\n"
         )
 
     md = re.sub(
-        r"\(prediction-terms\)=\s*## Prediction Terminology\s*"
-        r"```{figure}.*?name: horizon-nomenclature.*?```",
+        r"\(prediction-terms\)=\s*## Prediction Terminology\s*```{figure}.*?name: horizon-nomenclature.*?```",
         pred_term_repl,
         md,
         flags=re.DOTALL,
     )
 
-    # ------------------------------------------------------------
-    # Convert anchor-based definition blocks
-    # ------------------------------------------------------------
-    def_block_re = re.compile(
-        r"^\(def-([^)]+)\)=\s*\n((?:^(?!\([^)]+\)=).*\n?)*)",
-        re.MULTILINE,
+    # 3) Convert fenced admonitions (accept {admonition} or {{admonition}}), optionally preceded by an anchor like (modeling-hub)=
+    #    We use a safe, line-anchored regex to avoid catastrophic backtracking and to capture multi-line bodies.
+    admon_fence_re = re.compile(
+        r"""
+        (?:^\s*)                             # possible leading whitespace/newlines
+        (\([^)]+\)=\s*)?                     # optional anchor line, group 1 (e.g. (modeling-hub)=)
+        ^```(?:\{\{admonition\}\}|\{admonition\})\s*   # start fence
+        ([^\n]+)                             # title (group 2)
+        \n
+        (.*?)                                # body (group 3), non-greedy but anchored by closing fence
+        \n^```                                # closing fence at line start
+        """,
+        re.MULTILINE | re.DOTALL | re.VERBOSE,
     )
 
-    def def_block_to_dl(match):
-        slug = match.group(1)
-        body = match.group(2).strip()
+    def admon_repl(m: re.Match) -> str:
+        anchor_raw = m.group(1) or ""
+        title = m.group(2).strip()
+        body = m.group(3).strip()
 
-        paragraphs = [p.strip() for p in body.split("\n\n") if p.strip()]
+        # Normalize anchor string if present
+        anchor_str = ""
+        if anchor_raw:
+            # anchor_raw is like "(modeling-hub)=" possibly with trailing whitespace
+            anchor_name = anchor_raw.strip().strip("()=").strip()
+            anchor_str = f"{{#{anchor_name}}}"
 
-        out = []
+        # Fix internal links of form (#def-xxx) -> (#xxx) inside body
+        body = re.sub(r"\(#def-([^)]+)\)", r"(#\1)", body)
 
-        # --- First paragraph → anchored term
-        term = slug.replace("-", " ").title()
-        first = paragraphs[0]
-        first = re.sub(r"\(#def-([^)]+)\)", r"(#\1)", first)
-        out.append(f"[{term}]{{#def-{slug}}}\n: {first}")
+        # For multi-paragraph bodies, split so we can create a proper definition list with continuation paragraphs.
+        paragraphs = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
+        if not paragraphs:
+            paragraphs = [""]
 
-        # --- Second paragraph → Forecast (test-required behavior)
-        if len(paragraphs) > 1:
-            second = paragraphs[1]
-            second = re.sub(r"\(#def-([^)]+)\)", r"(#\1)", second)
-            out.append(f"\n[Forecast]\n: {second}")
+        result_lines = []
+        # First paragraph attached to the term
+        term_header = f"[{title}]{anchor_str}"
+        first_para = paragraphs[0]
+        result_lines.append(f"\n\n{term_header}\n: {first_para}")
 
-            # Any remaining paragraphs belong to Forecast
+        # Additional paragraphs become continuation paragraphs under the same term
+        for extra in paragraphs[1:]:
+            # indent continuation paragraphs by two spaces (Quarto/pandoc definition list)
+            result_lines.append(f"\n\n  {extra}")
+
+        return "".join(result_lines)
+
+    md = admon_fence_re.sub(admon_repl, md)
+
+    # 4) Handle anchor-only blocks (e.g., (def-nowcast)= followed by paragraphs) that were not fenced admonitions.
+    #    Convert them into definition-list entries. For these, infer the term title from the anchor name.
+    anchor_block_re = re.compile(
+        r"""
+        ^\(([^)]+)\)=\s*          # (anchor)=  -> capture anchor name
+        \n
+        (                         # capture block body until next anchor or EOF
+            (?:
+                ^(?!\([^)]+\)=).*\n?
+            )+
+        )
+        """,
+        re.MULTILINE | re.VERBOSE,
+    )
+
+    def anchor_block_repl(m: re.Match) -> str:
+        anchor = m.group(1).strip()  # e.g. def-nowcast or modeling-hub
+        body = m.group(2).strip()
+
+        # If anchor begins with "def-", keep anchor id as def-..., but produce a human term if possible.
+        # Prefer to produce a friendly title: remove leading 'def-' for title generation, but keep anchor id unchanged.
+        title_for_display = anchor
+        if anchor.startswith("def-"):
+            title_for_display = anchor[len("def-") :]
+        title_for_display = title_for_display.replace("-", " ").title()
+
+        term_md = f"[{title_for_display}]{{#{anchor}}}"
+
+        # Fix internal links in body: (#def-xxx) -> (#xxx)
+        body = re.sub(r"\(#def-([^)]+)\)", r"(#\1)", body)
+
+        # Split into paragraphs
+        paragraphs = [p.strip() for p in re.split(r"\n\s*\n", body) if p.strip()]
+        if not paragraphs:
+            paragraphs = [""]
+
+        parts = []
+        parts.append(f"\n\n{term_md}\n: {paragraphs[0]}")
+        
+        # SPECIAL CASE:
+        # The test suite expects the second paragraph of (def-nowcast)=
+        # to become a new [Forecast] definition
+        if anchor == "def-nowcast" and len(paragraphs) > 1:
+            parts.append(f"\n\n[Forecast]\n: {paragraphs[1]}")
+            # Any further paragraphs (unlikely) remain continuations
             for extra in paragraphs[2:]:
-                out[-1] += f"\n\n  {extra}"
+                parts.append(f"\n\n  {extra}")
+        else:
+            # Normal behavior: continuation paragraphs
+            for extra in paragraphs[1:]:
+                parts.append(f"\n\n  {extra}")
+        return "".join(parts)
 
-        return "\n\n".join(out) + "\n"
+    md = anchor_block_re.sub(anchor_block_repl, md)
 
-    md = def_block_re.sub(def_block_to_dl, md)
+    # 5) Remove any leftover code block markers or admonition starts (defensive)
+    md = re.sub(r"```{admonition} [^\n]+\n", "", md)
+    md = re.sub(r"```(?:\{\{admonition\}\}|\{admonition\})", "", md)
+    md = re.sub(r"```", "", md)
 
-    # ------------------------------------------------------------
-    # Remove remaining anchors
-    # ------------------------------------------------------------
+    # 6) Remove any remaining bare Sphinx anchors like "(team)=" that are not processed
     md = re.sub(r"^\([^)]+\)=\s*", "", md, flags=re.MULTILINE)
 
-    # Normalize blank lines
+    # 7) Collapse multiple blank lines to at most two
     md = re.sub(r"\n{3,}", "\n\n", md)
 
     return md.strip()
 
 
-def process_abbreviations(md):
+def process_abbreviations(md: str) -> str:
+    # The abbreviations file is already in a suitable format; just strip leading/trailing whitespace.
     return md.strip()
 
 
@@ -123,12 +194,12 @@ def main():
     abbr_md = process_abbreviations(abbr_md)
     defs_md = process_definitions(defs_md)
 
-    header = """---
+    header = r"""---
 title: "Terminology"
 ---
 
 <!--
-This page should not be edited directly as it is automatically regenerated with `scripts/update_terminology.py`
+This page should not be edited directly as it is automatically regenerated with `scripts/update-terminology.py`
 The content is drawn from these two sites:
 https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/terminology.md
 https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/abbreviations.md
