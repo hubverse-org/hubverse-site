@@ -1,117 +1,104 @@
-import random
-from pathlib import Path
-from types import SimpleNamespace
-
+import os
+from unittest.mock import MagicMock
 import pytest
 
-from scripts import update_contributors as uc
+from scripts.update_contributors import (
+    get_github_client,
+    fetch_contributors,
+    write_contributors_file,
+)
 
-def make_fake_user(login, *, name=None, blog=None, bio=None, location=None):
-    # Fully shaped user object to avoid exceptions in render
-    return SimpleNamespace(
-        login=login,
-        name=name,
-        blog=blog,
-        bio=bio,
-        location=location,
-        avatar_url=f"https://avatar.example/{login}.png",
-        html_url=f"https://github.com/{login}",
+# Test 1: missing token
+def test_get_github_client_no_token():
+    with pytest.raises(ValueError, match="GITHUB_TOKEN is not set"):
+        get_github_client(None)
+
+# Test 2: fetching contributors (including filtering)
+def test_fetch_contributors_filters_dependabot():
+    # Mock contributors
+    alice = MagicMock(login="alice")
+    dependabot = MagicMock(login="dependabot[bot]")
+
+    repo1 = MagicMock()
+    repo1.name = "repo1"
+    repo1.get_contributors.return_value = [alice, dependabot]
+
+    repo2 = MagicMock()
+    repo2.name = "repo2"
+    repo2.get_contributors.return_value = [alice]
+
+    org = MagicMock()
+    org.get_repos.return_value = [repo1, repo2]
+
+    contributors = fetch_contributors(org)
+
+    assert "alice" in contributors
+    assert contributors["alice"] == {"repo1", "repo2"}
+    assert not any(k.startswith("dependabot") for k in contributors)
+
+# Test 3: repo contributor fetch failure is skipped
+def test_fetch_contributors_skips_failing_repo():
+    repo_ok = MagicMock()
+    repo_ok.name = "ok"
+    repo_ok.get_contributors.return_value = [MagicMock(login="bob")]
+
+    repo_fail = MagicMock()
+    repo_fail.get_contributors.side_effect = Exception("API error")
+
+    org = MagicMock()
+    org.get_repos.return_value = [repo_ok, repo_fail]
+
+    contributors = fetch_contributors(org)
+
+    assert contributors == {"bob": {"ok"}}
+
+# Test 4: write file successfully
+def test_write_contributors_file(tmp_path):
+    github = MagicMock()
+
+    user = MagicMock()
+    user.name = "Alice Smith"
+    user.blog = "example.com"
+    user.bio = "  Open source contributor "
+    user.location = "USA"
+    user.avatar_url = "https://avatar"
+    user.html_url = "https://github.com/alice"
+
+    github.get_user.return_value = user
+
+    contributors = {"alice": {"repo1", "repo2"}}
+
+    output_file = write_contributors_file(
+        github,
+        contributors,
+        output_dir=tmp_path,
+        shuffle=False,
     )
 
-class FakeRepo:
-    def __init__(self, name, contributors, error=False):
-        self.name = name
-        self._contributors = contributors
-        self._error = error
-    def get_contributors(self):
-        if self._error:
-            raise Exception("API error")
-        return self._contributors
+    content = (tmp_path / "contributors.md").read_text()
 
-class FakeOrg:
-    def __init__(self, repos, users):
-        self._repos = repos
-        self._users = users
-    def get_repos(self):
-        return self._repos
-    def get_user(self, login):
-        # Always return a fully shaped user
-        u = self._users.get(login)
-        return u if u else make_fake_user(login)
+    assert "Alice Smith" in content
+    assert "https://example.com" in content
+    assert "Open source contributor." in content
+    assert "USA." in content
+    assert "repo1, repo2" in content
 
-class FakeGithub:
-    def __init__(self, org):
-        self._org = org
-    def get_organization(self, name):
-        return self._org
+# Test 5: fallback when user lookup fails
+def test_write_contributors_file_user_failure(tmp_path):
+    github = MagicMock()
+    github.get_user.side_effect = Exception("User not found")
 
-def run_with_tmp_output(tmp_path, repos, users, monkeypatch):
-    # Stabilize order
-    monkeypatch.setattr(random, "shuffle", lambda xs: None)
-    # Redirect output
-    monkeypatch.setattr(uc, "OUTPUT_DIR", str(tmp_path))
-    monkeypatch.setattr(uc, "OUTPUT_FILE", str(tmp_path / "contributors.md"))
-    # Run
-    g = FakeGithub(FakeOrg(repos, users))
-    uc.render_contributors(g)
-    return tmp_path / "contributors.md"
+    contributors = {"ghost": {"repo1"}}
 
-def test_end_to_end_writes_contributors(tmp_path, monkeypatch):
-    repo_a = FakeRepo("repoA", [make_fake_user("alice"), make_fake_user("dependabot[bot]")])
-    repo_b = FakeRepo("repoB", [make_fake_user("bob"), make_fake_user("alice")])
-    users = {
-        "alice": make_fake_user("alice", name="Alice A.", blog="alice.example", bio="Researcher", location="MA"),
-        "bob": make_fake_user("bob"),  # minimal
-    }
-    out_path = run_with_tmp_output(tmp_path, [repo_a, repo_b], users, monkeypatch)
-    text = out_path.read_text(encoding="utf-8")
+    write_contributors_file(
+        github,
+        contributors,
+        output_dir=tmp_path,
+        shuffle=False,
+    )
 
-    assert "This page should not be edited directly" in text
-    assert "# Contributors to hubverse repositories" in text
-    assert "dependabot" not in text
+    content = (tmp_path / "contributors.md").read_text()
 
-    # Alice: blog normalization + name becomes a link only when blog exists
-    assert "- [Alice A.](https://alice.example) ([alice](https://github.com/alice))." in text
-    # Bob: no blog → plain name + GitHub link
-    assert "- bob ([bob](https://github.com/bob))." in text
-
-    # Bio/location sentences
-    assert " Researcher." in text
-    assert " MA." in text
-
-    # Aggregated repos sorted
-    assert "Repositories contributed to: repoA, repoB." in text
-
-    # One separator between two entries, none at end
-    assert text.count("---") == 1
-    assert text.strip().endswith(".")
-
-def test_repo_error_is_skipped(tmp_path, monkeypatch):
-    repo_err = FakeRepo("repoErr", [], error=True)
-    repo_ok = FakeRepo("repoOk", [make_fake_user("carol")])
-    users = {"carol": make_fake_user("carol", blog="https://carol.dev", name="Carol")}
-    out_path = run_with_tmp_output(tmp_path, [repo_err, repo_ok], users, monkeypatch)
-    text = out_path.read_text(encoding="utf-8")
-    assert "- [Carol](https://carol.dev) ([carol](https://github.com/carol))." in text
-    assert "repoOk" in text
-    assert "repoErr" not in text
-
-def test_fallback_on_user_fetch_failure(tmp_path, monkeypatch):
-    # No override for 'dave' → minimal user returns; still renders without exception
-    repo = FakeRepo("repoX", [make_fake_user("dave")])
-    users = {}
-    out_path = run_with_tmp_output(tmp_path, [repo], users, monkeypatch)
-    text = out_path.read_text(encoding="utf-8")
-    assert "- dave ([dave](https://github.com/dave))." in text
-
-def test_blog_scheme_added_only_when_missing(tmp_path, monkeypatch):
-    repo = FakeRepo("repoSchemes", [make_fake_user("eve"), make_fake_user("frank")])
-    users = {
-        "eve": make_fake_user("eve", name="Eve", blog="eve.dev"),             # no scheme → https:// added
-        "frank": make_fake_user("frank", name="Frank", blog="http://frank.dev"),  # preserve scheme
-    }
-    out_path = run_with_tmp_output(tmp_path, [repo], users, monkeypatch)
-    text = out_path.read_text(encoding="utf-8")
-    assert "(https://eve.dev)" in text
-    assert "(http://frank.dev)" in text
+    assert "Failed to fetch additional details" in content
+    assert "ghost" in content
 
