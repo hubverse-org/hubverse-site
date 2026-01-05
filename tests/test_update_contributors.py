@@ -1,19 +1,20 @@
 import random
 from pathlib import Path
 from types import SimpleNamespace
+
 import pytest
 
 from scripts import update_contributors as uc
 
-def make_fake_user(login, *, name=None, blog=None, bio=None, location=None,
-                   avatar_url="https://avatar.example/50.png"):
+def make_fake_user(login, *, name=None, blog=None, bio=None, location=None):
+    # Fully shaped user object to avoid exceptions in render
     return SimpleNamespace(
         login=login,
         name=name,
         blog=blog,
         bio=bio,
         location=location,
-        avatar_url=avatar_url,
+        avatar_url=f"https://avatar.example/{login}.png",
         html_url=f"https://github.com/{login}",
     )
 
@@ -34,7 +35,9 @@ class FakeOrg:
     def get_repos(self):
         return self._repos
     def get_user(self, login):
-        return self._users.get(login, make_fake_user(login))
+        # Always return a fully shaped user
+        u = self._users.get(login)
+        return u if u else make_fake_user(login)
 
 class FakeGithub:
     def __init__(self, org):
@@ -43,10 +46,12 @@ class FakeGithub:
         return self._org
 
 def run_with_tmp_output(tmp_path, repos, users, monkeypatch):
-    # Stabilize order for assertions
+    # Stabilize order
     monkeypatch.setattr(random, "shuffle", lambda xs: None)
+    # Redirect output
     monkeypatch.setattr(uc, "OUTPUT_DIR", str(tmp_path))
     monkeypatch.setattr(uc, "OUTPUT_FILE", str(tmp_path / "contributors.md"))
+    # Run
     g = FakeGithub(FakeOrg(repos, users))
     uc.render_contributors(g)
     return tmp_path / "contributors.md"
@@ -56,7 +61,7 @@ def test_end_to_end_writes_contributors(tmp_path, monkeypatch):
     repo_b = FakeRepo("repoB", [make_fake_user("bob"), make_fake_user("alice")])
     users = {
         "alice": make_fake_user("alice", name="Alice A.", blog="alice.example", bio="Researcher", location="MA"),
-        "bob": make_fake_user("bob"),  # minimal, so plain name
+        "bob": make_fake_user("bob"),  # minimal
     }
     out_path = run_with_tmp_output(tmp_path, [repo_a, repo_b], users, monkeypatch)
     text = out_path.read_text(encoding="utf-8")
@@ -79,7 +84,7 @@ def test_end_to_end_writes_contributors(tmp_path, monkeypatch):
 
     # One separator between two entries, none at end
     assert text.count("---") == 1
-    assert text.strip().endswith(".")  # not ending with '---'
+    assert text.strip().endswith(".")
 
 def test_repo_error_is_skipped(tmp_path, monkeypatch):
     repo_err = FakeRepo("repoErr", [], error=True)
@@ -87,7 +92,6 @@ def test_repo_error_is_skipped(tmp_path, monkeypatch):
     users = {"carol": make_fake_user("carol", blog="https://carol.dev", name="Carol")}
     out_path = run_with_tmp_output(tmp_path, [repo_err, repo_ok], users, monkeypatch)
     text = out_path.read_text(encoding="utf-8")
-    # With blog present, name appears in brackets
     assert "- [Carol](https://carol.dev) ([carol](https://github.com/carol))." in text
     assert "repoOk" in text
     assert "repoErr" not in text
