@@ -1,10 +1,7 @@
 import re
 import requests
 
-CITE_URL = (
-    "https://raw.githubusercontent.com/"
-    "hubverse-org/hubDocs/main/docs/source/overview/cite.md"
-)
+CITE_URL = "https://raw.githubusercontent.com/hubverse-org/hubDocs/main/docs/source/overview/cite.md"
 
 DEST_FILE = "cite.qmd"
 
