@@ -25,7 +25,7 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 
 :::{.about-entity .column-page}
 
-![](/logo/logo-with-text.png){alt="The hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
+![](/brand/logo/logo-with-text.png){alt="The hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
 
 ## Improving public health outcomes through collaborative modeling {.subtitle}
 

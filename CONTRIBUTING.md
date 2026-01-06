@@ -50,9 +50,9 @@ These are supported by _auxiliary content_ folders:
 
  - `includes/img` contains images that are used in the pages. These images are
    always referenced with a leading slash like so `/includes/img/showcase.png`
- - `logo/` is a special folder that contains the hubverse logo
  - `brand/` contains a directive that allows us to use the logo in the site
     icons and allow us to use partials.
+ - `brand/logo/` is a special folder that contains the hubverse logo
  - `_partials/` contains HTML templates that are used for formatting the more
    complex parts of the site including testimonials and hub layouts. These are
    controlled by the quarto paritals extension
