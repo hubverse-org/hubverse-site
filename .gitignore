@@ -12,3 +12,5 @@ __pycache__/
 .coverage
 htmlcov/
 
+**/*.quarto_ipynb
+
