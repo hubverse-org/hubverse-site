@@ -31,7 +31,7 @@ hubs:
       evals: https://example.org/hub-insights/evals.html
       count: 5 # number of models submitted (this is automatically updated if your hub is public)
   hubverse:
-    logo: /logo/logo-with-text.png
+    logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
     hubs:
     - name: "Archival FluSight hub (2015--2019)"
