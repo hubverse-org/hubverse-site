@@ -1,48 +1,53 @@
-import requests
 import pytest
+import requests
+from unittest.mock import Mock, patch
 
 from scripts import update_cite
 
 
-class DummyResponse:
-    def __init__(self, text, status_code=200):
-        self.text = text
-        self.status_code = status_code
-
-    def raise_for_status(self):
-        if self.status_code >= 400:
-            raise requests.HTTPError(f"HTTP {self.status_code}")
-
-
-def test_fetch_markdown_success(monkeypatch):
-    def fake_get(url, timeout=30):
-        return DummyResponse("CONTENT")
-
-    monkeypatch.setattr(update_cite.requests, "get", fake_get)
+@patch("scripts.update_cite.requests.get")
+def test_fetch_markdown_success(mock_get):
+    mock_get.return_value = Mock(
+        text="CONTENT",
+        raise_for_status=Mock(),
+    )
 
     out = update_cite.fetch_markdown("http://example")
     assert out == "CONTENT"
 
 
-def test_fetch_markdown_failure_raises(monkeypatch):
-    def fake_get(url, timeout=30):
-        return DummyResponse("ERR", status_code=500)
-
-    monkeypatch.setattr(update_cite.requests, "get", fake_get)
+@patch("scripts.update_cite.requests.get")
+def test_fetch_markdown_failure_raises(mock_get):
+    mock_resp = Mock()
+    mock_resp.raise_for_status.side_effect = requests.HTTPError("HTTP 500")
+    mock_get.return_value = mock_resp
 
     with pytest.raises(RuntimeError):
         update_cite.fetch_markdown("http://example")
 
 
-def test_main_writes_dest_file(tmp_path, monkeypatch, sample_md_with_header):
+@patch("scripts.update_cite.requests.get")
+def test_fetch_markdown_failure_raises(mock_get):
+    mock_resp = Mock()
+    mock_resp.raise_for_status.side_effect = requests.HTTPError("HTTP 500")
+    mock_get.return_value = mock_resp
+
+    with pytest.raises(RuntimeError):
+        update_cite.fetch_markdown("http://example")
+
+
+@patch("scripts.update_cite.requests.get")
+def test_main_writes_dest_file(
+    mock_get, tmp_path, monkeypatch, sample_md_with_header
+):
     dest = tmp_path / "cite.qmd"
     monkeypatch.setattr(update_cite, "DEST_FILE", str(dest))
     monkeypatch.setattr(update_cite, "CITE_URL", "http://dummy")
 
-    def fake_get(url, timeout=30):
-        return DummyResponse(sample_md_with_header)
-
-    monkeypatch.setattr(update_cite.requests, "get", fake_get)
+    mock_get.return_value = Mock(
+        text=sample_md_with_header,
+        raise_for_status=Mock(),
+    )
 
     update_cite.main()
 
@@ -59,15 +64,18 @@ def test_main_writes_dest_file(tmp_path, monkeypatch, sample_md_with_header):
     "bad_text",
     ["", "BibTeX:\n```\n@x{}\n```\n"],
 )
-def test_main_handles_minimal_inputs(tmp_path, monkeypatch, bad_text):
+@patch("scripts.update_cite.requests.get")
+def test_main_handles_minimal_inputs(
+    mock_get, tmp_path, monkeypatch, bad_text
+):
     dest = tmp_path / "cite.qmd"
     monkeypatch.setattr(update_cite, "DEST_FILE", str(dest))
     monkeypatch.setattr(update_cite, "CITE_URL", "http://dummy")
 
-    def fake_get(url, timeout=30):
-        return DummyResponse(bad_text)
-
-    monkeypatch.setattr(update_cite.requests, "get", fake_get)
+    mock_get.return_value = Mock(
+        text=bad_text,
+        raise_for_status=Mock(),
+    )
 
     update_cite.main()
 

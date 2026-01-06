@@ -1,53 +1,47 @@
-import requests
 import pytest
-from pathlib import Path
+import requests
+from unittest.mock import Mock, patch
 
 from scripts import update_terminology
 
 
-class DummyResponse:
-    def __init__(self, text, status_code=200):
-        self.text = text
-        self.status_code = status_code
+@patch("scripts.update_terminology.requests.get")
+def test_fetch_markdown_success(mock_get):
+    mock_get.return_value = Mock(
+        text="CONTENT",
+        raise_for_status=Mock(),
+    )
 
-    def raise_for_status(self):
-        if self.status_code >= 400:
-            raise requests.HTTPError(f"HTTP {self.status_code}")
-
-
-def test_fetch_markdown_success(monkeypatch):
-    def fake_get(url):
-        return DummyResponse("CONTENT")
-
-    monkeypatch.setattr(update_terminology.requests, "get", fake_get)
     assert update_terminology.fetch_markdown("http://x") == "CONTENT"
 
 
-def test_fetch_markdown_failure(monkeypatch):
-    def fake_get(url):
-        return DummyResponse("ERR", status_code=500)
-
-    monkeypatch.setattr(update_terminology.requests, "get", fake_get)
+@patch("scripts.update_terminology.requests.get")
+def test_fetch_markdown_failure(mock_get):
+    mock_resp = Mock()
+    mock_resp.raise_for_status.side_effect = requests.HTTPError("HTTP 500")
+    mock_get.return_value = mock_resp
 
     with pytest.raises(RuntimeError):
         update_terminology.fetch_markdown("http://x")
 
 
-def test_main_writes_file(tmp_path, monkeypatch, sample_defs_md, sample_abbr_md):
+@patch("scripts.update_terminology.requests.get")
+def test_main_writes_file(
+    mock_get, tmp_path, monkeypatch, sample_defs_md, sample_abbr_md
+):
     dest = tmp_path / "terminology.qmd"
     monkeypatch.setattr(update_terminology, "DEST_FILE", str(dest))
 
-    def fake_get(url):
+    def side_effect(url, timeout=30):
         if "terminology.md" in url:
-            return DummyResponse(sample_defs_md)
-        return DummyResponse(sample_abbr_md)
+            return Mock(text=sample_defs_md, raise_for_status=Mock())
+        return Mock(text=sample_abbr_md, raise_for_status=Mock())
 
-    monkeypatch.setattr(update_terminology.requests, "get", fake_get)
+    mock_get.side_effect = side_effect
 
     update_terminology.main()
 
     assert dest.exists()
-
     text = dest.read_text(encoding="utf-8")
 
     # YAML header
@@ -62,14 +56,20 @@ def test_main_writes_file(tmp_path, monkeypatch, sample_defs_md, sample_abbr_md)
 
 
 @pytest.mark.parametrize("defs,abbr", [("", ""), ("#", "")])
-def test_main_handles_minimal_inputs(tmp_path, monkeypatch, defs, abbr):
+@patch("scripts.update_terminology.requests.get")
+def test_main_handles_minimal_inputs(
+    mock_get, tmp_path, monkeypatch, defs, abbr
+):
     dest = tmp_path / "terminology.qmd"
     monkeypatch.setattr(update_terminology, "DEST_FILE", str(dest))
 
-    def fake_get(url):
-        return DummyResponse(defs if "terminology" in url else abbr)
+    def side_effect(url, timeout=30):
+        return Mock(
+            text=defs if "terminology" in url else abbr,
+            raise_for_status=Mock(),
+        )
 
-    monkeypatch.setattr(update_terminology.requests, "get", fake_get)
+    mock_get.side_effect = side_effect
 
     update_terminology.main()
     assert dest.exists()
