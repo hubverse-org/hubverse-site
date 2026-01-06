@@ -7,7 +7,7 @@ help: # Show help for each of the Makefile recipes.
 .PHONY: contributors
 contributors: # generate contributors page (requires python)
 	@echo Updating contributors page...
-	python scripts/update-contributors.py
+	python scripts/update_contributors.py
 
 .PHONY: models
 models: # generate models page (requires BASH, yq, and gh)
@@ -17,15 +17,19 @@ models: # generate models page (requires BASH, yq, and gh)
 .PHONY: terminology
 terminology: # generate terminology page (requires python)
 	@echo Updating terminology page...
-	python scripts/update-terminology.py
+	python scripts/update_terminology.py
 
 .PHONY: cite
 cite: # generate cite page (requires python)
 	@echo Updating cite page...
-	python scripts/update-cite.py
+	python scripts/update_cite.py
+
+.PHONY: test
+test: # run unit tests (requires python/pytest)
+	python -m pytest
 
 .PHONY: render
-render: contributors models terminology cite # update files and render to HTML 
+render: contributors models terminology cite # update files and render to HTML
 	quarto render
 
 .PHONY: preview

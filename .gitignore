@@ -1,3 +1,14 @@
 /.quarto/
 /_site/
 .Rproj.user
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
