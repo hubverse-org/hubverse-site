@@ -59,6 +59,7 @@ def convert_admonitions_to_callouts(md: str) -> str:
     return pattern.sub(repl, md)
 
 
+# Ensures that any BibTeX code block is fenced as ```bibtex, while leaving all other fenced blocks unchanged.
 def normalize_bibtex_fences(md: str) -> str:
     lines = md.splitlines()
     out = []
@@ -67,7 +68,7 @@ def normalize_bibtex_fences(md: str) -> str:
     while i < len(lines):
         line = lines[i]
 
-        # Already-correct BibTeX fence
+        # If this is already a correctly labeled BibTeX code fence (```bibtex), copy the entire fenced block verbatim.
         if re.match(r"^\s*```bibtex\s*$", line):
             out.append(line)
             i += 1
@@ -79,7 +80,7 @@ def normalize_bibtex_fences(md: str) -> str:
                 i += 1
             continue
 
-        # BibTeX label → normalize following fence
+        # If there is a "BibTeX:" label followed by an unlabeled fenced block, convert the ``` fence into ```bibtex .
         if re.match(r"^\s*BibTeX:\s*$", line):
             out.append(line)
             if i + 1 < len(lines) and re.match(r"^\s*```\s*$", lines[i + 1]):
@@ -95,7 +96,7 @@ def normalize_bibtex_fences(md: str) -> str:
             i += 1
             continue
 
-        # Generic fenced block → pass through unchanged
+        # If there's any other fenced code block, pass it through unchanged (no relabeling)
         if re.match(r"^\s*```\s*$", line):
             out.append(line)
             i += 1
