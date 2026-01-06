@@ -9,7 +9,7 @@ website:
     content: "Welcome to the new hubverse site. If you have any comments, feel free to [provide feedback](https://github.com/hubverse-org/hubverse-site/issues/new)"
     type: info
     position: above-navbar
-  favicon: brand/logo/logo.png
+  favicon: /brand/logo/logo.png
   title: "hubverse"
   site-url: "https://hubverse.io"
   repo-url: "https://github.com/hubverse-org/hubverse-site"
@@ -92,8 +92,9 @@ format:
     link-external-icon: true
     breadcrumbs: true
     theme:
-      - litera
-      - includes/poppins.scss
+      light:
+        - litera
+        - includes/poppins.scss
     css: styles.css
     toc: true
     includes:
