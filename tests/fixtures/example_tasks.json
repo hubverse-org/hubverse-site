@@ -1,0 +1,30 @@
+{
+  "rounds": [
+    {
+      "model_tasks": [
+        {
+          "target_metadata": [
+            {
+              "target_id": "accuracy",
+              "target_name": "Accuracy",
+              "target_type": "metric",
+              "description": "Accuracy on validation split",
+              "time_unit": "seconds"
+            },
+            {
+              "target_id": "latency",
+              "target_name": "Latency",
+              "target_type": "metric",
+              "description": "99th percentile latency",
+              "time_unit": "milliseconds"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "cloud": {
+    "host": "aws://prod.example.internal"
+  }
+}
+

@@ -1,0 +1,15 @@
+---
+title: Active Hubs (fixture)
+hubs:
+  - region: Americas
+    hubs:
+      - name: Foo Hub
+        repo: foo/bar
+        count: 0
+      - name: Baz Hub
+        repo: baz/qux
+        count: 0
+---
+
+# Active hubs list
+
