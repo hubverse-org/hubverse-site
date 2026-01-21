@@ -17,16 +17,16 @@ setup() {
   cat <<'EOF' >"$BATS_TEST_TMPDIR/expected"
 2 targets for example/hub
 ==========================================================================
-- id: accuracy
-  name: Accuracy
-  type: metric
-  desc: Accuracy on validation split
-  unit: seconds
-- id: latency
-  name: Latency
-  type: metric
-  desc: 99th percentile latency
-  unit: milliseconds
+- id: wk inc hosp
+  name: incident hospitalizations
+  type: continuous
+  desc: Hospitalization counts on a weekly basis
+  unit: week
+- id: death prop
+  name: proportion of deaths
+  type: compositional
+  desc: Daily nowcasted proportion of deaths among all cases
+  unit: day
 EOF
 
   # strip the leading blank line emitted by `echo` in the script

@@ -1,9 +1,9 @@
 ---
 title: Active Hubs (fixture)
 hubs:
-  - region: Americas
+  - name: Unit Test Foo Hubs
     hubs:
-      - name: Foo Hub
+      - name: Foo Hub 1
         repo: foo/bar
         count: 0
       - name: Baz Hub
@@ -12,4 +12,5 @@ hubs:
 ---
 
 # Active hubs list
-
+ 
+ 
