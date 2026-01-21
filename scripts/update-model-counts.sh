@@ -57,4 +57,3 @@ for hub in "${hubs[@]}"; do
   fi
 done
 
-
