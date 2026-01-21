@@ -1,5 +1,5 @@
 | example | name | hub name | repo | insights | aws |
-| ------- | ---- | -------- | ---- | -------- | --- |
+|----|----|----|----|----|----|
 | hubverse | The hubverse | Archival FluSight hub (2015--2019) | hubverse-org/flusight_hub_archive |  | uscdc-flusight-hub-v1 |
 | epiengage | epiENGAGE | Variant Nowcast Hub | reichlab/variant-nowcast-hub | https://reichlab.io/variant-nowcast-hub-dashboard/ | covid-variant-nowcast-hub |
 | epiengage | epiENGAGE | Flu Metrocast Hub | reichlab/flu-metrocast |  | reichlab-flu-metrocast-hub |
