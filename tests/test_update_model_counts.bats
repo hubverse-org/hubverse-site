@@ -16,7 +16,7 @@ setup() {
   export GH_COUNT_foo_bar=3
   export GH_COUNT_baz_qux=5
 
-  run scripts/update-model-counts.sh "$hub_file"
+  run "${BATS_TEST_DIRNAME}/../scripts/update-model-counts.sh" "$hub_file"
 
   [ "$status" -eq 0 ]
   [[ "$output" == *"foo/bar has 3 models"* ]]
@@ -42,7 +42,7 @@ setup() {
   export GH_COUNT_foo_bar=2
   export GH_COUNT_baz_qux="oops"
 
-  run scripts/update-model-counts.sh "$hub_file"
+  run "${BATS_TEST_DIRNAME}/../scripts/update-model-counts.sh" "$hub_file"
 
   [ "$status" -eq 0 ]
   [[ "$output" == *"foo/bar has 2 models"* ]]

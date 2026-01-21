@@ -2,6 +2,8 @@
 
 setup() {
   local stubdir="${BATS_TEST_DIRNAME}/stubs"
+  
+  HUB_PATH="${BATS_TEST_DIRNAME}/../example/hub"
 
   export GH_BIN="${stubdir}/gh"
   export CURL_BIN="${stubdir}/curl"
@@ -9,7 +11,11 @@ setup() {
 }
 
 @test "default run prints targets summary" {
-  run scripts/get-hub-stats.sh example/hub
+  if ! command -v yq >/dev/null; then
+    skip "yq must be installed for this test"
+  fi
+  
+  run "${BATS_TEST_DIRNAME}/../scripts/get-hub-stats.sh" "$hub_path"
 
   [ "$status" -eq 0 ]
   [[ "$output" == *"2 targets for example/hub"* ]]
