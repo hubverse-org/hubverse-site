@@ -9,19 +9,20 @@ setup() {
   export CURL_BIN="${stubdir}/curl"
   export CURL_FIXTURE="${BATS_TEST_DIRNAME}/fixtures/example_tasks.json"
 }
-
 @test "default run prints targets summary" {
   if ! command -v yq >/dev/null; then
     skip "yq must be installed for this test"
   fi
-  
-  run "${BATS_TEST_DIRNAME}/../scripts/get-hub-stats.sh" "$hub_path"
+
+  run "${BATS_TEST_DIRNAME}/../scripts/get-hub-stats.sh" "$HUB_PATH"
 
   [ "$status" -eq 0 ]
-  [[ "$output" == *"2 targets for example/hub"* ]]
 
-  cat <<'EOF' >"$BATS_TEST_TMPDIR/expected"
-2 targets for example/hub
+  header="2 targets for ${HUB_PATH}"
+  [[ "$output" == *"$header"* ]]
+
+  cat <<EOF >"$BATS_TEST_TMPDIR/expected"
+$header
 ==========================================================================
 - id: wk inc hosp
   name: incident hospitalizations
@@ -35,14 +36,12 @@ setup() {
   unit: day
 EOF
 
-  # strip the leading blank line emitted by `echo` in the script
   printf '%s\n' "$output" | sed '1d' > "$BATS_TEST_TMPDIR/actual"
-
   diff -u "$BATS_TEST_TMPDIR/expected" "$BATS_TEST_TMPDIR/actual"
 }
 
 @test "aws key prints host information" {
-  run scripts/get-hub-stats.sh example/hub tasks aws
+  run "${BATS_TEST_DIRNAME}/../scripts/get-hub-stats.sh" "$HUB_PATH" tasks aws
 
   [ "$status" -eq 0 ]
   [ "$output" = "aws://prod.example.internal" ]
