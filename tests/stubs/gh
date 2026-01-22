@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [[ "$#" -lt 2 || "$1" != "api" ]]; then
+  echo "gh stub: unsupported invocation $*" >&2
+  exit 1
+fi
+
+shift # drop "api"
+
+path=""
+jq_arg=""
+while [[ "$#" -gt 0 ]]; do
+  case "$1" in
+    --jq)
+      jq_arg="$2"
+      shift 2
+      ;;
+    *)
+      if [[ -z "$path" ]]; then
+        path="$1"
+        shift
+      else
+        echo "gh stub: unexpected arg $1" >&2
+        exit 1
+      fi
+      ;;
+  esac
+done
+
+if [[ -z "$path" ]]; then
+  echo "gh stub: missing API path" >&2
+  exit 1
+fi
+
+repo_path="${path#/repos/}"
+
+sanitize() {
+  printf '%s' "$1" | tr -c '[:alnum:]' '_'
+}
+
+if [[ "$jq_arg" == ".default_branch" ]]; then
+  repo_var="GH_DEFAULT_BRANCH_$(sanitize "$repo_path")"
+  echo "${!repo_var:-main}"
+  exit 0
+fi
+
+if [[ "$repo_path" == */contents/model-output ]]; then
+  repo="${repo_path%/contents/model-output}"
+  count_var="GH_COUNT_$(sanitize "$repo")"
+  if [[ -n "${!count_var:-}" ]]; then
+    echo "${!count_var}"
+  else
+    echo "${GH_COUNT_DEFAULT:-0}"
+  fi
+  exit 0
+fi
+
+echo "gh stub: unhandled request: ${path} (jq=${jq_arg:-none})" >&2
+exit 1
+

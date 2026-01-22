@@ -1,0 +1,29 @@
+---
+hubs:
+  hubverse:
+    logo: /brand/logo/logo-with-text.png
+    name: "The hubverse"
+    hubs:
+      - name: "Example Complex Forecast Hub"
+        description: "An example of a forecast hub with a complex set of modeling tasks"
+        contact:
+          - name: "Maintainer name"
+            email: "maintainer.email@example.com"
+        repo: "hubverse-org/example-complex-forecast-hub"
+        license: "MIT License"
+        aws: "example-complex-forecast-hub"
+        count: 1
+  smhet:
+    logo: /includes/img/smh_logo.png
+    name: "Scenario Modeling Hub Example Team"
+    hubs:
+      - name: "Example Scenario Modeling Hub"
+        description: "An example scenario modeling hub"
+        contact:
+          - name: Scenario Modeling Hub Example Team
+            email: smhet.email@example.com
+        repo: smhet/example-scenario-modeling-hub
+        license: MIT License
+        count: 0
+---
+

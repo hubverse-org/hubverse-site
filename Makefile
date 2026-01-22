@@ -12,7 +12,7 @@ contributors: # generate contributors page (requires python)
 .PHONY: models
 models: # generate models page (requires BASH, yq, and gh)
 	@echo Updating model counts...
-	bash scripts/update-model-counts.sh
+	bash scripts/update_model_counts.sh
 
 .PHONY: terminology
 terminology: # generate terminology page (requires python)

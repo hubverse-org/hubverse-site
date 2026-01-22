@@ -1,0 +1,167 @@
+{
+  "schema_version": "https://raw.githubusercontent.com/hubverse-org/schemas/main/v5.0.0/tasks-schema.json",
+  "rounds": [
+    {
+      "round_id_from_variable": true,
+      "round_id": "reference_date",
+      "model_tasks": [
+        {
+          "task_ids": {
+            "reference_date": {
+              "required": null,
+              "optional": [
+                "2026-01-22",
+                "2026-01-29"
+              ]
+            },
+            "location": {
+              "required": null,
+              "optional": [
+                "US",
+                "01"
+              ]
+            },
+            "horizon": {
+              "required": null,
+              "optional": [
+                -1,
+                0,
+                1
+              ]
+            },
+            "target_end_date": {
+              "required": null,
+              "optional": [
+                "2026-01-15",
+                "2026-01-22"
+              ]
+            },
+            "target": {
+              "required": null,
+              "optional": [
+                "wk inc hosp"
+              ]
+            }
+          },
+          "output_type": {
+            "quantile": {
+              "output_type_id": {
+                "required": [
+                  0.05,
+                  0.5,
+                  0.95
+                ]
+              },
+              "is_required": false,
+              "value": {
+                "type": "double",
+                "minimum": 0
+              }
+            },
+            "sample": {
+              "output_type_id_params": {
+                "type": "character",
+                "max_length": 15,
+                "min_samples_per_task": 200,
+                "max_samples_per_task": 200,
+                "compound_taskid_set": [
+                  "location"
+                ]
+              },
+              "is_required": false,
+              "value": {
+                "type": "double",
+                "minimum": 0
+              }
+            }
+          },
+          "target_metadata": [
+            {
+              "target_id": "wk inc hosp",
+              "target_name": "Weekly incident hospitalizations",
+              "target_units": "count",
+              "target_keys": {
+                "target": "wk inc hosp"
+              },
+              "target_type": "continuous",
+              "is_step_ahead": true,
+              "description": "Hospitalization counts on a weekly basis",
+              "time_unit": "week"
+            }
+          ]
+        },
+        {
+          "task_ids": {
+            "nowcast_date": {
+              "required": null,
+              "optional": [
+                "2026-01-15",
+                "2026-01-22"
+              ]
+            },
+            "location": {
+              "required": null,
+              "optional": [
+                "AL",
+                "AK"
+              ]
+            },
+            "clade": {
+              "required": ["22A", "22B", "recombinant"],
+              "optional": null
+            }
+          },
+          "output_type": {
+            "quantile": {
+              "output_type_id": {
+                "required": [
+                  0.01,
+                  0.5,
+                  0.99
+                ]
+              },
+              "is_required": false,
+              "value": {
+                "type": "double",
+                "minimum": 0
+              }
+            },
+            "sample": {
+              "output_type_id_params": {
+                "type": "character",
+                "max_length": 15,
+                "min_samples_per_task": 200,
+                "max_samples_per_task": 200,
+                "compound_taskid_set": [
+                  "location"
+                ]
+              },
+              "is_required": false,
+              "value": {
+                "type": "double",
+                "minimum": 0
+              }
+            }
+          },
+          "target_metadata": [
+            {
+              "target_id": "clade prop",
+              "target_name": "Daily nowcasted clade proportions",
+              "target_units": "proportion",
+              "target_keys": null,
+              "target_type": "compositional",
+              "is_step_ahead": true,
+              "description": "Daily nowcasted clade proportions among all cases",
+              "time_unit": "day"
+            }
+          ]
+        }
+      ],
+      "submissions_due": {
+        "relative_to": "reference_date",
+        "start": -6,
+        "end": -3
+      }
+    }
+  ]
+}

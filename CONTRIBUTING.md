@@ -178,7 +178,7 @@ with data that updates dynamically.
    and was written by Alvaro J. Castro Rivadeneira and modified by Zhian Kamvar and Matthew Cornell
    for this site.
 2. `_data/active-hubs.qmd` is updated by
-   [scripts/update-model-counts.sh](scripts/update-model-counts.sh). This
+   [scripts/update_model_counts.sh](scripts/update_model_counts.sh). This
    script uses the GitHub API to update model counts for known hubs. It
    requires BASH, [yq](https://github.com/mikefarah/yq/#install), and
    [gh](https://cli.github.com) and was written by Zhian Kamvar.
