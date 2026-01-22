@@ -199,7 +199,7 @@ title: "Terminology"
 ---
 
 <!--
-This page should not be edited directly as it is automatically regenerated with `scripts/update-terminology.py`
+This page should not be edited directly as it is automatically regenerated with `scripts/update_terminology.py`
 The content is drawn from these two sites:
 https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/terminology.md
 https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/abbreviations.md

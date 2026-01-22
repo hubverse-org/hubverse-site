@@ -6,7 +6,7 @@
 # GitHub API 
 # 
 # USAGE:
-#   bash scripts/update-model-counts.sh [file]
+#   bash scripts/update_model_counts.sh [file]
 #
 # ARGUMENTS:
 #   
@@ -56,5 +56,4 @@ for hub in "${hubs[@]}"; do
     count="missing"
   fi
 done
-
 
