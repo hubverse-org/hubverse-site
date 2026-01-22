@@ -46,7 +46,7 @@ EOF
   diff -u "$BATS_TEST_TMPDIR/expected" "$BATS_TEST_TMPDIR/actual"
 }
 
-@test "aws key prints host information" {
+@test "aws metadata prints host information" {
   if ! command -v yq >/dev/null; then
   skip "yq must be installed for this test"
   fi
