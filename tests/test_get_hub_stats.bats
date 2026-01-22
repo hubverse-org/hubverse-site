@@ -3,7 +3,7 @@
 setup() {
   local stubdir="${BATS_TEST_DIRNAME}/stubs"
 
-  HUB_PATH="${BATS_TEST_DIRNAME}/../example/hub"
+  HUB_PATH="example-org/example-hub"
 
   export GH_BIN="${stubdir}/gh"
   export CURL_BIN="${stubdir}/curl"
