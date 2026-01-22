@@ -10,25 +10,25 @@ setup() {
     skip "yq must be installed for this test"
   fi
 
-  local hub_file="${BATS_TEST_TMPDIR}/active-hubs.qmd"
-  cp "${BATS_TEST_DIRNAME}/fixtures/active-hubs.qmd" "$hub_file"
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
 
-  export GH_COUNT_foo_bar=3
-  export GH_COUNT_baz_qux=5
+  export GH_COUNT_hubverse_org_example_complex_forecast_hub=3
+  export GH_COUNT_smhet_example_scenario_modeling_hub=5
 
-  run "${BATS_TEST_DIRNAME}/../scripts/update-model-counts.sh" "$hub_file"
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
 
   [ "$status" -eq 0 ]
-  [[ "$output" == *"foo/bar has 3 models"* ]]
-  [[ "$output" == *"baz/qux has 5 models"* ]]
+  [[ "$output" == *"hubverse-org/example-complex-forecast-hub has 3 models"* ]]
+  [[ "$output" == *"smhet/example-scenario-modeling-hub has 5 models"* ]]
 
-  local foo_count
-  foo_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "foo/bar") | .count' "$hub_file")
-  [ "$foo_count" = "3" ]
+  local hubverse_org_count
+  hubverse_org_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "hubverse-org/example-complex-forecast-hub") | .count' "$hub_file")
+  [ "$hubverse_org_count" = "3" ]
 
-  local baz_count
-  baz_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "baz/qux") | .count' "$hub_file")
-  [ "$baz_count" = "5" ]
+  local smhet_count
+  smhet_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "smhet/example-scenario-modeling-hub") | .count' "$hub_file")
+  [ "$smhet_count" = "5" ]
 }
 
 @test "leaves count unchanged when gh result is not positive" {
@@ -36,24 +36,24 @@ setup() {
     skip "yq must be installed for this test"
   fi
 
-  local hub_file="${BATS_TEST_TMPDIR}/active-hubs.qmd"
-  cp "${BATS_TEST_DIRNAME}/fixtures/active-hubs.qmd" "$hub_file"
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
 
-  export GH_COUNT_foo_bar=2
-  export GH_COUNT_baz_qux="oops"
+  export GH_COUNT_hubverse_org_example_complex_forecast_hub=2
+  export GH_COUNT_smhet_example_scenario_modeling_hub="oops"
 
-  run "${BATS_TEST_DIRNAME}/../scripts/update-model-counts.sh" "$hub_file"
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
 
   [ "$status" -eq 0 ]
-  [[ "$output" == *"foo/bar has 2 models"* ]]
-  [[ "$output" == *"baz/qux has an unknown number of models"* ]]
+  [[ "$output" == *"hubverse-org/example-complex-forecast-hub has 2 models"* ]]
+  [[ "$output" == *"smhet/example-scenario-modeling-hub has an unknown number of models"* ]]
 
-  local foo_count
-  foo_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "foo/bar") | .count' "$hub_file")
-  [ "$foo_count" = "2" ]
+  local hubverse_org_count
+  hubverse_org_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "hubverse-org/example-complex-forecast-hub") | .count' "$hub_file")
+  [ "$hubverse_org_count" = "2" ]
 
-  local baz_count
-  baz_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "baz/qux") | .count' "$hub_file")
-  [ "$baz_count" = "0" ]
+  local smhet_count
+  smhet_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "smhet/example-scenario-modeling-hub") | .count' "$hub_file")
+  [ "$smhet_count" = "0" ]
 }
 

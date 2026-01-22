@@ -2,19 +2,30 @@
 
 setup() {
   local stubdir="${BATS_TEST_DIRNAME}/stubs"
-  
+
   HUB_PATH="${BATS_TEST_DIRNAME}/../example/hub"
 
   export GH_BIN="${stubdir}/gh"
   export CURL_BIN="${stubdir}/curl"
   export CURL_FIXTURE="${BATS_TEST_DIRNAME}/fixtures/example_tasks.json"
+
+  export JQ_BIN="$(command -v jq)"
+  export YQ_BIN="$(command -v yq)"
+
+  if command -v yq >/dev/null; then
+  export YQ_BIN="$(command -v yq)"
+  else
+  skip "yq is required for get_hub_stats tests"
+  fi
+
 }
+
 @test "default run prints targets summary" {
   if ! command -v yq >/dev/null; then
     skip "yq must be installed for this test"
   fi
 
-  run "${BATS_TEST_DIRNAME}/../scripts/get-hub-stats.sh" "$HUB_PATH"
+  run "${BATS_TEST_DIRNAME}/../scripts/get_hub_stats.sh" "$HUB_PATH"
 
   [ "$status" -eq 0 ]
 
@@ -25,14 +36,14 @@ setup() {
 $header
 ==========================================================================
 - id: wk inc hosp
-  name: incident hospitalizations
+  name: Weekly incident hospitalizations
   type: continuous
   desc: Hospitalization counts on a weekly basis
   unit: week
-- id: death prop
-  name: proportion of deaths
+- id: clade prop
+  name: Daily nowcasted clade proportions
   type: compositional
-  desc: Daily nowcasted proportion of deaths among all cases
+  desc: Daily nowcasted clade proportions among all cases
   unit: day
 EOF
 
@@ -41,9 +52,24 @@ EOF
 }
 
 @test "aws key prints host information" {
-  run "${BATS_TEST_DIRNAME}/../scripts/get-hub-stats.sh" "$HUB_PATH" tasks aws
+  if ! command -v yq >/dev/null; then
+  skip "yq must be installed for this test"
+  fi
+
+  local admin_fixture="${BATS_TEST_DIRNAME}/fixtures/example_admin.json"
+
+  CURL_FIXTURE="$admin_fixture"   # overrides the stub fixture
+  run "${BATS_TEST_DIRNAME}/../scripts/get_hub_stats.sh" "$HUB_PATH" admin aws
 
   [ "$status" -eq 0 ]
-  [ "$output" = "aws://prod.example.internal" ]
+
+  cat <<'EOF' >"$BATS_TEST_TMPDIR/expected"
+name: aws
+storage_service: s3
+storage_location: example-complex-forecast-hub
+EOF
+
+  printf '%s\n' "$output" >"$BATS_TEST_TMPDIR/actual"
+  diff -u "$BATS_TEST_TMPDIR/expected" "$BATS_TEST_TMPDIR/actual"
 }
 
