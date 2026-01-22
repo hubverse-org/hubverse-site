@@ -70,7 +70,7 @@ hubs:
         license: MIT License
         forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
         evals: https://reichlab.io/metrocast-dashboard/eval.html
-        count: 13
+        count: 14
   ai4casting:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
