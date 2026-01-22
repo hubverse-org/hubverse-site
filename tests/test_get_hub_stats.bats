@@ -9,13 +9,8 @@ setup() {
   export CURL_BIN="${stubdir}/curl"
   export CURL_FIXTURE="${BATS_TEST_DIRNAME}/fixtures/example_tasks.json"
 
-  export JQ_BIN="$(command -v jq)"
-  export YQ_BIN="$(command -v yq)"
-
-  if command -v yq >/dev/null; then
-  export YQ_BIN="$(command -v yq)"
-  else
-  skip "yq is required for get_hub_stats tests"
+  if ! command -v yq >/dev/null; then
+    skip "yq is required for get_hub_stats tests"
   fi
 
 }
