@@ -50,5 +50,25 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 :::
 
 :::
+## Local Model Development Hubs
 
+::: {.column-screen-inset}
 
+:::{#orgs .grid style='--bs-gap: 0.5em'}
+
+{{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
+
+:::
+
+:::
+## Training Hubs
+
+::: {.column-screen-inset}
+
+:::{#orgs .grid style='--bs-gap: 0.5em'}
+
+{{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
+
+:::
+
+:::
