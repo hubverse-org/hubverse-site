@@ -45,6 +45,54 @@ hubs:
         # --- OPTIONAL ----
         aws: "uscdc-flusight-hub-v1" # from your admin.json
         count: 99
+  epiENGAGE:
+    logo: /includes/img/epiengage.png
+    name: "epiENGAGE"
+    hubs:
+      - name: "Variant Nowcast Model Development Retrospective Hub"
+        description: "Hub hosting retrospective model development for the UMass teams's submission to the [U.S. SARS CoV-2 Variant       Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub). \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
+        license: "MIT License"
+      - name: "Flusion Retrospective Hub"
+        description: "Influenza forecasting using data fusions. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/flusion" # must be slug, not URL
+        license: "MIT License"
+      - name: "Flusion Submissions Hub"
+        description: "Influenza forecasting using data fusions. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/submissions-hub" # must be slug, not URL
+        license: "MIT License"
+  Reich Lab:
+    logo: /includes/img/epiengage.png
+    name: "Reich lab"
+    hubs:
+      - name: "SISMID ILI Forecasting Sandbox"
+        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/sismid-ili-forecasting-sandbox" # must be slug, not URL
+        license: "MIT License"
+      - name: "Forecast Sandbox"
+        description: "Sandbox for experimental forecasts used by the Reich Lab before and during the 2025/2026 respiratory virus season. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/forecast-sandbox-2025-2026" # must be slug, not URL
+        license: "MIT License"
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
