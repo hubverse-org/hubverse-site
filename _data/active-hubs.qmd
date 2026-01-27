@@ -58,7 +58,7 @@ hubs:
         repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
         license: "MIT License"
       - name: "Flusion Retrospective Hub"
-        description: "Influenza forecasting using data fusions. \n"
+        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to [FluSight](https://github.com/cdcepi/FluSight-forecast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -66,7 +66,7 @@ hubs:
         repo: "reichlab/flusion" # must be slug, not URL
         license: "MIT License"
       - name: "Flusion Submissions Hub"
-        description: "Influenza forecasting using data fusions. \n"
+        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to [FluSight](https://github.com/cdcepi/FluSight-forecast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -74,12 +74,20 @@ hubs:
         repo: "reichlab/submissions-hub" # must be slug, not URL
         license: "MIT License"
       - name: "Forecast Sandbox"
-        description: "Sandbox for experimental forecasts used by the Reich Lab before and during the 2025/2026 respiratory virus season. \n"
+        description: "Hub serving as a sandbox/testbed for experimental [FluSight](https://github.com/cdcepi/FluSight-forecast-hub) forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
         repo: "reichlab/forecast-sandbox-2025-2026" # must be slug, not URL
+        license: "MIT License"
+      - name: "MetroCast Sandbox"
+        description: "Hub serving as a sandbox/testbed for experimental [Metrocast forecasts](https://github.com/reichlab/flu-metrocast/tree/main) before and during the 2025/2026 respiratory virus forecasting season.\n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "nickreich/metrocast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
   reichlab-training:
     logo: /includes/img/epiengage.png
