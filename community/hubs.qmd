@@ -2,7 +2,7 @@
 title: "List of Hubs"
 ---
 
-## Current Hubs
+## Real-time Collaborative Public Health Hubs
 
 The hubs listed below are all active. Many of these hubs have **open source data** available and
 ready to analyze in hubverse format.
@@ -47,10 +47,13 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 {{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
 
+{{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
+
+{{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
 :::
 
 :::
-## Local Model Development Hubs
+## Training Hubs
 
 ::: {.column-screen-inset}
 
@@ -61,7 +64,7 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 :::
 
 :::
-## Training Hubs
+## Model Development Hubs
 
 ::: {.column-screen-inset}
 
