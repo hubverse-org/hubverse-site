@@ -22,7 +22,7 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 {{< partial /_partials/hub.qmd hubs.smhct id="smhct">}}
 
-{{< partial /_partials/hub.qmd hubs.epiengage id="epiengage">}}
+{{< partial /_partials/hub.qmd hubs.epiengage id="epiengage-rtc">}}
 
 {{< partial /_partials/hub.qmd hubs.ai4casting id="ai4casting">}}
 
@@ -70,7 +70,7 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 :::{#orgs .grid style='--bs-gap: 0.5em'}
 
-{{< partial /_partials/hub.qmd hubs.hubverse id="hubverse">}}
+{{< partial /_partials/hub.qmd hubs.hubverse id="epiegnage-modeldev">}}
 
 :::
 
