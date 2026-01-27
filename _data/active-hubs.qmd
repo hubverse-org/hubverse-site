@@ -46,8 +46,8 @@ hubs:
         aws: "uscdc-flusight-hub-v1" # from your admin.json
         count: 99
   reichlab-modeldev:
-    logo: /includes/img/epiengage.png
-    name: "epiENGAGE"
+    logo: /includes/img/reichlab.png
+    name: "Reich Lab"
     hubs:
       - name: "Variant Nowcast Model Development Retrospective Hub"
         description: "Hub hosting retrospective model development for the UMass teams's submission to the [U.S. SARS CoV-2 Variant Nowcast Hub (https://github.com/reichlab/variant-nowcast-hub). \n"
@@ -90,8 +90,8 @@ hubs:
         repo: "nickreich/metrocast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
   reichlab-training:
-    logo: /includes/img/epiengage.png
-    name: "Reich lab"
+    logo: /includes/img/reichlab.png
+    name: "Reich Lab"
     hubs:
       - name: "SISMID ILI Forecasting Sandbox"
         description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. \n"
@@ -101,7 +101,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "reichlab/sismid-ili-forecasting-sandbox" # must be slug, not URL
         license: "MIT License"
-  epiengage-rtc:
+  epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
     hubs:
@@ -116,11 +116,11 @@ hubs:
         aws: "covid-variant-nowcast-hub"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
         count: 10
-      - name: "Flu Metrocast Hub"
+      - name: "Flu MetroCast Hub"
         description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
         contact:
-          - name: "Dongah Kim"
-            email: donga0223@gmail.com
+          - name: "epiENGAGE Flu MetroCast Team"
+            email: epiengage@austin.utexas.edu
         aws: reichlab-flu-metrocast-hub
         repo: reichlab/flu-metrocast
         license: MIT License
@@ -233,18 +233,12 @@ hubs:
         count: 22
       - name: "RSV Forecast Hub"
         description: |
-          This repository is designed to collect forecast data for the
-          2024-2025 RSV Forecast Hub run by Johns Hopkins University
-          Infectious Disease Dynamics Group. This project collects
-          forecasts for weekly new hospitalizations due to confirmed
-          RSV.
+          This repository is designed to collect forecast data for the RSV Forecast Hub run by the US CDC. 
         contact:
-          - name: Shaun Truelove
-            email: shauntruelove@jhu.edu
-        repo: HopkinsIDD/rsv-forecast-hub
+          - name: RSV Hub
+            email: rsvhub@cdc.gov
+        repo: CDCgov/rsv-forecast-hub
         license: MIT License
-        forecasts: https://rsvforecasthub.org/#National_Forecast
-        evals: https://rsvforecasthub.org/#Evaluation
         count: 9
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
@@ -256,7 +250,7 @@ hubs:
         contact:
           - name: WHO FluNet Hub
             email: opp8@cdc.gov
-  ecdc-rtc:
+  ecdc:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
     hubs:
@@ -329,5 +323,15 @@ hubs:
             email: mietchen@unc.edu
         insights: https://www.respilens.com/
         count: 2
+  acefa:
+    logo: /includes/img/acefa.png
+    name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+    hubs:
+      - name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+        description: |
+          ACEFA aims to support the timely, effective response to epidemic diseases in Australia through real-time data analytics, modelling, and forecasting.
+        contact:
+          - name: Emily Kay
+            email: emily.kay@unimelb.edu.au
 ---
 
