@@ -233,7 +233,7 @@ hubs:
         count: 22
       - name: "RSV Forecast Hub"
         description: |
-          This repository is designed to collect forecast data for the RSV Forecast Hub run by the US CDC. 
+          A repository run by the US CDC to collect forecasts of weekly new hospitalizations and the percentage of emergency department visits due to RSV. 
         contact:
           - name: RSV Hub
             email: rsvhub@cdc.gov
@@ -351,5 +351,21 @@ hubs:
         contact:
           - name: Emily Kay
             email: emily.kay@unimelb.edu.au
+  hopkinsidd:
+    logo: /includes/img/hopkinsidd.png
+    name: "Johns Hopkins University Infectious Disease Dynamics Group"
+    hubs:
+      - name: "Archival US RSV Forecast Hub 2024--2025"
+        description: |
+          This repository was designed to collect forecast data for the
+          2024-2025 RSV Forecast Hub run by Johns Hopkins University
+          Infectious Disease Dynamics Group. This project collected
+          forecasts for weekly new hospitalizations due to confirmed
+          RSV.
+        contact:
+          - name: Shaun Truelove
+            email: shauntruelove@jhu.edu
+        repo: HopkinsIDD/rsv-forecast-hub
+        license: MIT License
 ---
 
