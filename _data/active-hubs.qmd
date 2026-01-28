@@ -35,7 +35,7 @@ hubs:
     name: "The hubverse"
     hubs:
       - name: "Archival FluSight hub (2015--2019)"
-        description: "original FluSight Forecast submissions (https://github.com/cdcepi/FluSight-forecasts), reformatted to align with the hubverse format. \n"
+        description: "original submission to [FluSight](https://github.com/cdcepi/FluSight-forecasts), reformatted to align with the hubverse format. \n"
         # from admin.json
         contact:
           - name: "Luke Mullany"
@@ -50,7 +50,7 @@ hubs:
     name: "Reich Lab"
     hubs:
       - name: "Variant Nowcast Model Development Retrospective Hub"
-        description: "Hub hosting retrospective model development for the UMass teams's submission to the U.S. SARS CoV-2 Variant Nowcast Hub (https://github.com/reichlab/variant-nowcast-hub). \n"
+        description: "Hub hosting retrospective model development for the UMass teams's submission to the [U.S. SARS CoV-2 Variant Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -58,7 +58,7 @@ hubs:
         repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
         license: "MIT License"
       - name: "Flusion Retrospective Hub"
-        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight (https://github.com/cdcepi/FluSight-forecast-hub). \n"
+        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to [FluSight](https://github.com/cdcepi/FluSight-forecast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -66,7 +66,7 @@ hubs:
         repo: "reichlab/flusion/tree/main/retrospective-hub" # must be slug, not URL
         license: "MIT License"
       - name: "Flusion Submissions Hub"
-        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to FluSight (https://github.com/cdcepi/FluSight-forecast-hub). \n"
+        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to [FluSight](https://github.com/cdcepi/FluSight-forecast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -74,7 +74,7 @@ hubs:
         repo: "reichlab/flusion/tree/main/submissions-hub" # must be slug, not URL
         license: "MIT License"
       - name: "Forecast Sandbox"
-        description: "Hub serving as a sandbox/testbed for experimental FluSight (https://github.com/cdcepi/FluSight-forecast-hub) forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
+        description: "Hub serving as a sandbox/testbed for experimental [FluSight](https://github.com/cdcepi/FluSight-forecast-hub) forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -82,7 +82,7 @@ hubs:
         repo: "reichlab/forecast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
       - name: "MetroCast Sandbox"
-        description: "Hub serving as a sandbox/testbed for experimental [Metrocast forecasts](https://github.com/reichlab/flu-metrocast/tree/main) before and during the 2025/2026 respiratory virus forecasting season.\n"
+        description: "Hub serving as a sandbox/testbed for experimental [Flu MetroCast forecasts](https://github.com/reichlab/flu-metrocast/tree/main) before and during the 2025/2026 respiratory virus forecasting season.\n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -94,7 +94,7 @@ hubs:
     name: "Reich Lab"
     hubs:
       - name: "SISMID ILI Forecasting Sandbox"
-        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. \n"
+        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. This hub was created for the [2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics](https://nfidd.github.io/sismid/). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
