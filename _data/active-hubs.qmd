@@ -50,7 +50,7 @@ hubs:
     name: "Reich Lab"
     hubs:
       - name: "Variant Nowcast Model Development Retrospective Hub"
-        description: "Hub hosting retrospective model development for the UMass teams's submission to the [U.S. SARS CoV-2 Variant Nowcast Hub (https://github.com/reichlab/variant-nowcast-hub). \n"
+        description: "Hub hosting retrospective model development for the UMass teams's submission to the U.S. SARS CoV-2 Variant Nowcast Hub (https://github.com/reichlab/variant-nowcast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -58,23 +58,23 @@ hubs:
         repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
         license: "MIT License"
       - name: "Flusion Retrospective Hub"
-        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to [FluSight](https://github.com/cdcepi/FluSight-forecast-hub). \n"
+        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight (https://github.com/cdcepi/FluSight-forecast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/flusion" # must be slug, not URL
+        repo: "reichlab/flusion/tree/main/retrospective-hub # must be slug, not URL
         license: "MIT License"
       - name: "Flusion Submissions Hub"
-        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to [FluSight](https://github.com/cdcepi/FluSight-forecast-hub). \n"
+        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to FluSight (https://github.com/cdcepi/FluSight-forecast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/submissions-hub" # must be slug, not URL
+        repo: "reichlab/flusion/tree/main/submissions-hub # must be slug, not URL
         license: "MIT License"
       - name: "Forecast Sandbox"
-        description: "Hub serving as a sandbox/testbed for experimental [FluSight](https://github.com/cdcepi/FluSight-forecast-hub) forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
+        description: "Hub serving as a sandbox/testbed for experimental FluSight (https://github.com/cdcepi/FluSight-forecast-hub) forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
@@ -131,7 +131,7 @@ hubs:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
     hubs:
-      - name: "Hosptitalization Forecast Hub"
+      - name: "Hospitalization Forecast Hub"
         description: |
           Public Health Ontario’s Ontario Respiratory Virus Tool Data
           monitors the capacity of hospitals, helping policymakers and
@@ -329,7 +329,7 @@ hubs:
     logo: /includes/img/ACCIDDALogoBigWithSubs.png
     name: Atlantic Coast Center for Infectious Disease Dynamics and Analytics
     description: |
-      The Atlantic Coast Center for Infectious Disease Dynamics and Analytics devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
+      The Atlantic Coast Center for Infectious Disease Dynamics and Analytics is devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
     hubs:
       - name: NC DHHS / ACCIDDA Forecasting Collaboration
         description: |
