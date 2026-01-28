@@ -291,6 +291,24 @@ hubs:
         repo: european-modelling-hubs/RespiCompass
         insights: https://respicompass.ecdc.europa.eu/insights/
         count: 11
+  ecdc-archival:
+    name: "European Centre for Disease Prevention and Control (ECDC)"
+    logo: /includes/img/ecdc.png
+    hubs:
+      - name: "Archival RespiCast Influenza Hub (2023--2024)"
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
+        description: |
+          This repository archives the forecasts computed during season 2023/2024. 
+        repo: european-modelling-hubs/flu-forecast-hub_archive
+      - name: "Archival RespiCast ARI Hub (2023--2024)"
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
+        description: |
+          This repository archives the forecasts computed during season 2023/2024.
+        repo: european-modelling-hubs/ari-forecast-hub_archive
   cadph:
     logo: /includes/img/cadph.png
     name: California Department of Public Health
