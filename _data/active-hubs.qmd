@@ -50,7 +50,7 @@ hubs:
     name: "Reich Lab"
     hubs:
       - name: "Variant Nowcast Model Development Retrospective Hub"
-        description: "Hub hosting retrospective model development for the UMass teams's submission to the [U.S. SARS CoV-2 Variant Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub). \n"
+        description: "Hub hosting retrospective model development for the UMass teams's submission to the [U.S. SARS-CoV-2 Variant Nowcast Hub](https://github.com/reichlab/variant-nowcast-hub). \n"
         # from admin.json
         contact:
           - name: "Nick Reich"
