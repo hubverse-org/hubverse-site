@@ -29,12 +29,30 @@ SOFTWARE.
 
 local lustache = require("lustache")
 
+-- Convert markdown string to HTML if it contains markdown link syntax
+-- This allows [text](url) links in YAML descriptions to render as clickable links
+--@param str string
+--@return string
+local function markdown_to_html(str)
+  -- Check if string contains markdown link syntax [text](url)
+  if type(str) == "string" and string.match(str, "%[.-%]%(.-%)") then
+    -- Convert markdown to HTML using Pandoc
+    local doc = pandoc.read(str, "markdown")
+    local html = pandoc.write(doc, "html")
+    -- Remove wrapping <p> tags for inline use, but preserve content
+    html = string.gsub(html, "^%s*<p>", "")
+    html = string.gsub(html, "</p>%s*$", "")
+    return html
+  end
+  return str
+end
+
 --@param obj table
 --@return table | string
 local function pandoc_stringify(obj)
   if pandoc.utils.type(obj) == "string" or pandoc.utils.type(obj) == "Inlines" then
-    return pandoc.utils.stringify(obj)
-  end
+    local str = pandoc.utils.stringify(obj)
+    return markdown_to_html(str)  end
 
   if type(obj) == "table" and pandoc.utils.type(obj) ~= "Blocks" then
     for k, v in pairs(obj) do
