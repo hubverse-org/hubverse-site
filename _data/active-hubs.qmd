@@ -94,10 +94,7 @@ hubs:
     name: "Reich Lab"
     hubs:
       - name: "SISMID ILI Forecasting Sandbox"
-        description: |
-  Sandbox hub providing an environment for training, research, or benchmarking purposes.
-  This hub was created for the
-  <a href="https://nfidd.github.io/sismid/">2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics</a>.
+        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. This hub was created for the 2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics (https://nfidd.github.io/sismid).\n"
         # from admin.json
         contact:
           - name: "Nick Reich"
