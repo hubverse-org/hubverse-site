@@ -344,10 +344,12 @@ hubs:
   acefa:
     logo: /includes/img/acefa.png
     name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+    description: |
+      ACEFA aims to support the timely, effective response to epidemic diseases in Australia through real-time data analytics, modelling, and forecasting.
     hubs:
-      - name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+      - name: Australia-Aotearoa Forecasting Hub
         description: |
-          ACEFA aims to support the timely, effective response to epidemic diseases in Australia through real-time data analytics, modelling, and forecasting.
+          The Australia–Aotearoa Forecasting Hub collects submissions of forecasted daily case incidence for SARS-CoV-2, RSV, and influenza virus. As an experimental target, the hub also collects submissions of predicted epidemic peak size and timing for each of these pathogens.
         contact:
           - name: Emily Kay
             email: emily.kay@unimelb.edu.au
