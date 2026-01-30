@@ -29,67 +29,14 @@ SOFTWARE.
 
 local lustache = require("lustache")
 
--- Convert Inlines to HTML string, preserving links and other formatting
---@param inlines pandoc.Inlines
---@return string
-local function inlines_to_html(inlines)
-  local doc = pandoc.Pandoc({pandoc.Plain(inlines)})
-  local html = pandoc.write(doc, "html")
-  -- Remove wrapping <p> tags for inline use
-  html = string.gsub(html, "^%s*<p>", "")
-  html = string.gsub(html, "</p>%s*$", "")
-  -- Trim any trailing whitespace/newlines
-  html = string.gsub(html, "%s+$", "")
-  return html
-end
-
--- Convert markdown string to HTML if it contains markdown link syntax
--- This allows [text](url) links in YAML descriptions to render as clickable links
---@param str string
---@return string
-local function markdown_to_html(str)
-  -- Check if string contains markdown link syntax [text](url)
-  if type(str) == "string" and string.match(str, "%[.-%]%(.-%)") then
-    -- Convert markdown to HTML using Pandoc
-    local doc = pandoc.read(str, "markdown")
-    local html = pandoc.write(doc, "html")
-    -- Remove wrapping <p> tags for inline use, but preserve content
-    html = string.gsub(html, "^%s*<p>", "")
-    html = string.gsub(html, "</p>%s*$", "")
-    return html
-  end
-  return str
-end
-  
 --@param obj table
 --@return table | string
 local function pandoc_stringify(obj)
- local obj_type = pandoc.utils.type(obj)
-
-  -- Handle Inlines specially to preserve links and formatting
-  if obj_type == "Inlines" then
-    -- Check if there are any Link elements in the Inlines
-    local has_links = false
-    for _, el in ipairs(obj) do
-      if el.t == "Link" then
-        has_links = true
-        break
-      end
-    end
-    -- If there are links, convert to HTML to preserve them
-    if has_links then
-      return inlines_to_html(obj)
-    end
-    -- Otherwise just stringify
+  if pandoc.utils.type(obj) == "string" or pandoc.utils.type(obj) == "Inlines" then
     return pandoc.utils.stringify(obj)
   end
 
-  -- Handle plain strings - check for markdown link syntax
-  if obj_type == "string" then
-    return markdown_to_html(obj)
-  end
-  
-  if type(obj) == "table" and obj_type ~= "Blocks" then
+  if type(obj) == "table" and pandoc.utils.type(obj) ~= "Blocks" then
     for k, v in pairs(obj) do
       obj[k] = pandoc_stringify(v)
     end
