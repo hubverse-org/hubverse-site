@@ -35,7 +35,7 @@ hubs:
     name: "The hubverse"
     hubs:
       - name: "Archival FluSight hub (2015--2019)"
-        description: "original FluSight Forecast submissions (https://github.com/cdcepi/FluSight-forecasts), reformatted to align with the hubverse format. \n"
+        description: "original submission to FluSight, reformatted to align with the hubverse format. \n"
         # from admin.json
         contact:
           - name: "Luke Mullany"
@@ -45,6 +45,62 @@ hubs:
         # --- OPTIONAL ----
         aws: "uscdc-flusight-hub-v1" # from your admin.json
         count: 99
+  reichlab-modeldev:
+    logo: /includes/img/reichlab.png
+    name: "Reich Lab"
+    hubs:
+      - name: "Variant Nowcast Model Development Retrospective Hub"
+        description: "Hub hosting retrospective model development for the UMass teams's submission to the U.S. SARS-CoV-2 Variant Nowcast Hub. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
+        license: "MIT License"
+      - name: "Flusion Retrospective Hub"
+        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/flusion/tree/main/retrospective-hub" # must be slug, not URL
+        license: "MIT License"
+      - name: "Flusion Submissions Hub"
+        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to FluSight. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/flusion/tree/main/submissions-hub" # must be slug, not URL
+        license: "MIT License"
+      - name: "Forecast Sandbox"
+        description: "Hub serving as a sandbox/testbed for experimental FluSight forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/forecast-sandbox-2025-2026" # must be slug, not URL
+        license: "MIT License"
+      - name: "MetroCast Sandbox"
+        description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "nickreich/metrocast-sandbox-2025-2026" # must be slug, not URL
+        license: "MIT License"
+  reichlab-training:
+    logo: /includes/img/reichlab.png
+    name: "Reich Lab"
+    hubs:
+      - name: "SISMID ILI Forecasting Sandbox"
+        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. This hub was created for the 2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics (https://nfidd.github.io/sismid).\n"
+        # from admin.json
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "reichlab/sismid-ili-forecasting-sandbox" # must be slug, not URL
+        license: "MIT License"
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
@@ -60,11 +116,11 @@ hubs:
         aws: "covid-variant-nowcast-hub"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
         count: 10
-      - name: "Flu Metrocast Hub"
+      - name: "Flu MetroCast Hub"
         description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
         contact:
-          - name: "Dongah Kim"
-            email: donga0223@gmail.com
+          - name: "epiENGAGE Flu MetroCast Team"
+            email: epiengage@austin.utexas.edu
         aws: reichlab-flu-metrocast-hub
         repo: reichlab/flu-metrocast
         license: MIT License
@@ -75,7 +131,7 @@ hubs:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
     hubs:
-      - name: "Hosptitalization Forecast Hub"
+      - name: "Hospitalization Forecast Hub"
         description: |
           Public Health Ontario’s Ontario Respiratory Virus Tool Data
           monitors the capacity of hospitals, helping policymakers and
@@ -145,27 +201,8 @@ hubs:
         repo: midas-network/covid19-smh-research
         license: MIT License
         count: 7
-  hopkinsidd:
-    logo: /includes/img/hopkinsidd.png
-    name: "Johns Hopkins University Infectious Disease Dynamics Group"
-    hubs:
-      - name: "US RSV Forecast Hub"
-        description: |
-          This repository is designed to collect forecast data for the
-          2024-2025 RSV Forecast Hub run by Johns Hopkins University
-          Infectious Disease Dynamics Group. This project collects
-          forecasts for weekly new hospitalizations due to confirmed
-          RSV.
-        contact:
-          - name: Shaun Truelove
-            email: shauntruelove@jhu.edu
-        repo: HopkinsIDD/rsv-forecast-hub
-        license: MIT License
-        forecasts: https://rsvforecasthub.org/#National_Forecast
-        evals: https://rsvforecasthub.org/#Evaluation
-        count: 9
   uscdc:
-    name: "US Centers for Disease Control"
+    name: "US Centers for Disease Control and Prevention"
     logo: /includes/img/cdc.jpg
     hubs:
       - name: "FluSight Forecast Hub"
@@ -194,6 +231,15 @@ hubs:
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
         count: 22
+      - name: "RSV Forecast Hub"
+        description: |
+          A repository run by the US CDC to collect forecasts of weekly new hospitalizations and the percentage of emergency department visits due to RSV. 
+        contact:
+          - name: RSV Hub
+            email: rsvhub@cdc.gov
+        repo: CDCgov/rsv-forecast-hub
+        license: MIT License
+        count: 9
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
         contact:
@@ -245,6 +291,24 @@ hubs:
         repo: european-modelling-hubs/RespiCompass
         insights: https://respicompass.ecdc.europa.eu/insights/
         count: 11
+  ecdc-archival:
+    name: "European Centre for Disease Prevention and Control (ECDC)"
+    logo: /includes/img/ecdc.png
+    hubs:
+      - name: "Archival RespiCast Influenza Hub (2023--2024)"
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
+        description: |
+          This repository archives the forecasts computed during season 2023/2024. 
+        repo: european-modelling-hubs/flu-forecast-hub_archive
+      - name: "Archival RespiCast ARI Hub (2023--2024)"
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
+        description: |
+          This repository archives the forecasts computed during season 2023/2024.
+        repo: european-modelling-hubs/ari-forecast-hub_archive
   cadph:
     logo: /includes/img/cadph.png
     name: California Department of Public Health
@@ -265,7 +329,7 @@ hubs:
     logo: /includes/img/ACCIDDALogoBigWithSubs.png
     name: Atlantic Coast Center for Infectious Disease Dynamics and Analytics
     description: |
-      The Atlantic Coast Center for Infectious Disease Dynamics and Analytics devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
+      The Atlantic Coast Center for Infectious Disease Dynamics and Analytics is devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
     hubs:
       - name: NC DHHS / ACCIDDA Forecasting Collaboration
         description: |
@@ -277,5 +341,33 @@ hubs:
             email: mietchen@unc.edu
         insights: https://www.respilens.com/
         count: 2
+  acefa:
+    logo: /includes/img/acefa.png
+    name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+    description: |
+      ACEFA aims to support the timely, effective response to epidemic diseases in Australia through real-time data analytics, modelling, and forecasting.
+    hubs:
+      - name: Australia-Aotearoa Forecasting Hub
+        description: |
+          The Australia–Aotearoa Forecasting Hub collects submissions of forecasted daily case incidence for SARS-CoV-2, RSV, and influenza virus. As an experimental target, the hub also collects submissions of predicted epidemic peak size and timing for each of these pathogens.
+        contact:
+          - name: Emily Kay
+            email: emily.kay@unimelb.edu.au
+  hopkinsidd:
+    logo: /includes/img/hopkinsidd.png
+    name: "Johns Hopkins University Infectious Disease Dynamics Group"
+    hubs:
+      - name: "Archival US RSV Forecast Hub 2024--2025"
+        description: |
+          This repository was designed to collect forecast data for the
+          2024-2025 RSV Forecast Hub run by Johns Hopkins University
+          Infectious Disease Dynamics Group. This project collected
+          forecasts for weekly new hospitalizations due to confirmed
+          RSV.
+        contact:
+          - name: Shaun Truelove
+            email: shauntruelove@jhu.edu
+        repo: HopkinsIDD/rsv-forecast-hub
+        license: MIT License
 ---
 
