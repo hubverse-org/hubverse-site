@@ -91,7 +91,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "nickreich/metrocast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
-        count: 6
+        count: 7
   reichlab-training:
     logo: /includes/img/reichlab.png
     name: "Reich Lab"
