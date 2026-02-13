@@ -221,7 +221,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 89
+        count: 90
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
@@ -268,7 +268,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 26
+        count: 27
       - name: "European Covid-19 Forecasting Hub"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
