@@ -2,7 +2,7 @@
 title: '{{< fa user-graduate >}} Research & Talks'
 ---
 
-## Presentations
+## {{< fa person-chalkboard >}} Presentations
 
 Here are links to presentations about the hubverse:
 
