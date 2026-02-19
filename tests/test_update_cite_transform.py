@@ -79,7 +79,7 @@ def test_cleanup_blank_lines_compresses(sample_md_mixed_blanklines):
 def test_build_header_has_yaml_and_comment():
     header = build_header()
     assert header.startswith("---")
-    assert 'title: "How to cite"' in header
+    assert 'title: "{{< fa quote-left >}} &nbsp;How to cite"' in header
     assert header.strip().endswith("-->")
 
 
