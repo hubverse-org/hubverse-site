@@ -1,6 +1,8 @@
 ---
-title: '{{< fa person-chalkboard >}} Presentations'
+title: '{{< fa user-graduate >}} Research & Talks'
 ---
+
+## Presentations
 
 Here are links to presentations about the hubverse:
 

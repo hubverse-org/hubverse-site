@@ -33,6 +33,7 @@ website:
           href: quickstart/develop.qmd
         - "---"
         - icon: headset
+          text: "Consulting Support"
           href: quickstart/support-consulting.md
       - text: "Tools"
         menu:
@@ -66,8 +67,8 @@ website:
           href: https://docs.hubverse.io/
         - text: "{{< fa coins >}} &nbsp;&nbsp;Funding"
           href: "funding.md"
-        - text: "{{< fa person-chalkboard >}} &nbsp;Presentations"
-          href: "presentations.md"
+        - text: "{{< fa user-graduate >}} &nbsp;Research & Talks"
+          href: "researchtalks.md"
         - text: "{{< fa laptop-code >}} &nbsp;Trainings"
           href: "trainings.md"
         - text: "{{< fa quote-left >}} &nbsp;&nbsp;How to cite"
@@ -77,6 +78,7 @@ website:
           href: "CONTRIBUTING.md"
         - "---"
         - icon: headset
+          text: "Consulting Support"
           href: quickstart/support-consulting.md
   page-footer:
     left:
