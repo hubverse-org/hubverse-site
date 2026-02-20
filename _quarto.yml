@@ -62,6 +62,7 @@ website:
       - text: "Resources"
         menu:
         - icon: book
+          text: "Terminology"
           href: "terminology.qmd"
         - text: "{{< fa book >}} &nbsp;&nbsp;Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
