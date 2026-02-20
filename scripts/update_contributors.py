@@ -1,13 +1,15 @@
 import os
 import random
 from collections import defaultdict
-from github import Github
+from github import Github, Auth
 
 
 def get_github_client(token: str) -> Github:
     if not token:
         raise ValueError("GITHUB_TOKEN is not set.")
-    return Github(token)
+    
+    auth = Auth.Token(token)
+    return Github(auth=auth)
 
 
 def fetch_contributors(org) -> dict[str, set[str]]:
@@ -41,12 +43,14 @@ def write_contributors_file(
 
     with open(output_file, "w", encoding="utf-8") as file:
         file.write(
+            "---\n"
+            "title: '{{< fa pencil >}} Contributors to the hubverse repositories'\n"
+            "---\n\n"
             "<!--\n"
             "This page should not be edited directly as it is automatically regenerated with `scripts/update_contributors.py`\n"
             "-->\n\n"
         )
         file.write(
-            "# Contributors to hubverse repositories\n\n"
             "These are the contributors to hubverse repositories in random order.\n\n"
         )
 
