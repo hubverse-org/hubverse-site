@@ -1,5 +1,6 @@
 ---
-title: "What is a Modeling Hub?"
+title: '<i class="bi bi-question-circle"></i> What is a modeling hub?'
+pagetitle: "What is a modeling hub?"
 ---
 
 ## Introduction

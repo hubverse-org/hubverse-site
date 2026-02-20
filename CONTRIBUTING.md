@@ -1,5 +1,6 @@
 ---
-title: "Contributing to the hubverse site"
+title: '<i class="bi bi-github"></i> Contributing to the hubverse site'
+pagetitle: "Contributing to the hubverse site"
 ---
 
 :::{.callout-important}

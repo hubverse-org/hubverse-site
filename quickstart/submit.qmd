@@ -1,5 +1,6 @@
 ---
-title: "Submit Model Output"
+title: '<i class="bi bi-file-earmark-arrow-up"></i> Submit model output'
+pagetitle: "Submit model output"
 ---
 
 When you want to submit a model to a hub, a good first place to start is

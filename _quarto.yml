@@ -19,24 +19,30 @@ website:
     right:
       - text: "Home"
         href: index.qmd
-      - text: "**Get Started**"
+      - text: "**Get started**"
         menu:
         - icon: question-circle
+          text: "What is a modeling hub?"
           href: quickstart/index.qmd
         - icon: diagram-3
+          text: "Create a hub"
           href: quickstart/create.qmd
         - icon: file-earmark-arrow-up
+          text: "Submit model output"
           href: quickstart/submit.qmd
         - icon: graph-up
+          text: "Analyze data"
           href: quickstart/analyze.qmd
         - icon: braces
+          text: "Develop software"
           href: quickstart/develop.qmd
         - "---"
         - icon: headset
+          text: "Consulting support"
           href: quickstart/support-consulting.md
       - text: "Tools"
         menu:
-        - text: "Data Standards"
+        - text: "Data standards"
           icon: compass
           href: tools/data.qmd
         - text: "Software"
@@ -57,17 +63,19 @@ website:
           href: "contact.qmd"
         - text: "---"
         - icon: info-circle-fill
+          text: "About the hubverse"
           href: "about.qmd"
       - text: "Resources"
         menu:
         - icon: book
+          text: "Terminology"
           href: "terminology.qmd"
         - text: "{{< fa book >}} &nbsp;&nbsp;Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
         - text: "{{< fa coins >}} &nbsp;&nbsp;Funding"
           href: "funding.md"
-        - text: "{{< fa person-chalkboard >}} &nbsp;Presentations"
-          href: "presentations.md"
+        - text: "{{< fa user-graduate >}} &nbsp;Research & talks"
+          href: "researchtalks.md"
         - text: "{{< fa laptop-code >}} &nbsp;Trainings"
           href: "trainings.md"
         - text: "{{< fa quote-left >}} &nbsp;&nbsp;How to cite"
@@ -77,6 +85,7 @@ website:
           href: "CONTRIBUTING.md"
         - "---"
         - icon: headset
+          text: "Consulting support"
           href: quickstart/support-consulting.md
   page-footer:
     left:

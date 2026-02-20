@@ -1,5 +1,6 @@
 ---
-title: "Terminology"
+title: '<i class="bi bi-book"></i> Terminology'
+pagetitle: "Terminology"
 ---
 
 This is a placeholder page. It is automatically regenerated with `scripts/update_terminology.py`

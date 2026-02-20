@@ -1,5 +1,6 @@
 ---
-title: "Analyze Data"
+title: '<i class="bi bi-graph-up"></i> Analyze data'
+pagetitle: "Analyze data"
 ---
 
 ## Access hub data

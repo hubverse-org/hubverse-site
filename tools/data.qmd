@@ -1,5 +1,6 @@
 ---
-title: "Data Standards"
+title: '<i class="bi bi-compass"></i> Data standards'
+pagetitle: "Data standards"
 ---
 
 :::{.callout-tip}

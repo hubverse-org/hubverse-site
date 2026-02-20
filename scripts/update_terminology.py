@@ -195,7 +195,8 @@ def main():
     defs_md = process_definitions(defs_md)
 
     header = r"""---
-title: "Terminology"
+title: '<i class="bi bi-book"></i> Terminology'
+pagetitle: "Terminology"
 ---
 
 <!--
