@@ -121,7 +121,7 @@ def cleanup_blank_lines(md: str) -> str:
 
 def build_header() -> str:
     return r"""---
-title: "How to cite"
+title: "{{< fa quote-left >}} &nbsp;How to cite"
 ---
 
 <!--
