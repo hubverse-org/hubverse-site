@@ -1,5 +1,5 @@
 ---
-title: '{{< fa user-graduate >}} Research & Talks'
+title: '{{< fa user-graduate >}} Research & talks'
 ---
 
 Following is a list of research outputs and talks related to the hubverse. This includes presentations about the hubverse, as well as research that has been done using hubverse data standards and software.

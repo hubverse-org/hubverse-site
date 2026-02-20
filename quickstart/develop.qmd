@@ -1,5 +1,6 @@
 ---
-title: "Develop Software"
+title: '<i class="bi bi-braces"></i> Develop software'
+pagetitle: "Develop software"
 ---
 
 {{< include /_snippets/develop.qmd >}}

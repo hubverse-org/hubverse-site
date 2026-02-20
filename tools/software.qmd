@@ -1,5 +1,6 @@
 ---
-title: "Software"
+title: '<i class="bi bi-tools"></i> Software'
+pagetitle: "Software"
 ---
 
 :::{.callout-tip}

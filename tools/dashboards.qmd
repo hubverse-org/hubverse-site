@@ -1,5 +1,6 @@
 ---
-title: "Dashboards"
+title: '<i class="bi bi-speedometer"></i> Dashboards'
+pagetitle: "Dashboards"
 ---
 
 ## Introduction

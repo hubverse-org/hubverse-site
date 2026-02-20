@@ -1,5 +1,6 @@
 ---
-title: "Create a hub"
+title: '<i class="bi bi-diagram-3"></i> Create a hub'
+pagetitle: "Create a hub"
 ---
 
 ## Determine what model output you want to collect
