@@ -241,7 +241,7 @@ hubs:
           - name: RSV Hub
             email: rsvhub@cdc.gov
         repo: CDCgov/rsv-forecast-hub
-        license: MIT License
+        license: Apache License 2.0
         count: 9
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
