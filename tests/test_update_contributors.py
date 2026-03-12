@@ -83,7 +83,28 @@ def test_write_contributors_file(tmp_path):
     assert "USA." in content
     assert "repo1, repo2" in content
 
-# Test 5: fallback when user lookup fails
+# Test 5: nav block is appended at the end of the file
+def test_write_contributors_file_includes_nav_block(tmp_path):
+    github = MagicMock()
+    user = MagicMock()
+    user.name = "Alice"
+    user.blog = ""
+    user.bio = ""
+    user.location = ""
+    user.avatar_url = "https://avatar"
+    user.html_url = "https://github.com/alice"
+    github.get_user.return_value = user
+
+    write_contributors_file(github, {"alice": {"repo1"}}, output_dir=tmp_path, shuffle=False)
+
+    content = (tmp_path / "contributors.md").read_text()
+    assert ":::: {.page-nav}" in content
+    assert "/community/hubs.qmd" in content  # prev link
+    assert "/contact.qmd" in content         # next link
+    assert content.rstrip().endswith("::::")  # nav block is last
+
+
+# Test 6: fallback when user lookup fails
 def test_write_contributors_file_user_failure(tmp_path):
     github = MagicMock()
     github.get_user.side_effect = Exception("User not found")

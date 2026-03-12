@@ -60,6 +60,26 @@ def test_main_writes_dest_file(
     assert "\n# How to cite" not in text
 
 
+@patch("scripts.update_cite.requests.get")
+def test_main_writes_nav_block(mock_get, tmp_path, monkeypatch, sample_md_with_header):
+    dest = tmp_path / "cite.qmd"
+    monkeypatch.setattr(update_cite, "DEST_FILE", str(dest))
+    monkeypatch.setattr(update_cite, "CITE_URL", "http://dummy")
+
+    mock_get.return_value = Mock(
+        text=sample_md_with_header,
+        raise_for_status=Mock(),
+    )
+
+    update_cite.main()
+
+    text = dest.read_text(encoding="utf-8")
+    assert ":::: {.page-nav}" in text
+    assert "/trainings.md" in text       # prev link
+    assert "/CONTRIBUTING.md" in text    # next link
+    assert text.rstrip().endswith("::::")  # nav block is last
+
+
 @pytest.mark.parametrize(
     "bad_text",
     ["", "BibTeX:\n```\n@x{}\n```\n"],

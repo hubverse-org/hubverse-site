@@ -33,3 +33,21 @@ The [AMPH Forecast Suite](https://accidda.github.io/AMPH_Forecast_Suite/index.ht
 * Ensembling, visualizing, and evaluating forecast results
 * Generating outputs compatible with forecast hubs and evaluation tools
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/researchtalks.md){.prev-arrow}
+
+[Previous](/researchtalks.md){.prev-label}
+
+[**Research &amp; talks**](/researchtalks.md){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/cite.qmd){.next-label}
+
+[›](/cite.qmd){.next-arrow}
+
+[**How to cite**](/cite.qmd){.next-title}
+:::
+::::

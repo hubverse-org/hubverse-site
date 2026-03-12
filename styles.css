@@ -1,5 +1,79 @@
 /* css styles */
 
+/* Page navigation (Next / Prev links) */
+
+/* Wrapper when both prev and next appear on the same page */
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.page-nav .next-page,
+.page-nav .prev-page {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Shared grid base for standalone use */
+.next-page,
+.prev-page {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 0.5rem;
+}
+
+.next-page { justify-content: end; }
+
+.next-page p,
+.prev-page p {
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* NEXT: label top-left, arrow right (spans rows), title bottom-left */
+.next-page p:nth-child(1) { grid-column: 1; grid-row: 1; text-align: right; }
+.next-page p:nth-child(2) { grid-column: 2; grid-row: 1 / 3; display: flex; align-items: center; }
+.next-page p:nth-child(3) { grid-column: 1; grid-row: 2; text-align: right; }
+
+/* PREV: arrow left (spans rows), label top-right, title bottom-right */
+.prev-page p:nth-child(1) { grid-column: 1; grid-row: 1 / 3; display: flex; align-items: center; }
+.prev-page p:nth-child(2) { grid-column: 2; grid-row: 1; }
+.prev-page p:nth-child(3) { grid-column: 2; grid-row: 2; }
+
+.next-page a,
+.prev-page a {
+  text-decoration: none;
+}
+
+a.next-label, a.next-arrow,
+a.prev-label, a.prev-arrow {
+  color: inherit;
+}
+
+a.next-label, a.prev-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+a.next-label:hover, a.next-arrow:hover,
+a.prev-label:hover, a.prev-arrow:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.next-title, a.prev-title {
+  font-weight: 600;
+}
+
 /* Force Poppins across content (reinforces theme variables) */
 body,
 .quarto-article,

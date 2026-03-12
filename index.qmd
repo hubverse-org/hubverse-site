@@ -138,3 +138,11 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 :::
 
+::: {.next-page}
+[Next](/quickstart/index.qmd){.next-label}
+
+[›](/quickstart/index.qmd){.next-arrow}
+
+[**What is a modeling hub?**](/quickstart/index.qmd){.next-title}
+:::
+

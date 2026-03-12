@@ -4,3 +4,21 @@ pagetitle: "Develop software"
 ---
 
 {{< include /_snippets/develop.qmd >}}
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/quickstart/analyze.qmd){.prev-arrow}
+
+[Previous](/quickstart/analyze.qmd){.prev-label}
+
+[**Analyze data**](/quickstart/analyze.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/tools/data.qmd){.next-label}
+
+[›](/tools/data.qmd){.next-arrow}
+
+[**Data standards**](/tools/data.qmd){.next-title}
+:::
+::::

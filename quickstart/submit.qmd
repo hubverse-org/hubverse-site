@@ -18,3 +18,21 @@ As a modeler, you will find the following packages important:
  - [hubValidations](https://hubverse-org.github.io/hubValidations) create submisson template and validate your model. 
 
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/quickstart/create.qmd){.prev-arrow}
+
+[Previous](/quickstart/create.qmd){.prev-label}
+
+[**Create a hub**](/quickstart/create.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/quickstart/analyze.qmd){.next-label}
+
+[›](/quickstart/analyze.qmd){.next-arrow}
+
+[**Analyze data**](/quickstart/analyze.qmd){.next-title}
+:::
+::::

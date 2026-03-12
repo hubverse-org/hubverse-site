@@ -88,6 +88,22 @@ def write_contributors_file(
             if i != last_index:
                 file.write("---\n\n")
 
+        file.write(
+            "\n\n"
+            ":::: {.page-nav}\n"
+            "::: {.prev-page}\n"
+            "[‹](/community/hubs.qmd){.prev-arrow}\n\n"
+            "[Previous](/community/hubs.qmd){.prev-label}\n\n"
+            "[**List of hubs**](/community/hubs.qmd){.prev-title}\n"
+            ":::\n\n"
+            "::: {.next-page}\n"
+            "[Next](/contact.qmd){.next-label}\n\n"
+            "[›](/contact.qmd){.next-arrow}\n\n"
+            "[**Contact**](/contact.qmd){.next-title}\n"
+            ":::\n"
+            "::::\n"
+        )
+
     return output_file
 
 

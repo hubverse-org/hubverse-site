@@ -4,3 +4,21 @@ title: "{{< fa quote-left >}} &nbsp;How to cite"
 
 This is a placeholder page. It is automatically regenerated with `scripts/update_cite.py`
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/trainings.md){.prev-arrow}
+
+[Previous](/trainings.md){.prev-label}
+
+[**Trainings**](/trainings.md){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/CONTRIBUTING.md){.next-label}
+
+[›](/CONTRIBUTING.md){.next-arrow}
+
+[**Contributing to the site**](/CONTRIBUTING.md){.next-title}
+:::
+::::

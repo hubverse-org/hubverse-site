@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m pytest tests/test_update_contributors.py::test_write_contributors_file_includes_nav_block tests/test_update_terminology_cli.py::test_main_writes_nav_block tests/test_update_cite_cli.py::test_main_writes_nav_block -v)",
+      "Bash(python3 -m pytest tests/test_update_contributors.py::test_write_contributors_file_includes_nav_block tests/test_update_terminology_cli.py::test_main_writes_nav_block tests/test_update_cite_cli.py::test_main_writes_nav_block -v)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/ajcr./.venv/**)",
+      "Bash(ls .venv/bin/python*)",
+      "Bash(ls pyproject.toml requirements*.txt)",
+      "Bash(.venv/bin/python -m pytest tests/test_update_contributors.py::test_write_contributors_file_includes_nav_block tests/test_update_terminology_cli.py::test_main_writes_nav_block tests/test_update_cite_cli.py::test_main_writes_nav_block -v)"
+    ]
+  }
+}

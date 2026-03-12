@@ -62,3 +62,21 @@ On June 25, 2025, the following members of the steering committee were elected:
 - Matthew Cornell, University of Massachusetts in Amherst, Reich Lab
 - Anna Krystalli, R-RSE
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/tools/dashboards.qmd){.prev-arrow}
+
+[Previous](/tools/dashboards.qmd){.prev-label}
+
+[**Dashboards**](/tools/dashboards.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/community/hubs.qmd){.next-label}
+
+[›](/community/hubs.qmd){.next-arrow}
+
+[**List of hubs**](/community/hubs.qmd){.next-title}
+:::
+::::

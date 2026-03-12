@@ -55,6 +55,29 @@ def test_main_writes_file(
     assert "Centers for Disease Control" in text
 
 
+@patch("scripts.update_terminology.requests.get")
+def test_main_writes_nav_block(
+    mock_get, tmp_path, monkeypatch, sample_defs_md, sample_abbr_md
+):
+    dest = tmp_path / "terminology.qmd"
+    monkeypatch.setattr(update_terminology, "DEST_FILE", str(dest))
+
+    def side_effect(url, timeout=30):
+        if "terminology.md" in url:
+            return Mock(text=sample_defs_md, raise_for_status=Mock())
+        return Mock(text=sample_abbr_md, raise_for_status=Mock())
+
+    mock_get.side_effect = side_effect
+
+    update_terminology.main()
+
+    text = dest.read_text(encoding="utf-8")
+    assert ":::: {.page-nav}" in text
+    assert "/about.qmd" in text    # prev link
+    assert "/funding.md" in text   # next link
+    assert text.rstrip().endswith("::::")  # nav block is last
+
+
 @pytest.mark.parametrize("defs,abbr", [("", ""), ("#", "")])
 @patch("scripts.update_terminology.requests.get")
 def test_main_handles_minimal_inputs(

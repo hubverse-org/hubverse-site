@@ -74,3 +74,21 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 :::
 
 :::
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/community/index.qmd){.prev-arrow}
+
+[Previous](/community/index.qmd){.prev-label}
+
+[**Community**](/community/index.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/community/contributors.md){.next-label}
+
+[›](/community/contributors.md){.next-arrow}
+
+[**Contributors**](/community/contributors.md){.next-title}
+:::
+::::

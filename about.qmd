@@ -100,3 +100,21 @@ Our second "hubverse retreat" was held June 3--7, 2024 at the University of Mass
 
 The third "hubverse retreat" was held October 14--17, 2025, at the University of Massachusetts, Amherst. During the retreat we worked on [finishing and readying the release of the v6.0.0 schema](https://github.com/hubverse-org/schemas/issues/136) that formalizes target data (among other improvements), adding sample functionality and other features to hubVis, coding hubdata python versions of timeseries functions, and developing a more productive relationship with Claude.
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/contact.qmd){.prev-arrow}
+
+[Previous](/contact.qmd){.prev-label}
+
+[**Contact**](/contact.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/terminology.qmd){.next-label}
+
+[›](/terminology.qmd){.next-arrow}
+
+[**Terminology**](/terminology.qmd){.next-title}
+:::
+::::
