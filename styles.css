@@ -31,6 +31,7 @@
 }
 
 .next-page { justify-content: end; }
+.prev-page { justify-content: start; }
 
 .next-page p,
 .prev-page p {
