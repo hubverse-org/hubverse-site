@@ -57,6 +57,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
         license: "MIT License"
+        count: 13
       - name: "Flusion Retrospective Hub"
         description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight. \n"
         # from admin.json
@@ -129,7 +130,7 @@ hubs:
         license: MIT License
         forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
         evals: https://reichlab.io/metrocast-dashboard/eval.html
-        count: 15
+        count: 16
   ai4casting:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
@@ -220,7 +221,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 91
+        count: 93
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
