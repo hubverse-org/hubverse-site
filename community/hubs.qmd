@@ -62,6 +62,8 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 {{< partial /_partials/hub.qmd hubs.reichlab-training id="reichlab-training">}}
 
+{{< partial /_partials/hub.qmd hubs.sjfox id="sjfox">}}
+
 :::
 
 :::
@@ -72,8 +74,6 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 :::{#orgs .grid style='--bs-gap: 0.5em'}
 
 {{< partial /_partials/hub.qmd hubs.reichlab-modeldev id="reichlab-modeldev">}}
-
-{{< partial /_partials/hub.qmd hubs.sjfox id="sjfox">}}
 
 :::
 
