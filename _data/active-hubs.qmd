@@ -87,7 +87,7 @@ hubs:
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "nickreich/metrocast-sandbox-2025-2026" # must be slug, not URL
+        repo: "reichlab/metrocast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
   reichlab-training:
     logo: /includes/img/reichlab.png
@@ -368,6 +368,34 @@ hubs:
           - name: Shaun Truelove
             email: shauntruelove@jhu.edu
         repo: HopkinsIDD/rsv-forecast-hub
+        license: MIT License
+  dailypartita:
+    logo: /includes/img/dailypartita.png
+    name: "Guangzhou Laboratory"
+    hubs:
+      - name: "China COVID-19 Prediction Center"
+        description: |
+          This collaborative prediction platform collects and evaluates real-time predictions of SARS-CoV-2 positivity rates 
+          in influenza-like illness cases from sentinel hospitals in China. 
+          The platform provides evidence-based insights for comparing prediction models and supporting public health decision-making.
+        contact:
+          - name: Kaixin Yang
+            email: yang_kaixin@gzlab.ac.cn
+        repo: dailypartita/China-COVID-19-Forecast-Hub
+        license: MIT License
+  sjfox:
+    logo: /includes/img/Northern_Arizona_U_logo.png
+    name: "Northern Arizona University"
+    hubs:
+      - name: "ATSF2026 Training Hub"
+        description: |
+          A template of a Sandbox hub of forecasts based on the original FluSight Challenge run by the CDC. 
+          All data and the repository structure have been formatted according to hubverse standards. 
+          The purpose of this hub is to provide a sandbox environment for training, research or benchmarking purposes.
+        contact:
+          - name: Spencer J Fox
+            email: Spencer.Fox@nau.edu
+        repo: sjfox/ATSF2026
         license: MIT License
 ---
 
