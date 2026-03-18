@@ -89,7 +89,7 @@ hubs:
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "nickreich/metrocast-sandbox-2025-2026" # must be slug, not URL
+        repo: "reichlab/metrocast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
         count: 7
   reichlab-training:
@@ -374,5 +374,29 @@ hubs:
         repo: HopkinsIDD/rsv-forecast-hub
         license: MIT License
         count: 9
+  dailypartita:
+    logo: /includes/img/dailypartita.png
+    name: "Guangzhou Laboratory"
+    hubs:
+      - name: "China COVID-19 Prediction Center"
+        description: "This collaborative prediction platform collects and evaluates real-time predictions of SARS-CoV-2 positivity rates \nin influenza-like illness cases from sentinel hospitals in China. \nThe platform provides evidence-based insights for comparing prediction models and supporting public health decision-making.\n"
+        contact:
+          - name: Kaixin Yang
+            email: yang_kaixin@gzlab.ac.cn
+        repo: dailypartita/China-COVID-19-Forecast-Hub
+        license: MIT License
+        count: 9
+  sjfox:
+    logo: /includes/img/Northern_Arizona_U_logo.png
+    name: "Northern Arizona University"
+    hubs:
+      - name: "ATSF2026 Training Hub"
+        description: "This is a sandbox hub used to teach programming and forecasting techniques to undergraduate and \ngraduate students as part of the Applied Time Series Forecasting course at Northern Arizona University. \nStudents are asked to produce weekly 4-week-ahead forecasts for five seasons of weighted influenza-like illness \nat the HHS and National level.\n"
+        contact:
+          - name: Spencer J Fox
+            email: Spencer.Fox@nau.edu
+        repo: sjfox/ATSF2026
+        license: MIT License
+        count: 8
 ---
 
