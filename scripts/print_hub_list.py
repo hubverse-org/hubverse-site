@@ -1,5 +1,6 @@
 import argparse
 import csv
+import json
 from pathlib import Path
 
 import yaml
@@ -24,17 +25,41 @@ def parse_args(argv=None):
         help="Do not write CSV output.",
     )
     parser.add_argument(
-        "--no-md",
+        "--write-md",
         dest="write_md",
-        action="store_false",
-        help="Do not write Markdown output.",
+        action="store_true",
+        help="Write Markdown output (disabled by default).",
     )
-    parser.set_defaults(write_csv=True, write_md=True)
+    parser.add_argument(
+        "--no-json",
+        dest="write_json",
+        action="store_false",
+        help="Do not write hubs.json output.",
+    )
+    parser.set_defaults(write_csv=True, write_md=False, write_json=True)
     return parser.parse_args(argv)
 
 
+def parse_repo_slug(slug):
+    """Parse an org/repo slug (possibly with /tree/main/subdir) into a dict.
+
+    Examples
+    --------
+    "cdcepi/FluSight-forecast-hub"
+        -> {"org": "cdcepi", "repo": "FluSight-forecast-hub"}
+    "reichlab/flusion/tree/main/retrospective-hub"
+        -> {"org": "reichlab", "repo": "flusion", "hub_subdir": "retrospective-hub"}
+    """
+    parts = slug.split("/")
+    entry = {"org": parts[0], "repo": parts[1]}
+    # Handle e.g. "org/repo/tree/main/subdir"
+    if len(parts) >= 5 and parts[2] == "tree":
+        entry["hub_subdir"] = parts[4]
+    return entry
+
+
 def build_hub_table(input_qmd: Path):
-    """Parse a Quarto file and return a list of hub rows."""
+    """Parse a Quarto file and return a list of hub rows sorted by repo slug."""
     with open(input_qmd, "r", encoding="utf-8") as f:
         docs = list(yaml.safe_load_all(f))
 
@@ -60,6 +85,7 @@ def build_hub_table(input_qmd: Path):
                 }
             )
 
+    rows.sort(key=lambda r: (r["repo"] or r["hub name"]).lower())
     return rows
 
 
@@ -81,6 +107,18 @@ def write_markdown(rows, output_md: Path):
             f.write("| " + " | ".join(str(r[h]) for h in HEADERS) + " |\n")
 
 
+def write_hubs_json(rows, output_json: Path):
+    """Write hubs.json with {org, repo[, hub_subdir]} entries for hubs that have a repo slug."""
+    hubs = [
+        parse_repo_slug(r["repo"])
+        for r in rows
+        if r.get("repo", "").strip()
+    ]
+    hub_lines = ",\n".join(f"    {json.dumps(h)}" for h in hubs)
+    with open(output_json, "w", encoding="utf-8") as f:
+        f.write(f'{{\n  "hubs": [\n{hub_lines}\n  ]\n}}\n')
+
+
 def main(argv=None):
     base_dir = Path(__file__).resolve().parents[1]
     args = parse_args(argv)
@@ -92,14 +130,19 @@ def main(argv=None):
 
     output_csv = output_dir / "active-hubs-table.csv"
     output_md = output_dir / "active-hubs-table.md"
+    output_json = output_dir / "hubs.json"
 
     rows = build_hub_table(input_qmd)
 
     if args.write_csv:
         write_csv(rows, output_csv)
 
-    if args.write_md:
-        write_markdown(rows, output_md)
+    # Markdown output is disabled by default; pass --write-md to enable.
+    # if args.write_md:
+    #     write_markdown(rows, output_md)
+
+    if args.write_json:
+        write_hubs_json(rows, output_json)
 
     print(f"Saved {len(rows)} rows to {output_dir}")
 
