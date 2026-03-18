@@ -389,9 +389,10 @@ hubs:
     hubs:
       - name: "ATSF2026 Training Hub"
         description: |
-          A template of a Sandbox hub of forecasts based on the original FluSight Challenge run by the CDC. 
-          All data and the repository structure have been formatted according to hubverse standards. 
-          The purpose of this hub is to provide a sandbox environment for training, research or benchmarking purposes.
+          This is a sandbox hub used to teach programming and forecasting techniques to undergraduate and 
+          graduate students as part of the Applied Time Series Forecasting course at Northern Arizona University. 
+          Students are asked to produce weekly 4-week-ahead forecasts for five seasons of weighted influenza-like illness 
+          at the HHS and National level.
         contact:
           - name: Spencer J Fox
             email: Spencer.Fox@nau.edu
