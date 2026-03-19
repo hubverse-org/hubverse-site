@@ -9,7 +9,7 @@ QUARTO_DEB="quarto-${QUARTO_VERSION}-linux-amd64.deb"
 
 echo "Installing Quarto ${QUARTO_VERSION}..."
 wget -q "https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/${QUARTO_DEB}"
-sudo dpkg -i "${QUARTO_DEB}"
+dpkg -i "${QUARTO_DEB}"
 rm "${QUARTO_DEB}"
 
 # --------------------------------------------------------------------------- #
@@ -27,7 +27,7 @@ chmod +x /usr/local/bin/yq
 echo "Installing gh CLI..."
 wget -q https://github.com/cli/cli/releases/download/v2.67.0/gh_2.67.0_linux_amd64.tar.gz
 tar xzf gh_2.67.0_linux_amd64.tar.gz
-sudo mv gh_2.67.0_linux_amd64/bin/gh /usr/local/bin/gh
+mv gh_2.67.0_linux_amd64/bin/gh /usr/local/bin/gh
 rm -rf gh_2.67.0_linux_amd64 gh_2.67.0_linux_amd64.tar.gz
 
 # --------------------------------------------------------------------------- #
