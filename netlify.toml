@@ -1,0 +1,9 @@
+[build]
+  command   = "bash netlify-build.sh"
+  publish   = "_site"
+
+[build.environment]
+  QUARTO_VERSION = "1.6.40"
+
+[context.deploy-preview]
+  command = "bash netlify-build.sh"
