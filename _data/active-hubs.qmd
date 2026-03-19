@@ -119,7 +119,7 @@ hubs:
         license: MIT License
         aws: "covid-variant-nowcast-hub"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
-        count: 10
+        count: 11
       - name: "Flu MetroCast Hub"
         description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
         contact:
@@ -397,6 +397,6 @@ hubs:
             email: Spencer.Fox@nau.edu
         repo: sjfox/ATSF2026
         license: MIT License
-        count: 8
+        count: 9
 ---
 
