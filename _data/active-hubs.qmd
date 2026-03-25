@@ -376,7 +376,7 @@ hubs:
       - name: "GZlab-China-COVID-19-Forecast-Hub"
         description: |
           This collaborative hub is designed to collect real-time probabilistic nowcasts and forecasts of weekly SARS-CoV-2 positivity rates from
-          the Chinese sentinel hospital surveillance network (data form China CDC).
+          the Chinese sentinel hospital surveillance network (data from China CDC).
         contact:
           - name: Kaixin Yang
             email: yang_kaixin@gzlab.ac.cn
