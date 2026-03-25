@@ -17,3 +17,21 @@ title: "{{< fa address-card >}} Contact"
 
 - If you encounter difficulties with our software or tools, please [file an issue in the appropriate repository](/community/index.qmd#file-issues).
 - If you are an interested in contributing to _the hubverse_, please visit the [community page](/community/index.qmd).
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/community/contributors.md){.prev-arrow}
+
+[Previous](/community/contributors.md){.prev-label}
+
+[**Contributors**](/community/contributors.md){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/about.qmd){.next-label}
+
+[›](/about.qmd){.next-arrow}
+
+[**About the hubverse**](/about.qmd){.next-title}
+:::
+::::

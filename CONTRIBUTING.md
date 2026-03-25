@@ -198,3 +198,21 @@ with data that updates dynamically.
 These are all integrated into [`.github/workflows/publish.yml`](.github/workflows/publish.yml).
 
 If this becomes too burdensome, these scripts could be all ported to python and run using [quarto project scripts](https://quarto.org/docs/projects/scripts.html).
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/cite.qmd){.prev-arrow}
+
+[Previous](/cite.qmd){.prev-label}
+
+[**How to cite**](/cite.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/quickstart/support-consulting.md){.next-label}
+
+[›](/quickstart/support-consulting.md){.next-arrow}
+
+[**Consulting support**](/quickstart/support-consulting.md){.next-title}
+:::
+::::

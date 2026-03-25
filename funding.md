@@ -11,3 +11,21 @@ title: '{{< fa coins >}} Funding supporting the hubverse'
  - US CDC Center for Forecasting and Outbreak Analytics, Insight Net Center of Implementation based at UT-Austin and UMass-Amherst (NU38FT000008), Sept 2023 - Aug 2028.
  - US CDC Center for Forecasting and Outbreak Analytics, Insight Net Center of Innovation based at University of North Carolina-Chapel Hill and Johns Hopkins University (NU38FT000012), Sept 2023 - Aug 2028.
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/terminology.qmd){.prev-arrow}
+
+[Previous](/terminology.qmd){.prev-label}
+
+[**Terminology**](/terminology.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/researchtalks.md){.next-label}
+
+[›](/researchtalks.md){.next-arrow}
+
+[**Research &amp; talks**](/researchtalks.md){.next-title}
+:::
+::::

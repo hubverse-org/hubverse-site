@@ -46,3 +46,21 @@ Some examples of dashboards are:
 
 
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/tools/software.qmd){.prev-arrow}
+
+[Previous](/tools/software.qmd){.prev-label}
+
+[**Software**](/tools/software.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/community/index.qmd){.next-label}
+
+[›](/community/index.qmd){.next-arrow}
+
+[**Community**](/community/index.qmd){.next-title}
+:::
+::::

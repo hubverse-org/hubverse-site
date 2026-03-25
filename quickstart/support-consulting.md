@@ -36,3 +36,11 @@ May include all or any combination of the following: troubleshooting validations
 
 If interested, please contact [hubverse+help@groups.io](mailto:hubverse+help@groups.io). In your message, please provide a brief description of the hub, a link to the repository (if applicable), and what you hope to address with the consulting session. 
 
+
+::: {.prev-page}
+[‹](/CONTRIBUTING.md){.prev-arrow}
+
+[Previous](/CONTRIBUTING.md){.prev-label}
+
+[**Contributing to the site**](/CONTRIBUTING.md){.prev-title}
+:::

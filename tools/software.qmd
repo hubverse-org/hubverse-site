@@ -51,3 +51,21 @@ The hubverse has a wide range of software packages designed to help you **admini
 
 :::
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/tools/data.qmd){.prev-arrow}
+
+[Previous](/tools/data.qmd){.prev-label}
+
+[**Data standards**](/tools/data.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/tools/dashboards.qmd){.next-label}
+
+[›](/tools/dashboards.qmd){.next-arrow}
+
+[**Dashboards**](/tools/dashboards.qmd){.next-title}
+:::
+::::

@@ -1,5 +1,9 @@
 project:
   type: website
+  render:
+    - "**/*.qmd"
+    - "**/*.md"
+    - "!CLAUDE.md"
   resources:
     - docs-redirect.html
 website:
@@ -56,33 +60,33 @@ website:
         - text: "{{< fa people-line >}} &nbsp;Community"
           href: community/index.qmd
         - text: "{{< fa list >}} &nbsp;&nbsp;List of hubs"
-          href: "community/hubs.qmd"
+          href: community/hubs.qmd
         - text: "{{< fa pencil >}} &nbsp;&nbsp;Contributors"
           href: community/contributors.md
         - text: "{{< fa address-card >}} &nbsp;&nbsp;Contact"
-          href: "contact.qmd"
+          href: contact.qmd
         - text: "---"
         - icon: info-circle-fill
           text: "About the hubverse"
-          href: "about.qmd"
+          href: about.qmd
       - text: "Resources"
         menu:
         - icon: book
           text: "Terminology"
-          href: "terminology.qmd"
+          href: terminology.qmd
         - text: "{{< fa book >}} &nbsp;&nbsp;Documentation {{< fa arrow-up-right-from-square >}}"
           href: https://docs.hubverse.io/
         - text: "{{< fa coins >}} &nbsp;&nbsp;Funding"
-          href: "funding.md"
+          href: funding.md
         - text: "{{< fa user-graduate >}} &nbsp;Research & talks"
-          href: "researchtalks.md"
+          href: researchtalks.md
         - text: "{{< fa laptop-code >}} &nbsp;Trainings"
-          href: "trainings.md"
+          href: trainings.md
         - text: "{{< fa quote-left >}} &nbsp;&nbsp;How to cite"
-          href: "cite.qmd"
+          href: cite.qmd
         - icon: github
           text: "Contributing to the site"
-          href: "CONTRIBUTING.md"
+          href: CONTRIBUTING.md
         - "---"
         - icon: headset
           text: "Consulting support"

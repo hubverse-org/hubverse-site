@@ -208,7 +208,22 @@ Any edits to concepts, terms or abbreviations should be made on the hubDocs repo
 -->
 """
 
-    final_md = f"{header}\n{defs_md}\n\n\n{abbr_md}"
+    nav_block = (
+        "\n\n"
+        ":::: {.page-nav}\n"
+        "::: {.prev-page}\n"
+        "[‹](/about.qmd){.prev-arrow}\n\n"
+        "[Previous](/about.qmd){.prev-label}\n\n"
+        "[**About the hubverse**](/about.qmd){.prev-title}\n"
+        ":::\n\n"
+        "::: {.next-page}\n"
+        "[Next](/funding.md){.next-label}\n\n"
+        "[›](/funding.md){.next-arrow}\n\n"
+        "[**Funding**](/funding.md){.next-title}\n"
+        ":::\n"
+        "::::\n"
+    )
+    final_md = f"{header}\n{defs_md}\n\n\n{abbr_md}{nav_block}"
 
     with open(DEST_FILE, "w", encoding="utf-8") as f:
         f.write(final_md)

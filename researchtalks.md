@@ -37,3 +37,21 @@ Following is a list of research outputs and talks related to the hubverse. This 
 
 - Reich NG, Lessler J, Funk S, Viboud C, Vespignani A, Tibshirani RJ, et al. [Collaborative Hubs: Making the Most of Predictive Epidemic Modeling](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2022.306831). Am J Public Health. 2022 Jun;112(6):839–42. doi:10.2105/AJPH.2022.306831
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/funding.md){.prev-arrow}
+
+[Previous](/funding.md){.prev-label}
+
+[**Funding**](/funding.md){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/trainings.md){.next-label}
+
+[›](/trainings.md){.next-arrow}
+
+[**Trainings**](/trainings.md){.next-title}
+:::
+::::

@@ -5,3 +5,21 @@ pagetitle: "Terminology"
 
 This is a placeholder page. It is automatically regenerated with `scripts/update_terminology.py`
 
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/about.qmd){.prev-arrow}
+
+[Previous](/about.qmd){.prev-label}
+
+[**About the hubverse**](/about.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/funding.md){.next-label}
+
+[›](/funding.md){.next-arrow}
+
+[**Funding**](/funding.md){.next-title}
+:::
+::::

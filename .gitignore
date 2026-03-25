@@ -1,5 +1,6 @@
 /.quarto/
 /_site/
+/.claude/
 .Rproj.user
 
 # Python cache

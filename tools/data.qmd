@@ -97,3 +97,21 @@ near-real-time to AWS:
 If you are interested in storing your data on AWS S3, please consult the [AWS
 onboarding
 guide](https://docs.hubverse.io/en/latest/developer/cloud-onboarding.html)
+
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/quickstart/develop.qmd){.prev-arrow}
+
+[Previous](/quickstart/develop.qmd){.prev-label}
+
+[**Develop software**](/quickstart/develop.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/tools/software.qmd){.next-label}
+
+[›](/tools/software.qmd){.next-arrow}
+
+[**Software**](/tools/software.qmd){.next-title}
+:::
+::::

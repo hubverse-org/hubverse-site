@@ -144,7 +144,22 @@ def process_cite_markdown(md: str) -> str:
 def main():
     src_md = fetch_markdown(CITE_URL)
     body = process_cite_markdown(src_md)
-    final_qmd = f"{build_header()}\n{body}"
+    nav_block = (
+        "\n\n"
+        ":::: {.page-nav}\n"
+        "::: {.prev-page}\n"
+        "[‹](/trainings.md){.prev-arrow}\n\n"
+        "[Previous](/trainings.md){.prev-label}\n\n"
+        "[**Trainings**](/trainings.md){.prev-title}\n"
+        ":::\n\n"
+        "::: {.next-page}\n"
+        "[Next](/CONTRIBUTING.md){.next-label}\n\n"
+        "[›](/CONTRIBUTING.md){.next-arrow}\n\n"
+        "[**Contributing to the site**](/CONTRIBUTING.md){.next-title}\n"
+        ":::\n"
+        "::::\n"
+    )
+    final_qmd = f"{build_header()}\n{body}{nav_block}"
 
     with open(DEST_FILE, "w", encoding="utf-8") as f:
         f.write(final_qmd)

@@ -33,3 +33,21 @@ your hub.
  - [hubAdmin](https://hubverse-org.github.io/hubAdmin) provides tools for you to create a new hub
  - [hubCI](https://hubverse-org.github.io/hubCI) allows you to set up automated check for your hub on github
 
+:::: {.page-nav}
+::: {.prev-page}
+[‹](/quickstart/index.qmd){.prev-arrow}
+
+[Previous](/quickstart/index.qmd){.prev-label}
+
+[**What is a modeling hub?**](/quickstart/index.qmd){.prev-title}
+:::
+
+::: {.next-page}
+[Next](/quickstart/submit.qmd){.next-label}
+
+[›](/quickstart/submit.qmd){.next-arrow}
+
+[**Submit model output**](/quickstart/submit.qmd){.next-title}
+:::
+::::
+
