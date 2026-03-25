@@ -82,7 +82,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "reichlab/forecast-sandbox-2025-2026" # must be slug, not URL
         license: "MIT License"
-        count: 24
+        count: 25
       - name: "MetroCast Sandbox"
         description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
         # from admin.json
@@ -221,7 +221,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 93
+        count: 94
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
