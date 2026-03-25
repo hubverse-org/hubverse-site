@@ -373,11 +373,10 @@ hubs:
     logo: /includes/img/dailypartita.png
     name: "Guangzhou Laboratory"
     hubs:
-      - name: "China COVID-19 Prediction Center"
+      - name: "GZlab-China-COVID-19-Forecast-Hub"
         description: |
-          This collaborative prediction platform collects and evaluates real-time predictions of SARS-CoV-2 positivity rates 
-          in influenza-like illness cases from sentinel hospitals in China. 
-          The platform provides evidence-based insights for comparing prediction models and supporting public health decision-making.
+          This collaborative hub is designed to collect real-time probabilistic nowcasts and forecasts of weekly SARS-CoV-2 positivity rates from
+          the Chinese sentinel hospital surveillance network (data form China CDC).
         contact:
           - name: Kaixin Yang
             email: yang_kaixin@gzlab.ac.cn
