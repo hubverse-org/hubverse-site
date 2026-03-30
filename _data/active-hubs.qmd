@@ -35,72 +35,70 @@ hubs:
     name: "The hubverse"
     hubs:
       - name: "Archival FluSight hub (2015--2019)"
-        description: "original submission to FluSight, reformatted to align with the hubverse format. \n"
-        # from admin.json
+        description: "original submission to FluSight, reformatted to align with the hubverse format."
         contact:
           - name: "Luke Mullany"
             email: "Luke.Mullany@jhuapl.edu"
-        repo: "hubverse-org/flusight_hub_archive" # must be slug, not URL
+        repo: "hubverse-org/flusight_hub_archive"
         license: "MIT License"
-        # --- OPTIONAL ----
-        aws: "uscdc-flusight-hub-v1" # from your admin.json
+        aws: "uscdc-flusight-hub-v1"
         count: 99
   reichlab-modeldev:
     logo: /includes/img/reichlab.png
     name: "Reich Lab"
     hubs:
       - name: "Variant Nowcast Model Development Retrospective Hub"
-        description: "Hub hosting retrospective model development for the UMass teams's submission to the U.S. SARS-CoV-2 Variant Nowcast Hub. \n"
-        # from admin.json
+        description: "Hub hosting retrospective model development for the UMass teams's submission to the U.S. SARS-CoV-2 Variant Nowcast Hub."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/variant-nowcast-model-dev-retro" # must be slug, not URL
+        repo: "reichlab/variant-nowcast-model-dev-retro"
         license: "MIT License"
+        count: 9
       - name: "Flusion Retrospective Hub"
-        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight. \n"
-        # from admin.json
+        description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/flusion/tree/main/retrospective-hub" # must be slug, not URL
+        repo: "reichlab/flusion/tree/main/retrospective-hub"
         license: "MIT License"
+        count: 9
       - name: "Flusion Submissions Hub"
-        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to FluSight. \n"
-        # from admin.json
+        description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to FluSight."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/flusion/tree/main/submissions-hub" # must be slug, not URL
+        repo: "reichlab/flusion/tree/main/submissions-hub"
         license: "MIT License"
+        count: 8
       - name: "Forecast Sandbox"
-        description: "Hub serving as a sandbox/testbed for experimental FluSight forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
-        # from admin.json
+        description: "Hub serving as a sandbox/testbed for experimental FluSight forecasts before and during the 2025/2026 respiratory virus forecasting season."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/forecast-sandbox-2025-2026" # must be slug, not URL
+        repo: "reichlab/forecast-sandbox-2025-2026"
         license: "MIT License"
+        count: 9
       - name: "MetroCast Sandbox"
-        description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season. \n"
-        # from admin.json
+        description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/metrocast-sandbox-2025-2026" # must be slug, not URL
+        repo: "reichlab/metrocast-sandbox-2025-2026"
         license: "MIT License"
+        count: 9
   reichlab-training:
     logo: /includes/img/reichlab.png
     name: "Reich Lab"
     hubs:
       - name: "SISMID ILI Forecasting Sandbox"
-        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. This hub was created for the 2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics (https://nfidd.github.io/sismid).\n"
-        # from admin.json
+        description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. This hub was created for the 2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics (https://nfidd.github.io/sismid)."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/sismid-ili-forecasting-sandbox" # must be slug, not URL
+        repo: "reichlab/sismid-ili-forecasting-sandbox"
         license: "MIT License"
+        count: 9
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
@@ -117,7 +115,7 @@ hubs:
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/
         count: 10
       - name: "Flu MetroCast Hub"
-        description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program. \n"
+        description: "The Flu MetroCast Hub is a modeling hub with the goal of\ncollecting city- and county-level forecasts of influenza\nactivity. The hub is led by the epiENGAGE team from UT-Austin\nand UMass-Amherst, as a part of the CDC Insight Net program."
         contact:
           - name: "epiENGAGE Flu MetroCast Team"
             email: epiengage@austin.utexas.edu
@@ -263,6 +261,7 @@ hubs:
           weekly forecasts on Influenza-Like-Illness (ILI) and Acute
           Respiratory Infection (ARI) incidence in EU/EEA countries.
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
+        license: CC-BY 4.0 license
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
         count: 26
@@ -274,6 +273,7 @@ hubs:
           The European Covid-19 Forecasting Hub collates weekly
           forecasts on Covid-19 Hospital Admissions in EU/EEA countries.
         repo: european-modelling-hubs/RespiCast-Covid19
+        license: CC-BY 4.0 license
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=5
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
         count: 19
@@ -289,6 +289,7 @@ hubs:
           and applies multi-model analyses through international
           modelling collaboration.
         repo: european-modelling-hubs/RespiCompass
+        license: CC-BY 4.0 license
         insights: https://respicompass.ecdc.europa.eu/insights/
         count: 11
   ecdc-archival:
@@ -302,6 +303,8 @@ hubs:
         description: |
           This repository archives the forecasts computed during season 2023/2024. 
         repo: european-modelling-hubs/flu-forecast-hub_archive
+        license: CC-BY 4.0 license
+        count: 9
       - name: "Archival RespiCast ARI Hub (2023--2024)"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
@@ -309,6 +312,8 @@ hubs:
         description: |
           This repository archives the forecasts computed during season 2023/2024.
         repo: european-modelling-hubs/ari-forecast-hub_archive
+        license: CC-BY 4.0 license
+        count: 9
   cadph:
     logo: /includes/img/cadph.png
     name: California Department of Public Health
@@ -369,20 +374,23 @@ hubs:
             email: shauntruelove@jhu.edu
         repo: HopkinsIDD/rsv-forecast-hub
         license: MIT License
+        count: 9
   dailypartita:
     logo: /includes/img/dailypartita.png
     name: "Guangzhou Laboratory"
     hubs:
-      - name: "China COVID-19 Prediction Center"
+      - name: "GZlab China COVID-19 Forecast Hub"
         description: |
-          This collaborative prediction platform collects and evaluates real-time predictions of SARS-CoV-2 positivity rates 
-          in influenza-like illness cases from sentinel hospitals in China. 
-          The platform provides evidence-based insights for comparing prediction models and supporting public health decision-making.
+          This collaborative hub is designed to collect real-time probabilistic nowcasts and forecasts of weekly SARS-CoV-2 positivity rates from
+          the Chinese sentinel hospital surveillance network (data from China CDC).
         contact:
           - name: Kaixin Yang
             email: yang_kaixin@gzlab.ac.cn
         repo: dailypartita/China-COVID-19-Forecast-Hub
+        forecasts: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/forecast.html
+        evals: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html
         license: MIT License
+        count: 9
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png
     name: "Northern Arizona University"
@@ -398,5 +406,6 @@ hubs:
             email: Spencer.Fox@nau.edu
         repo: sjfox/ATSF2026
         license: MIT License
+        count: 9
 ---
 
