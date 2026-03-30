@@ -25,5 +25,17 @@ hubs:
         repo: smhet/example-scenario-modeling-hub
         license: MIT License
         count: 0
+  example-subdir-org:
+    logo: /includes/img/example-logo.png
+    name: "Example Subdirectory Org"
+    hubs:
+      - name: "Example Subdirectory Hub"
+        description: "A hub stored in a subdirectory of a monorepo"
+        contact:
+          - name: "Maintainer name"
+            email: "maintainer.email@example.com"
+        repo: "example-subdir-org/monorepo/tree/main/example-subdir-hub"
+        license: "MIT License"
+        count: 2
 ---
 

@@ -28,6 +28,19 @@ fi
 # grab the hub file or fallback to the default
 hub_file="${1:-_data/active-hubs.qmd}"
 
+# Build the GitHub API path for a hub's model-output directory.
+# Handles subdirectory hubs stored as "owner/repo/tree/branch/subdir".
+model_output_api_path() {
+  local repo="${1%/}"
+  if [[ "$repo" == */tree/* ]]; then
+    local base="${repo%%/tree/*}"
+    local rest="${repo#*/tree/*/}"
+    echo "/repos/${base}/contents/${rest}/model-output"
+  else
+    echo "/repos/${repo}/contents/model-output"
+  fi
+}
+
 # get array of hub repo locations from the file
 mapfile -t hubs < <(yq --front-matter=extract '.hubs[].hubs[] | .repo' "${hub_file}")
 
@@ -35,7 +48,7 @@ selector='[.[] | select((.type == "dir"))] | length'
 re='^[0-9]+$'
 for hub in "${hubs[@]}"; do
   # 1. Use the GitHub API to count the number of directories in `model-output`
-  n=$(gh api "/repos/${hub%/}/contents/model-output" --jq "$selector")
+  n=$(gh api "$(model_output_api_path "${hub}")" --jq "$selector")
   if [[ "${n}" =~ $re && "${n}" -gt 0 ]]; then
     echo "${hub%/} has ${n} models"
     # 2. Use yq to update that number in the frontmatter
