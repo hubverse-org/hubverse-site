@@ -331,7 +331,7 @@ hubs:
         license: CC-BY 4.0 license
         count: 25
   accidda:
-    logo: /includes/img/ACCIDDALogoBigWithSubs.png
+    logo: /includes/img/accidda.png
     name: Atlantic Coast Center for Infectious Disease Dynamics and Analytics
     description: |
       The Atlantic Coast Center for Infectious Disease Dynamics and Analytics is devoted to rapid, coordinated response to infectious disease threats through innovative modeling techniques, enhanced data integration, and training a new generation of public health experts.
