@@ -3,4 +3,5 @@ PyGithub>=2.8.1
 pytest>=9.0
 PyYAML>=6.0
 pandas>=2.0
+jupyter>=1.0
 
