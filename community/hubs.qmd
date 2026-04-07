@@ -2,17 +2,23 @@
 title: '{{< fa list >}} List of hubs'
 ---
 
-## Real-time Collaborative Public Health Hubs
-
-The hubs listed below are all active. Many of these hubs have **open source data** available and
-ready to analyze in hubverse format.
-
 ::: {.callout-tip appearance="simple"}
 
 Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us about your hub!](/contact.qmd){.btn .btn-outline-dark .ms-auto}
 :::
 
+:::{.d-none}
 {{< include /_data/active-hubs.qmd >}}
+:::
+
+::: {.panel-tabset}
+
+## Cards
+
+### Real-time Collaborative Public Health Hubs
+
+The hubs listed below are all active. Many of these hubs have **open source data** available and
+ready to analyze in hubverse format.
 
 ::: {.column-screen-inset}
 
@@ -40,7 +46,7 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 :::
 
-## Archival Hubs
+### Archival Hubs
 
 ::: {.column-screen-inset}
 
@@ -54,7 +60,8 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 :::
 
 :::
-## Training Hubs
+
+### Training Hubs
 
 ::: {.column-screen-inset}
 
@@ -67,7 +74,8 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 :::
 
 :::
-## Model Development Hubs
+
+### Model Development Hubs
 
 ::: {.column-screen-inset}
 
@@ -76,6 +84,139 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 {{< partial /_partials/hub.qmd hubs.reichlab-modeldev id="reichlab-modeldev">}}
 
 :::
+
+:::
+
+## Table
+
+```{python}
+#| echo: false
+#| warning: false
+
+import sys
+import pandas as pd
+from pathlib import Path
+from IPython.display import display, HTML
+
+# community/ is the working directory when this chunk runs, so add the
+# project root to sys.path so that scripts.hub_table can be imported.
+sys.path.insert(0, str(Path("..").resolve()))
+
+from scripts.hub_table import build_hub_dataframe
+
+df = build_hub_dataframe(Path("../_data/active-hubs.qmd"))
+
+CATEGORY_BADGE = {
+    "Active":            "primary",
+    "Archival":          "secondary",
+    "Training":          "info",
+    "Model Development": "warning",
+}
+
+rows_html = ""
+for _, row in df.iterrows():
+    badge = CATEGORY_BADGE.get(row["Category"], "secondary")
+    models = "" if pd.isna(row["Models"]) else int(row["Models"])
+    rows_html += f"""
+    <tr>
+      <td>{row['Hub']}</td>
+      <td>{row['Organization']}</td>
+      <td><span class="badge text-bg-{badge}">{row['Category']}</span></td>
+      <td class="text-center" data-val="{models}">{models}</td>
+      <td>{row['Repo']}</td>
+      <td class="text-center">{row['Open Data']}</td>
+      <td class="text-center">{row['Insights']}</td>
+      <td class="text-center">{row['Forecasts']}</td>
+      <td class="text-center">{row['Evaluations']}</td>
+    </tr>"""
+
+display(HTML(f"""
+<style>
+  #hub-table thead th.sortable {{
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }}
+  #hub-table thead th.sortable:hover {{ background-color: rgba(0,0,0,.05); }}
+  #hub-table thead th.sortable::after {{ content: " ⇅"; opacity: .4; }}
+  #hub-table thead th.sort-asc::after  {{ content: " ↑"; opacity: 1; }}
+  #hub-table thead th.sort-desc::after {{ content: " ↓"; opacity: 1; }}
+  #hub-table th:nth-child(5),
+  #hub-table td:nth-child(5) {{ min-width: 16rem; }}
+</style>
+<script>
+(function() {{
+  var sortCol = -1, sortDir = 1;
+
+  function sortHubTable(colIndex) {{
+    var table = document.getElementById('hub-table');
+    var tbody = table.querySelector('tbody');
+    var rows  = Array.from(tbody.querySelectorAll('tr'));
+    var headers = Array.from(table.querySelectorAll('thead th'));
+
+    sortDir = (colIndex === sortCol) ? -sortDir : 1;
+    sortCol = colIndex;
+
+    headers.forEach(function(h) {{
+      h.classList.remove('sort-asc', 'sort-desc');
+    }});
+    headers[colIndex].classList.add(sortDir === 1 ? 'sort-asc' : 'sort-desc');
+
+    rows.sort(function(a, b) {{
+      var aCell = a.cells[colIndex];
+      var bCell = b.cells[colIndex];
+      // Use data-val attribute for numeric columns, otherwise text content
+      var aVal = aCell.dataset.val !== undefined ? aCell.dataset.val : aCell.textContent.trim();
+      var bVal = bCell.dataset.val !== undefined ? bCell.dataset.val : bCell.textContent.trim();
+      // Empty values always sort last
+      if (aVal === '' && bVal !== '') return 1;
+      if (bVal === '' && aVal !== '') return -1;
+      // Numeric sort when both values are numbers
+      var aNum = parseFloat(aVal), bNum = parseFloat(bVal);
+      if (!isNaN(aNum) && !isNaN(bNum)) return sortDir * (aNum - bNum);
+      return sortDir * aVal.localeCompare(bVal, undefined, {{sensitivity: 'base'}});
+    }});
+
+    rows.forEach(function(r) {{ tbody.appendChild(r); }});
+  }}
+
+  function filterHubTable() {{
+    var q = document.getElementById('hub-search').value.toLowerCase();
+    document.querySelectorAll('#hub-table tbody tr').forEach(function(r) {{
+      r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+    }});
+  }}
+
+  document.addEventListener('DOMContentLoaded', function() {{
+    document.querySelectorAll('#hub-table thead th.sortable').forEach(function(th, i) {{
+      th.addEventListener('click', function() {{ sortHubTable(i); }});
+    }});
+    document.getElementById('hub-search').addEventListener('input', filterHubTable);
+  }});
+}})();
+</script>
+<input type="text" id="hub-search" placeholder="Search hubs..."
+       class="form-control mb-3" aria-label="Search hubs">
+<div class="table-responsive">
+  <table id="hub-table" class="table table-sm table-striped table-hover align-middle">
+    <thead>
+      <tr>
+        <th class="sortable">Hub</th>
+        <th class="sortable">Organization</th>
+        <th class="sortable">Category</th>
+        <th class="sortable text-center">Models</th>
+        <th>Repo</th>
+        <th class="text-center">Open Data</th>
+        <th class="text-center">Insights</th>
+        <th class="text-center">Forecasts</th>
+        <th class="text-center">Evaluations</th>
+      </tr>
+    </thead>
+    <tbody>{rows_html}</tbody>
+  </table>
+</div>
+"""))
+```
 
 :::
 
