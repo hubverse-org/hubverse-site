@@ -16,7 +16,7 @@ sjf:
   hub: Southern Hemisphere Severe Acute Respiratory Infection Forecast Hub
   org:
     slug: uscdc
-    name: Centers for Disease Control and Prevention
+    name: US Centers for Disease Control and Prevention
   name: Dr. Spencer J Fox
   img: /includes/img/sjf.png
   testimonial: |
