@@ -1,38 +1,22 @@
 ---
 hmsc:
-  hub: West Nile Virus Forecasting Hub
-  org:
-    slug: cadph
-    name: California Department of Public Health
-  name: Dr. Héctor M. Sánchez C
-  img: /includes/img/HMSC.png
-  testimonial: |
-    We wanted to launch the first West Nile Virus Forecasting
-    Challenge in the state of California to support existing efforts in reducing
-    disease prevalence. **The hubverse tools have been a crucial component in our
-    setup** as they allow for standard submission formats and validations, which
-    encourage participation and collaborations from external teams.
+  - hub: West Nile Virus Forecasting Hub
+    name: Dr. Héctor M. Sánchez C
+    img: /includes/img/HMSC.png
+    testimonial: |
+      We wanted to launch the first West Nile Virus Forecasting Challenge in the state of California to support existing efforts         in reducing disease prevalence. **The hubverse tools have been a crucial component in our nsetup** as they allow for
+      standard submission formats and validations, which encourage participation and collaborations from external teams.
+    org:
+      slug: cadph
+      name: California Department of Public Health
 sjf:
-  hub: Paraguay Forecast Hub
-  org:
-    slug: uscdc
-    name: US Centers for Disease Control and Prevention
-  name: Dr. Spencer J Fox
-  img: /includes/img/sjf.png
-  testimonial: |
-    Hubverse tools have been instrumental in enabling us to scale infectious disease forecasting globally, including to regions
-    that have historically lacked access to real-time forecasts. Their standardized, flexible infrastructure makes it possible to
-    rapidly deploy and coordinate forecasting efforts across many regions.
-alfa:
-  hub: Alfa Hub
-  name: Dr. Alfa
-  img: https://placecats.com/300/300
-  testimonial: |
-    The hubverse has been supporting the Alfa hub for years
-beta:
-  hub: Beta Hub
-  name: Dr. Beta
-  img: https://placecats.com/400/400
-  testimonial: |
-    We wanted to track the distribution of beta across metropolitan areas in the US. The hubverse provided an easy way to get us quickly set up 
+    - hub: Paraguay Forecast Hub
+      name: Dr. Spencer J Fox
+      img: /includes/img/sjf.png
+      testimonial: |
+        Hubverse tools have been instrumental in enabling us to scale infectious disease forecasting globally, including to regions
+        that have historically lacked access to real-time forecasts. Their standardized, flexible infrastructure makes it possible         to rapidly deploy and coordinate forecasting efforts across many regions.
+      org:
+      slug: uscdc
+      name: US Centers for Disease Control and Prevention
 ---
