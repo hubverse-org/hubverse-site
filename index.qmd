@@ -100,6 +100,7 @@ R-Universe](https://hubverse-org.r-universe.dev)
 :::{.grid}
 
 {{< partial /_partials/testimonial.qmd hmsc >}}
+{{< partial /_partials/testimonial.qmd sjf >}}
 
 :::
 
