@@ -18,7 +18,7 @@ sjf:
     slug: cdc
     name: Centers for Disease Control and Prevention
   name: Dr. Spencer J Fox
-  img: /includes/img/HMSC.png
+  img: /includes/img/SJF.png
   testimonial: |
     Hubverse tools have been instrumental in enabling us to scale infectious disease forecasting globally, including to regions
 that have historically lacked access to real-time forecasts. Their standardized, flexible infrastructure makes it possible to rapidly deploy and coordinate forecasting efforts across many regions.
