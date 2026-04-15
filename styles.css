@@ -93,6 +93,27 @@ p, li, blockquote, dd, dt {
   font-size: 1.6rem;
 }
 
+.testimonial-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+.testimonial-grid > p:empty {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial .grid {
+    grid-template-columns: 1fr;
+  }
+  .testimonial .g-col-5,
+  .testimonial .g-col-7 {
+    grid-column: span 1;
+  }
+}
+
 .testimonial {
   margin: 0;
   margin-top: 1rex;
