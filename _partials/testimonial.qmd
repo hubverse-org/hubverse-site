@@ -1,5 +1,5 @@
 ```{=html}
-<div class="card mb-3 g-col-12 g-col-sm-12 g-col-md-6 testimonial">
+<div class="card mb-3 h-100 testimonial">
   <div class="grid">
     <div class="g-col-5">
       <img src="{{img}}" class="img-fluid rounded-start" alt=" ">
