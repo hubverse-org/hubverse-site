@@ -25,8 +25,9 @@ cite: # generate cite page (requires python)
 	python scripts/update_cite.py
 
 .PHONY: test
-test: # run unit tests (requires python/pytest)
+test: # run unit tests (requires python/pytest and bats)
 	python -m pytest
+	bats tests/
 
 .PHONY: render
 render: contributors models terminology cite # update files and render to HTML

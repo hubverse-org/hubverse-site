@@ -1,0 +1,40 @@
+name: Update Quarto Extensions
+
+on:
+  schedule:
+    - cron: '0 10 * * 1' # every Monday at 10:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-extensions:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+
+      - name: Update extensions
+        run: |
+          quarto add gadenbuie/partials --no-prompt
+          quarto add quarto-ext/fontawesome --no-prompt
+
+      - name: Open pull request if extensions changed
+        uses: peter-evans/create-pull-request@dd2324fc52d5d43c699a5636bcf19fceaa70c284 #v7.0.7
+        with:
+          commit-message: "chore: update Quarto extensions"
+          title: "chore: update Quarto extensions"
+          body: |
+            Automated weekly update of Quarto extensions.
+
+            Extensions updated:
+            - `gadenbuie/partials`
+            - `quarto-ext/fontawesome`
+
+            The render test in the publish workflow will verify these changes work correctly.
+          branch: automated/update-quarto-extensions
+          delete-branch: true

@@ -45,8 +45,15 @@ if [[ "$jq_arg" == ".default_branch" ]]; then
   exit 0
 fi
 
-if [[ "$repo_path" == */contents/model-output ]]; then
-  repo="${repo_path%/contents/model-output}"
+if [[ "$repo_path" == */model-output ]]; then
+  stripped="${repo_path%/model-output}"
+  if [[ "$stripped" == */contents ]]; then
+    # Regular hub: owner/repo/contents → owner/repo
+    repo="${stripped%/contents}"
+  else
+    # Subdirectory hub: owner/repo/contents/subdir → owner/repo/subdir
+    repo="${stripped/\/contents\//\/}"
+  fi
   count_var="GH_COUNT_$(sanitize "$repo")"
   if [[ -n "${!count_var:-}" ]]; then
     echo "${!count_var}"

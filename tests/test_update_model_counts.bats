@@ -31,6 +31,26 @@ setup() {
   [ "$smhet_count" = "5" ]
 }
 
+@test "updates counts for subdirectory hubs" {
+  if ! command -v yq >/dev/null; then
+    skip "yq must be installed for this test"
+  fi
+
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
+
+  export GH_COUNT_example_subdir_org_monorepo_example_subdir_hub=7
+
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
+
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"example-subdir-org/monorepo/tree/main/example-subdir-hub has 7 models"* ]]
+
+  local count
+  count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "example-subdir-org/monorepo/tree/main/example-subdir-hub") | .count' "$hub_file")
+  [ "$count" = "7" ]
+}
+
 @test "leaves count unchanged when gh result is not positive" {
   if ! command -v yq >/dev/null; then
     skip "yq must be installed for this test"
