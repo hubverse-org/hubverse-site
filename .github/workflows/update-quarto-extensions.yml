@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b #v2
 
       - name: Update extensions
         run: |
