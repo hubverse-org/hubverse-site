@@ -18,7 +18,7 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
       - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b #v2
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -43,7 +43,7 @@ jobs:
 
       - name: Test
         if: ${{ github.event_name == 'pull_request' }}
-        uses: quarto-dev/quarto-actions/render@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+        uses: quarto-dev/quarto-actions/render@8a96df13519ee81fd526f2dfca5962811136661b #v2
         with:
           to: html
         env:
@@ -57,7 +57,7 @@ jobs:
 
       - name: Render and Publish
         if: ${{ github.event_name != 'pull_request' }}
-        uses: quarto-dev/quarto-actions/publish@9e48da27e184aa238fcb49f5db75469626d43adb #v2
+        uses: quarto-dev/quarto-actions/publish@8a96df13519ee81fd526f2dfca5962811136661b #v2
         with:
           target: gh-pages
         env:
