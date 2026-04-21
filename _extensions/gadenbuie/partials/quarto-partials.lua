@@ -36,8 +36,6 @@ local function pandoc_stringify(obj)
     return pandoc.utils.stringify(obj)
   end
 
-  -- descend into tables and stringify to prevent concatenation, but not if they are "Blocks",
-  -- which are paragraphs.
   if type(obj) == "table" and pandoc.utils.type(obj) ~= "Blocks" then
     for k, v in pairs(obj) do
       obj[k] = pandoc_stringify(v)
@@ -58,9 +56,30 @@ function copy(obj, seen)
   return res
 end
 
+local function normalize_quarto_path(file)
+  local prefix = ""
+  local path = pandoc.utils.stringify(file)
+  local leader = string.sub(path, 1, 7)
+  if leader == "file://" then
+    -- MACHINE ROOT STARTS WITH file:///
+    path = string.sub(path, 8, -1)
+  elseif string.sub(leader, 1, 2) == "//" then
+    -- MACHINE ROOT STARTS WITH //
+    path = string.sub(path, 2, -1)
+  elseif string.sub(leader, 1, 1) == "/" then
+    -- QUARTO ROOT STARTS WITH /
+    prefix = os.getenv("QUARTO_PROJECT_ROOT")
+  end
+  return prefix..path
+end
+
 local function render_partial(file, data, context)
-  local f = io.open(file, "r")
-  local template = f:read("a")
+  local path = normalize_quarto_path(file)
+  local f = io.open(path, "rb")
+  if f == nil then 
+    error("Error resolving partial - unable to open file " .. path)
+  end
+  local template = f:read("*all")
   f:close()
 
   local rendered = lustache:render(template, data)
