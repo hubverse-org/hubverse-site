@@ -20,8 +20,8 @@ jobs:
 
       - name: Update extensions
         run: |
-          quarto add gadenbuie/partials --no-prompt
-          quarto add quarto-ext/fontawesome --no-prompt
+          quarto update extension gadenbuie/quarto-partials --no-prompt
+          quarto update extension quarto-ext/fontawesome --no-prompt
 
       - name: Open pull request if extensions changed
         env:
