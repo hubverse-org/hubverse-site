@@ -2,6 +2,7 @@ import csv
 from io import StringIO
 from pathlib import Path
 from unittest.mock import MagicMock, patch
+from urllib.parse import urlparse
 
 import polars as pl
 import pytest
@@ -220,12 +221,13 @@ def test_fetch_hub_stats_concat_succeeds_when_both_dirs_have_files():
     def fake_get(url, **kwargs):
         response = MagicMock()
         response.raise_for_status = MagicMock()
+        parsed = urlparse(url)
         # API listing calls
-        if "api.github.com" in url and "model-output" in url:
+        if parsed.netloc == "api.github.com" and "model-output" in parsed.path:
             response.status_code = 200
             response.json.return_value = [{"type": "file", "download_url": csv_url}]
             response.links = {}
-        elif "api.github.com" in url and "target-data" in url:
+        elif parsed.netloc == "api.github.com" and "target-data" in parsed.path:
             response.status_code = 200
             response.json.return_value = [{"type": "file", "download_url": csv_url_td}]
             response.links = {}
