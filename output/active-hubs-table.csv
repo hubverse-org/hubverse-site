@@ -1,0 +1,32 @@
+example,name,hub name,repo,insights,aws
+ai4casting,AI4Casting (U of Guelph),Hospitalization Forecast Hub,ai4castinghub/hospitalization-forecast,,
+ai4casting,AI4Casting (U of Guelph),RVDSS Forecast Hub,ai4castinghub/rvdss-forecast,,
+acefa,Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics,Australia-Aotearoa Forecasting Hub,,,
+uscdc,US Centers for Disease Control and Prevention,FluSight Forecast Hub,cdcepi/FluSight-forecast-hub,,cdcepi-flusight-forecast-hub
+uscdc,US Centers for Disease Control and Prevention,COVID-19 Forecast Hub,CDCgov/covid19-forecast-hub,,covid19-forecast-hub
+uscdc,US Centers for Disease Control and Prevention,RSV Forecast Hub,CDCgov/rsv-forecast-hub,,
+cadph,California Department of Public Health,West Nile Virus Forecasting Hub,cdphmodeling/wnvca-2024,,
+dailypartita,Guangzhou Laboratory,GZlab China COVID-19 Forecast Hub,dailypartita/China-COVID-19-Forecast-Hub,,
+ecdc-archival,European Centre for Disease Prevention and Control (ECDC),Archival RespiCast ARI Hub (2023--2024),european-modelling-hubs/ari-forecast-hub_archive,,
+ecdc-archival,European Centre for Disease Prevention and Control (ECDC),Archival RespiCast Influenza Hub (2023--2024),european-modelling-hubs/flu-forecast-hub_archive,,
+ecdc,European Centre for Disease Prevention and Control (ECDC),European Covid-19 Forecasting Hub,european-modelling-hubs/RespiCast-Covid19,,
+ecdc,European Centre for Disease Prevention and Control (ECDC),RespiCast Syndromic Indicators,european-modelling-hubs/RespiCast-SyndromicIndicators,,
+ecdc,European Centre for Disease Prevention and Control (ECDC),RespiCompass - ECDC's Respiratory Diseases Scenario Hub,european-modelling-hubs/RespiCompass,https://respicompass.ecdc.europa.eu/insights/,
+hopkinsidd,Johns Hopkins University Infectious Disease Dynamics Group,Archival US RSV Forecast Hub 2024--2025,HopkinsIDD/rsv-forecast-hub,,
+hubverse,The hubverse,Archival FluSight hub (2015--2019),hubverse-org/flusight_hub_archive,,uscdc-flusight-hub-v1
+smhct,Scenario Modeling Hub Coordination Team,COVID-19 Scenario Modeling Hub,midas-network/covid19-scenario-modeling-hub,https://covid19scenariomodelinghub.org/,
+smhct,Scenario Modeling Hub Coordination Team,COVID-19 Scenario Modeling Hub - Research,midas-network/covid19-smh-research,,
+smhct,Scenario Modeling Hub Coordination Team,Flu Scenario Modeling Hub,midas-network/flu-scenario-modeling-hub,https://fluscenariomodelinghub.org,
+smhct,Scenario Modeling Hub Coordination Team,RSV Scenario Modeling Hub,midas-network/rsv-scenario-modeling-hub,https://rsvscenariomodelinghub.org,
+accidda,Atlantic Coast Center for Infectious Disease Dynamics and Analytics,NC DHHS / ACCIDDA Forecasting Collaboration,,https://www.respilens.com/,
+uscdc,US Centers for Disease Control and Prevention,Paraguay Forecast Hub,,,
+epiengage,epiENGAGE,Flu MetroCast Hub,reichlab/flu-metrocast,,reichlab-flu-metrocast-hub
+reichlab-modeldev,Reich Lab,Flusion Retrospective Hub,reichlab/flusion/tree/main/retrospective-hub,,
+reichlab-modeldev,Reich Lab,Flusion Submissions Hub,reichlab/flusion/tree/main/submissions-hub,,
+reichlab-modeldev,Reich Lab,Forecast Sandbox,reichlab/forecast-sandbox-2025-2026,,
+reichlab-modeldev,Reich Lab,MetroCast Sandbox,reichlab/metrocast-sandbox-2025-2026,,
+reichlab-training,Reich Lab,SISMID ILI Forecasting Sandbox,reichlab/sismid-ili-forecasting-sandbox,,
+epiengage,epiENGAGE,Variant Nowcast Hub,reichlab/variant-nowcast-hub,https://reichlab.io/variant-nowcast-hub-dashboard/,covid-variant-nowcast-hub
+reichlab-modeldev,Reich Lab,Variant Nowcast Model Development Retrospective Hub,reichlab/variant-nowcast-model-dev-retro,,
+sjfox,Northern Arizona University,ATSF2026 Training Hub,sjfox/ATSF2026,,
+uscdc,US Centers for Disease Control and Prevention,WHO FluNet Hub,,,

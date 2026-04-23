@@ -16,7 +16,7 @@ def parse_args(argv=None):
     parser.add_argument(
         "--output-dir",
         type=Path,
-        help="Directory to write generated files. Defaults to the project _data directory.",
+        help="Directory to write generated files. Defaults to the project output/ directory.",
     )
     parser.add_argument(
         "--no-csv",
@@ -124,7 +124,7 @@ def main(argv=None):
     args = parse_args(argv)
 
     input_qmd = base_dir / "_data" / "active-hubs.qmd"
-    output_dir = args.output_dir or (base_dir / "_data")
+    output_dir = args.output_dir or (base_dir / "output")
     output_dir = output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
