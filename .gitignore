@@ -15,3 +15,6 @@ htmlcov/
 
 **/*.quarto_ipynb
 
+# Intermediate hub stats parquet cache (only hub_stats_summary.csv is committed)
+/output/hub_stats/
+
