@@ -111,7 +111,7 @@ rendered = pandoc.read(rendered)
       return pandoc.RawBlock('tex', rendered)
     end
     return pandoc.RawBlock('tex', rendered)
-  
+
   elseif string.match(path, "%.html") then
     -- And `.html` for HTML documents
     if context == "inline" then
