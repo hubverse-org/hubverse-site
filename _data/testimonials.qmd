@@ -21,6 +21,15 @@ sjf:
   img: /includes/img/sjf.png
   testimonial: |
     Hubverse tools have been instrumental in enabling us to scale infectious disease forecasting globally, including to regions that have historically lacked access to real-time forecasts. Their standardized, flexible infrastructure makes it possible to rapidly deploy and coordinate forecasting efforts across many regions.
+acefa:
+  hub: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+  org:
+    slug: acefa
+    name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+  name: Dr. Saras Windecker
+  img: /includes/img/acefa_ppl.jpg
+  testimonial: |
+    The hubverse tools and team were instrumental in getting our hubs up and running. The materials provided a solid foundation for us to build upon, and were easily extendable to personalise the hubs to our unique data use cases. The team and broader community provide welcome support.
 alfa:
   hub: Alfa Hub
   name: Dr. Alfa
