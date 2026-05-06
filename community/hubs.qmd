@@ -102,9 +102,10 @@ from IPython.display import display, HTML
 # project root to sys.path so that scripts.hub_table can be imported.
 sys.path.insert(0, str(Path("..").resolve()))
 
-from scripts.hub_table import build_hub_dataframe
+from scripts.hub_table import build_hub_dataframe, canon_repo_key, load_hub_row_counts
 
 df = build_hub_dataframe(Path("../_data/active-hubs.qmd"))
+hub_row_counts = load_hub_row_counts(Path("../output/hub_stats_summary.csv"))
 
 CATEGORY_BADGE = {
     "Active":            "primary",
@@ -117,12 +118,18 @@ rows_html = ""
 for _, row in df.iterrows():
     badge = CATEGORY_BADGE.get(row["Category"], "secondary")
     models = "" if pd.isna(row["Models"]) else int(row["Models"])
+    repo_slug = row.get("RepoSlug") or ""
+    key = canon_repo_key(repo_slug) if repo_slug else ""
+    data_rows = hub_row_counts.get(key)
+    data_val = data_rows if data_rows is not None else ""
+    data_display = f"{data_rows:,}" if data_rows is not None else ""
     rows_html += f"""
     <tr>
       <td>{row['Hub']}</td>
       <td>{row['Organization']}</td>
       <td><span class="badge text-bg-{badge}">{row['Category']}</span></td>
       <td class="text-center" data-val="{models}">{models}</td>
+      <td class="text-center" data-val="{data_val}">{data_display}</td>
       <td>{row['Repo']}</td>
       <td class="text-center">{row['Open Data']}</td>
       <td class="text-center">{row['Insights']}</td>
@@ -141,8 +148,8 @@ display(HTML(f"""
   #hub-table thead th.sortable::after {{ content: " ⇅"; opacity: .4; }}
   #hub-table thead th.sort-asc::after  {{ content: " ↑"; opacity: 1; }}
   #hub-table thead th.sort-desc::after {{ content: " ↓"; opacity: 1; }}
-  #hub-table th:nth-child(5),
-  #hub-table td:nth-child(5) {{ min-width: 16rem; }}
+  #hub-table th:nth-child(6),
+  #hub-table td:nth-child(6) {{ min-width: 16rem; }}
 </style>
 <script>
 (function() {{
@@ -205,6 +212,7 @@ display(HTML(f"""
         <th class="sortable">Organization</th>
         <th class="sortable">Category</th>
         <th class="sortable text-center">Models</th>
+        <th class="sortable text-center">Data Rows</th>
         <th>Repo</th>
         <th class="text-center">Open Data</th>
         <th class="text-center">Insights</th>

@@ -8,6 +8,31 @@ from pathlib import Path
 import pandas as pd
 import yaml
 
+
+def canon_repo_key(repo_slug: str) -> str:
+    """Normalize a repo slug to the form used in hub_stats_summary.csv.
+
+    Converts 'org/repo/tree/main/subdir' -> 'org/repo/subdir'.
+    Plain 'org/repo' slugs are returned unchanged.
+    """
+    parts = repo_slug.split("/")
+    if len(parts) >= 5 and parts[2] == "tree":
+        return f"{parts[0]}/{parts[1]}/{parts[4]}"
+    return "/".join(parts[:2])
+
+
+def load_hub_row_counts(path: Path) -> dict[str, int]:
+    """Read hub_stats_summary.csv and return total row counts per hub.
+
+    Sums model-output and target-data rows for each hub.
+    Returns an empty dict if the file does not exist.
+    """
+    if not path.exists():
+        return {}
+    df = pd.read_csv(path)
+    df = df[df["dir"].isin(["model-output", "target-data"])]
+    return dict(df.groupby("repo")["row_count"].sum().astype(int))
+
 CATEGORIES: dict[str, str] = {
     "uscdc":             "Active",
     "smhct":             "Active",
@@ -56,6 +81,7 @@ def build_hub_dataframe(path: Path) -> pd.DataFrame:
                     "Organization": org["name"],
                     "Category": CATEGORIES.get(org_key, "Other"),
                     "Models": hub.get("count"),
+                    "RepoSlug": repo or "",
                     "Repo": (
                         f'<a href="https://github.com/{repo}" target="_blank"'
                         f' class="font-monospace small">{repo}</a>'

@@ -1,32 +1,30 @@
-on:
-  workflow_dispatch:
-  push:
-    branches: main
-  pull_request:
-    branches: main
-  schedule:
-    - cron: '5 14 * * 5' # every Friday at 14:05 UTC == 09:05 EST (10:05 EDT)
+name: Update Hub Stats
 
-name: Quarto Publish
+on:
+  schedule:
+    - cron: '0 12 * * 1' # every Monday at 12:00 UTC
+  workflow_dispatch:
 
 jobs:
-  build-deploy:
+  update-and-publish:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b #v2
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.x'
+
       - name: Install Python dependencies
         run: pip install -r requirements/requirements.txt
-      - name: Run Python tests
-        run: python -m pytest
+
       - name: Install YQ
         env:
           VERSION: v4.45.1
@@ -34,7 +32,16 @@ jobs:
         run: |
           wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - |\
           tar xz && sudo mv ${BINARY} /usr/bin/yq
-      - name: Generate content
+
+      - name: Update hub list
+        run: python scripts/print_hub_list.py
+
+      - name: Update hub stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/get_hub_stats.py
+
+      - name: Generate other site content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -43,22 +50,20 @@ jobs:
           make terminology
           make cite
 
-      - name: Test
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: quarto-dev/quarto-actions/render@8a96df13519ee81fd526f2dfca5962811136661b #v2
-        with:
-          to: html
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload artifact
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: actions/upload-artifact@v7
-        with:
-          path: "${{ github.workspace }}/_site"
+      - name: Commit updated data files
+        run: |
+          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv"
+          if [ -z "$(git status --porcelain $DATA_FILES)" ]; then
+            echo "No changes to data files, skipping commit."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add $DATA_FILES
+            git commit -m "chore: update hub data files [skip ci]"
+            git push origin main
+          fi
 
       - name: Render and Publish
-        if: ${{ github.event_name != 'pull_request' }}
         uses: quarto-dev/quarto-actions/publish@8a96df13519ee81fd526f2dfca5962811136661b #v2
         with:
           target: gh-pages
