@@ -25,6 +25,8 @@ jobs:
           python-version: '3.x'
       - name: Install Python dependencies
         run: pip install -r requirements/requirements.txt
+      - name: Run Python tests
+        run: python -m pytest
       - name: Install YQ
         env:
           VERSION: v4.45.1
