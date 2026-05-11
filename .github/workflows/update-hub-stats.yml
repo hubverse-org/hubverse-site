@@ -40,22 +40,35 @@ jobs:
         run: python scripts/get_hub_stats.py
 
       - name: Open pull request with updated data files
-        uses: peter-evans/create-pull-request@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          add-paths: |
-            output/hubs.json
-            output/active-hubs-table.csv
-            output/hub_stats_summary.csv
-          branch: chore/update-hub-stats
-          commit-message: "chore: update hub data files"
-          title: "chore: update hub data files"
-          body: |
-            Automated weekly update of hub data files.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv"
+          if [ -z "$(git status --porcelain $DATA_FILES)" ]; then
+            echo "No changes to data files, skipping PR."
+            exit 0
+          fi
 
-            - `output/hubs.json`
-            - `output/active-hubs-table.csv`
-            - `output/hub_stats_summary.csv`
+          BRANCH="chore/update-hub-stats"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add $DATA_FILES
+          git commit -m "chore: update hub data files"
+          git push --force origin "$BRANCH"
 
-            Once merged, the site will be re-rendered and published automatically by the Quarto Publish workflow.
-          delete-branch: true
+          if gh pr list --head "$BRANCH" --state open | grep -q "$BRANCH"; then
+            echo "PR already open for $BRANCH, skipping creation."
+          else
+            gh pr create \
+              --title "chore: update hub data files" \
+              --body "Automated weekly update of hub data files.
+
+          - \`output/hubs.json\`
+          - \`output/active-hubs-table.csv\`
+          - \`output/hub_stats_summary.csv\`
+
+          Once merged, the site will be re-rendered and published automatically by the Quarto Publish workflow." \
+              --base main \
+              --head "$BRANCH"
+          fi
