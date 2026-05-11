@@ -10,12 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b #v2
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -41,31 +39,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/get_hub_stats.py
 
-      - name: Generate other site content
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          make contributors
-          make models
-          make terminology
-          make cite
-
-      - name: Commit updated data files
-        run: |
-          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv"
-          if [ -z "$(git status --porcelain $DATA_FILES)" ]; then
-            echo "No changes to data files, skipping commit."
-          else
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add $DATA_FILES
-            git commit -m "chore: update hub data files [skip ci]"
-            git push origin main
-          fi
-
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@8a96df13519ee81fd526f2dfca5962811136661b #v2
+      - name: Open pull request with updated data files
+        uses: peter-evans/create-pull-request@v7
         with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          add-paths: |
+            output/hubs.json
+            output/active-hubs-table.csv
+            output/hub_stats_summary.csv
+          branch: chore/update-hub-stats
+          commit-message: "chore: update hub data files"
+          title: "chore: update hub data files"
+          body: |
+            Automated weekly update of hub data files.
+
+            - `output/hubs.json`
+            - `output/active-hubs-table.csv`
+            - `output/hub_stats_summary.csv`
+
+            Once merged, the site will be re-rendered and published automatically by the Quarto Publish workflow.
+          delete-branch: true
