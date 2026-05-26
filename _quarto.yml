@@ -110,9 +110,8 @@ format:
         - includes/poppins.scss
     css: styles.css
     toc: true
-    includes:
-      in-header: includes/plausible.html
-      before-body: docs-redirect.html
+    include-in-header: includes/plausible.html
+    include-before-body: docs-redirect.html
 brand: brand/_brand.yml
 resources:
  - includes/
