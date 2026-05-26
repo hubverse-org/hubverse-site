@@ -77,6 +77,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async="" src="https://plausible.io/js/pa-Qtr0-pdxejuvymNBgYMIj.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -258,6 +264,51 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<script>
+  const path = window.location.pathname;
+  const isDev = window.location.hostname === "localhost";
+
+  // Use console.log for debugging:
+  // console.log("🔍 docs-redirect script loaded");
+  // console.log("🚧 Current path:", path);
+
+  const redirects = {
+    "overview/history.html": "https://hubverse.io/about.html#history",
+    "overview/contributors.html": "https://hubverse.io/community/contributors.html",
+    "overview/contribute.html": "https://hubverse.io/community/",
+    "overview/who-we-are.html": "https://hubverse.io/about.html",
+    "overview/scope.html": "https://hubverse.io/about.html#scope",
+    "overview/support-consulting.html": "https://hubverse.io/quickstart/support-consulting.html",
+    "overview/data-storage.html": "https://docs.hubverse.io/en/latest/user-guide/data-storage.html",
+    "user-guide/presentations.html": "https://hubverse.io/researchtalks.html"
+  };
+
+  const versionedPathRegex = /^\/en\/(\d+\.\d+\.\d+|latest|stable)\//;
+  const isVersionedPath = versionedPathRegex.test(path);
+  const isLatestOrStable = path.startsWith("/en/latest") || path.startsWith("/en/stable");
+
+  let redirected = false;
+
+  if (isDev || isVersionedPath) {
+    if (isLatestOrStable) {
+      for (const [key, url] of Object.entries(redirects)) {
+        if (path.includes(key)) {
+          // console.log("🔀 Redirecting to:", url);
+          window.location.href = url;
+          redirected = true;
+          break;
+        }
+      }
+    }
+  }
+
+  if (!redirected && isVersionedPath) {
+    const fallback = "https://docs.hubverse.io" + path;
+    // console.log("🔀 Redirecting to fallback docs:", fallback);
+    window.location.href = fallback;
+  }
+</script>
+
 
 
 

@@ -77,6 +77,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<!-- Privacy-friendly analytics by Plausible -->
+<script async="" src="https://plausible.io/js/pa-Qtr0-pdxejuvymNBgYMIj.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -261,6 +267,51 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
+<script>
+  const path = window.location.pathname;
+  const isDev = window.location.hostname === "localhost";
+
+  // Use console.log for debugging:
+  // console.log("🔍 docs-redirect script loaded");
+  // console.log("🚧 Current path:", path);
+
+  const redirects = {
+    "overview/history.html": "https://hubverse.io/about.html#history",
+    "overview/contributors.html": "https://hubverse.io/community/contributors.html",
+    "overview/contribute.html": "https://hubverse.io/community/",
+    "overview/who-we-are.html": "https://hubverse.io/about.html",
+    "overview/scope.html": "https://hubverse.io/about.html#scope",
+    "overview/support-consulting.html": "https://hubverse.io/quickstart/support-consulting.html",
+    "overview/data-storage.html": "https://docs.hubverse.io/en/latest/user-guide/data-storage.html",
+    "user-guide/presentations.html": "https://hubverse.io/researchtalks.html"
+  };
+
+  const versionedPathRegex = /^\/en\/(\d+\.\d+\.\d+|latest|stable)\//;
+  const isVersionedPath = versionedPathRegex.test(path);
+  const isLatestOrStable = path.startsWith("/en/latest") || path.startsWith("/en/stable");
+
+  let redirected = false;
+
+  if (isDev || isVersionedPath) {
+    if (isLatestOrStable) {
+      for (const [key, url] of Object.entries(redirects)) {
+        if (path.includes(key)) {
+          // console.log("🔀 Redirecting to:", url);
+          window.location.href = url;
+          redirected = true;
+          break;
+        }
+      }
+    }
+  }
+
+  if (!redirected && isVersionedPath) {
+    const fallback = "https://docs.hubverse.io" + path;
+    // console.log("🔀 Redirecting to fallback docs:", fallback);
+    window.location.href = fallback;
+  }
+</script>
+
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -1644,7 +1695,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div id="3d0f22fc" class="cell" data-execution_count="1">
+<div id="71d5a311" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <style>
   #hub-table thead th.sortable {
