@@ -89,7 +89,7 @@ def build_hub_dataframe(path: Path) -> pd.DataFrame:
                         else '<span class="text-muted fst-italic">private</span>'
                     ),
                     "Open Data": (
-                        f'<span class="text-success fw-bold" title="s3://{hub[\"aws\"]}">✓</span>'
+                        f'<span class="text-success fw-bold" title="s3://{hub["aws"]}">✓</span>'
                         if hub.get("aws")
                         else ""
                     ),
