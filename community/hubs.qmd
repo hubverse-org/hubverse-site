@@ -105,6 +105,7 @@ sys.path.insert(0, str(Path("..").resolve()))
 from scripts.hub_table import build_hub_dataframe, canon_repo_key, load_hub_row_counts
 
 df = build_hub_dataframe(Path("../_data/active-hubs.qmd"))
+df = df.sort_values("Hub", ascending=False).reset_index(drop=True)
 hub_row_counts = load_hub_row_counts(Path("../output/hub_stats_summary.csv"))
 
 CATEGORY_BADGE = {
@@ -153,7 +154,7 @@ display(HTML(f"""
 </style>
 <script>
 (function() {{
-  var sortCol = -1, sortDir = 1;
+  var sortCol = 0, sortDir = -1;
 
   function sortHubTable(colIndex) {{
     var table = document.getElementById('hub-table');
@@ -198,6 +199,7 @@ display(HTML(f"""
     document.querySelectorAll('#hub-table thead th.sortable').forEach(function(th, i) {{
       th.addEventListener('click', function() {{ sortHubTable(i); }});
     }});
+    document.querySelectorAll('#hub-table thead th')[0].classList.add('sort-desc');
     document.getElementById('hub-search').addEventListener('input', filterHubTable);
   }});
 }})();
