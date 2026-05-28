@@ -105,7 +105,7 @@ sys.path.insert(0, str(Path("..").resolve()))
 from scripts.hub_table import build_hub_dataframe, canon_repo_key, load_hub_row_counts
 
 df = build_hub_dataframe(Path("../_data/active-hubs.qmd"))
-df = df.sort_values("Hub", ascending=False).reset_index(drop=True)
+df = df.sort_values("Hub", key=lambda s: s.str.lower(), ascending=False).reset_index(drop=True)
 hub_row_counts = load_hub_row_counts(Path("../output/hub_stats_summary.csv"))
 
 CATEGORY_BADGE = {
