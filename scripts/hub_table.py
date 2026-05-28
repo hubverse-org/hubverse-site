@@ -89,10 +89,7 @@ def build_hub_dataframe(path: Path) -> pd.DataFrame:
                         else '<span class="text-muted fst-italic">private</span>'
                     ),
                     "Open Data": (
-                        resource_link(
-                            "https://hubverse-org.github.io/hubData/articles/connect_hub.html",
-                            f"s3://{hub['aws']}",
-                        )
+                        '<span class="text-success fw-bold">✓</span>'
                         if hub.get("aws")
                         else ""
                     ),
