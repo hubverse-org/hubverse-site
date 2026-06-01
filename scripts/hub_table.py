@@ -88,7 +88,7 @@ def build_hub_dataframe(path: Path) -> pd.DataFrame:
                         if repo
                         else '<span class="text-muted fst-italic">private</span>'
                     ),
-                    "Open Data": (
+                    "S3 Bucket": (
                         f'<span class="text-success fw-bold" title="s3://{hub["aws"]}">✓</span>'
                         if hub.get("aws")
                         else ""
