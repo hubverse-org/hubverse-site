@@ -10,7 +10,7 @@ website:
   announcement:
     icon: baloon #megaphone
     dismissable: true
-    content: "Welcome to the new hubverse site. If you have any comments, feel free to [provide feedback](https://github.com/hubverse-org/hubverse-site/issues/new)"
+    content: "Welcome to the hubverse. Discover [our community](/community/index.qmd), get involved, or reach out to share your feedback."
     type: info
     position: above-navbar
   favicon: /brand/logo/logo.png
