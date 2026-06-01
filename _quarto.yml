@@ -7,6 +7,12 @@ project:
   resources:
     - docs-redirect.html
 website:
+  announcement:
+    icon: baloon #megaphone
+    dismissable: true
+    content: "Welcome to the hubverse. Discover [our community](/community/index.qmd), get involved, or reach out to share your feedback."
+    type: info
+    position: above-navbar
   favicon: /brand/logo/logo.png
   title: "hubverse"
   site-url: "https://hubverse.io"
