@@ -13,6 +13,7 @@ ecdc,European Centre for Disease Prevention and Control (ECDC),European Covid-19
 ecdc,European Centre for Disease Prevention and Control (ECDC),RespiCast Syndromic Indicators,european-modelling-hubs/RespiCast-SyndromicIndicators,,
 ecdc,European Centre for Disease Prevention and Control (ECDC),RespiCompass - ECDC's Respiratory Diseases Scenario Hub,european-modelling-hubs/RespiCompass,https://respicompass.ecdc.europa.eu/insights/,
 hopkinsidd,Johns Hopkins University Infectious Disease Dynamics Group,Archival US RSV Forecast Hub 2024--2025,HopkinsIDD/rsv-forecast-hub,,
+hubverse,The hubverse,Archival COVID-19 Forecast Hub (2020--2024),hubverse-org/covid19-forecast-hub-archive,,
 hubverse,The hubverse,Archival FluSight hub (2015--2019),hubverse-org/flusight_hub_archive,,uscdc-flusight-hub-v1
 smhct,Scenario Modeling Hub Coordination Team,COVID-19 Scenario Modeling Hub,midas-network/covid19-scenario-modeling-hub,https://covid19scenariomodelinghub.org/,
 smhct,Scenario Modeling Hub Coordination Team,COVID-19 Scenario Modeling Hub - Research,midas-network/covid19-smh-research,,
@@ -26,7 +27,7 @@ reichlab-modeldev,Reich Lab,Flusion Submissions Hub,reichlab/flusion/tree/main/s
 reichlab-modeldev,Reich Lab,Forecast Sandbox,reichlab/forecast-sandbox-2025-2026,,
 reichlab-modeldev,Reich Lab,MetroCast Sandbox,reichlab/metrocast-sandbox-2025-2026,,
 reichlab-training,Reich Lab,SISMID ILI Forecasting Sandbox,reichlab/sismid-ili-forecasting-sandbox,,
-epiengage,epiENGAGE,Variant Nowcast Hub,reichlab/variant-nowcast-hub,https://reichlab.io/variant-nowcast-hub-dashboard/,covid-variant-nowcast-hub
+epiengage,epiENGAGE,Variant Nowcast Hub,reichlab/variant-nowcast-hub,https://reichlab.io/variant-nowcast-hub-dashboard/explore.html,covid-variant-nowcast-hub
 reichlab-modeldev,Reich Lab,Variant Nowcast Model Development Retrospective Hub,reichlab/variant-nowcast-model-dev-retro,,
 sjfox,Northern Arizona University,ATSF2026 Training Hub,sjfox/ATSF2026,,
 uscdc,US Centers for Disease Control and Prevention,WHO FluNet Hub,,,
