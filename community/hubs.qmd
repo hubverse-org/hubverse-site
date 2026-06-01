@@ -89,6 +89,8 @@ ready to analyze in hubverse format.
 
 ## Table
 
+::: {.column-screen-inset}
+
 ```{python}
 #| echo: false
 #| warning: false
@@ -227,6 +229,8 @@ display(HTML(f"""
 </div>
 """))
 ```
+
+:::
 
 :::
 
