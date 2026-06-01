@@ -79,7 +79,7 @@ def test_build_hub_dataframe_returns_expected_columns(minimal_qmd):
     df = build_hub_dataframe(minimal_qmd)
     assert list(df.columns) == [
         "Hub", "Organization", "Category", "Models",
-        "RepoSlug", "Repo", "Open Data", "Insights", "Forecasts", "Evaluations",
+        "RepoSlug", "Repo", "S3 Bucket", "Insights", "Forecasts", "Evaluations",
     ]
 
 
@@ -245,17 +245,17 @@ hubs:
 
     df = build_hub_dataframe(qmd)
 
-    assert df.iloc[0]["Open Data"] == ""
+    assert df.iloc[0]["S3 Bucket"] == ""
 
 
 def test_present_aws_produces_resource_link(minimal_qmd):
     df = build_hub_dataframe(minimal_qmd)
-    assert "✓" in df.iloc[0]["Open Data"]
+    assert "✓" in df.iloc[0]["S3 Bucket"]
 
 
 def test_present_aws_resource_link_includes_bucket_name_in_title(minimal_qmd):
     df = build_hub_dataframe(minimal_qmd)
-    assert "covid-variant-nowcast-hub" in df.iloc[0]["Open Data"]
+    assert "covid-variant-nowcast-hub" in df.iloc[0]["S3 Bucket"]
 
 
 def test_missing_insights_produces_empty_string(tmp_path):

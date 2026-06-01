@@ -132,7 +132,7 @@ for _, row in df.iterrows():
       <td class="text-center" data-val="{models}">{models}</td>
       <td class="text-center" data-val="{data_val}">{data_display}</td>
       <td>{row['Repo']}</td>
-      <td class="text-center">{row['Open Data']}</td>
+      <td class="text-center">{row['S3 Bucket']}</td>
       <td class="text-center">{row['Insights']}</td>
       <td class="text-center">{row['Forecasts']}</td>
       <td class="text-center">{row['Evaluations']}</td>
@@ -216,7 +216,7 @@ display(HTML(f"""
         <th class="sortable text-center">Models</th>
         <th class="sortable text-center">Data Rows</th>
         <th>Repo</th>
-        <th class="text-center">Open Data</th>
+        <th class="text-center">S3 Bucket</th>
         <th class="text-center">Insights</th>
         <th class="text-center">Forecasts</th>
         <th class="text-center">Evaluations</th>
