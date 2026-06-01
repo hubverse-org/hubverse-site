@@ -34,6 +34,14 @@ hubs:
     logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
     hubs:
+      - name: "COVID-19 Forecast Hub Archive (2020--2024)"
+        description: "original submissions to the COVID-19 Forecast Hub, reformatted to align with the hubverse format."
+        contact:
+          - name: "Nick Reich"
+            email: "nick@umass.edu"
+        repo: "hubverse-org/covid19-forecast-hub-archive"
+        license: "MIT License"
+        count: 1
       - name: "Archival FluSight hub (2015--2019)"
         description: "original submission to FluSight, reformatted to align with the hubverse format."
         contact:
