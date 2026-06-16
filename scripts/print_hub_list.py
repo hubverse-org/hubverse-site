@@ -92,7 +92,7 @@ def build_hub_table(input_qmd: Path):
 
 def write_csv(rows, output_csv: Path):
     with open(output_csv, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=HEADERS)
+        writer = csv.DictWriter(f, fieldnames=HEADERS, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
