@@ -17,6 +17,6 @@ htmlcov/
 
 .positai
 
-# Intermediate hub stats parquet cache (only hub_stats_summary.csv is committed)
-/output/hub_stats/
+# Transient CI artifact written by check_hub_stats.py and consumed by the workflow
+/output/hub_stats_warnings.md
 

@@ -82,6 +82,7 @@ def build_hub_table(input_qmd: Path):
                     "repo": hub.get("repo", ""),
                     "insights": hub.get("insights", ""),
                     "aws": hub.get("aws", ""),
+                    "archived_dirs": hub.get("archived_dirs") or [],
                 }
             )
 
@@ -108,12 +109,15 @@ def write_markdown(rows, output_md: Path):
 
 
 def write_hubs_json(rows, output_json: Path):
-    """Write hubs.json with {org, repo[, hub_subdir]} entries for hubs that have a repo slug."""
-    hubs = [
-        parse_repo_slug(r["repo"])
-        for r in rows
-        if r.get("repo", "").strip()
-    ]
+    """Write hubs.json with {org, repo[, hub_subdir][, archived_dirs]} entries for hubs that have a repo slug."""
+    hubs = []
+    for r in rows:
+        if not r.get("repo", "").strip():
+            continue
+        entry = parse_repo_slug(r["repo"])
+        if r.get("archived_dirs"):
+            entry["archived_dirs"] = r["archived_dirs"]
+        hubs.append(entry)
     hub_lines = ",\n".join(f"    {json.dumps(h)}" for h in hubs)
     with open(output_json, "w", encoding="utf-8") as f:
         f.write(f'{{\n  "hubs": [\n{hub_lines}\n  ]\n}}\n')

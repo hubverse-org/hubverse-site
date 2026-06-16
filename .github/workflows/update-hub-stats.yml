@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '0 12 * * 1' # every Monday at 12:00 UTC
   workflow_dispatch:
+    inputs:
+      force:
+        description: 'Re-fetch all hubs regardless of cached pushed_at timestamps'
+        required: false
+        default: 'false'
+        type: boolean
 
 jobs:
   update-and-publish:
@@ -37,13 +43,28 @@ jobs:
       - name: Update hub stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/get_hub_stats.py
+        run: |
+          FORCE_FLAG=""
+          if [ "${{ inputs.force }}" = "true" ]; then
+            FORCE_FLAG="--force"
+          fi
+          python scripts/get_hub_stats.py $FORCE_FLAG
+
+      - name: Check for hub stat regressions
+        id: hub_check
+        run: |
+          python scripts/check_hub_stats.py
+          if [ -s output/hub_stats_warnings.md ]; then
+            echo "has_warnings=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_warnings=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Open pull request with updated data files
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv"
+          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv output/hub_stats/"
           if [ -z "$(git status --porcelain $DATA_FILES)" ]; then
             echo "No changes to data files, skipping PR."
             exit 0
@@ -67,8 +88,20 @@ jobs:
           - \`output/hubs.json\`
           - \`output/active-hubs-table.csv\`
           - \`output/hub_stats_summary.csv\`
+          - \`output/hub_stats/\` (per-hub parquet cache + fetch_cache.json)
 
           Once merged, the site will be re-rendered and published automatically by the Quarto Publish workflow." \
               --base main \
               --head "$BRANCH"
+          fi
+
+      - name: Comment on PR with regression warnings
+        if: steps.hub_check.outputs.has_warnings == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="chore/update-hub-stats"
+          PR_NUMBER=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$PR_NUMBER" ]; then
+            gh pr comment "$PR_NUMBER" --body-file output/hub_stats_warnings.md
           fi
