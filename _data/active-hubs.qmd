@@ -417,5 +417,21 @@ hubs:
         repo: sjfox/ATSF2026
         license: MIT License
         count: 11
+  epistorm:
+    logo: /includes/img/epistorm.png
+    name: "Center for Advanced Epidemic Analytics and Predictive Modeling Technology (EPISTORM)"
+    description: |
+      Epistorm transforms data into meaningful analytics insights for informed decision-making and policy formulation. They merge innovative statistical, analytical, and AI techniques with traditional approaches to enhance forecasting and modeling. Epistorm incorporates new data types, such as mobility, airline, genomic, and wastewater information, into advanced models. They have also developed a platform that simulates global air travel and infection patterns to support disease monitoring and prediction.
+    hubs:
+      - name: "BVBD Modeling Hub"
+        description: |
+          This modeling hub has been built to collect outbreak size estimates of the Bundibugyo (Ebola) virus outbreak in 2026.
+        contact:
+          - name: Nick Reich
+            email: nick@umass.edu
+        license: MIT License
+        repo: "InsightNet-US/BDBV-Modeling-Hub"
+        aws: bdbv-modeling-hub
+        count: 5
 ---
 

@@ -43,6 +43,7 @@ CATEGORIES: dict[str, str] = {
     "accidda":           "Active",
     "acefa":             "Active",
     "dailypartita":      "Active",
+    "epistorm":          "Active",
     "hubverse":          "Archival",
     "ecdc-archival":     "Archival",
     "hopkinsidd":        "Archival",
