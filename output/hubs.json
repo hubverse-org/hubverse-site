@@ -11,7 +11,7 @@
     {"org": "european-modelling-hubs", "repo": "flu-forecast-hub_archive"},
     {"org": "european-modelling-hubs", "repo": "RespiCast-Covid19"},
     {"org": "european-modelling-hubs", "repo": "RespiCast-SyndromicIndicators"},
-    {"org": "european-modelling-hubs", "repo": "RespiCompass", "archived_dirs": ["Previous_Rounds/*/model-output"]},
+    {"org": "european-modelling-hubs", "repo": "RespiCompass", "archived_dirs": ["Previous_Rounds/*/model-output", "Previous_Rounds/*/target-data"]},
     {"org": "HopkinsIDD", "repo": "rsv-forecast-hub"},
     {"org": "hubverse-org", "repo": "covid19-forecast-hub-archive"},
     {"org": "hubverse-org", "repo": "flusight_hub_archive"},
