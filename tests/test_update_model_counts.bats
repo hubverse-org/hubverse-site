@@ -51,6 +51,54 @@ setup() {
   [ "$count" = "7" ]
 }
 
+@test "sums model counts across archived round directories" {
+  if ! command -v yq >/dev/null; then
+    skip "yq must be installed for this test"
+  fi
+
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
+
+  # Root model-output is empty; two archived rounds each have teams
+  export GH_COUNT_example_archived_org_example_archived_hub=0
+  export GH_ROUNDS_example_archived_org_example_archived_hub_contents_Previous_Rounds="2024-2025_round_1
+2025-2026_round_1"
+  export GH_COUNT_example_archived_org_example_archived_hub_Previous_Rounds_2024_2025_round_1=15
+  export GH_COUNT_example_archived_org_example_archived_hub_Previous_Rounds_2025_2026_round_1=13
+
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
+
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"example-archived-org/example-archived-hub has 28 models"* ]]
+
+  local count
+  count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "example-archived-org/example-archived-hub") | .count' "$hub_file")
+  [ "$count" = "28" ]
+}
+
+@test "ignores archived_dirs patterns that do not end in model-output" {
+  if ! command -v yq >/dev/null; then
+    skip "yq must be installed for this test"
+  fi
+
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
+
+  export GH_COUNT_example_archived_org_example_archived_hub=0
+  export GH_ROUNDS_example_archived_org_example_archived_hub_contents_Previous_Rounds="2024-2025_round_1"
+  export GH_COUNT_example_archived_org_example_archived_hub_Previous_Rounds_2024_2025_round_1=10
+
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
+
+  [ "$status" -eq 0 ]
+  # target-data pattern should be ignored; only the model-output round contributes
+  [[ "$output" == *"example-archived-org/example-archived-hub has 10 models"* ]]
+
+  local count
+  count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "example-archived-org/example-archived-hub") | .count' "$hub_file")
+  [ "$count" = "10" ]
+}
+
 @test "leaves count unchanged when gh result is not positive" {
   if ! command -v yq >/dev/null; then
     skip "yq must be installed for this test"
