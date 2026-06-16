@@ -304,9 +304,10 @@ hubs:
         repo: european-modelling-hubs/RespiCompass
         license: CC-BY 4.0 license
         insights: https://respicompass.ecdc.europa.eu/insights/
-        count: 11
+        count: 25
         archived_dirs:
           - "Previous_Rounds/*/model-output"
+          - "Previous_Rounds/*/target-data"
   ecdc-archival:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
