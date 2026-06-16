@@ -42,7 +42,7 @@ ready to analyze in hubverse format.
 
 {{< partial /_partials/hub.qmd hubs.dailypartita id="dailypartita">}}
 
-{{< partial /_partials/hub.qmd hubs.epistorm id="epistorm">}}
+{{< partial /_partials/hub.qmd hubs.insightnet id="insightnet">}}
 
 :::
 
