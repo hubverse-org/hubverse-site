@@ -340,3 +340,88 @@ def test_parse_args_no_json_flag():
     assert args.write_json is False
 
 
+# ---------------------------------------------------------------------------
+# archived_dirs – build_hub_table and write_hubs_json
+# ---------------------------------------------------------------------------
+
+
+def test_build_hub_table_includes_archived_dirs(tmp_path):
+    qmd = tmp_path / "active-hubs.qmd"
+    qmd.write_text(
+        """---
+hubs:
+  ecdc:
+    name: "ECDC"
+    hubs:
+      - name: "RespiCompass"
+        repo: european-modelling-hubs/RespiCompass
+        archived_dirs:
+          - "Previous_Rounds/*/model-output"
+---
+""",
+        encoding="utf-8",
+    )
+    rows = build_hub_table(qmd)
+    assert rows[0]["archived_dirs"] == ["Previous_Rounds/*/model-output"]
+
+
+def test_build_hub_table_archived_dirs_defaults_to_empty_list(tmp_path):
+    qmd = tmp_path / "active-hubs.qmd"
+    qmd.write_text(
+        """---
+hubs:
+  org:
+    name: "Org"
+    hubs:
+      - name: "Hub"
+        repo: org/hub
+---
+""",
+        encoding="utf-8",
+    )
+    rows = build_hub_table(qmd)
+    assert rows[0]["archived_dirs"] == []
+
+
+def test_write_hubs_json_includes_archived_dirs(tmp_path):
+    output = tmp_path / "hubs.json"
+    rows = [
+        {
+            "repo": "european-modelling-hubs/RespiCompass",
+            "hub name": "", "name": "", "example": "", "insights": "", "aws": "",
+            "archived_dirs": ["Previous_Rounds/*/model-output"],
+        }
+    ]
+    write_hubs_json(rows, output)
+    data = json.loads(output.read_text(encoding="utf-8"))
+    assert data["hubs"][0]["archived_dirs"] == ["Previous_Rounds/*/model-output"]
+
+
+def test_write_hubs_json_omits_archived_dirs_when_empty(tmp_path):
+    output = tmp_path / "hubs.json"
+    rows = [
+        {
+            "repo": "org/hub",
+            "hub name": "", "name": "", "example": "", "insights": "", "aws": "",
+            "archived_dirs": [],
+        }
+    ]
+    write_hubs_json(rows, output)
+    data = json.loads(output.read_text(encoding="utf-8"))
+    assert "archived_dirs" not in data["hubs"][0]
+
+
+def test_write_hubs_json_archived_dirs_multiple_patterns(tmp_path):
+    output = tmp_path / "hubs.json"
+    rows = [
+        {
+            "repo": "org/hub",
+            "hub name": "", "name": "", "example": "", "insights": "", "aws": "",
+            "archived_dirs": ["Old/*/model-output", "Old/*/target-data"],
+        }
+    ]
+    write_hubs_json(rows, output)
+    data = json.loads(output.read_text(encoding="utf-8"))
+    assert data["hubs"][0]["archived_dirs"] == ["Old/*/model-output", "Old/*/target-data"]
+
+
