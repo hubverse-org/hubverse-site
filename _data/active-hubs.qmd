@@ -30,6 +30,11 @@ hubs:
         forecasts: https://example.org/hub-insights/forecasts.html
         evals: https://example.org/hub-insights/evals.html
         count: 5 # number of models submitted (this is automatically updated if your hub is public)
+        # archived_dirs: glob patterns (one * per segment) for directories whose
+        # rows should be counted alongside the standard model-output / target-data.
+        # archived_dirs:
+        #   - "Previous_Rounds/*/model-output"
+        #   - "Previous_Rounds/*/target-data"
   hubverse:
     logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
@@ -300,6 +305,8 @@ hubs:
         license: CC-BY 4.0 license
         insights: https://respicompass.ecdc.europa.eu/insights/
         count: 11
+        archived_dirs:
+          - "Previous_Rounds/*/model-output"
   ecdc-archival:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
