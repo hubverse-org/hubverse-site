@@ -417,5 +417,21 @@ hubs:
         repo: sjfox/ATSF2026
         license: MIT License
         count: 27
+  insightnet:
+    logo: /includes/img/insightnet.png
+    name: "Insight Net"
+    description: |
+      Insight Net is a national network of centers working to improve our collective ability to understand, predict, prepare for, and respond to infectious disease threats through collaboration between analytic experts and public health departments.
+    hubs:
+      - name: "BVBD Modeling Hub"
+        description: |
+          This modeling hub has been built to collect outbreak size estimates of the Bundibugyo (Ebola) virus outbreak in 2026.
+        contact:
+          - name: Nick Reich
+            email: nick@umass.edu
+        license: MIT License
+        repo: "InsightNet-US/BDBV-Modeling-Hub"
+        aws: bdbv-modeling-hub
+        count: 5
 ---
 
