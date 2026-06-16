@@ -45,6 +45,16 @@ if [[ "$jq_arg" == ".default_branch" ]]; then
   exit 0
 fi
 
+# Listing subdirectory names (used when expanding archived_dirs glob patterns).
+# Returns one directory name per line from GH_ROUNDS_<sanitized_path>.
+if [[ "$jq_arg" == '.[] | select(.type=="dir") | .name' ]]; then
+  rounds_var="GH_ROUNDS_$(sanitize "$repo_path")"
+  if [[ -n "${!rounds_var:-}" ]]; then
+    echo "${!rounds_var}"
+  fi
+  exit 0
+fi
+
 if [[ "$repo_path" == */model-output ]]; then
   stripped="${repo_path%/model-output}"
   if [[ "$stripped" == */contents ]]; then

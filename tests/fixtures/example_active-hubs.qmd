@@ -37,5 +37,20 @@ hubs:
         repo: "example-subdir-org/monorepo/tree/main/example-subdir-hub"
         license: "MIT License"
         count: 2
+  example-archived-org:
+    logo: /includes/img/example-logo.png
+    name: "Example Archived Org"
+    hubs:
+      - name: "Example Archived Hub"
+        description: "A hub whose model-output has moved to archived round subdirectories"
+        contact:
+          - name: "Maintainer name"
+            email: "maintainer.email@example.com"
+        repo: "example-archived-org/example-archived-hub"
+        license: "MIT License"
+        count: 0
+        archived_dirs:
+          - "Previous_Rounds/*/model-output"
+          - "Previous_Rounds/*/target-data"
 ---
 
