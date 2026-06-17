@@ -1,0 +1,55 @@
+---
+hubs:
+  hubverse:
+    logo: /brand/logo/logo-with-text.png
+    name: "The hubverse"
+    hubs:
+      - name: "Example Complex Forecast Hub"
+        description: "An example of a forecast hub with a complex set of modeling tasks"
+        contact:
+          - name: "Maintainer name"
+            email: "maintainer.email@example.com"
+        repo: "hubverse-org/example-complex-forecast-hub"
+        license: "MIT License"
+        aws: "example-complex-forecast-hub"
+        count: 1
+  smhet:
+    logo: /includes/img/smh_logo.png
+    name: "Scenario Modeling Hub Example Team"
+    hubs:
+      - name: "Example Scenario Modeling Hub"
+        description: "An example scenario modeling hub"
+        contact:
+          - name: Scenario Modeling Hub Example Team
+            email: smhet.email@example.com
+        repo: smhet/example-scenario-modeling-hub
+        license: MIT License
+        count: 8
+  example-subdir-org:
+    logo: /includes/img/example-logo.png
+    name: "Example Subdirectory Org"
+    hubs:
+      - name: "Example Subdirectory Hub"
+        description: "A hub stored in a subdirectory of a monorepo"
+        contact:
+          - name: "Maintainer name"
+            email: "maintainer.email@example.com"
+        repo: "example-subdir-org/monorepo/tree/main/example-subdir-hub"
+        license: "MIT License"
+        count: 2
+  example-archived-org:
+    logo: /includes/img/example-logo.png
+    name: "Example Archived Org"
+    hubs:
+      - name: "Example Archived Hub"
+        description: "A hub whose model-output has moved to archived round subdirectories"
+        contact:
+          - name: "Maintainer name"
+            email: "maintainer.email@example.com"
+        repo: "example-archived-org/example-archived-hub"
+        license: "MIT License"
+        count: 0
+        archived_dirs:
+          - "Previous_Rounds/*/model-output"
+          - "Previous_Rounds/*/target-data"
+---

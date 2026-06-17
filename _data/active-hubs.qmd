@@ -46,7 +46,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "hubverse-org/covid19-forecast-hub-archive"
         license: "MIT License"
-        count: 1
+        count: 127
       - name: "Archival FluSight hub (2015--2019)"
         description: "Original submission to FluSight, reformatted to align with the hubverse format."
         contact:
@@ -277,7 +277,7 @@ hubs:
         license: CC-BY 4.0 license
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 27
+        count: 28
       - name: "European Covid-19 Forecasting Hub"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
@@ -304,7 +304,7 @@ hubs:
         repo: european-modelling-hubs/RespiCompass
         license: CC-BY 4.0 license
         insights: https://respicompass.ecdc.europa.eu/insights/
-        count: 11
+        count: 25
         archived_dirs:
           - "Previous_Rounds/*/model-output"
           - "Previous_Rounds/*/target-data"
@@ -417,7 +417,7 @@ hubs:
             email: Spencer.Fox@nau.edu
         repo: sjfox/ATSF2026
         license: MIT License
-        count: 11
+        count: 27
   insightnet:
     logo: /includes/img/insightnet.png
     name: "Insight Net"
