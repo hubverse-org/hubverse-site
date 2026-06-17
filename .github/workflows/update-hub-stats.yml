@@ -40,6 +40,11 @@ jobs:
       - name: Update hub list
         run: python scripts/print_hub_list.py
 
+      - name: Update model counts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/update_model_counts.sh
+
       - name: Update hub stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -54,6 +59,7 @@ jobs:
         id: hub_check
         run: |
           python scripts/check_hub_stats.py
+          bash scripts/check_model_counts.sh
           if [ -s output/hub_stats_warnings.md ]; then
             echo "has_warnings=true" >> "$GITHUB_OUTPUT"
           else
@@ -64,7 +70,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv output/hub_stats/"
+          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv output/hub_stats/ output/hub_stats_last_updated.txt _data/active-hubs.qmd"
           if [ -z "$(git status --porcelain $DATA_FILES)" ]; then
             echo "No changes to data files, skipping PR."
             exit 0
@@ -89,6 +95,7 @@ jobs:
           - \`output/active-hubs-table.csv\`
           - \`output/hub_stats_summary.csv\`
           - \`output/hub_stats/\` (per-hub parquet cache + fetch_cache.json)
+          - \`_data/active-hubs.qmd\` (updated model counts)
 
           Once merged, the site will be re-rendered and published automatically by the Quarto Publish workflow." \
               --base main \

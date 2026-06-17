@@ -99,6 +99,30 @@ setup() {
   [ "$count" = "10" ]
 }
 
+@test "preserves existing count and logs message when model count cannot be determined" {
+  if ! command -v yq >/dev/null; then
+    skip "yq must be installed for this test"
+  fi
+
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
+
+  # No GH_COUNT set for smhet hub → count cannot be determined
+  export GH_COUNT_hubverse_org_example_complex_forecast_hub=4
+  unset GH_COUNT_smhet_example_scenario_modeling_hub 2>/dev/null || true
+  export GH_COUNT_DEFAULT=0
+
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
+
+  [ "$status" -eq 0 ]
+  [[ "$output" == *"smhet/example-scenario-modeling-hub: could not determine model count, keeping existing value"* ]]
+
+  # smhet count stays at its original value (0 from fixture)
+  local smhet_count
+  smhet_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "smhet/example-scenario-modeling-hub") | .count' "$hub_file")
+  [ "$smhet_count" = "0" ]
+}
+
 @test "leaves count unchanged when gh result is not positive" {
   if ! command -v yq >/dev/null; then
     skip "yq must be installed for this test"
@@ -114,7 +138,7 @@ setup() {
 
   [ "$status" -eq 0 ]
   [[ "$output" == *"hubverse-org/example-complex-forecast-hub has 2 models"* ]]
-  [[ "$output" == *"smhet/example-scenario-modeling-hub has an unknown number of models"* ]]
+  [[ "$output" == *"smhet/example-scenario-modeling-hub: could not determine model count"* ]]
 
   local hubverse_org_count
   hubverse_org_count=$(yq --front-matter=extract '.hubs[].hubs[] | select(.repo == "hubverse-org/example-complex-forecast-hub") | .count' "$hub_file")

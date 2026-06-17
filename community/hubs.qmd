@@ -119,6 +119,28 @@ CATEGORY_BADGE = {
     "Model Development": "warning",
 }
 
+total_hubs = len(df)
+total_orgs = df["Organization"].nunique()
+total_models = int(df["Models"].dropna().sum())
+total_data_rows = sum(hub_row_counts.values())
+summary_html = (
+    f"<strong>{total_hubs:,}</strong> hubs &nbsp;·&nbsp; "
+    f"<strong>{total_orgs:,}</strong> organizations &nbsp;·&nbsp; "
+    f"<strong>{total_models:,}</strong> models &nbsp;·&nbsp; "
+    f"<strong>{total_data_rows:,}</strong> data rows"
+)
+
+_last_updated_file = Path("../output/hub_stats_last_updated.txt")
+if _last_updated_file.exists():
+    last_updated = _last_updated_file.read_text().strip()
+else:
+    import subprocess
+    _git = subprocess.run(
+        ["git", "log", "-1", "--format=%cs", "--", "output/hub_stats_summary.csv"],
+        capture_output=True, text=True, cwd=Path("..").resolve()
+    )
+    last_updated = _git.stdout.strip() or "unavailable"
+
 rows_html = ""
 for _, row in df.iterrows():
     badge = CATEGORY_BADGE.get(row["Category"], "secondary")
@@ -208,6 +230,7 @@ display(HTML(f"""
   }});
 }})();
 </script>
+<p class="text-muted small mb-2">Stats are updated weekly every Monday. Last updated: {last_updated}.</p>
 <input type="text" id="hub-search" placeholder="Search hubs..."
        class="form-control mb-3" aria-label="Search hubs">
 <div class="table-responsive">
@@ -227,6 +250,11 @@ display(HTML(f"""
       </tr>
     </thead>
     <tbody>{rows_html}</tbody>
+    <tfoot>
+      <tr>
+        <td colspan="10" class="text-center text-muted small py-2">{summary_html}</td>
+      </tr>
+    </tfoot>
   </table>
 </div>
 """))
