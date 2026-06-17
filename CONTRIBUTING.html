@@ -313,7 +313,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#used-in-production" id="toc-used-in-production" class="nav-link" data-scroll-target="#used-in-production">Used in production</a></li>
   <li><a href="#optional-software" id="toc-optional-software" class="nav-link" data-scroll-target="#optional-software">Optional software</a></li>
   </ul></li>
-  <li><a href="#pre-computed-content" id="toc-pre-computed-content" class="nav-link" data-scroll-target="#pre-computed-content">Pre-computed content</a></li>
+  <li><a href="#pre-computed-content" id="toc-pre-computed-content" class="nav-link" data-scroll-target="#pre-computed-content">Pre-computed content</a>
+  <ul class="collapse">
+  <li><a href="#publish-workflow-.githubworkflowspublish.yml" id="toc-publish-workflow-.githubworkflowspublish.yml" class="nav-link" data-scroll-target="#publish-workflow-.githubworkflowspublish.yml">Publish workflow (<code>.github/workflows/publish.yml</code>)</a></li>
+  <li><a href="#update-hub-stats-workflow-.githubworkflowsupdate-hub-stats.yml" id="toc-update-hub-stats-workflow-.githubworkflowsupdate-hub-stats.yml" class="nav-link" data-scroll-target="#update-hub-stats-workflow-.githubworkflowsupdate-hub-stats.yml">Update Hub Stats workflow (<code>.github/workflows/update-hub-stats.yml</code>)</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/hubverse-org/hubverse-site/edit/main/CONTRIBUTING.md" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/blob/main/CONTRIBUTING.md" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/hubverse-org/hubverse-site/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -458,7 +462,7 @@ Important
 <section id="adding-an-organization" class="level3">
 <h3 class="anchored" data-anchor-id="adding-an-organization">Adding an organization</h3>
 <p>There is a template of the required fields at the top of the file. You can duplicate this template and update it to match your organization.</p>
-<p>The next step is to edit <a href="./community/hubs.html">community/hubs.qmd</a> and add your organization to the list based on the slug you chose.</p>
+<p>The next step is to add your organization’s slug to the <code>CATEGORIES</code> dictionary in <a href="scripts/hub_table.py">scripts/hub_table.py</a> with the appropriate category (<code>"Active"</code>, <code>"Archival"</code>, <code>"Training"</code>, or <code>"Model Development"</code>). Without this, the hub will appear under the “Other” category in the table.</p>
 </section>
 <section id="adding-a-hub-to-your-organization" class="level3">
 <h3 class="anchored" data-anchor-id="adding-a-hub-to-your-organization">Adding a hub to your organization</h3>
@@ -472,15 +476,17 @@ Important
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>          A description that</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>          can span</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>          multiple lines</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">contact</span><span class="kw">:</span><span class="at"> </span><span class="st">"hub-info@example.com"</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">"License Name (e.g MIT License)"</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">        # --- OPTIONAL ----</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"example-org/hub-name"</span><span class="co"> # must be slug, not URL</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">aws</span><span class="kw">:</span><span class="at"> </span><span class="st">"aws-bucket-name"</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">insights</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">forecasts</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">evals</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/evals.html</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">count</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span><span class="co"> # number of models submitted (this is automatically updated if your hub is public)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">contact</span><span class="kw">:</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="at">          </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"hub-info-person"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">email</span><span class="kw">:</span><span class="at"> </span><span class="st">"hub-info@example.com"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">license</span><span class="kw">:</span><span class="at"> </span><span class="st">"License Name (e.g MIT License)"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">        # --- OPTIONAL ----</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> </span><span class="st">"example-org/hub-name"</span><span class="co"> # must be slug, not URL</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">aws</span><span class="kw">:</span><span class="at"> </span><span class="st">"aws-bucket-name"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">insights</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">forecasts</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/forecasts.html</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">evals</span><span class="kw">:</span><span class="at"> https://reichlab.io/variant-nowcast-hub-dashboard/evals.html</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">count</span><span class="kw">:</span><span class="at"> </span><span class="dv">5</span><span class="co"> # number of models submitted (this is automatically updated if your hub is public)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="notes" class="level4">
 <h4 class="anchored" data-anchor-id="notes">Notes</h4>
 <ol type="1">
@@ -522,14 +528,26 @@ Important
 </section>
 <section id="pre-computed-content" class="level2">
 <h2 class="anchored" data-anchor-id="pre-computed-content">Pre-computed content</h2>
-<p>There are currently four pages that contain pre-computed content, which is automatically run on GitHub every time the site is built. <strong>There is no need to manually run these scripts.</strong> This avoids unnecessary updates to the source code with data that updates dynamically.</p>
+<p>Pre-computed content is generated automatically by two GitHub Actions workflows. <strong>There is no need to manually run these scripts.</strong></p>
+<section id="publish-workflow-.githubworkflowspublish.yml" class="level3">
+<h3 class="anchored" data-anchor-id="publish-workflow-.githubworkflowspublish.yml">Publish workflow (<a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a>)</h3>
+<p>Runs every time a commit is pushed to <code>main</code> (and on a weekly schedule). Generates the following content before rendering and publishing the site:</p>
 <ol type="1">
-<li><code>community/contributors.md</code> is generated by <a href="scripts/update_contributors.py">scripts/update_contributors.py</a>. This script auto-generates a list of contributors to hubverse github repositories. It requires Python and was written by Alvaro J. Castro Rivadeneira and modified by Zhian Kamvar and Matthew Cornell for this site.</li>
-<li><code>_data/active-hubs.qmd</code> is updated by <a href="scripts/update_model_counts.sh">scripts/update_model_counts.sh</a>. This script uses the GitHub API to update model counts for known hubs. It requires BASH, <a href="https://github.com/mikefarah/yq/#install">yq</a>, and <a href="https://cli.github.com">gh</a> and was written by Zhian Kamvar.</li>
+<li><code>community/contributors.md</code> is generated by <a href="scripts/update_contributors.py">scripts/update_contributors.py</a>. This script auto-generates a list of contributors to hubverse GitHub repositories. It requires Python and was written by Alvaro J. Castro Rivadeneira and modified by Zhian Kamvar and Matthew Cornell for this site.</li>
+<li><code>_data/active-hubs.qmd</code> is updated by <a href="scripts/update_model_counts.sh">scripts/update_model_counts.sh</a>. This script uses the GitHub API to update model counts for known hubs. It requires BASH, <a href="https://github.com/mikefarah/yq/#install">yq</a>, and <a href="https://cli.github.com">gh</a> and was written by Zhian Kamvar and modified by by Alvaro J. Castro Rivadeneira.</li>
 <li><code>terminology.qmd</code> is generated by <a href="scripts/update_terminology.py">scripts/update_terminology.py</a>. This script auto-generates a page with <a href="https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/terminology.md">terminology</a> and <a href="https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/abbreviations.md">abbreviations</a> pulled from the <a href="https://docs.hubverse.io/en/latest/">hubDocs site</a>. It requires Python and was written by Alvaro J. Castro Rivadeneira for this site.</li>
 <li><code>cite.qmd</code> is generated by <a href="scripts/update_cite.py">scripts/update_cite.py</a>. This script auto-generates a page with <a href="https://github.com/hubverse-org/hubDocs/blob/main/docs/source/overview/cite.md">cite</a> pulled from the <a href="https://docs.hubverse.io/en/latest/">hubDocs site</a>. It requires Python and was written by Alvaro J. Castro Rivadeneira for this site.</li>
 </ol>
-<p>These are all integrated into <a href=".github/workflows/publish.yml"><code>.github/workflows/publish.yml</code></a>.</p>
+</section>
+<section id="update-hub-stats-workflow-.githubworkflowsupdate-hub-stats.yml" class="level3">
+<h3 class="anchored" data-anchor-id="update-hub-stats-workflow-.githubworkflowsupdate-hub-stats.yml">Update Hub Stats workflow (<a href=".github/workflows/update-hub-stats.yml"><code>.github/workflows/update-hub-stats.yml</code></a>)</h3>
+<p>Runs on a weekly schedule (every Monday) and can also be triggered manually. Fetches row counts and model counts from all hub repositories and opens a pull request with the updated data files. The workflow:</p>
+<ol type="1">
+<li>Regenerates <code>output/hubs.json</code> and <code>output/active-hubs-table.csv</code> from <code>_data/active-hubs.qmd</code> using <a href="scripts/print_hub_list.py">scripts/print_hub_list.py</a>.</li>
+<li>Updates model counts in <code>_data/active-hubs.qmd</code> using <a href="scripts/update_model_counts.sh">scripts/update_model_counts.sh</a>. If a count cannot be determined (e.g.&nbsp;a private repository), the existing value is preserved.</li>
+<li>Fetches row counts for all hub <code>model-output</code> and <code>target-data</code> directories using <a href="scripts/get_hub_stats.py">scripts/get_hub_stats.py</a>. Results are cached as parquet files in <code>output/hub_stats/</code> and summarised in <code>output/hub_stats_summary.csv</code>. A <code>fetch_cache.json</code> records the last-seen <code>pushed_at</code> timestamp for each hub so that unchanged hubs are skipped on subsequent runs.</li>
+<li>Checks for regressions using <a href="scripts/check_hub_stats.py">scripts/check_hub_stats.py</a> and <a href="scripts/check_model_counts.sh">scripts/check_model_counts.sh</a>. If any row counts or model counts have decreased, a warning comment is posted on the pull request.</li>
+</ol>
 <p>If this becomes too burdensome, these scripts could be all ported to python and run using <a href="https://quarto.org/docs/projects/scripts.html">quarto project scripts</a>.</p>
 <div class="page-nav">
 <div class="prev-page">
@@ -545,6 +563,7 @@ Important
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

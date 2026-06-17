@@ -101,6 +101,9 @@ for hub in "${hubs[@]}"; do
       select(.repo == "'"${hub%/}"'") | .count |= '"${n}"'
     )' "${hub_file}"
   else
-    echo "${hub} has an unknown number of models"
+    existing=$(yq --front-matter=extract \
+      '.hubs[].hubs[] | select(.repo == "'"${hub%/}"'") | .count' \
+      "${hub_file}" 2>/dev/null)
+    echo "${hub%/}: could not determine model count, keeping existing value (${existing:-unknown})"
   fi
 done
