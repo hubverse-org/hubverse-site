@@ -70,7 +70,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv output/hub_stats/ _data/active-hubs.qmd"
+          DATA_FILES="output/hubs.json output/active-hubs-table.csv output/hub_stats_summary.csv output/hub_stats/ output/hub_stats_last_updated.txt _data/active-hubs.qmd"
           if [ -z "$(git status --porcelain $DATA_FILES)" ]; then
             echo "No changes to data files, skipping PR."
             exit 0

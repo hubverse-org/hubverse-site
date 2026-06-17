@@ -34,6 +34,7 @@ public repositories.
 import argparse
 import concurrent.futures
 import csv
+import datetime
 import json
 import os
 from collections import defaultdict
@@ -529,6 +530,9 @@ def main() -> None:
         save_fetch_cache(fetch_cache, cache_path)
 
     write_summary_csv(hub_stats_dir, summary_path)
+
+    last_updated_path = base_dir / "output" / "hub_stats_last_updated.txt"
+    last_updated_path.write_text(datetime.date.today().isoformat())
 
 
 if __name__ == "__main__":
