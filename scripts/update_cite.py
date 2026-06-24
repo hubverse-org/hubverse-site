@@ -59,6 +59,52 @@ def convert_admonitions_to_callouts(md: str) -> str:
     return pattern.sub(repl, md)
 
 
+def convert_tab_sets(md: str) -> str:
+    """
+    Convert MyST tab-set directives:
+
+        ::::{tab-set}
+        :::{tab-item} Name
+        Content
+        :::
+        ::::
+
+    into Quarto panel-tabset blocks:
+
+        ::: {.panel-tabset}
+        ## Name
+        Content
+        :::
+
+    Unlabeled code fences inside a BibTeX tab-item are labelled as ```bibtex.
+    """
+    lines = md.splitlines()
+    out = []
+    in_tab_set = False
+    in_bibtex_tab = False
+
+    for line in lines:
+        if re.match(r"^::::\{tab-set\}\s*$", line):
+            out.append("::: {.panel-tabset}")
+            in_tab_set = True
+        elif in_tab_set and re.match(r"^::::\s*$", line):
+            out.append(":::")
+            in_tab_set = False
+            in_bibtex_tab = False
+        elif in_tab_set and re.match(r"^:::\{tab-item\}\s+", line):
+            tab_name = re.sub(r"^:::\{tab-item\}\s+", "", line).strip()
+            out.append(f"## {tab_name}")
+            in_bibtex_tab = tab_name.lower() == "bibtex"
+        elif in_tab_set and re.match(r"^:::\s*$", line):
+            in_bibtex_tab = False
+        elif in_bibtex_tab and re.match(r"^```\s*$", line):
+            out.append("```bibtex")
+        else:
+            out.append(line)
+
+    return "\n".join(out)
+
+
 # Ensures that any BibTeX code block is fenced as ```bibtex, while leaving all other fenced blocks unchanged.
 def normalize_bibtex_fences(md: str) -> str:
     lines = md.splitlines()
@@ -135,6 +181,7 @@ Any edits to citation content should be made on the hubDocs repository.
 
 def process_cite_markdown(md: str) -> str:
     md = remove_top_header(md)
+    md = convert_tab_sets(md)
     md = convert_admonitions_to_callouts(md)
     md = normalize_bibtex_fences(md)
     md = cleanup_blank_lines(md)
