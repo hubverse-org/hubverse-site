@@ -68,6 +68,13 @@ def test_convert_tab_sets_closes_with_single_colon_fence(sample_md_with_tab_set)
 def test_convert_tab_sets_labels_bibtex_fence(sample_md_with_tab_set):
     out = convert_tab_sets(sample_md_with_tab_set)
     assert "```bibtex" in out
+    lines = out.splitlines()
+    bibtex_opens = [l for l in lines if l.strip() == "```bibtex"]
+    bibtex_closes_wrongly = [l for l in lines if l.strip() == "```bibtex" and lines.index(l) != lines.index(bibtex_opens[0])]
+    # opening fence is labelled; closing fence must be plain ```
+    open_idx = lines.index("```bibtex")
+    close_idx = next(i for i in range(open_idx + 1, len(lines)) if lines[i].strip() == "```")
+    assert lines[close_idx].strip() == "```", "closing fence must not be labelled ```bibtex"
 
 
 def test_convert_tab_sets_preserves_content(sample_md_with_tab_set):

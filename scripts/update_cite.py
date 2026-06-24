@@ -82,6 +82,7 @@ def convert_tab_sets(md: str) -> str:
     out = []
     in_tab_set = False
     in_bibtex_tab = False
+    in_code_block = False
 
     for line in lines:
         if re.match(r"^::::\{tab-set\}\s*$", line):
@@ -93,12 +94,21 @@ def convert_tab_sets(md: str) -> str:
             in_bibtex_tab = False
         elif in_tab_set and re.match(r"^:::\{tab-item\}\s+", line):
             tab_name = re.sub(r"^:::\{tab-item\}\s+", "", line).strip()
+            out.append("")
             out.append(f"## {tab_name}")
+            out.append("")
             in_bibtex_tab = tab_name.lower() == "bibtex"
         elif in_tab_set and re.match(r"^:::\s*$", line):
+            out.append("")
             in_bibtex_tab = False
+            in_code_block = False
         elif in_bibtex_tab and re.match(r"^```\s*$", line):
-            out.append("```bibtex")
+            if not in_code_block:
+                out.append("```bibtex")
+                in_code_block = True
+            else:
+                out.append("```")
+                in_code_block = False
         else:
             out.append(line)
 
