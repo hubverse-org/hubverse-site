@@ -18,7 +18,7 @@ Following is a list of research outputs and talks related to the hubverse. This 
 
 ### Publications about the hubverse
 
-- Consortium of Infectious Disease Modeling Hubs; Kerr M, Borchering R, Castro Rivadeneira AJ, Contamin L, Funk S, Hochheiser H, et al. [Coordinating collaborative infectious disease modeling projects with the hubverse](https://www.medrxiv.org/content/10.1101/2025.10.03.25337284v1)[Internet]. medRxiv; 2025 Oct 6 [cited 2026 Jun 3]. Available from: [https://www.medrxiv.org/content/10.1101/2025.10.03.25337284v1](https://www.medrxiv.org/content/10.1101/2025.10.03.25337284v1).
+- Consortium of Infectious Disease Modeling Hubs; Kerr M, Borchering R, Castro Rivadeneira AJ, Contamin L, Funk S, Hochheiser H, et al. [A software platform for collaborative infectious disease modelling](https://www.nature.com/articles/s44360-026-00145-7). Nat Health. 2026 Jun 16;s44360-026-00145-7. doi: 10.1038/s44360-026-00145-7.
 - Shandross L, Howerton E, Contamin L, Hochheiser H, Krystalli A, Consortium of Infectious Disease Modeling Hubs, et al. [Multi-Model Ensembles in Infectious Disease and Public Health: Methods, Interpretation, and Implementation in R](https://onlinelibrary.wiley.com/doi/10.1002/sim.70333). Stat Med. 2026 Jan 22;45(1-2):e70333. doi: 10.1002/sim.70333.
 
 ### Publications that have used hubverse tools
