@@ -3,6 +3,7 @@ import re
 from scripts.update_cite import (
     remove_top_header,
     convert_admonitions_to_callouts,
+    convert_tab_sets,
     normalize_bibtex_fences,
     cleanup_blank_lines,
     build_header,
@@ -42,6 +43,56 @@ def test_convert_multiple_admonitions():
     assert out.count("::: {.callout-note}") == 2
     assert "## First" in out and "Body A" in out
     assert "## Second" in out and "Body B" in out
+
+
+def test_convert_tab_sets_produces_panel_tabset(sample_md_with_tab_set):
+    out = convert_tab_sets(sample_md_with_tab_set)
+    assert "::: {.panel-tabset}" in out
+    assert "::::{tab-set}" not in out
+
+
+def test_convert_tab_sets_converts_tab_items_to_headings(sample_md_with_tab_set):
+    out = convert_tab_sets(sample_md_with_tab_set)
+    assert "## APA" in out
+    assert "## Vancouver" in out
+    assert "## BibTeX" in out
+    assert ":::{tab-item}" not in out
+
+
+def test_convert_tab_sets_closes_with_single_colon_fence(sample_md_with_tab_set):
+    out = convert_tab_sets(sample_md_with_tab_set)
+    assert out.rstrip().endswith(":::")
+    assert "::::" not in out
+
+
+def test_convert_tab_sets_labels_bibtex_fence(sample_md_with_tab_set):
+    out = convert_tab_sets(sample_md_with_tab_set)
+    assert "```bibtex" in out
+    lines = out.splitlines()
+    bibtex_opens = [l for l in lines if l.strip() == "```bibtex"]
+    bibtex_closes_wrongly = [l for l in lines if l.strip() == "```bibtex" and lines.index(l) != lines.index(bibtex_opens[0])]
+    # opening fence is labelled; closing fence must be plain ```
+    open_idx = lines.index("```bibtex")
+    close_idx = next(i for i in range(open_idx + 1, len(lines)) if lines[i].strip() == "```")
+    assert lines[close_idx].strip() == "```", "closing fence must not be labelled ```bibtex"
+
+
+def test_convert_tab_sets_preserves_content(sample_md_with_tab_set):
+    out = convert_tab_sets(sample_md_with_tab_set)
+    assert "Author A. Title. Journal. 2026." in out
+    assert "Author A. Title. J Abbrev. 2026." in out
+    assert "@article{key2026" in out
+
+
+def test_process_cite_markdown_with_tab_set(sample_md_with_tab_set):
+    out = process_cite_markdown(sample_md_with_tab_set)
+    assert "::: {.panel-tabset}" in out
+    assert "## APA" in out
+    assert "## BibTeX" in out
+    assert "```bibtex" in out
+    assert "::::{tab-set}" not in out
+    assert ":::{tab-item}" not in out
+    assert "\n\n\n" not in out
 
 
 def test_normalize_bibtex_fences_after_label(sample_md_with_header):

@@ -89,6 +89,33 @@ def sample_md_mixed_blanklines():
 
 
 @pytest.fixture
+def sample_md_with_tab_set():
+    """Markdown containing a MyST tab-set with APA, Vancouver, and BibTeX tabs."""
+    return textwrap.dedent(
+        """
+        ## Hubverse project
+
+        ::::{tab-set}
+        :::{tab-item} APA
+        Author A. Title. Journal. 2026.
+        :::
+        :::{tab-item} Vancouver
+        Author A. Title. J Abbrev. 2026.
+        :::
+        :::{tab-item} BibTeX
+        ```
+        @article{key2026,
+          title = {Title},
+          year = {2026}
+        }
+        ```
+        :::
+        ::::
+        """
+    ).strip()
+
+
+@pytest.fixture
 def sample_bibtex_already_fenced():
     """Markdown containing a correctly fenced BibTeX block."""
     return (
