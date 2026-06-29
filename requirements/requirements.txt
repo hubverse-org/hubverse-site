@@ -4,6 +4,6 @@ pytest>=9.1.0
 PyYAML>=6.0
 pandas>=3.0.2
 jupyter>=1.1.1
-polars>=1.41.0
+polars>=1.42.0
 duckdb>=1.5.2
 
