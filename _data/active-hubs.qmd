@@ -39,7 +39,7 @@ hubs:
     logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
     hubs:
-      - name: "Archival COVID-19 Forecast Hub (2020--2024)"
+      - name: "Archival COVID-19 Forecast Hub (2020-2024)"
         description: "Original submissions to the COVID-19 Forecast Hub, reformatted to align with the hubverse format."
         contact:
           - name: "Nick Reich"
@@ -47,7 +47,7 @@ hubs:
         repo: "hubverse-org/covid19-forecast-hub-archive"
         license: "MIT License"
         count: 127
-      - name: "Archival FluSight hub (2015--2019)"
+      - name: "Archival FluSight hub (2015-2019)"
         description: "Original submission to FluSight, reformatted to align with the hubverse format."
         contact:
           - name: "Luke Mullany"
@@ -312,7 +312,7 @@ hubs:
     name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
     hubs:
-      - name: "Archival RespiCast Influenza Hub (2023--2024)"
+      - name: "Archival RespiCast Influenza Hub (2023-2024)"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
             email: european.modelling.hub@ecdc.europa.eu
@@ -320,7 +320,7 @@ hubs:
         repo: european-modelling-hubs/flu-forecast-hub_archive
         license: CC-BY 4.0 license
         count: 16
-      - name: "Archival RespiCast ARI Hub (2023--2024)"
+      - name: "Archival RespiCast ARI Hub (2023-2024)"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
             email: european.modelling.hub@ecdc.europa.eu
@@ -377,7 +377,7 @@ hubs:
     logo: /includes/img/hopkinsidd.png
     name: "Johns Hopkins University Infectious Disease Dynamics Group"
     hubs:
-      - name: "Archival US RSV Forecast Hub 2024--2025"
+      - name: "Archival US RSV Forecast Hub 2024-2025"
         description: |
           This repository was designed to collect forecast data for the
           2024-2025 RSV Forecast Hub run by Johns Hopkins University
