@@ -123,6 +123,24 @@ setup() {
   [ "$smhet_count" = "0" ]
 }
 
+@test "skips hubs with null or empty repo" {
+  if ! command -v yq >/dev/null; then
+    skip "yq must be installed for this test"
+  fi
+
+  local hub_file="${BATS_TEST_TMPDIR}/example_active-hubs.qmd"
+  cp "${BATS_TEST_DIRNAME}/fixtures/example_active-hubs.qmd" "$hub_file"
+
+  export GH_COUNT_hubverse_org_example_complex_forecast_hub=3
+
+  run "${BATS_TEST_DIRNAME}/../scripts/update_model_counts.sh" "$hub_file"
+
+  [ "$status" -eq 0 ]
+  # null/empty repos should not appear in output at all
+  [[ "$output" != *"null:"* ]]
+  [[ "$output" != *"null has"* ]]
+}
+
 @test "leaves count unchanged when gh result is not positive" {
   if ! command -v yq >/dev/null; then
     skip "yq must be installed for this test"
