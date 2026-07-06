@@ -1,4 +1,4 @@
-## hubverse Website
+## hubverse website
 
 This is the hubverse website. The goals for this website are to
 provide signposts for users who are new to the hubverse.

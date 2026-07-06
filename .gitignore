@@ -2,6 +2,7 @@
 /_site/
 /.claude/
 .Rproj.user
+.Rhistory
 
 # Python cache
 __pycache__/

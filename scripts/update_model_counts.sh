@@ -77,6 +77,9 @@ mapfile -t hubs < <(yq --front-matter=extract '.hubs[].hubs[] | .repo' "${hub_fi
 selector='[.[] | select((.type == "dir"))] | length'
 re='^[0-9]+$'
 for hub in "${hubs[@]}"; do
+  # Skip hubs with no repo (private or repo-less hubs emit "null" from yq).
+  [[ -z "${hub}" || "${hub}" == "null" ]] && continue
+
   # 1. Count subdirectories in the root model-output (may be 0 if data has moved
   #    to archived rounds).
   n=$(gh api "$(model_output_api_path "${hub}")" --jq "$selector" 2>/dev/null)
