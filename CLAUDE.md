@@ -6,6 +6,10 @@ Quarto-based static website for [hubverse.io](https://hubverse.io). Built with
 Python scripts for data generation, BASH scripts for hub metadata, and two
 GitHub Actions workflows for automated updates.
 
+The live site is **served by GitHub Pages** (published by `publish.yml`).
+**Netlify only builds PR deploy previews** (`netlify.toml`, `netlify-build.sh`)
+— it does not serve production.
+
 ## Commands
 
 ```bash
