@@ -46,8 +46,11 @@ pip install -r requirements/requirements.txt
 # Generate content (requires GITHUB_TOKEN in Netlify environment variables)
 # --------------------------------------------------------------------------- #
 echo "Generating content..."
+# Note: `make models` is intentionally omitted. Model counts in
+# _data/active-hubs.qmd are updated and committed by the Update Hub Stats
+# workflow, so running it here would trigger redundant GitHub API calls and
+# risk rate-limiting (see .github/workflows/publish.yml).
 make contributors
-make models
 make terminology
 make cite
 

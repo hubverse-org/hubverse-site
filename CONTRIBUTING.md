@@ -70,6 +70,19 @@ Finally, there are _build process_ files and folders:
  - `Makefile` is a helper that allows us to port the build process anywhere
  - `.github/workflows/publish.yml` runs all the scripts and publishes the quarto
    site to gh pages.
+ - `netlify.toml` and `netlify-build.sh` configure Netlify deploy previews.
+
+## Where the site is hosted
+
+The live site at [hubverse.io](https://hubverse.io) is **served by GitHub
+Pages**, published by [`.github/workflows/publish.yml`](.github/workflows/publish.yml)
+whenever changes land on `main`.
+
+**Netlify is only used to build deploy previews for pull requests** (see
+`netlify.toml` and `netlify-build.sh`), so reviewers can preview changes before
+merging. It does not serve the production site. Changes that affect the live
+site should target the GitHub Pages build process; Netlify config only needs to
+change if the PR-preview build itself needs to change.
 
 
 ## How to add a testimonial
