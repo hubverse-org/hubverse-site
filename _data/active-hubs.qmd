@@ -111,7 +111,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "reichlab/sismid-ili-forecasting-sandbox"
         license: "MIT License"
-        count: 21
+        count: 6
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
@@ -186,7 +186,7 @@ hubs:
         repo: midas-network/covid19-scenario-modeling-hub
         license: MIT License
         insights: https://covid19scenariomodelinghub.org/
-        count: 12
+        count: 13
       - name: "Flu Scenario Modeling Hub"
         description: "The Flu Scenario Modeling Hub aims to anticipate the impact of \nchanges in vaccination coverage and effectiveness, prior population \nimmunity, and dominant subtypes over the course of each influenza \nseason. \n"
         contact:
