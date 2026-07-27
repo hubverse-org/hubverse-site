@@ -111,7 +111,7 @@ hubs:
             email: "nick@umass.edu"
         repo: "reichlab/sismid-ili-forecasting-sandbox"
         license: "MIT License"
-        count: 17
+        count: 20
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
