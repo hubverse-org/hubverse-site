@@ -49,6 +49,7 @@ CATEGORIES: dict[str, str] = {
     "hopkinsidd":        "Archival",
     "reichlab-training": "Training",
     "sjfox":             "Training",
+    "bleicham":          "Training",
     "reichlab-modeldev": "Model Development",
 }
 

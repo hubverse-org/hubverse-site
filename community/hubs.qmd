@@ -73,6 +73,8 @@ ready to analyze in hubverse format.
 
 {{< partial /_partials/hub.qmd hubs.sjfox id="sjfox">}}
 
+{{< partial /_partials/hub.qmd hubs.bleicham id="bleicham">}}
+
 :::
 
 :::
