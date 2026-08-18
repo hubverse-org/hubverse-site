@@ -3,8 +3,6 @@ ai4castinghub/hospitalization-forecast,model-output,263004
 ai4castinghub/hospitalization-forecast,target-data,259
 ai4castinghub/rvdss-forecast,model-output,655214
 ai4castinghub/rvdss-forecast,target-data,816
-bleicham/Human-AI-Forecasting-Challenge-Sandbox,model-output,27945
-bleicham/Human-AI-Forecasting-Challenge-Sandbox,target-data,344
 cdcepi/FluSight-forecast-hub,model-output,24652305
 cdcepi/FluSight-forecast-hub,target-data,1342620
 CDCgov/covid19-forecast-hub,model-output,8103511
@@ -18,9 +16,9 @@ european-modelling-hubs/ari-forecast-hub_archive,model-output,218844
 european-modelling-hubs/ari-forecast-hub_archive,target-data,261961
 european-modelling-hubs/flu-forecast-hub_archive,model-output,407938
 european-modelling-hubs/flu-forecast-hub_archive,target-data,416705
-european-modelling-hubs/RespiCast-Covid19,model-output,820282
+european-modelling-hubs/RespiCast-Covid19,model-output,816802
 european-modelling-hubs/RespiCast-Covid19,target-data,331777
-european-modelling-hubs/RespiCast-SyndromicIndicators,model-output,3743557
+european-modelling-hubs/RespiCast-SyndromicIndicators,model-output,3731845
 european-modelling-hubs/RespiCast-SyndromicIndicators,target-data,698097
 european-modelling-hubs/RespiCompass,model-output,510788280
 european-modelling-hubs/RespiCompass,target-data,67504
