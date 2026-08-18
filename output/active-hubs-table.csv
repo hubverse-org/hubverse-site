@@ -2,7 +2,7 @@ example,name,hub name,repo,insights,aws
 ai4casting,AI4Casting (U of Guelph),Hospitalization Forecast Hub,ai4castinghub/hospitalization-forecast,,
 ai4casting,AI4Casting (U of Guelph),RVDSS Forecast Hub,ai4castinghub/rvdss-forecast,,
 acefa,Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics,Australia-Aotearoa Forecasting Hub,,,
-bleicham,Clemson University,SISMID Human-AI Teaming Forecast Challenge Sandbox,bleicham/Human-AI-Forecasting-Challenge-Sandbox,,
+bleicham,DMA-PRIME,SISMID Human-AI Teaming Forecast Challenge Sandbox,bleicham/Human-AI-Forecasting-Challenge-Sandbox,,
 uscdc,US Centers for Disease Control and Prevention,FluSight Forecast Hub,cdcepi/FluSight-forecast-hub,,cdcepi-flusight-forecast-hub
 uscdc,US Centers for Disease Control and Prevention,COVID-19 Forecast Hub,CDCgov/covid19-forecast-hub,,covid19-forecast-hub
 uscdc,US Centers for Disease Control and Prevention,RSV Forecast Hub,CDCgov/rsv-forecast-hub,,
