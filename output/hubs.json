@@ -2,6 +2,7 @@
   "hubs": [
     {"org": "ai4castinghub", "repo": "hospitalization-forecast"},
     {"org": "ai4castinghub", "repo": "rvdss-forecast"},
+    {"org": "bleicham", "repo": "Human-AI-Forecasting-Challenge-Sandbox"},
     {"org": "cdcepi", "repo": "FluSight-forecast-hub"},
     {"org": "CDCgov", "repo": "covid19-forecast-hub"},
     {"org": "CDCgov", "repo": "rsv-forecast-hub"},
