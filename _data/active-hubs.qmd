@@ -26,7 +26,7 @@ hubs:
         # --- OPTIONAL ----
         repo: "example-org/hub-name" # must be slug, not URL
         aws: "aws-bucket-name" # from your admin.json
-        insights: https://example.org/hub-insights/
+        insights: https://example.org/hub-insights/ # usually used instead of forecasts for scenario and variant hubs
         forecasts: https://example.org/hub-insights/forecasts.html
         evals: https://example.org/hub-insights/evals.html
         count: 5 # number of models submitted (this is automatically updated if your hub is public)
@@ -38,83 +38,91 @@ hubs:
   hubverse:
     logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
+    description: |
+      The hubverse is a collection of open-source software and data tools that enable collaborative modeling exercises. It is developed by the Consortium of Infectious Disease Modeling Hubs, a collaboration of research teams and public health professionals that have built and maintained predictive modeling hubs for infectious disease applications. Working together, we have developed the hubverse for groups running collaborative modeling hub efforts.
     hubs:
       - name: "Archival COVID-19 Forecast Hub (2020-2024)"
         description: "Original submissions to the COVID-19 Forecast Hub, reformatted to align with the hubverse format."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "hubverse-org/covid19-forecast-hub-archive"
         license: "MIT License"
+        repo: "hubverse-org/covid19-forecast-hub-archive"
         count: 127
       - name: "Archival FluSight hub (2015-2019)"
         description: "Original submission to FluSight, reformatted to align with the hubverse format."
         contact:
           - name: "Luke Mullany"
             email: "Luke.Mullany@jhuapl.edu"
-        repo: "hubverse-org/flusight_hub_archive"
         license: "MIT License"
+        repo: "hubverse-org/flusight_hub_archive"
         aws: "uscdc-flusight-hub-v1"
         count: 99
   reichlab-modeldev:
     logo: /includes/img/reichlab.png
     name: "Reich Lab"
+    description: |
+      The Reich Lab at the University of Massachusetts Amherst develops statistical methods and analytical tools to help people make sense of data, including methods for infectious disease forecasting and building open-source tools and hubs for collaborative modeling.
     hubs:
       - name: "Variant Nowcast Model Development Retrospective Hub"
         description: "Hub hosting retrospective model development for the UMass teams's submission to the U.S. SARS-CoV-2 Variant Nowcast Hub."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/variant-nowcast-model-dev-retro"
         license: "MIT License"
+        repo: "reichlab/variant-nowcast-model-dev-retro"
         count: 13
       - name: "Flusion Retrospective Hub"
         description: "Hub hosting model outputs generated in retrospective analyses for the UMass-flusion model submitted to FluSight."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/flusion/tree/main/retrospective-hub"
         license: "MIT License"
+        repo: "reichlab/flusion/tree/main/retrospective-hub"
         count: 9
       - name: "Flusion Submissions Hub"
         description: "Hub hosting model outputs generated in real time for weekly model submissions for the UMass-flusion model submitted to FluSight."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/flusion/tree/main/submissions-hub"
         license: "MIT License"
+        repo: "reichlab/flusion/tree/main/submissions-hub"
         count: 8
       - name: "Forecast Sandbox"
         description: "Hub serving as a sandbox/testbed for experimental FluSight forecasts before and during the 2025/2026 respiratory virus forecasting season."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/forecast-sandbox-2025-2026"
         license: "MIT License"
+        repo: "reichlab/forecast-sandbox-2025-2026"
         count: 25
       - name: "MetroCast Sandbox"
         description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/metrocast-sandbox-2025-2026"
         license: "MIT License"
+        repo: "reichlab/metrocast-sandbox-2025-2026"
         count: 7
   reichlab-training:
     logo: /includes/img/reichlab.png
     name: "Reich Lab"
+    description: |
+      The Reich Lab at the University of Massachusetts Amherst develops statistical methods and analytical tools to help people make sense of data, including methods for infectious disease forecasting and building open-source tools and hubs for collaborative modeling. These training hubs are designed to provide a sandbox environment for students and researchers to learn about infectious disease modeling and forecasting.
     hubs:
       - name: "SISMID ILI Forecasting Sandbox"
         description: "Sandbox hub providing an environment for training, research, or benchmarking purposes. This hub was created for the 2025 SISMID course on Nowcasting and Forecasting Infectious Disease Dynamics (https://nfidd.github.io/sismid)."
         contact:
           - name: "Nick Reich"
             email: "nick@umass.edu"
-        repo: "reichlab/sismid-ili-forecasting-sandbox"
         license: "MIT License"
+        repo: "reichlab/sismid-ili-forecasting-sandbox"
         count: 20
   epiengage:
     logo: /includes/img/epiengage.png
     name: "epiENGAGE"
+    description: |
+      epiENGAGE is a CDC Insight Net center, led by teams at UT-Austin and UMass-Amherst, that develops forecasting and analytic tools to support public health decision-making.
     hubs:
       - name: "Variant Nowcast Hub"
         description: |
@@ -122,8 +130,8 @@ hubs:
         contact:
           - name: Nick Reich
             email: nick@umass.edu
-        repo: reichlab/variant-nowcast-hub
         license: MIT License
+        repo: reichlab/variant-nowcast-hub
         aws: "covid-variant-nowcast-hub"
         insights: https://reichlab.io/variant-nowcast-hub-dashboard/explore.html
         evals: https://reichlab.io/variant-nowcast-hub-dashboard/eval.html
@@ -133,15 +141,17 @@ hubs:
         contact:
           - name: "epiENGAGE Flu MetroCast Team"
             email: epiengage@austin.utexas.edu
-        aws: reichlab-flu-metrocast-hub
-        repo: reichlab/flu-metrocast
         license: MIT License
+        repo: reichlab/flu-metrocast
+        aws: reichlab-flu-metrocast-hub
         forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
         evals: https://reichlab.io/metrocast-dashboard/eval.html
         count: 16
   ai4casting:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
+    description: |
+      AI4Casting, based at the University of Guelph, applies artificial intelligence and machine learning to forecast respiratory disease burden and hospital capacity.
     hubs:
       - name: "Hospitalization Forecast Hub"
         description: |
@@ -154,8 +164,8 @@ hubs:
         contact:
           - name: Siddhesh Suresh Kadam
             email: skadam@uoguelph.ca
-        repo: ai4castinghub/hospitalization-forecast
         license: MIT License
+        repo: ai4castinghub/hospitalization-forecast
         forecasts: https://4castinghub.uoguelph.ca/hospitalization/
         count: 12
       - name: "RVDSS Forecast Hub"
@@ -170,21 +180,23 @@ hubs:
         contact:
           - name: Siddhesh Suresh Kadam
             email: skadam@uoguelph.ca
-        repo: ai4castinghub/rvdss-forecast
         license: MIT License
+        repo: ai4castinghub/rvdss-forecast
         forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
         count: 15
   smhct:
     logo: /includes/img/smh_logo.png
     name: "Scenario Modeling Hub Coordination Team"
+    description: |
+      The Scenario Modeling Hub Coordination Team coordinates multi-model scenario projections for infectious diseases, including COVID-19, influenza, and RSV to inform public health planning and decision-making.
     hubs:
       - name: "COVID-19 Scenario Modeling Hub"
         description: "The COVID-19 Scenario Modeling Hub aims to examine the impact \nof changes in behavior and control, new variants, and vaccination \nover a 3-month to 2-year time period, depending on the round. \n"
         contact:
           - name: Scenario Modeling Hub Coordination Team
             email: scenariohub@midasnetwork.us
-        repo: midas-network/covid19-scenario-modeling-hub
         license: MIT License
+        repo: midas-network/covid19-scenario-modeling-hub
         insights: https://covid19scenariomodelinghub.org/
         count: 14
       - name: "Flu Scenario Modeling Hub"
@@ -192,8 +204,8 @@ hubs:
         contact:
           - name: Scenario Modeling Hub Coordination Team
             email: scenariohub@midasnetwork.us
-        repo: midas-network/flu-scenario-modeling-hub
         license: MIT License
+        repo: midas-network/flu-scenario-modeling-hub
         insights: https://fluscenariomodelinghub.org
         count: 16
       - name: "RSV Scenario Modeling Hub"
@@ -201,8 +213,8 @@ hubs:
         contact:
           - name: Scenario Modeling Hub Coordination Team
             email: scenariohub@midasnetwork.us
-        repo: midas-network/rsv-scenario-modeling-hub
         license: MIT License
+        repo: midas-network/rsv-scenario-modeling-hub
         insights: https://rsvscenariomodelinghub.org
         count: 18
       - name: "COVID-19 Scenario Modeling Hub - Research"
@@ -210,12 +222,14 @@ hubs:
         contact:
           - name: Scenario Modeling Hub Coordination Team
             email: scenariohub@midasnetwork.us
-        repo: midas-network/covid19-smh-research
         license: MIT License
+        repo: midas-network/covid19-smh-research
         count: 7
   uscdc:
-    name: "US Centers for Disease Control and Prevention"
     logo: /includes/img/cdc.jpg
+    name: "US Centers for Disease Control and Prevention"
+    description: |
+      The US Centers for Disease Control and Prevention is the national public health agency of the United States, coordinating collaborative forecasting efforts for influenza, COVID-19, RSV, and other respiratory diseases.
     hubs:
       - name: "FluSight Forecast Hub"
         description: |
@@ -224,8 +238,8 @@ hubs:
         contact:
           - name: FluSight Forecast Hub
             email: flusight@cdc.gov
-        repo: cdcepi/FluSight-forecast-hub
         license: "MIT License"
+        repo: cdcepi/FluSight-forecast-hub
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
@@ -237,8 +251,8 @@ hubs:
         contact:
           - name: COVID-19 Forecast Hub
             email: covidhub@cdc.gov
-        repo: CDCgov/covid19-forecast-hub
         license: Apache License 2.0
+        repo: CDCgov/covid19-forecast-hub
         aws: covid19-forecast-hub
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
@@ -248,8 +262,8 @@ hubs:
         contact:
           - name: RSV Hub
             email: rsvhub@cdc.gov
-        repo: CDCgov/rsv-forecast-hub
         license: Apache License 2.0
+        repo: CDCgov/rsv-forecast-hub
         count: 9
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
@@ -262,38 +276,37 @@ hubs:
           - name: WHO FluNet Hub
             email: opp8@cdc.gov
   ecdc:
-    name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
+    name: "European Centre for Disease Prevention and Control (ECDC)"
+    description: |
+      The European Centre for Disease Prevention and Control (ECDC) is an EU agency that strengthens Europe's defenses against infectious diseases, coordinating collaborative respiratory disease forecasting and scenario modeling across EU/EEA countries.
     hubs:
       - name: "RespiCast Syndromic Indicators"
-        contact:
-          - name: European Centre for Disease Prevention and Control (ECDC)
-            email: european.modelling.hub@ecdc.europa.eu
         description: |
           The European Syndromic Indicators Forecasting Hub collates
           weekly forecasts on Influenza-Like-Illness (ILI) and Acute
           Respiratory Infection (ARI) incidence in EU/EEA countries.
-        repo: european-modelling-hubs/RespiCast-SyndromicIndicators
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
         license: CC-BY 4.0 license
+        repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
         count: 30
       - name: "European Covid-19 Forecasting Hub"
-        contact:
-          - name: European Centre for Disease Prevention and Control (ECDC)
-            email: european.modelling.hub@ecdc.europa.eu
         description: |
           The European Covid-19 Forecasting Hub collates weekly
           forecasts on Covid-19 Hospital Admissions in EU/EEA countries.
-        repo: european-modelling-hubs/RespiCast-Covid19
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
         license: CC-BY 4.0 license
+        repo: european-modelling-hubs/RespiCast-Covid19
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=5
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=5
         count: 19
       - name: "RespiCompass - ECDC's Respiratory Diseases Scenario Hub"
-        contact:
-          - name: European Centre for Disease Prevention and Control (ECDC)
-            email: european.modelling.hub@ecdc.europa.eu
         description: |
           RespiCompass is a platform dedicated to hosting and sharing
           scenario modelling results for respiratory pathogens. This
@@ -301,49 +314,56 @@ hubs:
           Disease Prevention and Control (ECDC). RespiCompass develops
           and applies multi-model analyses through international
           modelling collaboration.
-        repo: european-modelling-hubs/RespiCompass
+        contact:
+          - name: European Centre for Disease Prevention and Control (ECDC)
+            email: european.modelling.hub@ecdc.europa.eu
         license: CC-BY 4.0 license
+        repo: european-modelling-hubs/RespiCompass
         insights: https://respicompass.ecdc.europa.eu/insights/
         count: 25
         archived_dirs:
           - "Previous_Rounds/*/model-output"
           - "Previous_Rounds/*/target-data"
   ecdc-archival:
-    name: "European Centre for Disease Prevention and Control (ECDC)"
     logo: /includes/img/ecdc.png
+    name: "European Centre for Disease Prevention and Control (ECDC)"
+    description: |
+      The European Centre for Disease Prevention and Control (ECDC) is an EU agency that strengthens Europe's defenses against infectious diseases. These repositories archive forecasts from past respiratory disease forecasting seasons.
     hubs:
       - name: "Archival RespiCast Influenza Hub (2023-2024)"
+        description: "This repository archives the forecasts computed during season 2023/2024. \n"
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
             email: european.modelling.hub@ecdc.europa.eu
-        description: "This repository archives the forecasts computed during season 2023/2024. \n"
-        repo: european-modelling-hubs/flu-forecast-hub_archive
         license: CC-BY 4.0 license
+        repo: european-modelling-hubs/flu-forecast-hub_archive
         count: 16
       - name: "Archival RespiCast ARI Hub (2023-2024)"
+        description: |
+          This repository archives the forecasts computed during season 2023/2024.
         contact:
           - name: European Centre for Disease Prevention and Control (ECDC)
             email: european.modelling.hub@ecdc.europa.eu
-        description: |
-          This repository archives the forecasts computed during season 2023/2024.
-        repo: european-modelling-hubs/ari-forecast-hub_archive
         license: CC-BY 4.0 license
+        repo: european-modelling-hubs/ari-forecast-hub_archive
         count: 12
   cadph:
     logo: /includes/img/cadph.png
     name: California Department of Public Health
+    description: |
+      The California Department of Public Health works to protect the health of Californians, including through modeling and forecasting of infectious disease threats such as West Nile virus.
     hubs:
       - name: West Nile Virus Forecasting Hub
-        contact:
-          - name: West Nile Virus Forecasting Hub
-            email: modeling@cdph.ca.gov
         description: |
           This is an open (by request) forecasting challenge to predict monthly
           West Nile virus (WNV) total disease cases in select California counties
           in 2024 in the months of May through December. This is the first
           iteration of a California county-specific Forecasting Challenge.
-        repo: cdphmodeling/wnvca-2024
+        contact:
+          - name: West Nile Virus Forecasting Hub
+            email: modeling@cdph.ca.gov
         license: CC-BY 4.0 license
+        repo: cdphmodeling/wnvca-2024
         count: 25
   accidda:
     logo: /includes/img/accidda.png
@@ -369,13 +389,15 @@ hubs:
     hubs:
       - name: Australia-Aotearoa Forecasting Hub
         description: |
-          The Australia–Aotearoa Forecasting Hub collects submissions of forecasted daily case incidence for SARS-CoV-2, RSV, and influenza virus. As an experimental target, the hub also collects submissions of predicted epidemic peak size and timing for each of these pathogens.
+          The Australia–Aotearoa Forecasting Hub collects submissions of forecasted daily case incidence for SARS-CoV-2, RSV, and influenza virus. As an experimental target, the hub also collects submissions of predicted epidemic peak size and timing for each of these pathogens.
         contact:
           - name: Emily Kay
             email: emily.kay@unimelb.edu.au
   hopkinsidd:
     logo: /includes/img/hopkinsidd.png
     name: "Johns Hopkins University Infectious Disease Dynamics Group"
+    description: |
+      The Johns Hopkins University Infectious Disease Dynamics Group develops models and forecasts to understand and predict the spread of infectious diseases.
     hubs:
       - name: "Archival US RSV Forecast Hub 2024-2025"
         description: |
@@ -387,12 +409,14 @@ hubs:
         contact:
           - name: Shaun Truelove
             email: shauntruelove@jhu.edu
-        repo: HopkinsIDD/rsv-forecast-hub
         license: MIT License
+        repo: HopkinsIDD/rsv-forecast-hub
         count: 9
   dailypartita:
     logo: /includes/img/dailypartita.png
     name: "Guangzhou Laboratory"
+    description: |
+      Guangzhou Laboratory is a research institution in China focused on respiratory disease research, surveillance, and real-time forecasting.
     hubs:
       - name: "GZlab China COVID-19 Forecast Hub"
         description: |
@@ -401,22 +425,24 @@ hubs:
         contact:
           - name: Kaixin Yang
             email: yang_kaixin@gzlab.ac.cn
+        license: MIT License
         repo: dailypartita/China-COVID-19-Forecast-Hub
         forecasts: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/forecast.html
         evals: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html
-        license: MIT License
         count: 9
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png
     name: "Northern Arizona University"
+    description: |
+      The forecasting group at Northern Arizona University develops infectious disease models and trains students in applied time series forecasting.
     hubs:
       - name: "ATSF2026 Training Hub"
         description: "This is a sandbox hub used to teach programming and forecasting techniques to undergraduate and \ngraduate students as part of the Applied Time Series Forecasting course at Northern Arizona University. \nStudents are asked to produce weekly 4-week-ahead forecasts for five seasons of weighted influenza-like illness \nat the HHS and National level.\n"
         contact:
           - name: Spencer J Fox
             email: Spencer.Fox@nau.edu
-        repo: sjfox/ATSF2026
         license: MIT License
+        repo: sjfox/ATSF2026
         count: 27
   insightnet:
     logo: /includes/img/insightnet.png
@@ -434,5 +460,23 @@ hubs:
         repo: "InsightNet-US/BDBV-Modeling-Hub"
         aws: bdbv-modeling-hub
         count: 5
+  bleicham:
+    logo: /includes/img/DMA-PRIME-Logo.png
+    name: "DMA-PRIME"
+    description: |
+      DMA-PRIME (Disease Modeling and Analytics to inform Outbreak Prevention, Response, Intervention, Mitigation, and Elimination) increases the ability of public health organizations and communities to prepare for, and respond to, infectious disease threats through a statewide network for outbreak detection, forecasting, and emergency response.
+    hubs:
+      - name: "SISMID Human-AI Teaming Forecast Challenge Sandbox"
+        description: "A sandbox forecasting challenge for the SISMID lab on Human–AI Teaming Approaches to Infectious Disease Modeling. Students built a collaborative forecasting pipeline end to end: cleaning surveillance data, producing a probabilistic forecast, submitting it to the hub through a validated pull request, and seeing it scored against every other team's on the same target, horizons, and data."
+        contact:
+          - name: "Amanda Bleichrodt"
+            email: "ambleic@clemson.edu"
+          - name: "Lior Rennert"
+            email: liorr@clemson.edu
+        license: MIT License
+        repo: bleicham/Human-AI-Forecasting-Challenge-Sandbox
+        forecasts: https://bleicham.github.io/Human-AI-Teaming-Challenge-Sandbox-Dashboard/forecast.html
+        evals: https://bleicham.github.io/Human-AI-Teaming-Challenge-Sandbox-Dashboard/eval.html
+        count: 12
 ---
 
