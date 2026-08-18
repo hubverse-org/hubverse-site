@@ -461,16 +461,18 @@ hubs:
         aws: bdbv-modeling-hub
         count: 5
   bleicham:
-    logo: /includes/img/clemson.png
-    name: "Clemson University"
+    logo: /includes/img/DMA-PRIME-Logo.png
+    name: "DMA-PRIME"
     description: |
-      The Center for Public Health Modeling and Response aims to utilize data-driven approaches to inform clinical and public health decision-making and assist the ability of health organizations and communities to prepare for, and respond to, public health threats.
+      DMA-PRIME (Disease Modeling and Analytics to inform Outbreak Prevention, Response, Intervention, Mitigation, and Elimination) increases the ability of public health organizations and communities to prepare for, and respond to, infectious disease threats through a statewide network for outbreak detection, forecasting, and emergency response.
     hubs:
       - name: "SISMID Human-AI Teaming Forecast Challenge Sandbox"
-        description: "A sandbox forecasting challenge for the SISMID Human-AI Teaming Approach to Infectious Disease Modeling lab. It is modeled on the US CDC's FluSight challenge and built to hubverse standards, so that participants can work through a real collaborative-forecasting pipeline end to end: from raw surveillance data, to a submitted probabilistic forecast, to an evaluated, directly comparable score."
+        description: "A sandbox forecasting challenge for the SISMID lab on Human–AI Teaming Approaches to Infectious Disease Modeling. Students built a collaborative forecasting pipeline end to end: cleaning surveillance data, producing a probabilistic forecast, submitting it to the hub through a validated pull request, and seeing it scored against every other team's on the same target, horizons, and data."
         contact:
           - name: "Amanda Bleichrodt"
             email: "ambleic@clemson.edu"
+          - name: "Lior Rennert"
+            email: liorr@clemson.edu
         license: MIT License
         repo: bleicham/Human-AI-Forecasting-Challenge-Sandbox
         forecasts: https://bleicham.github.io/Human-AI-Teaming-Challenge-Sandbox-Dashboard/forecast.html
