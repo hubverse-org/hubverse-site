@@ -1,5 +1,5 @@
 requests>=2.34.2
-PyGithub>=2.9.1
+PyGithub>=2.10.0
 pytest>=9.1.0
 PyYAML>=6.0
 pandas>=3.0.2
