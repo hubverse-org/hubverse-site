@@ -198,7 +198,7 @@ hubs:
         license: MIT License
         repo: midas-network/covid19-scenario-modeling-hub
         insights: https://covid19scenariomodelinghub.org/
-        count: 14
+        count: 15
       - name: "Flu Scenario Modeling Hub"
         description: "The Flu Scenario Modeling Hub aims to anticipate the impact of \nchanges in vaccination coverage and effectiveness, prior population \nimmunity, and dominant subtypes over the course of each influenza \nseason. \n"
         contact:
@@ -293,7 +293,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 30
+        count: 31
       - name: "European Covid-19 Forecasting Hub"
         description: |
           The European Covid-19 Forecasting Hub collates weekly
