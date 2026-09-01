@@ -23,6 +23,8 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 
 {{< include /_data/active-hubs.qmd >}}
 
+{{< include /_data/projects.qmd >}}
+
 :::{.about-entity .column-page}
 
 ![](/brand/logo/logo-with-text.png){alt="The hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
@@ -73,8 +75,8 @@ output submissions that can be **easily validated, ensembled, and visualized**.
 
 ## Software
 
-[**hubverse software**](tools/software.qmd) is written in R and provides tools for
-all phases in the life cycle of a hub.
+[**hubverse software**](tools/software.qmd) is written in R, Python, and JavaScript,
+and provides tools for all phases in the life cycle of a hub.
 
 :::{ style="font-size: 1.4rem;"}
 
@@ -102,6 +104,15 @@ R-Universe](https://hubverse-org.r-universe.dev)
 {{< partial /_partials/testimonial.qmd sjf >}}
 {{< partial /_partials/testimonial.qmd acefa >}}
 
+:::
+
+
+## Built with the hubverse {#showcase .column-screen-inset}
+
+Cool projects made possible by the hubverse, built by teams across the community.
+
+:::{.grid .showcase-grid style='--bs-gap: 0.5em;'}
+{{< partial /_partials/showcase.qmd projects >}}
 :::
 
 
