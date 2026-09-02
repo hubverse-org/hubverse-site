@@ -18,7 +18,7 @@ Building off of systems designed for influenza forecasting challenges led by the
 
  - [German/Poland COVID-19 Forecast Hub](https://github.com/KITmetricslab/covid19-forecast-hub-de)
  - [US COVID-19 Scenario Modeling Hub](https://github.com/midas-network/covid19-scenario-modeling-hub)
- - [European COVID-19 Forecast Hub](https://github.com/covid19-forecast-hub-europe/covid19-forecast-hub-europe)
+ - [European COVID-19 Forecast Hub](https://github.com/european-modelling-hubs/covid19-forecast-hub-europe_archive)
  - [German Hospitalization Nowcast Hub](https://github.com/KITmetricslab/hospitalization-nowcast-hub)
  - [US Influenza FluSight 2022 Challenge](https://github.com/cdcepi/Flusight-forecast-data)
 

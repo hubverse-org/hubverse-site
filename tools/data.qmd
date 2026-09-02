@@ -36,14 +36,14 @@ three properties:
    variables**](https://docs.hubverse.io/en/latest/user-guide/tasks.html#usage-of-task-id-variables):
    a collection of variables and their expected values used for modeling
    efforts (for example: `target` (incident hospitalizations), `location`
-   (Massachusettes), `reference_date` (2025-04-16), and `horizon` (-1))
+   (Massachusetts), `reference_date` (2025-04-16), and `horizon` (-1))
 2. [**Output
    types**](https://docs.hubverse.io/en/latest/user-guide/tasks.html#output-types):
    The method modelers should use to summarize the results of their modeling
    efforts (for example: the `quantile` probabilities 0.01, 0.025, 0.5, 0.975, 0.99)
 3. [**Target
    metadata**](https://docs.hubverse.io/en/latest/user-guide/tasks.html#target-metadata):
-   The caracteristics of the value modelers are trying to predict (for example,
+   The characteristics of the value modelers are trying to predict (for example,
    incident hospitalizations represent weekly step-ahead continuous count data)
 
 ## Model Output
@@ -53,8 +53,8 @@ models are constructed or what software they are run in. The only requirement is
 that the model output must be in a tabular format (specified in the hub's
 `admin.json` file).
 
-The model output format is a tabluar representation of model output defined by
-the [Model Tasks](#model-tasks) for a given hub. You can find examples of model
+The model output format is a tabular representation of model output defined by
+the [Model Tasks](#understanding-model-tasks) for a given hub. You can find examples of model
 output and more in the [model output formats
 page](https://docs.hubverse.io/en/latest/user-guide/model-output.html) of the
 official documentation.
