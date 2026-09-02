@@ -7,10 +7,10 @@ If you want to help contribute code to the hubverse, it is important to consult
 
 #### Contributing to existing software
 
-To contribute to exisiting software packages, be sure to read the contribution 
+To contribute to existing software packages, be sure to read the contribution 
 guide for the package you want to contribute to. You can find this guide in the
 `CONTRIBUTING.html` page of any R package website. Most of these are identical,
-but there are caveats, 
+but there are caveats. 
 For example [the hubUtils contributing
 guide](https://hubverse-org.github.io/hubUtils/CONTRIBUTING.html) has a section
 on synchronizing with the schemas and [the hubValidations contributing

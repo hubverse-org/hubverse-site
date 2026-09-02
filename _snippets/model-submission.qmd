@@ -11,7 +11,7 @@ hub. They will ask you to provide metadata for your model.
 Useful tools are available in the **hubValidations** R package.
 
  - Create a **submission template** with [`hubValidations::submission_tmpl()`](https://hubverse-org.github.io/hubValidations/reference/submission_tmpl.html)
- - **Validate** your submission with [`hubValidaitons::validate_submission()`](https://hubverse-org.github.io/hubValidations/reference/validate_submission.html)
+ - **Validate** your submission with [`hubValidations::validate_submission()`](https://hubverse-org.github.io/hubValidations/reference/validate_submission.html)
 
 [{{< fa book >}} Model metadata](https://docs.hubverse.io/en/latest/user-guide/model-metadata.html){.btn .btn-outline-dark .ms-auto}
 [{{< fa book >}} Writing model output to a hub](https://docs.hubverse.io/en/latest/user-guide/model-output.html#writing-model-output-to-a-hub){.btn .btn-outline-dark .ms-auto}

@@ -11,7 +11,7 @@ You need to answer a few questions first:
 2. What variables do you want to use for modeling? These are your **modeling task IDs**
 3. What is the modeling horizon (if any)?
 4. What kind of estimates do you expect to represent the value of the modeling target (e.g. quantile and mean values)? These are **output types**.
-4. How often do you want to take submissions? your **modeling rounds**
+5. How often do you want to take submissions? your **modeling rounds**
 
 By answering these questions, you will be able to determine your **modeling tasks**.
 A modeling task focuses on a single target and is made up of a unique

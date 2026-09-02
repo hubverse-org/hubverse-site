@@ -9,13 +9,13 @@ hub](/community/hubs.qmd)
 
 {{< include /_snippets/model-submission.qmd >}}
 
-## important packages
+## Important packages
 
 As a modeler, you will find the following packages important:
 
- - [hubUtils](https://hubverse-org.github.io/hubData) access important information about the hub
+ - [hubUtils](https://hubverse-org.github.io/hubUtils) access important information about the hub
  - [hubData](https://hubverse-org.github.io/hubData) seamlessly access data from a local or remote hub
- - [hubValidations](https://hubverse-org.github.io/hubValidations) create submisson template and validate your model. 
+ - [hubValidations](https://hubverse-org.github.io/hubValidations) create submission template and validate your model. 
 
 
 
