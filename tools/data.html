@@ -48,9 +48,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f6e01a33f51a1b4c350e93621ecbef4a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-f6e01a33f51a1b4c350e93621ecbef4a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-f6e01a33f51a1b4c350e93621ecbef4a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-aa5358338b539e57685255669eb3f6e6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-aa5358338b539e57685255669eb3f6e6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-aa5358338b539e57685255669eb3f6e6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/all.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-6.7.2/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -368,15 +368,15 @@ Tip
 <p>The <code>tasks.json</code> file is responsible for validation of all model submissions and ensures that data are inter-operable.</p>
 <p>A model task defines the expected content of a tabular model submission against one or more modeling targets. It includes three properties:</p>
 <ol type="1">
-<li><a href="https://docs.hubverse.io/en/latest/user-guide/tasks.html#usage-of-task-id-variables"><strong>Task ID variables</strong></a>: a collection of variables and their expected values used for modeling efforts (for example: <code>target</code> (incident hospitalizations), <code>location</code> (Massachusettes), <code>reference_date</code> (2025-04-16), and <code>horizon</code> (-1))</li>
+<li><a href="https://docs.hubverse.io/en/latest/user-guide/tasks.html#usage-of-task-id-variables"><strong>Task ID variables</strong></a>: a collection of variables and their expected values used for modeling efforts (for example: <code>target</code> (incident hospitalizations), <code>location</code> (Massachusetts), <code>reference_date</code> (2025-04-16), and <code>horizon</code> (-1))</li>
 <li><a href="https://docs.hubverse.io/en/latest/user-guide/tasks.html#output-types"><strong>Output types</strong></a>: The method modelers should use to summarize the results of their modeling efforts (for example: the <code>quantile</code> probabilities 0.01, 0.025, 0.5, 0.975, 0.99)</li>
-<li><a href="https://docs.hubverse.io/en/latest/user-guide/tasks.html#target-metadata"><strong>Target metadata</strong></a>: The caracteristics of the value modelers are trying to predict (for example, incident hospitalizations represent weekly step-ahead continuous count data)</li>
+<li><a href="https://docs.hubverse.io/en/latest/user-guide/tasks.html#target-metadata"><strong>Target metadata</strong></a>: The characteristics of the value modelers are trying to predict (for example, incident hospitalizations represent weekly step-ahead continuous count data)</li>
 </ol>
 </section>
 <section id="model-output" class="level2">
 <h2 class="anchored" data-anchor-id="model-output">Model Output</h2>
 <p>Model outputs are <em>provided by modeling teams</em>. The hubverse does not limit how models are constructed or what software they are run in. The only requirement is that the model output must be in a tabular format (specified in the hub’s <code>admin.json</code> file).</p>
-<p>The model output format is a tabluar representation of model output defined by the <a href="#model-tasks">Model Tasks</a> for a given hub. You can find examples of model output and more in the <a href="https://docs.hubverse.io/en/latest/user-guide/model-output.html">model output formats page</a> of the official documentation.</p>
+<p>The model output format is a tabular representation of model output defined by the <a href="#understanding-model-tasks">Model Tasks</a> for a given hub. You can find examples of model output and more in the <a href="https://docs.hubverse.io/en/latest/user-guide/model-output.html">model output formats page</a> of the official documentation.</p>
 </section>
 <section id="target-data" class="level2">
 <h2 class="anchored" data-anchor-id="target-data">Target Data</h2>

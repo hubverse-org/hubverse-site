@@ -24,7 +24,7 @@ hubs:
             email: "hub-info@example.com"
         license: "License Name (e.g MIT License)"
         # --- OPTIONAL ----
-        repo: "example-org/hub-name" # must be slug, not URL
+        repo: "example-org/hub-name" # "org/repo" slug, not a URL; for a hub in a subdirectory use "org/repo/tree/branch/subdir"
         aws: "aws-bucket-name" # from your admin.json
         insights: https://example.org/hub-insights/ # usually used instead of forecasts for scenario and variant hubs
         forecasts: https://example.org/hub-insights/forecasts.html
