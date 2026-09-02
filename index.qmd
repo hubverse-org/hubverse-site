@@ -25,6 +25,8 @@ NOTE: the `include` directives below are needed to load the metadata that are us
 
 {{< include /_data/projects.qmd >}}
 
+{{< include /_data/orgs.qmd >}}
+
 :::{.about-entity .column-page}
 
 ![](/brand/logo/logo-with-text.png){alt="The hubverse" width="75%" style="display: block; margin-left: auto; margin-right: auto;"}
@@ -127,26 +129,27 @@ Do you have a hub, but it's not listed? [{{< fa question-circle >}} Tell us abou
 
 :::{#orgs .grid .text-center style='--bs-gap: 0.5em'}
 
-{{< partial /_partials/orgs.qmd hubs.uscdc id="uscdc">}}
-
-{{< partial /_partials/orgs.qmd hubs.ecdc id="ecdc">}}
-
-{{< partial /_partials/orgs.qmd hubs.epiengage id="epiengage">}}
-
-{{< partial /_partials/orgs.qmd hubs.cadph id="cadph">}}
-
-{{< partial /_partials/orgs.qmd hubs.smhct id="smhct">}}
-
-{{< partial /_partials/orgs.qmd hubs.acefa id="acefa">}}
-
-{{< partial /_partials/orgs.qmd hubs.ai4casting id="ai4casting">}}
-
-{{< partial /_partials/orgs.qmd hubs.hubverse id="hubverse">}}
-
-{{< partial /_partials/orgs.qmd hubs.accidda id="accidda">}}
+{{< partial /_partials/orgs.qmd orgs >}}
 
 
 :::
+
+```{=html}
+<script>
+// Shuffle the organization cards on each page load so no organization is
+// consistently listed first (Fisher-Yates).
+document.addEventListener('DOMContentLoaded', function () {
+  var grid = document.getElementById('orgs');
+  if (!grid) return;
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card.org'));
+  for (var i = cards.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
+  }
+  cards.forEach(function (c) { grid.appendChild(c); });
+});
+</script>
+```
 
 :::
 

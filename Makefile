@@ -14,6 +14,11 @@ models: # generate models page (requires BASH, yq, and gh)
 	@echo Updating model counts...
 	bash scripts/update_model_counts.sh
 
+.PHONY: orgs
+orgs: # generate organization list from active-hubs.qmd (requires python)
+	@echo Updating organization list...
+	python scripts/print_org_list.py
+
 .PHONY: terminology
 terminology: # generate terminology page (requires python)
 	@echo Updating terminology page...
@@ -30,10 +35,10 @@ test: # run unit tests (requires python/pytest and bats)
 	bats tests/
 
 .PHONY: render
-render: contributors models terminology cite # update files and render to HTML
+render: contributors models orgs terminology cite # update files and render to HTML
 	quarto render
 
 .PHONY: preview
-preview: contributors models terminology cite # update files and preview
+preview: contributors models orgs terminology cite # update files and preview
 	quarto preview
 

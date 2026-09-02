@@ -51,6 +51,7 @@ echo "Generating content..."
 # workflow, so running it here would trigger redundant GitHub API calls and
 # risk rate-limiting (see .github/workflows/publish.yml).
 make contributors
+make orgs
 make terminology
 make cite
 
