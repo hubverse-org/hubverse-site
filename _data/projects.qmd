@@ -14,7 +14,7 @@ projects:
     org: UNC Chapel Hill / ACCIDDA (Atlantic Coast Center for Infectious Disease Dynamics and Analytics)
     description: "RespiLens is a responsive web app to visualize respiratory disease forecasts in the US, focused on accessibility for state health departments and the general public"
     url: https://www.respilens.com/
-    img: /includes/img/respilens.png
+    img: /includes/img/respilens.svg
   - name: MicroHubs
     org: Northern Arizona University
     description: "MicroHub is a local forecasting dashboard that helps public health teams upload surveillance data, run infectious disease forecast models, compare results, and export hub-ready probabilistic forecasts."
