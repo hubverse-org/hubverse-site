@@ -1,4 +1,18 @@
 ---
+# To add a testimonial, copy this template, replace the top-level key, fill in
+# the fields, and reference it in index.qmd with
+#   {{< partial /_partials/testimonial.qmd your-key >}}
+# (see CONTRIBUTING.md). The `org` block is optional.
+#
+# your-key:
+#   hub: "Name of the hub"
+#   org:
+#     slug: org-slug              # matches an organization slug in active-hubs.qmd
+#     name: "Organization Name"
+#   name: "Dr. Contact Name"
+#   img: /includes/img/your-image.png   # 300x300 or larger
+#   testimonial: |
+#     A short quote about using the hubverse.
 hmsc:
   hub: West Nile Virus Forecasting Hub
   org:
@@ -15,14 +29,14 @@ hmsc:
 sjf:
   hub: Southern Hemisphere Severe Acute Respiratory Infection Forecast Hub
   org:
-    slug: uscdc
-    name: Southern Hemisphere Severe Acute Respiratory Infection Forecast Hub
+    slug: sjfox
+    name: Northern Arizona University
   name: Dr. Spencer J Fox
   img: /includes/img/sjf.png
   testimonial: |
     Hubverse tools have been instrumental in enabling us to scale infectious disease forecasting globally, including to regions that have historically lacked access to real-time forecasts. Their standardized, flexible infrastructure makes it possible to rapidly deploy and coordinate forecasting efforts across many regions.
 acefa:
-  hub: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
+  hub: Australia-Aotearoa Forecasting Hub
   org:
     slug: acefa
     name: Australia-Aotearoa Consortium for Epidemic Forecasting & Analytics
@@ -30,16 +44,4 @@ acefa:
   img: /includes/img/acefa_ppl.jpg
   testimonial: |
     The hubverse tools and team were instrumental in getting our hubs up and running. The materials provided a solid foundation for us to build upon, and were easily extendable to personalise the hubs to our unique data use cases. The team and broader community provide welcome support.
-alfa:
-  hub: Alfa Hub
-  name: Dr. Alfa
-  img: https://placecats.com/300/300
-  testimonial: |
-    The hubverse has been supporting the Alfa hub for years
-beta:
-  hub: Beta Hub
-  name: Dr. Beta
-  img: https://placecats.com/400/400
-  testimonial: |
-    We wanted to track the distribution of beta across metropolitan areas in the US. The hubverse provided an easy way to get us quickly set up 
 ---

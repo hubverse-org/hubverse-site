@@ -87,7 +87,7 @@ and provides tools for all phases in the life cycle of a hub.
  - {{< fa download >}} **fetch model and target data** with [hubData](https://hubverse-org.github.io/hubData)
  - {{< fa blender >}} **ensemble** models with [hubEnsembles](https://hubverse-org.github.io/hubEnsembles)
  - {{< fa stethoscope >}} **evaluate** model performance with [hubEvals](https://hubverse-org.github.io/hubEvals)
- - {{< fa chart-line >}} **visualize** forecasts with [hubViz](https://hubverse-org.github.io/hubVis)
+ - {{< fa chart-line >}} **visualize** forecasts with [hubVis](https://hubverse-org.github.io/hubVis)
  - ... and more!
 
 :::

@@ -4,6 +4,10 @@ project:
     - "**/*.qmd"
     - "**/*.md"
     - "!CLAUDE.md"
+    - "!README.md"
+    - "!LICENSE.md"
+    - "!tests/**"
+    - "!output/**"
   resources:
     - docs-redirect.html
 website:

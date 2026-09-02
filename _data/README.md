@@ -8,7 +8,7 @@ data from these pages into the current page so that we can use the partials
 without cluttering or duplicating YAML content.
 
 Note that this is likely off-label usage in quarto, as they mention from their
-maunual (linked above):
+manual (linked above):
 
 > It also means that if the included file has a metadata block, that block will
 > take effect in all included files. In most cases, having metadata blocks in

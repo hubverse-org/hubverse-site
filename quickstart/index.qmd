@@ -10,8 +10,8 @@ challenges. The [**structured data standards**](/tools/data.qmd) combined with
 robust [**hubverse software**](/tools/software.qmd) facilitate **rapid
 validation, ensembling, visualization, and evaluation** of model submissions.
 
-One example of a modeling hub is the [FluSight Forecasting
-Hub](/community/hubs.qmd#cdc), which collects short-term
+One example of a modeling hub is the [FluSight Forecast
+Hub](/community/hubs.qmd#uscdc), which collects short-term
 forecasts of influenza hospitalizations for US states and territories. Model
 output data are submitted weekly from teams in academia, industry, and
 government.

@@ -9,7 +9,7 @@ It is best to [view this page on GitHub](https://github.com/hubverse-org/hubvers
 
 :::
 
-The goal of this website is to provide general, high-level information about the hubverse and to point to existing resources such as documentaiton and vignettes.
+The goal of this website is to provide general, high-level information about the hubverse and to point to existing resources such as documentation and vignettes.
 
 This website is built on GitHub with [quarto](https://quarto.org) and uses an
 extended version of Pandoc's [markdown
@@ -56,7 +56,7 @@ These are supported by _auxiliary content_ folders:
  - `brand/logo/` is a special folder that contains the hubverse logo
  - `_partials/` contains HTML templates that are used for formatting the more
    complex parts of the site including testimonials and hub layouts. These are
-   controlled by the quarto paritals extension
+   controlled by the quarto partials extension
  - `_snippets/` contains shared markdown content that can be used with the quarto
   includes directive
  - `_data/` contains yaml-only quarto documents that serve as as data for the
@@ -166,7 +166,7 @@ org:
 1. the `evals` key points to a evaluations visualization. If you do not have this, omit it.
 1. the `insights` key points to a page that contains insights that are not reflected in `forecasts` or `evals`
 1. other hubs will have a `count` key that indicates the number of models that
-   have been submitted. These counts are automatically udpated, so you may omit
+   have been submitted. These counts are automatically updated, so you may omit
    it if you wish.
 
 ## Software used
