@@ -16,7 +16,7 @@ projects:
     img: /includes/img/respilens.svg
   - name: MicroHubs
     org: Northern Arizona University
-    description: "MicroHub is a local forecasting dashboard that helps public health teams upload surveillance data, run infectious disease forecast models, compare results, and export hub-ready probabilistic forecasts."
+    description: "A MicroHub is a forecasting dashboard can be run locally on a laptop (without making any data public) that helps public health teams load surveillance data, run infectious disease forecast models, compare results, and export hub-ready probabilistic forecasts. R Shiny app built to run with Docker Desktop."
     url: https://sjfox.github.io/microhub-workshop/
     img: /includes/img/microhub.png
 ---
