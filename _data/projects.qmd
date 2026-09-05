@@ -8,7 +8,6 @@
 #   url         project website or repository
 #   img         screenshot/logo shown on the left of the card (path under /includes/img/)
 #
-# NOTE (verify): descriptions below are drafted; confirm wording with the teams.
 projects:
   - name: RespiLens
     org: UNC Chapel Hill / ACCIDDA (Atlantic Coast Center for Infectious Disease Dynamics and Analytics)
