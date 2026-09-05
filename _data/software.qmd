@@ -101,9 +101,9 @@ friends:
     repo: epiforecasts/scoringutils
     docs: https://epiforecasts.io/scoringutils/
     category: Evaluate
-  - name: alloscore
+  - name: alloscore2
     description: "Scoring methods for allocation and decision problems built on forecasts."
-    repo: aaronger/alloscore
+    repo: reichlab/alloscore2
     docs: https://academic.oup.com/jrsssa/article/188/4/1299/7927906
     category: Evaluate
   - name: modelimportance
