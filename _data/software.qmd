@@ -1,0 +1,124 @@
+---
+# Software catalog for tools/software.qmd.
+#
+# Each package is one entry. To add a package, copy an entry into the right
+# list (software-r / software-python / software-js / friends) and fill in:
+#   name        display name (usually the package name)
+#   description one concise sentence
+#   repo        GitHub slug "org/name" (used to build the "code" link)
+#   docs        documentation / pkgdown / website URL (optional)
+#   category    one short tag shown as a badge (Access, Validate, Evaluate,
+#               Ensemble, Visualize, Admin, Utility, Examples, CI, Dev,
+#               Transform, Dashboard, Meta)
+#
+# The lists below drive the catalog automatically via _partials/package-card.qmd.
+
+# --- Core hubverse R packages (see https://hubverse-org.r-universe.dev/packages) ---
+software-r:
+  - name: hubverse
+    description: "Meta-package that installs and loads the full suite of hubverse R packages in one step."
+    repo: hubverse-org/hubverse
+    docs: https://hubverse-org.r-universe.dev/hubverse
+    category: Meta
+  - name: hubData
+    description: "Connect to, access, and manipulate hub model-output and target data."
+    repo: hubverse-org/hubData
+    docs: https://hubverse-org.github.io/hubData
+    category: Access
+  - name: hubAdmin
+    description: "Create and validate hub configuration files such as admin.json and tasks.json."
+    repo: hubverse-org/hubAdmin
+    docs: https://hubverse-org.github.io/hubAdmin
+    category: Admin
+  - name: hubValidations
+    description: "Validate model-output submissions, typically as pull-request CI checks on a hub."
+    repo: hubverse-org/hubValidations
+    docs: https://hubverse-org.github.io/hubValidations
+    category: Validate
+  - name: hubEnsembles
+    description: "Build ensembles from model outputs, including weighted and quantile averages and linear pools."
+    repo: hubverse-org/hubEnsembles
+    docs: https://hubverse-org.github.io/hubEnsembles
+    category: Ensemble
+  - name: hubEvals
+    description: "Evaluate and score infectious-disease model outputs."
+    repo: hubverse-org/hubEvals
+    docs: https://hubverse-org.github.io/hubEvals
+    category: Evaluate
+  - name: hubVis
+    description: "Plot and visualize hub model outputs to synthesize model submissions."
+    repo: hubverse-org/hubVis
+    docs: https://hubverse-org.github.io/hubVis
+    category: Visualize
+  - name: hubExamples
+    description: "Example forecasting and scenario-modeling data in the hubverse format."
+    repo: hubverse-org/hubExamples
+    docs: https://hubverse-org.github.io/hubExamples
+    category: Examples
+  - name: hubUtils
+    description: "Lightweight utility functions shared across hubverse packages."
+    repo: hubverse-org/hubUtils
+    docs: https://hubverse-org.github.io/hubUtils
+    category: Utility
+  - name: hubCI
+    description: "Set up and manage hubverse continuous-integration workflows."
+    repo: hubverse-org/hubCI
+    docs: https://hubverse-org.github.io/hubCI
+    category: CI
+  - name: hubDevs
+    description: "Utilities for creating and standardizing new hubverse packages."
+    repo: hubverse-org/hubDevs
+    docs: https://hubverse-org.github.io/hubDevs
+    category: Dev
+
+# --- Python packages ---
+software-python:
+  - name: hubdata
+    description: "Python tools for accessing and working with hubverse hub data."
+    repo: hubverse-org/hub-data
+    docs: https://pypi.org/project/hubdata/
+    category: Access
+  - name: hubverse-transform
+    description: "Transform hubverse model-output files; used in the cloud data pipeline."
+    repo: hubverse-org/hubverse-transform
+    category: Transform
+
+# --- JavaScript components ---
+software-js:
+  - name: predtimechart
+    description: "A predtimechart-based forecast-visualization component for hub dashboards."
+    repo: hubverse-org/hub-dashboard-predtimechart
+    category: Dashboard
+  - name: predevals
+    description: "A JavaScript module for interactive exploration of forecast evaluations."
+    repo: hubverse-org/predevals
+    category: Dashboard
+
+# --- Friends of the hubverse: tools from the wider community ---
+friends:
+  - name: scoringutils
+    description: "Evaluate and score probabilistic forecasts with a range of proper scoring rules."
+    repo: epiforecasts/scoringutils
+    docs: https://epiforecasts.io/scoringutils/
+    category: Evaluate
+  - name: alloscore2
+    description: "Scoring methods for allocation and decision problems built on forecasts."
+    repo: reichlab/alloscore2
+    docs: https://academic.oup.com/jrsssa/article/188/4/1299/7927906
+    category: Evaluate
+  - name: modelimportance
+    description: "Measures the contribution and importance of individual models within an ensemble."
+    repo: mkim425/modelimportance
+    docs: https://mkim425.r-universe.dev/modelimportance
+    category: Evaluate
+  - name: fable
+    description: "Forecasting models that can be evaluated, visualized & combined in tidyverse style."
+    repo: tidyverts/fable
+    docs: https://fable.tidyverts.org/
+    category: Forecast
+  - name: EpiBenchmark
+    description: "Benchmark and compare epidemic forecasting models."
+    repo: accidda/EpiBenchmark
+    docs: https://accidda.github.io/EpiBenchmark/
+    category: Evaluate
+---
