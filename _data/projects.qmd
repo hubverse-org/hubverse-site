@@ -19,4 +19,9 @@ projects:
     description: "A MicroHub is a forecasting dashboard can be run locally on a laptop (without making any data public) that helps public health teams load surveillance data, run infectious disease forecast models, compare results, and export hub-ready probabilistic forecasts. R Shiny app built to run with Docker Desktop."
     url: https://sjfox.github.io/microhub-workshop/
     img: /includes/img/microhub.png
+  - name: EpiBenchmark
+    org: UNC Chapel Hill / ACCIDDA (Atlantic Coast Center for Infectious Disease Dynamics and Analytics)
+    description: "EpiBenchmark is a benchmarking framework and challenge library for the standardized evaluation and comparison of infectious disease forecasting models."
+    url: https://accidda.github.io/EpiBenchmark/
+    img: /includes/img/accidda_logo.png
 ---

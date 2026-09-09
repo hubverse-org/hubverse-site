@@ -113,7 +113,7 @@ friends:
     category: Evaluate
   - name: EpiBenchmark
     description: "Benchmark and compare epidemic forecasting models."
-    repo: accidda/EpiBenchmark
+    repo: ACCIDDA/EpiBenchmark
     docs: https://accidda.github.io/EpiBenchmark/
     category: Evaluate
   - name: RespiLens
