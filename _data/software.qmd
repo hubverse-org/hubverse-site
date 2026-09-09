@@ -116,4 +116,14 @@ friends:
     repo: accidda/EpiBenchmark
     docs: https://accidda.github.io/EpiBenchmark/
     category: Evaluate
+  - name: RespiLens
+    description: "A responsive web app to explore respiratory disease forecasts in the US."
+    repo: ACCIDDA/RespiLens
+    docs: https://www.respilens.com/
+    category: Visualize
+  - name: MicroHubs
+    description: "A local forecasting dashboard to run models, compare results, and export hub-ready forecasts."
+    repo: sjfox/microhub-workshop
+    docs: https://sjfox.github.io/microhub-workshop/
+    category: Dashboard
 ---
