@@ -293,7 +293,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 31
+        count: 33
       - name: "European Covid-19 Forecasting Hub"
         description: |
           The European Covid-19 Forecasting Hub collates weekly
@@ -429,7 +429,7 @@ hubs:
         repo: dailypartita/China-COVID-19-Forecast-Hub
         forecasts: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/forecast.html
         evals: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html
-        count: 9
+        count: 7
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png
     name: "Northern Arizona University"
