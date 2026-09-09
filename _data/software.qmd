@@ -111,11 +111,6 @@ friends:
     repo: mkim425/modelimportance
     docs: https://mkim425.r-universe.dev/modelimportance
     category: Evaluate
-  - name: fable
-    description: "Forecasting models that can be evaluated, visualized & combined in tidyverse style."
-    repo: tidyverts/fable
-    docs: https://fable.tidyverts.org/
-    category: Forecast
   - name: EpiBenchmark
     description: "Benchmark and compare epidemic forecasting models."
     repo: accidda/EpiBenchmark
