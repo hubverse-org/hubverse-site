@@ -1,0 +1,17 @@
+```{=html}
+{{#.}}
+<div class="card package h-100 g-col-12 g-col-sm-6 g-col-md-4">
+  <div class="card-body">
+    <h5 class="card-title d-flex justify-content-between align-items-start">
+      <code>{{name}}</code>
+      {{#category}}<span class="badge text-bg-light">{{category}}</span>{{/category}}
+    </h5>
+    <p class="card-text">{{description}}</p>
+  </div>
+  <div class="card-footer bg-transparent border-0">
+    {{#docs}}<a href="{{docs}}" class="card-link" target="_blank"><i class="bi bi-book"></i> docs</a>{{/docs}}
+    <a href="https://github.com/{{repo}}" class="card-link" target="_blank"><i class="bi bi-github"></i> code</a>
+  </div>
+</div>
+{{/.}}
+```

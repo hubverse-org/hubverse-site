@@ -26,6 +26,7 @@ make preview              # generate content + quarto preview
 # Individual generation steps
 make contributors         # update community/contributors.md
 make models               # update model counts in _data/active-hubs.qmd
+make orgs                 # regenerate _data/orgs.qmd (landing-page org list)
 make terminology          # update terminology.qmd
 make cite                 # update cite.qmd
 ```
@@ -59,8 +60,10 @@ tests/
 2. If adding a **new organization**, also add its slug to the `CATEGORIES` dict
    in `scripts/hub_table.py` (`"Active"`, `"Archival"`, `"Training"`, or
    `"Model Development"`). Without this the org appears as "Other".
-3. The `output/` files are regenerated automatically by the workflows — do not
-   edit them by hand.
+3. The `output/` files and the landing-page organization list (`_data/orgs.qmd`,
+   via `print_org_list.py`) are regenerated automatically by the build — do not
+   edit them by hand. The org list is deduplicated by organization name, so
+   multiple slugs for one org (e.g. `ecdc` / `ecdc-archival`) appear once.
 
 ## Key scripts
 
@@ -70,6 +73,7 @@ tests/
 | `scripts/get_hub_stats.py` | Reads `output/hubs.json` → fetches row counts via Git Trees API → writes per-hub parquets + `output/hub_stats_summary.csv` |
 | `scripts/check_hub_stats.py` | Compares new `hub_stats_summary.csv` to HEAD → writes `output/hub_stats_warnings.md` |
 | `scripts/hub_table.py` | Builds the sortable HTML table for `community/hubs.qmd` |
+| `scripts/print_org_list.py` | Reads `_data/active-hubs.qmd` → writes `_data/orgs.qmd`, the deduplicated (by org name) organization list for the landing-page grid |
 | `scripts/update_model_counts.sh` | Queries GitHub API for model counts → updates `count:` in `_data/active-hubs.qmd` in-place |
 | `scripts/check_model_counts.sh` | Compares model counts to HEAD → appends decreases to `output/hub_stats_warnings.md` |
 
@@ -77,7 +81,7 @@ tests/
 
 ### `publish.yml`
 Triggered on push to `main` and weekly (Fridays). Runs `make contributors
-terminology cite`, then renders and publishes to GitHub Pages. `make models`
+orgs terminology cite`, then renders and publishes to GitHub Pages. `make models`
 is intentionally omitted — model counts are updated and committed by the
 Update Hub Stats workflow before publish runs, so re-running it would trigger
 redundant GitHub API calls and risk rate-limiting.

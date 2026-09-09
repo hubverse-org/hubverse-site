@@ -1,0 +1,19 @@
+```{=html}
+{{#.}}
+<div class="card mb-3 h-100 showcase">
+  <div class="grid">
+    <div class="g-col-5">
+      <img src="{{img}}" class="img-fluid rounded-start" alt="Screenshot of the {{name}} project">
+    </div>
+    <div class="g-col-7">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{org}}</h6>
+        <p class="card-text">{{description}}</p>
+        <a href="{{url}}" class="card-link" target="_blank">Visit project <i class="bi bi-box-arrow-up-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+{{/.}}
+```

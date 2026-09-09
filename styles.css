@@ -233,12 +233,50 @@ img.logo {
   padding: 1rem;
 }
 
+/* Showcase cards mirror the testimonial cards (same structure and shape) */
+.showcase-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
 .showcase {
-  border-bottom: unset;
-  background: aqua;
-  text-align: center;
-  vertical-align: middle;
-  line-height: normal;
+  margin: 0;
+  margin-top: 1rex;
+  background: #e8f1f7; /* soft tint of the hubverse blue (#3C88BE) */
+  border: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Match the testimonial body text size */
+.showcase .card-title {
+  font-size: 1.5rem;
+}
+
+.showcase .card-text {
+  font-size: 1.2rem;
+  color: #5a5a5a;
+}
+
+/* Match the testimonial image treatment, cropped from the center */
+.showcase img {
+  height: fit-content;
+  max-height: 400px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 767px) {
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .showcase .grid {
+    grid-template-columns: 1fr;
+  }
+  .showcase .g-col-5,
+  .showcase .g-col-7 {
+    grid-column: span 1;
+  }
 }
 
 .card-body {
