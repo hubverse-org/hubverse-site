@@ -95,6 +95,8 @@ hubs:
             email: "nick@umass.edu"
         license: "MIT License"
         repo: "reichlab/forecast-sandbox-2025-2026"
+        forecasts: https://reichlab.io/forecast-sandbox-2025-2026-dashboard/forecast.html
+        evals: https://reichlab.io/forecast-sandbox-2025-2026-dashboard/eval.html
         count: 25
       - name: "MetroCast Sandbox"
         description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season."
