@@ -431,7 +431,7 @@ hubs:
         repo: dailypartita/China-COVID-19-Forecast-Hub
         forecasts: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/forecast.html
         evals: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html
-        count: 7
+        count: 8
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png
     name: "Northern Arizona University"
