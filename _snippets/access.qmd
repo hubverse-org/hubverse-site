@@ -16,6 +16,6 @@ You can connect to any hub with the **hubUtils** and **hubData** R packages or t
 
 **In Python:**
 
- - **connect to hub data** with [`hubdata.connect_hub()`](https://hubverse-org.github.io/hub-data/usage.html), which returns a `HubConnection`
- - **read the model output** as a PyArrow table with `HubConnection.to_table()` (or `.get_dataset()` for a dataset)
+ - **connect to hub data** with [`hubdata.connect_hub()`](https://hubverse-org.github.io/hub-data/usage.html)
+ - **read the model output** as a PyArrow table with `HubConnection.to_table()`
  - **connect to target data** with `hubdata.connect_target_data()`
