@@ -9,6 +9,7 @@ Following is a list of research outputs and talks related to the hubverse. This 
 ### Presentations about the hubverse
 
 - Presentations from regular hubverse community meetings - [folder](https://drive.google.com/drive/u/1/folders/1OGXf2V-gejEYOC-kYvZo2Zqj3EdCGTE5?ths=true) (ongoing since 04 October 2023)
+- "The Hubverse: Streamlining Collaborative Infectious Disease Modeling for Public Health Impact" presentation given at the Research Software Engineering Conference 2026 (RSECon26) - [slides](https://hubverse-org.github.io/hubverse-talk-RSECon26/), [Zenodo](https://zenodo.org/records/22685754), [repository](https://github.com/hubverse-org/hubverse-talk-RSECon26) (09 September 2026)
 - "The Hubverse: Streamlining Collaborative Infectious Disease Modeling for Public Health Impact" presentation given at the US-RSE Conference 2025 - [slides](https://hubverse-org.github.io/hubverse-talk-usrse25/#/title-slide), [Zenodo](https://zenodo.org/records/17297552), [repository](https://github.com/hubverse-org/hubverse-talk-usrse25) (07 October 2025)
 - "The Hubverse: open tools for collaborative modeling" presentation given during the first Insight Net Quarterly Seminar - [video](https://youtu.be/RF5_V2SEbnA?si=iBsmitzG9qLmIiE1) (18 June 2024)
 - "Hubverse: Supporting modeling hubs across the globe" presentation given at the ECDC RespiCast Hub Launch - [slides](includes/files/202311-ecdc-hub-launch.pdf) (20 November 2023)
