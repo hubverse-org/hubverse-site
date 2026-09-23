@@ -279,6 +279,13 @@ img.logo {
   }
 }
 
+/* Vertically center the text column so it sits in the middle of the card
+   rather than at the top of the (variable-height) image. */
+.testimonial .g-col-7,
+.showcase .g-col-7 {
+  align-self: center;
+}
+
 /* Carousel/slider for the Testimonials and "Built with the hubverse" sections.
    The .make-carousel containers are turned into Bootstrap carousels by a small
    script in index.qmd; these rules make the controls readable on the light card
