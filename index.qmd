@@ -172,8 +172,38 @@ Cool projects made possible by the hubverse, built by teams across the community
     }
   }
 
+  // Give every slide's card the same height (the tallest) so the carousel does
+  // not jump as it rotates. Hidden slides are measured by momentarily showing
+  // them; re-run after images load and on resize.
+  function equalize(container) {
+    var items = Array.prototype.slice.call(container.querySelectorAll('.carousel-item'));
+    items.forEach(function (it) { var c = it.querySelector('.card'); if (c) c.style.minHeight = ''; });
+    var max = 0;
+    items.forEach(function (it) {
+      var prev = it.style.display;
+      it.style.display = 'block';
+      var c = it.querySelector('.card');
+      if (c) max = Math.max(max, c.offsetHeight);
+      it.style.display = prev;
+    });
+    items.forEach(function (it) { var c = it.querySelector('.card'); if (c) c.style.minHeight = max + 'px'; });
+  }
+
+  var carousels = [];
+  function equalizeAll() { carousels.forEach(equalize); }
+
   document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.make-carousel').forEach(function (c) { carouselify(c, 7000); });
+    document.querySelectorAll('.make-carousel').forEach(function (c) {
+      carouselify(c, 7000);
+      carousels.push(c);
+    });
+    equalizeAll();
+  });
+  window.addEventListener('load', equalizeAll);
+  var resizeTimer;
+  window.addEventListener('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(equalizeAll, 200);
   });
 })();
 </script>
