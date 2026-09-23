@@ -10,11 +10,12 @@ Thanks to rigorous [data standards](/tools/data.qmd), our software works on any 
 :::
 
 [{{< fa book >}} Full list of hubverse software](https://docs.hubverse.io/en/latest/user-guide/software.html){.btn .btn-outline-dark .ms-auto}
+[{{< fa brands github >}} hubverse GitHub](https://github.com/hubverse-org){.btn .btn-outline-dark}
 
-The hubverse has a wide range of software packages designed to help you **administer hubs**, **validate** and **evaluate** model outputs, **access hub data**, **ensemble** and **visualize** models.
+The hubverse has a wide range of software packages designed to help you **administer hubs**, **validate** and **evaluate** model outputs, **access hub data**, **ensemble** and **visualize** models. Below you'll find common tasks first, then a catalog of the packages themselves.
 
 
-## Hub Access
+## Common tasks
 
 :::{.panel-tabset}
 
@@ -25,13 +26,6 @@ The hubverse has a wide range of software packages designed to help you **admini
 ### Get information about a hub
 
 {{< include /_snippets/hub-info.qmd >}}
-
-:::
-
-
-## Do more
-
-:::{.panel-tabset}
 
 ### Submit a model
 
@@ -50,6 +44,13 @@ The hubverse has a wide range of software packages designed to help you **admini
 {{< include /_snippets/develop.qmd >}}
 
 :::
+
+
+## Package catalog
+
+The hubverse is built as a set of interoperable packages across several languages. Most packages and tools are available in R. The Python and JavaScript packages support data access and dashboards.
+
+For a list of all software packages, grouped by language, please visit the [hubDocs Software page](https://docs.hubverse.io/en/latest/user-guide/software.html).
 
 
 :::: {.page-nav}

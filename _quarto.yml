@@ -95,6 +95,9 @@ website:
         - icon: headset
           text: "Consulting support"
           href: quickstart/support-consulting.md
+      - icon: github
+        href: https://github.com/hubverse-org
+        aria-label: "hubverse GitHub organization"
   page-footer:
     left:
       - icon: c-circle
