@@ -279,6 +279,35 @@ img.logo {
   }
 }
 
+/* Carousel/slider for the Testimonials and "Built with the hubverse" sections.
+   The .make-carousel containers are turned into Bootstrap carousels by a small
+   script in index.qmd; these rules make the controls readable on the light card
+   backgrounds and leave room in the gutters for the arrows and dots. */
+.hub-carousel {
+  padding: 0 3rem 2.25rem;
+}
+.hub-carousel .carousel-item {
+  padding: 0.25rem;
+}
+.hub-carousel .carousel-control-prev,
+.hub-carousel .carousel-control-next {
+  width: 3rem;
+}
+.hub-carousel .carousel-control-prev-icon,
+.hub-carousel .carousel-control-next-icon {
+  filter: invert(1) grayscale(100%); /* dark arrows on the light card background */
+}
+.hub-carousel .carousel-indicators {
+  bottom: 0;
+  margin-bottom: 0.25rem;
+}
+.hub-carousel .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #3C88BE; /* hubverse blue */
+}
+
 .card-body {
   font-size: 14px
 }

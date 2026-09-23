@@ -101,11 +101,10 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 ## Testimonials {#testimonials .column-screen-inset}
 
-:::{.grid .testimonial-grid style='--bs-gap: 0.5em;'}
+:::{#testimonial-carousel .make-carousel}
 {{< partial /_partials/testimonial.qmd hmsc >}}
 {{< partial /_partials/testimonial.qmd sjf >}}
 {{< partial /_partials/testimonial.qmd acefa >}}
-
 :::
 
 
@@ -113,9 +112,72 @@ R-Universe](https://hubverse-org.r-universe.dev)
 
 Cool projects made possible by the hubverse, built by teams across the community.
 
-:::{.grid .showcase-grid style='--bs-gap: 0.5em;'}
+:::{#showcase-carousel .make-carousel}
 {{< partial /_partials/showcase.qmd projects >}}
 :::
+
+```{=html}
+<script>
+// Turn each .make-carousel container into an auto-rotating Bootstrap carousel,
+// using its .card children as slides. Falls back to stacked cards if JS/Bootstrap
+// is unavailable.
+(function () {
+  function carouselify(container, interval) {
+    var cards = Array.prototype.slice.call(container.querySelectorAll('.card'));
+    if (cards.length < 2) return;
+    var id = container.id || ('hub-carousel-' + Math.random().toString(36).slice(2));
+    container.id = id;
+    container.classList.add('carousel', 'slide', 'hub-carousel');
+
+    var inner = document.createElement('div');
+    inner.className = 'carousel-inner';
+    cards.forEach(function (card, i) {
+      var item = document.createElement('div');
+      item.className = 'carousel-item' + (i === 0 ? ' active' : '');
+      item.appendChild(card);
+      inner.appendChild(item);
+    });
+
+    var indicators = document.createElement('div');
+    indicators.className = 'carousel-indicators';
+    cards.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.setAttribute('data-bs-target', '#' + id);
+      dot.setAttribute('data-bs-slide-to', String(i));
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      if (i === 0) { dot.className = 'active'; dot.setAttribute('aria-current', 'true'); }
+      indicators.appendChild(dot);
+    });
+
+    function control(dir, label) {
+      var btn = document.createElement('button');
+      btn.className = 'carousel-control-' + dir;
+      btn.type = 'button';
+      btn.setAttribute('data-bs-target', '#' + id);
+      btn.setAttribute('data-bs-slide', dir);
+      btn.innerHTML = '<span class="carousel-control-' + dir + '-icon" aria-hidden="true"></span>' +
+                      '<span class="visually-hidden">' + label + '</span>';
+      return btn;
+    }
+
+    container.innerHTML = '';
+    container.appendChild(indicators);
+    container.appendChild(inner);
+    container.appendChild(control('prev', 'Previous'));
+    container.appendChild(control('next', 'Next'));
+
+    if (window.bootstrap && window.bootstrap.Carousel) {
+      new window.bootstrap.Carousel(container, { interval: interval, ride: 'carousel', pause: 'hover' });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.make-carousel').forEach(function (c) { carouselify(c, 7000); });
+  });
+})();
+</script>
+```
 
 
 
