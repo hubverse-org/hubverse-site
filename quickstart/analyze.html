@@ -251,6 +251,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/hubverse-org"> <i class="bi bi-github" role="img" aria-label="hubverse GitHub organization">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -343,17 +348,24 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="access-hub-data" class="level2">
 <h2 class="anchored" data-anchor-id="access-hub-data">Access hub data</h2>
-<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a> <a href="https://hubverse-org.github.io/hubData" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubData</a> <a href="https://hubverse-org.github.io/hubData/articles/connect_hub.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Accessing data from a hub</a></p>
-<p>You can connect to any hub with the <strong>hubUtils</strong> and <strong>hubData</strong> R packages and be assured that all the data within the hub are <strong>validated</strong> against the <a href="../tools/data.html"><strong>hub data standards</strong></a>.</p>
+<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils (R)</a> <a href="https://hubverse-org.github.io/hubData" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubData (R)</a> <a href="https://pypi.org/project/hubdata/" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubdata (Python)</a> <a href="https://hubverse-org.github.io/hubData/articles/connect_hub.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Accessing data (R)</a> <a href="https://hubverse-org.github.io/hub-data/usage.html" class="btn btn-outline-dark ms-auto"><i class="fa-solid fa-book" aria-label="book"></i> Accessing data (Python)</a></p>
+<p>You can connect to any hub with the <strong>hubUtils</strong> and <strong>hubData</strong> R packages or the <strong>hubdata</strong> Python package, and be assured that all the data within the hub are <strong>validated</strong> against the <a href="../tools/data.html"><strong>hub data standards</strong></a>.</p>
+<p><strong>In R:</strong></p>
 <ul>
 <li><strong>connect to hub data</strong> with <a href="https://hubverse-org.github.io/hubData/reference/connect_hub.html"><code>hubData::connect_hub()</code></a></li>
 <li><strong>connect to a hub on S3</strong> with <a href="https://hubverse-org.github.io/hubData/reference/s3_bucket.html"><code>hubData::s3_bucket()</code></a></li>
 <li><strong>transform</strong> your existing data with <a href="https://hubverse-org.github.io/hubUtils/reference/as_model_out_tbl.html"><code>hubUtils::as_model_out_tbl()</code></a></li>
 </ul>
+<p><strong>In Python:</strong></p>
+<ul>
+<li><strong>connect to hub data</strong> with <a href="https://hubverse-org.github.io/hub-data/usage.html"><code>hubdata.connect_hub()</code></a></li>
+<li><strong>read the model output</strong> as a PyArrow table with <code>HubConnection.to_table()</code></li>
+<li><strong>connect to target data</strong> with <code>hubdata.connect_target_data()</code></li>
+</ul>
 </section>
 <section id="get-information-about-a-hub" class="level2">
 <h2 class="anchored" data-anchor-id="get-information-about-a-hub">Get information about a hub</h2>
-<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils</a></p>
+<p><a href="https://hubverse-org.github.io/hubUtils" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubUtils (R)</a> <a href="https://pypi.org/project/hubdata/" class="btn btn-outline-info ms-auto"><i class="fa-solid fa-box-open" aria-label="box-open"></i> hubdata (Python)</a></p>
 <p>The <strong>hubUtils</strong> R package provides utilities that give you useful information about a hub:</p>
 <ul>
 <li>fetch a hub <a href="https://docs.hubverse.io/en/latest/user-guide/hub-config.html"><strong>configuration file</strong></a> with <a href="https://hubverse-org.github.io/hubUtils/reference/read_config.html"><code>hubUtils::read_config()</code></a></li>
@@ -361,6 +373,7 @@ ul.task-list li input[type="checkbox"] {
 <li>find out what the submission <strong>rounds</strong> are with <a href="https://hubverse-org.github.io/hubUtils/reference/get_round_idx.html"><code>hubUtils::get_round_ids()</code></a></li>
 <li><strong>task ID names</strong> with <a href="https://hubverse-org.github.io/hubUtils/reference/get_task_id_names.html"><code>hubUtils::get_task_id_names()</code></a></li>
 </ul>
+<p>In <strong>Python</strong>, <a href="https://hubverse-org.github.io/hub-data/usage.html"><code>hubdata.connect_hub()</code></a> returns a <code>HubConnection</code> whose <code>.admin</code> and <code>.tasks</code> attributes expose the hub’s <code>admin.json</code> and <code>tasks.json</code> as dictionaries — giving you the submission rounds, task IDs, file formats, and other configuration.</p>
 </section>
 <section id="analyze-hub-data" class="level2">
 <h2 class="anchored" data-anchor-id="analyze-hub-data">Analyze hub data</h2>
