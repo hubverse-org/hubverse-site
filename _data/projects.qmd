@@ -24,4 +24,9 @@ projects:
     description: "EpiBenchmark is a benchmarking framework and challenge library for the standardized evaluation and comparison of infectious disease forecasting models."
     url: https://accidda.github.io/EpiBenchmark/
     img: /includes/img/accidda_logo.png
+  - name: Hubverse Support Tools
+    org: Clemson University / DMA-PRIME
+    description: "Hubverse Support Tools is a set of browser-based tools that help modeling teams prepare metadata, format data, and navigate GitHub submissions for hubverse hubs — no coding required."
+    url: https://dma-prime.github.io/Hubverse-Support-Tools/
+    img: /includes/img/DMA-PRIME-Logo.png
 ---
