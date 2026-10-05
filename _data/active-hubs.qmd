@@ -97,7 +97,7 @@ hubs:
         repo: "reichlab/forecast-sandbox-2025-2026"
         forecasts: https://reichlab.io/forecast-sandbox-2025-2026-dashboard/forecast.html
         evals: https://reichlab.io/forecast-sandbox-2025-2026-dashboard/eval.html
-        count: 19
+        count: 25
       - name: "MetroCast Sandbox"
         description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season."
         contact:
@@ -258,7 +258,7 @@ hubs:
         aws: covid19-forecast-hub
         forecasts: https://reichlab.io/covidhub-dashboard/forecast.html
         evals: https://reichlab.io/covidhub-dashboard/eval.html
-        count: 28
+        count: 29
       - name: "RSV Forecast Hub"
         description: "A repository run by the US CDC to collect forecasts of weekly new hospitalizations and the percentage of emergency department visits due to RSV. \n"
         contact:
@@ -266,7 +266,7 @@ hubs:
             email: rsvhub@cdc.gov
         license: Apache License 2.0
         repo: CDCgov/rsv-forecast-hub
-        count: 14
+        count: 16
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
         contact:
@@ -295,7 +295,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 33
+        count: 34
       - name: "European Covid-19 Forecasting Hub"
         description: |
           The European Covid-19 Forecasting Hub collates weekly
