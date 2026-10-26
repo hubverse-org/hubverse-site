@@ -80,8 +80,10 @@ tests/
 ## Workflows
 
 ### `publish.yml`
-Triggered on push to `main` and weekly (Fridays). Runs `make contributors
-orgs terminology cite`, then renders and publishes to GitHub Pages. `make models`
+Triggered on push to `main`, on PRs (render only, no publish), and weekly
+(Fridays). Runs the Python tests and the BASH tests (`bats tests/`, after yq is
+installed), then `make contributors orgs terminology cite`, then renders and
+publishes to GitHub Pages. `make models`
 is intentionally omitted — model counts are updated and committed by the
 Update Hub Stats workflow before publish runs, so re-running it would trigger
 redundant GitHub API calls and risk rate-limiting.
@@ -104,7 +106,19 @@ Triggered weekly (Mondays) or manually. Steps:
   hasn't changed since the last run are skipped entirely.
 - `archived_dirs` in `_data/active-hubs.qmd` supports glob patterns with one
   `*` per segment (e.g. `"Previous_Rounds/*/model-output"`) for hubs that have
-  moved data to archive subdirectories.
+  moved data to archive subdirectories. A plain pattern takes its bucket
+  (`model-output` / `target-data`) from its last segment. When the archive path
+  doesn't end in a bucket name, use a mapping with an explicit bucket:
+  `{path: "auxiliary-data/target-data-archive/*", bucket: target-data}`.
+  A mapping can also take a `files` glob on file names (e.g.
+  `files: "target_rvdss_data.csv"`) when an archive mixes target data with raw
+  inputs; check what an archive holds before adding it. Mappings count toward
+  row counts only; `update_model_counts.sh` reads string patterns only (and
+  logs any `model-output` mapping it skips).
+- Changing `archived_dirs` doesn't invalidate `fetch_cache.json`. A hub whose
+  `pushed_at` is unchanged won't be re-fetched, so delete that hub's entry from
+  `output/hub_stats/fetch_cache.json` in the same PR (or run with `--force`,
+  which re-fetches every hub).
 - **A failed file never becomes a silent 0.** If any file in a hub can't be
   counted, that hub's previous parquet and `fetch_cache.json` entry are left
   unchanged (so it's retried next run), and the hub is listed in

@@ -425,3 +425,37 @@ def test_write_hubs_json_archived_dirs_multiple_patterns(tmp_path):
     assert data["hubs"][0]["archived_dirs"] == ["Old/*/model-output", "Old/*/target-data"]
 
 
+def test_archived_dirs_path_bucket_mapping_passes_through(tmp_path):
+    qmd = tmp_path / "active-hubs.qmd"
+    qmd.write_text(
+        """---
+hubs:
+  ai4castinghub:
+    name: "AI4Casting Hub"
+    hubs:
+      - name: "Hospitalization Forecast"
+        repo: ai4castinghub/hospitalization-forecast
+        archived_dirs:
+          - "Previous_Rounds/*/model-output"
+          - path: "auxiliary-data/target-data-archive/*"
+            bucket: target-data
+            files: "target_*.csv"
+---
+""",
+        encoding="utf-8",
+    )
+    expected = [
+        "Previous_Rounds/*/model-output",
+        {
+            "path": "auxiliary-data/target-data-archive/*",
+            "bucket": "target-data",
+            "files": "target_*.csv",
+        },
+    ]
+    rows = build_hub_table(qmd)
+    assert rows[0]["archived_dirs"] == expected
+
+    output = tmp_path / "hubs.json"
+    write_hubs_json(rows, output)
+    data = json.loads(output.read_text(encoding="utf-8"))
+    assert data["hubs"][0]["archived_dirs"] == expected

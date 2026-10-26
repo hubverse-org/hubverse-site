@@ -34,6 +34,12 @@ jobs:
         run: |
           wget https://github.com/mikefarah/yq/releases/download/${VERSION}/${BINARY}.tar.gz -O - |\
           tar xz && sudo mv ${BINARY} /usr/bin/yq
+      - name: Run BASH tests
+        env:
+          VERSION: 1.13.0
+        # npx runs bats from the user's npm cache; `npm install -g` fails on
+        # the runner because it can't write man pages to /usr/local/share/man.
+        run: npx --yes "bats@${VERSION}" tests/
       - name: Generate content
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
