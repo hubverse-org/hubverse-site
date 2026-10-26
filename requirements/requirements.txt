@@ -5,5 +5,5 @@ PyYAML>=6.0
 pandas>=3.0.2
 jupyter>=1.1.1
 polars>=2.0.0
-duckdb>=1.5.2
+duckdb>=2.0.0
 
