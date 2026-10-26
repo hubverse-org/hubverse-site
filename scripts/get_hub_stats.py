@@ -44,6 +44,7 @@ import datetime
 import json
 import os
 from collections import Counter, defaultdict
+from fnmatch import fnmatchcase
 from io import StringIO
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -225,6 +226,7 @@ def list_files_for_archived_pattern(
     owner: str,
     repo: str,
     default_branch: str,
+    file_glob: str | None = None,
 ) -> list[tuple[str, str]]:
     """Return (download_url, source_dir) pairs for files matching a glob pattern.
 
@@ -233,10 +235,13 @@ def list_files_for_archived_pattern(
     matches files under any immediate subdirectory of Previous_Rounds/ whose
     name ends in model-output.
 
+    file_glob, if given, keeps only files whose name (last path segment)
+    matches it, e.g. "target_rvdss_data.csv" or "target_*.csv".
+
     source_dir is the concrete expanded prefix, e.g.:
         "Previous_Rounds/2025-2026_round_1/model-output"
     """
-    parts = pattern.split("/")
+    parts = pattern.rstrip("/").split("/")
     n = len(parts)
 
     results = []
@@ -246,6 +251,8 @@ def list_files_for_archived_pattern(
             continue
         path_parts = path.split("/")
         if len(path_parts) <= n:
+            continue
+        if file_glob is not None and not fnmatchcase(path_parts[-1], file_glob):
             continue
         if all(pat == "*" or pat == seg for pat, seg in zip(parts, path_parts)):
             source_dir = "/".join(path_parts[:n])
@@ -363,8 +370,11 @@ def _count_files(
 CANONICAL_DIRS = ("model-output", "target-data")
 
 
-def parse_archived_dir(entry: str | dict) -> tuple[str, str] | None:
-    """Normalize one ``archived_dirs`` entry to (pattern, bucket).
+ARCHIVED_DIR_KEYS = {"path", "bucket", "files"}
+
+
+def parse_archived_dir(entry: object) -> tuple[str, str, str | None] | None:
+    """Normalize one ``archived_dirs`` entry to (pattern, bucket, file_glob).
 
     Two forms are accepted:
 
@@ -373,20 +383,28 @@ def parse_archived_dir(entry: str | dict) -> tuple[str, str] | None:
         "Previous_Rounds/*/model-output"
 
     - a mapping with an explicit bucket, for archives whose path does not end
-      in the bucket name::
+      in the bucket name, and an optional ``files`` glob on file names for
+      archives that mix target data with other files::
 
-        {"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data"}
+        {"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data",
+         "files": "target_rvdss_data.csv"}
 
-    Returns None (and prints why) for malformed entries or unknown buckets.
+    Trailing slashes are stripped from the pattern. file_glob is None when
+    every data file should be counted. Returns None (and prints why) for
+    malformed entries or unknown buckets.
     """
     if isinstance(entry, str):
-        pattern, bucket = entry, entry.rstrip("/").split("/")[-1]
+        pattern = entry.rstrip("/")
+        bucket, file_glob = pattern.split("/")[-1], None
     elif (
         isinstance(entry, dict)
+        and set(entry) <= ARCHIVED_DIR_KEYS
         and isinstance(entry.get("path"), str)
         and isinstance(entry.get("bucket"), str)
+        and isinstance(entry.get("files", ""), str)
     ):
-        pattern, bucket = entry["path"], entry["bucket"]
+        pattern, bucket = entry["path"].rstrip("/"), entry["bucket"]
+        file_glob = entry.get("files")
     else:
         print(f"Skipping malformed archived_dirs entry: {entry!r}")
         return None
@@ -394,7 +412,7 @@ def parse_archived_dir(entry: str | dict) -> tuple[str, str] | None:
     if bucket not in CANONICAL_DIRS:
         print(f"Skipping archived pattern with unrecognised bucket '{bucket}': {pattern}")
         return None
-    return pattern, bucket
+    return pattern, bucket, file_glob
 
 
 def fetch_hub_stats(
@@ -402,7 +420,7 @@ def fetch_hub_stats(
     owner: str,
     repo: str,
     hub_subdir: str | None,
-    archived_dirs: list[str | dict] | None,
+    archived_dirs: list[object] | None,
     default_branch: str,
     tree_entries: list[dict],
 ) -> tuple[pl.DataFrame, list[tuple[str, str]]]:
@@ -436,10 +454,10 @@ def fetch_hub_stats(
         parsed = parse_archived_dir(entry)
         if parsed is None:
             continue
-        pattern, canonical_dir = parsed
+        pattern, canonical_dir, file_glob = parsed
 
         file_pairs = list_files_for_archived_pattern(
-            tree_entries, pattern, owner, repo, default_branch
+            tree_entries, pattern, owner, repo, default_branch, file_glob
         )
         if not file_pairs:
             print(f"  No files found for archived pattern: {pattern}")
@@ -487,7 +505,7 @@ def process_hub(
     repo: str,
     hub_subdir: str | None,
     hub_stats_dir: Path,
-    archived_dirs: list[str | dict] | None = None,
+    archived_dirs: list[object] | None = None,
     fetch_cache: dict[str, str] | None = None,
     force: bool = False,
 ) -> list[tuple[str, str]]:

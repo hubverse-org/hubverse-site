@@ -393,24 +393,74 @@ def test_list_files_for_archived_pattern_literal_pattern_no_wildcard():
     assert pairs[0][1] == "archive/model-output"
 
 
+def test_list_files_for_archived_pattern_trailing_slash_still_matches():
+    pairs = list_files_for_archived_pattern(
+        ARCHIVED_TREE, "Previous_Rounds/*/target-data/", "org", "repo", "main"
+    )
+    assert [src for _, src in pairs] == ["Previous_Rounds/round_1/target-data"]
+
+
+RVDSS_ARCHIVE_TREE = [
+    {"type": "blob", "path": "archive/season_2023_2024/target_rvdss_data.csv"},
+    {"type": "blob", "path": "archive/season_2023_2024/positive_tests.csv"},
+    {"type": "blob", "path": "archive/season_2023_2024/respiratory_detections.csv"},
+    {"type": "blob", "path": "archive/season_2024_2025/target_rvdss_data.csv"},
+    {"type": "blob", "path": "archive/season_2024_2025/positive_tests.csv"},
+]
+
+
+def test_list_files_for_archived_pattern_file_glob_filters_by_name():
+    pairs = list_files_for_archived_pattern(
+        RVDSS_ARCHIVE_TREE, "archive/*", "org", "repo", "main",
+        file_glob="target_rvdss_data.csv",
+    )
+    assert len(pairs) == 2
+    assert all(url.endswith("/target_rvdss_data.csv") for url, _ in pairs)
+
+
+def test_list_files_for_archived_pattern_file_glob_wildcard():
+    pairs = list_files_for_archived_pattern(
+        RVDSS_ARCHIVE_TREE, "archive/*", "org", "repo", "main", file_glob="*_tests.csv",
+    )
+    assert len(pairs) == 2
+
+
+def test_list_files_for_archived_pattern_without_file_glob_keeps_all():
+    pairs = list_files_for_archived_pattern(
+        RVDSS_ARCHIVE_TREE, "archive/*", "org", "repo", "main"
+    )
+    assert len(pairs) == 5
+
+
 # ---------------------------------------------------------------------------
 # parse_archived_dir
 # ---------------------------------------------------------------------------
 
 def test_parse_archived_dir_string_takes_bucket_from_last_segment():
     assert parse_archived_dir("Previous_Rounds/*/model-output") == (
-        "Previous_Rounds/*/model-output", "model-output",
+        "Previous_Rounds/*/model-output", "model-output", None,
     )
+
+
+def test_parse_archived_dir_strips_trailing_slash():
     assert parse_archived_dir("Previous_Rounds/*/target-data/") == (
-        "Previous_Rounds/*/target-data/", "target-data",
+        "Previous_Rounds/*/target-data", "target-data", None,
+    )
+    assert parse_archived_dir({"path": "archive/*/", "bucket": "target-data"}) == (
+        "archive/*", "target-data", None,
     )
 
 
 def test_parse_archived_dir_mapping_uses_explicit_bucket():
     entry = {"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data"}
     assert parse_archived_dir(entry) == (
-        "auxiliary-data/target-data-archive/*", "target-data",
+        "auxiliary-data/target-data-archive/*", "target-data", None,
     )
+
+
+def test_parse_archived_dir_mapping_with_files_glob():
+    entry = {"path": "archive/*", "bucket": "target-data", "files": "target_*.csv"}
+    assert parse_archived_dir(entry) == ("archive/*", "target-data", "target_*.csv")
 
 
 def test_parse_archived_dir_unknown_bucket_returns_none(capsys):
@@ -423,6 +473,8 @@ def test_parse_archived_dir_unknown_bucket_returns_none(capsys):
     {"path": "archive/*"},                         # missing bucket
     {"bucket": "target-data"},                     # missing path
     {"path": ["archive/*"], "bucket": "target-data"},
+    {"path": "archive/*", "bucket": "target-data", "files": ["a.csv"]},
+    {"path": "archive/*", "bucket": "target-data", "file": "a.csv"},  # typo'd key
     ["archive/*", "target-data"],
     42,
 ])
@@ -630,6 +682,23 @@ def test_fetch_hub_stats_counts_mapping_archive_under_explicit_bucket():
     ]
     assert not any("raw_files" in f for f in df["file"].to_list())
     assert df["row_count"].sum() == 6  # 3 files x 2 rows
+
+
+def test_fetch_hub_stats_mapping_files_glob_skips_raw_inputs():
+    # The rvdss layout: each archived season mixes the target file with raw inputs.
+    tree = [
+        {"type": "blob", "path": "target-data/season_2026_2027/target_rvdss_data.csv"},
+        {"type": "blob", "path": "archive/season_2024_2025/target_rvdss_data.csv"},
+        {"type": "blob", "path": "archive/season_2024_2025/positive_tests.csv"},
+        {"type": "blob", "path": "archive/season_2024_2025/respiratory_detections.csv"},
+    ]
+    archive = [{"path": "archive/*", "bucket": "target-data", "files": "target_rvdss_data.csv"}]
+    df, failures = fetch_hub_stats(
+        _make_session_for_tree(tree, csv_rows=2), "org", "repo", None, archive, "main", tree,
+    )
+    assert failures == []
+    assert all(f.endswith("/target_rvdss_data.csv") for f in df["file"].to_list())
+    assert df["row_count"].sum() == 4  # current + one archived target file
 
 
 def test_fetch_hub_stats_mixes_string_and_mapping_entries():

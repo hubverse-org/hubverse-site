@@ -98,6 +98,15 @@ for hub in "${hubs[@]}"; do
     '.hubs[].hubs[] | select(.repo == "'"${hub%/}"'") | .archived_dirs[]? | select(tag == "!!str")' \
     "${hub_file}" 2>/dev/null)
 
+  # Mappings aren't counted here; say so when one archives model output, since
+  # those models are missing from the count.
+  while IFS= read -r path; do
+    [[ -z "${path}" ]] && continue
+    echo "${hub%/}: archived_dirs mapping '${path}' (bucket model-output) is not included in the model count"
+  done < <(yq --front-matter=extract \
+    '.hubs[].hubs[] | select(.repo == "'"${hub%/}"'") | .archived_dirs[]? | select(tag == "!!map" and .bucket == "model-output") | .path' \
+    "${hub_file}" 2>/dev/null)
+
   if [[ "${n}" -gt 0 ]]; then
     echo "${hub%/} has ${n} models"
     # 3. Update the count in the frontmatter.

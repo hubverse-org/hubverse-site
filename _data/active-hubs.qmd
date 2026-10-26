@@ -35,11 +35,14 @@ hubs:
         # A plain pattern takes its bucket from its last segment; if the archive
         # path doesn't end in model-output / target-data, give the bucket
         # explicitly with a path/bucket mapping (counted in row counts only).
+        # A mapping can also take a `files` glob on file names, for archives
+        # that mix target data with raw input files.
         # archived_dirs:
         #   - "Previous_Rounds/*/model-output"
         #   - "Previous_Rounds/*/target-data"
         #   - path: "auxiliary-data/target-data-archive/*"
         #     bucket: target-data
+        #     files: "target_*.csv"
   hubverse:
     logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
@@ -197,6 +200,7 @@ hubs:
         archived_dirs:
           - path: "auxiliary-data/target-data-archive/*"
             bucket: target-data
+            files: "target_rvdss_data.csv"
   smhct:
     logo: /includes/img/smh_logo.png
     name: "Scenario Modeling Hub Coordination Team"

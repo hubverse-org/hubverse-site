@@ -439,13 +439,18 @@ hubs:
           - "Previous_Rounds/*/model-output"
           - path: "auxiliary-data/target-data-archive/*"
             bucket: target-data
+            files: "target_*.csv"
 ---
 """,
         encoding="utf-8",
     )
     expected = [
         "Previous_Rounds/*/model-output",
-        {"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data"},
+        {
+            "path": "auxiliary-data/target-data-archive/*",
+            "bucket": "target-data",
+            "files": "target_*.csv",
+        },
     ]
     rows = build_hub_table(qmd)
     assert rows[0]["archived_dirs"] == expected
@@ -454,5 +459,3 @@ hubs:
     write_hubs_json(rows, output)
     data = json.loads(output.read_text(encoding="utf-8"))
     assert data["hubs"][0]["archived_dirs"] == expected
-
-
