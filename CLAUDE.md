@@ -80,8 +80,10 @@ tests/
 ## Workflows
 
 ### `publish.yml`
-Triggered on push to `main` and weekly (Fridays). Runs `make contributors
-orgs terminology cite`, then renders and publishes to GitHub Pages. `make models`
+Triggered on push to `main`, on PRs (render only, no publish), and weekly
+(Fridays). Runs the Python tests and the BASH tests (`bats tests/`, after yq is
+installed), then `make contributors orgs terminology cite`, then renders and
+publishes to GitHub Pages. `make models`
 is intentionally omitted — model counts are updated and committed by the
 Update Hub Stats workflow before publish runs, so re-running it would trigger
 redundant GitHub API calls and risk rate-limiting.
