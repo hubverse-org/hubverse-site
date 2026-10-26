@@ -105,6 +105,15 @@ Triggered weekly (Mondays) or manually. Steps:
 - `archived_dirs` in `_data/active-hubs.qmd` supports glob patterns with one
   `*` per segment (e.g. `"Previous_Rounds/*/model-output"`) for hubs that have
   moved data to archive subdirectories.
+- **A failed file never becomes a silent 0.** If any file in a hub can't be
+  counted, that hub's previous parquet and `fetch_cache.json` entry are left
+  unchanged (so it's retried next run), and the hub is listed in
+  `output/hub_stats_fetch_errors.md`, which the workflow appends to the PR
+  warning comment. (Motivated by DuckDB 2.0 removing `relation.fetchone()`,
+  which zeroed every parquet file in one run.)
+- `duckdb`, `polars`, and `pandas` are capped below their next major version
+  in `requirements/requirements.txt`, so a breaking release arrives as a
+  reviewable Dependabot PR instead of reaching CI silently.
 
 ## Tests
 

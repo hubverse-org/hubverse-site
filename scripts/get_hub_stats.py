@@ -16,6 +16,12 @@ recursive Contents API (which fails with 403 for large directories and
 requires many sequential calls).  For repos whose tree response is
 truncated (>100 k entries), the script falls back to per-subtree calls.
 
+If any file in a hub cannot be counted (download or read error), that
+hub's previous parquet and cache entry are kept unchanged, so a bad run
+never overwrites good numbers with zeros, and the hub is retried on the
+next run.  Affected hubs are listed in output/hub_stats_fetch_errors.md,
+which the workflow appends to the PR warning comment.
+
 Notes
 -----
 Requires a GITHUB_TOKEN environment variable with read access to
@@ -37,7 +43,7 @@ import csv
 import datetime
 import json
 import os
-from collections import defaultdict
+from collections import Counter, defaultdict
 from io import StringIO
 from pathlib import Path
 from urllib.parse import urlsplit
@@ -269,16 +275,27 @@ def count_rows_csv(file_url: str, session: requests.Session) -> int:
 
 
 def count_rows_parquet(file_url: str) -> int:
-    """Use DuckDB to read row count from parquet file metadata."""
+    """Use DuckDB to read row count from parquet file metadata.
+
+    Uses ``fetchall()`` rather than ``fetchone()``: DuckDB 2.0 removed
+    ``fetchone()`` from relation objects.
+    """
     with duckdb.connect() as con:
-        con.sql("LOAD httpfs;")
-        result = con.sql(
+        if file_url.startswith(("http://", "https://")):
+            con.sql("LOAD httpfs;")
+        rows = con.sql(
             f"SELECT SUM(num_rows) FROM parquet_file_metadata('{file_url}');"
-        ).fetchone()
-    return result[0] if result else 0
+        ).fetchall()
+    return (rows[0][0] or 0) if rows else 0
 
 
-def count_rows(file_url: str, session: requests.Session) -> tuple[str, int]:
+def count_rows(file_url: str, session: requests.Session) -> tuple[str, int, str | None]:
+    """Count rows in one CSV or parquet file.
+
+    Returns (file_url, row_count, error). ``error`` is None on success; on
+    failure it holds the exception message and row_count is 0. Callers must
+    check ``error`` rather than treat 0 as a real count.
+    """
     suffix = Path(urlsplit(file_url).path).suffix.lower()
     try:
         count = (
@@ -288,8 +305,8 @@ def count_rows(file_url: str, session: requests.Session) -> tuple[str, int]:
         )
     except Exception as e:
         print(f"Error processing {file_url}: {e}")
-        count = 0
-    return file_url, count
+        return file_url, 0, str(e)
+    return file_url, count, None
 
 
 def _count_files(
@@ -298,8 +315,11 @@ def _count_files(
     label: str,
     canonical_dir: str,
     source_dir: str,
-) -> pl.DataFrame:
-    """Count rows for a list of file URLs and return a tidy DataFrame.
+) -> tuple[pl.DataFrame, list[tuple[str, str]]]:
+    """Count rows for a list of file URLs.
+
+    Returns (df, failures): a tidy DataFrame of per-file counts, and a list of
+    (file_url, error_message) for files that could not be counted.
 
     canonical_dir: the bucket name ("model-output" or "target-data") used in
                    the summary CSV.
@@ -312,8 +332,11 @@ def _count_files(
         futures = [executor.submit(count_rows, f, session) for f in files]
 
     all_counts: dict[str, int] = defaultdict(int)
+    failures: list[tuple[str, str]] = []
     for future in futures:
-        url, n = future.result()
+        url, n, error = future.result()
+        if error is not None:
+            failures.append((url, error))
         all_counts[url] += n
 
     df = pl.DataFrame({
@@ -329,7 +352,7 @@ def _count_files(
         if canonical_dir == "model-output"
         else pl.lit(None).cast(pl.String)
     )
-    return df.with_columns(model_id.alias("model_id"))
+    return df.with_columns(model_id.alias("model_id")), failures
 
 
 # ---------------------------------------------------------------------------
@@ -345,14 +368,18 @@ def fetch_hub_stats(
     archived_dirs: list[str] | None,
     default_branch: str,
     tree_entries: list[dict],
-) -> pl.DataFrame:
+) -> tuple[pl.DataFrame, list[tuple[str, str]]]:
     """Count rows for all files in model-output, target-data, and any archived dirs.
+
+    Returns (df, failures), where failures lists (file_url, error_message) for
+    every file that could not be counted.
 
     tree_entries: full blob listing from fetch_full_tree().
     """
     label = hub_label(owner, repo, hub_subdir)
     subdir_prefix = f"{hub_subdir}/" if hub_subdir else ""
     frames: list[pl.DataFrame] = []
+    failures: list[tuple[str, str]] = []
 
     # --- standard directories ------------------------------------------------
     for directory in ["model-output", "target-data"]:
@@ -363,7 +390,9 @@ def fetch_hub_stats(
         if not file_pairs:
             continue
         files = [url for url, _ in file_pairs]
-        frames.append(_count_files(files, session, label, directory, full_dir))
+        df, failed = _count_files(files, session, label, directory, full_dir)
+        frames.append(df)
+        failures.extend(failed)
 
     # --- archived directories -------------------------------------------------
     for pattern in (archived_dirs or []):
@@ -389,9 +418,11 @@ def fetch_hub_stats(
 
         for source_dir, files in by_source.items():
             print(f"  Found {len(files)} files in archived dir: {source_dir}")
-            frames.append(_count_files(files, session, label, canonical_dir, source_dir))
+            df, failed = _count_files(files, session, label, canonical_dir, source_dir)
+            frames.append(df)
+            failures.extend(failed)
 
-    return pl.concat(frames) if frames else pl.DataFrame()
+    return (pl.concat(frames) if frames else pl.DataFrame()), failures
 
 
 # ---------------------------------------------------------------------------
@@ -425,12 +456,20 @@ def process_hub(
     archived_dirs: list[str] | None = None,
     fetch_cache: dict[str, str] | None = None,
     force: bool = False,
-) -> Path:
+) -> list[tuple[str, str]]:
     """Fetch stats for one hub and cache them as a parquet file.
 
     Skips re-fetching if the hub's pushed_at timestamp matches the cached
     value and the parquet already exists, unless force=True.
-    Updates fetch_cache in-place with the new pushed_at after a successful fetch.
+
+    If every file is counted successfully, writes the parquet and updates
+    fetch_cache in-place with the new pushed_at. If ANY file fails, the hub's
+    previous parquet is left untouched and its cache entry is NOT updated, so
+    a bad run can never overwrite good numbers with zeros, and the hub is
+    retried automatically on the next run.
+
+    Returns the list of (file_url, error_message) failures (empty on success
+    or when skipped).
     """
     label = hub_label(owner, repo, hub_subdir)
     parquet_path = hub_stats_dir / f"{label.replace('/', '_')}.parquet"
@@ -440,18 +479,26 @@ def process_hub(
 
     if not force and parquet_path.exists() and cache.get(label) == pushed_at:
         print(f"Skipping {label} (no changes since {pushed_at})")
-        return parquet_path
+        return []
 
     print(f"Fetching stats for {label} (pushed_at={pushed_at})")
     tree_sha = get_tree_sha(session, owner, repo, default_branch)
     tree_entries = fetch_full_tree(session, owner, repo, tree_sha)
 
-    df = fetch_hub_stats(
+    df, failures = fetch_hub_stats(
         session, owner, repo, hub_subdir, archived_dirs, default_branch, tree_entries
     )
+    if failures:
+        kept = "keeping previous stats" if parquet_path.exists() else "no previous stats to keep"
+        print(
+            f"WARNING: {label}: {len(failures)} file(s) could not be counted; "
+            f"{kept} and not updating the fetch cache."
+        )
+        return failures
+
     df.write_parquet(parquet_path)
     cache[label] = pushed_at
-    return parquet_path
+    return []
 
 
 # ---------------------------------------------------------------------------
@@ -477,6 +524,54 @@ def write_summary_csv(hub_stats_dir: Path, summary_path: Path) -> None:
     )
     summary.write_csv(summary_path)
     print(f"Saved {summary_path}")
+
+
+# ---------------------------------------------------------------------------
+# Fetch-error report
+# ---------------------------------------------------------------------------
+
+
+def _md_cell(text: str, limit: int = 150) -> str:
+    """Make arbitrary text safe for a single markdown table cell."""
+    text = " ".join(text.split())  # collapse newlines/whitespace
+    if len(text) > limit:
+        text = text[: limit - 1] + "…"
+    return text.replace("|", "\\|")
+
+
+def write_fetch_errors_report(
+    fetch_errors: dict[str, list[tuple[str, str]]], report_path: Path
+) -> None:
+    """Write a markdown report of hubs whose files could not be counted.
+
+    Appended to the PR comment by the workflow. Removes any stale report when
+    there are no errors, so an old report can never be re-posted.
+    """
+    if not fetch_errors:
+        report_path.unlink(missing_ok=True)
+        return
+
+    lines = [
+        "## :warning: Files that could not be counted",
+        "",
+        "These hubs had files that failed to download or read during this run. "
+        "Their **previous stats were kept** (nothing was overwritten) and they "
+        "will be retried automatically on the next run.",
+        "",
+        "| Hub | Failed files | Error |",
+        "| --- | ---: | --- |",
+    ]
+    for label in sorted(fetch_errors, key=str.lower):
+        failures = fetch_errors[label]
+        messages = Counter(message for _, message in failures)
+        top_message, _ = messages.most_common(1)[0]
+        error = _md_cell(top_message)
+        if len(messages) > 1:
+            error += f" (+{len(messages) - 1} other error type(s))"
+        lines.append(f"| `{label}` | {len(failures):,} | {error} |")
+    lines.append("")
+    report_path.write_text("\n".join(lines))
+    print(f"Saved {report_path}")
 
 
 # ---------------------------------------------------------------------------
@@ -514,9 +609,10 @@ def main() -> None:
         hubs = json.load(f)
 
     fetch_cache = load_fetch_cache(cache_path)
+    fetch_errors: dict[str, list[tuple[str, str]]] = {}
 
     for hub in hubs.get("hubs", []):
-        process_hub(
+        failures = process_hub(
             session,
             hub["org"],
             hub["repo"],
@@ -526,10 +622,19 @@ def main() -> None:
             fetch_cache,
             force=args.force,
         )
+        if failures:
+            fetch_errors[hub_label(hub["org"], hub["repo"], hub.get("hub_subdir"))] = failures
         # Save after each hub so partial progress survives a crash or timeout.
         save_fetch_cache(fetch_cache, cache_path)
 
     write_summary_csv(hub_stats_dir, summary_path)
+    write_fetch_errors_report(fetch_errors, base_dir / "output" / "hub_stats_fetch_errors.md")
+    if fetch_errors:
+        n_files = sum(len(f) for f in fetch_errors.values())
+        print(
+            f"WARNING: {n_files} file(s) in {len(fetch_errors)} hub(s) could not be "
+            f"counted; previous stats were kept for: {', '.join(sorted(fetch_errors))}"
+        )
 
     last_updated_path = base_dir / "output" / "hub_stats_last_updated.txt"
     last_updated_path.write_text(datetime.date.today().isoformat())

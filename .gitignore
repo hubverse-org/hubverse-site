@@ -18,6 +18,8 @@ htmlcov/
 
 .positai
 
-# Transient CI artifact written by check_hub_stats.py and consumed by the workflow
+# Transient CI artifacts consumed by the workflow (written by check_hub_stats.py
+# and get_hub_stats.py respectively)
 /output/hub_stats_warnings.md
+/output/hub_stats_fetch_errors.md
 

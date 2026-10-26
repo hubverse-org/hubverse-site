@@ -60,6 +60,11 @@ jobs:
         run: |
           python scripts/check_hub_stats.py
           bash scripts/check_model_counts.sh
+          # Files that could not be counted (their hubs kept previous stats).
+          if [ -s output/hub_stats_fetch_errors.md ]; then
+            printf '\n' >> output/hub_stats_warnings.md
+            cat output/hub_stats_fetch_errors.md >> output/hub_stats_warnings.md
+          fi
           if [ -s output/hub_stats_warnings.md ]; then
             echo "has_warnings=true" >> "$GITHUB_OUTPUT"
           else
