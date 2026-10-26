@@ -86,6 +86,8 @@ for hub in "${hubs[@]}"; do
   [[ ! "${n}" =~ $re ]] && n=0
 
   # 2. Add counts from any archived model-output patterns defined in archived_dirs.
+  #    Only string patterns are read here; mapping entries ({path, bucket}) feed
+  #    row counts in get_hub_stats.py and are skipped for model counts.
   while IFS= read -r pattern; do
     [[ -z "${pattern}" ]] && continue
     extra=$(count_archived_model_output "${hub}" "${pattern}")
@@ -93,7 +95,7 @@ for hub in "${hubs[@]}"; do
       n=$((n + extra))
     fi
   done < <(yq --front-matter=extract \
-    '.hubs[].hubs[] | select(.repo == "'"${hub%/}"'") | .archived_dirs[]?' \
+    '.hubs[].hubs[] | select(.repo == "'"${hub%/}"'") | .archived_dirs[]? | select(tag == "!!str")' \
     "${hub_file}" 2>/dev/null)
 
   if [[ "${n}" -gt 0 ]]; then

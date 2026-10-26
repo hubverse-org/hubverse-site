@@ -32,9 +32,14 @@ hubs:
         count: 5 # number of models submitted (this is automatically updated if your hub is public)
         # archived_dirs: glob patterns (one * per segment) for directories whose
         # rows should be counted alongside the standard model-output / target-data.
+        # A plain pattern takes its bucket from its last segment; if the archive
+        # path doesn't end in model-output / target-data, give the bucket
+        # explicitly with a path/bucket mapping (counted in row counts only).
         # archived_dirs:
         #   - "Previous_Rounds/*/model-output"
         #   - "Previous_Rounds/*/target-data"
+        #   - path: "auxiliary-data/target-data-archive/*"
+        #     bucket: target-data
   hubverse:
     logo: /brand/logo/logo-with-text.png
     name: "The hubverse"
@@ -170,6 +175,9 @@ hubs:
         repo: ai4castinghub/hospitalization-forecast
         forecasts: https://4castinghub.uoguelph.ca/hospitalization/
         count: 12
+        archived_dirs:
+          - path: "auxiliary-data/target-data-archive/*"
+            bucket: target-data
       - name: "RVDSS Forecast Hub"
         description: |
           RVDSS is a national surveillance system that collects and
@@ -186,6 +194,9 @@ hubs:
         repo: ai4castinghub/rvdss-forecast
         forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
         count: 15
+        archived_dirs:
+          - path: "auxiliary-data/target-data-archive/*"
+            bucket: target-data
   smhct:
     logo: /includes/img/smh_logo.png
     name: "Scenario Modeling Hub Coordination Team"

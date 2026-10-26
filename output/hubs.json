@@ -1,7 +1,7 @@
 {
   "hubs": [
-    {"org": "ai4castinghub", "repo": "hospitalization-forecast"},
-    {"org": "ai4castinghub", "repo": "rvdss-forecast"},
+    {"org": "ai4castinghub", "repo": "hospitalization-forecast", "archived_dirs": [{"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data"}]},
+    {"org": "ai4castinghub", "repo": "rvdss-forecast", "archived_dirs": [{"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data"}]},
     {"org": "bleicham", "repo": "Human-AI-Forecasting-Challenge-Sandbox"},
     {"org": "cdcepi", "repo": "FluSight-forecast-hub"},
     {"org": "CDCgov", "repo": "covid19-forecast-hub"},

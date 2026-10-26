@@ -360,12 +360,49 @@ def _count_files(
 # ---------------------------------------------------------------------------
 
 
+CANONICAL_DIRS = ("model-output", "target-data")
+
+
+def parse_archived_dir(entry: str | dict) -> tuple[str, str] | None:
+    """Normalize one ``archived_dirs`` entry to (pattern, bucket).
+
+    Two forms are accepted:
+
+    - a string glob, whose bucket is its last path segment::
+
+        "Previous_Rounds/*/model-output"
+
+    - a mapping with an explicit bucket, for archives whose path does not end
+      in the bucket name::
+
+        {"path": "auxiliary-data/target-data-archive/*", "bucket": "target-data"}
+
+    Returns None (and prints why) for malformed entries or unknown buckets.
+    """
+    if isinstance(entry, str):
+        pattern, bucket = entry, entry.rstrip("/").split("/")[-1]
+    elif (
+        isinstance(entry, dict)
+        and isinstance(entry.get("path"), str)
+        and isinstance(entry.get("bucket"), str)
+    ):
+        pattern, bucket = entry["path"], entry["bucket"]
+    else:
+        print(f"Skipping malformed archived_dirs entry: {entry!r}")
+        return None
+
+    if bucket not in CANONICAL_DIRS:
+        print(f"Skipping archived pattern with unrecognised bucket '{bucket}': {pattern}")
+        return None
+    return pattern, bucket
+
+
 def fetch_hub_stats(
     session: requests.Session,
     owner: str,
     repo: str,
     hub_subdir: str | None,
-    archived_dirs: list[str] | None,
+    archived_dirs: list[str | dict] | None,
     default_branch: str,
     tree_entries: list[dict],
 ) -> tuple[pl.DataFrame, list[tuple[str, str]]]:
@@ -395,14 +432,11 @@ def fetch_hub_stats(
         failures.extend(failed)
 
     # --- archived directories -------------------------------------------------
-    for pattern in (archived_dirs or []):
-        canonical_dir = pattern.rstrip("/").split("/")[-1]
-        if canonical_dir not in ("model-output", "target-data"):
-            print(
-                f"Skipping archived pattern with unrecognised bucket "
-                f"'{canonical_dir}': {pattern}"
-            )
+    for entry in (archived_dirs or []):
+        parsed = parse_archived_dir(entry)
+        if parsed is None:
             continue
+        pattern, canonical_dir = parsed
 
         file_pairs = list_files_for_archived_pattern(
             tree_entries, pattern, owner, repo, default_branch
@@ -453,7 +487,7 @@ def process_hub(
     repo: str,
     hub_subdir: str | None,
     hub_stats_dir: Path,
-    archived_dirs: list[str] | None = None,
+    archived_dirs: list[str | dict] | None = None,
     fetch_cache: dict[str, str] | None = None,
     force: bool = False,
 ) -> list[tuple[str, str]]:

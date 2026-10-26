@@ -104,7 +104,15 @@ Triggered weekly (Mondays) or manually. Steps:
   hasn't changed since the last run are skipped entirely.
 - `archived_dirs` in `_data/active-hubs.qmd` supports glob patterns with one
   `*` per segment (e.g. `"Previous_Rounds/*/model-output"`) for hubs that have
-  moved data to archive subdirectories.
+  moved data to archive subdirectories. A plain pattern takes its bucket
+  (`model-output` / `target-data`) from its last segment. When the archive path
+  doesn't end in a bucket name, use a mapping with an explicit bucket:
+  `{path: "auxiliary-data/target-data-archive/*", bucket: target-data}`.
+  Mappings count toward row counts only; `update_model_counts.sh` reads string
+  patterns only.
+- Changing `archived_dirs` doesn't invalidate `fetch_cache.json`. A hub whose
+  `pushed_at` is unchanged won't be re-fetched, so run with `--force` (or wait
+  for the hub's next push) to pick up new archive patterns.
 - **A failed file never becomes a silent 0.** If any file in a hub can't be
   counted, that hub's previous parquet and `fetch_cache.json` entry are left
   unchanged (so it's retried next run), and the hub is listed in
