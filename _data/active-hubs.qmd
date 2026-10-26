@@ -105,7 +105,7 @@ hubs:
         repo: "reichlab/forecast-sandbox-2025-2026"
         forecasts: https://reichlab.io/forecast-sandbox-2025-2026-dashboard/forecast.html
         evals: https://reichlab.io/forecast-sandbox-2025-2026-dashboard/eval.html
-        count: 57
+        count: 75
       - name: "MetroCast Sandbox"
         description: "Hub serving as a sandbox/testbed for experimental Flu MetroCast forecasts before and during the 2025/2026 respiratory virus forecasting season."
         contact:
@@ -156,7 +156,7 @@ hubs:
         aws: reichlab-flu-metrocast-hub
         forecasts: https://reichlab.io/metrocast-dashboard/forecast.html
         evals: https://reichlab.io/metrocast-dashboard/eval.html
-        count: 16
+        count: 23
   ai4casting:
     logo: /includes/img/ai4casting.png
     name: "AI4Casting (U of Guelph)"
@@ -224,7 +224,7 @@ hubs:
         license: MIT License
         repo: midas-network/flu-scenario-modeling-hub
         insights: https://fluscenariomodelinghub.org
-        count: 16
+        count: 17
       - name: "RSV Scenario Modeling Hub"
         description: "The RSV Scenario Modeling Hub aims to project the impacts of new vaccines \nand monoclonal antibodies over the course of each RSV season. \n"
         contact:
@@ -260,7 +260,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 126
+        count: 128
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
@@ -281,7 +281,7 @@ hubs:
             email: rsvhub@cdc.gov
         license: Apache License 2.0
         repo: CDCgov/rsv-forecast-hub
-        count: 19
+        count: 20
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
         contact:
