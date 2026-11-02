@@ -224,7 +224,7 @@ hubs:
         license: MIT License
         repo: midas-network/flu-scenario-modeling-hub
         insights: https://fluscenariomodelinghub.org
-        count: 17
+        count: 19
       - name: "RSV Scenario Modeling Hub"
         description: "The RSV Scenario Modeling Hub aims to project the impacts of new vaccines \nand monoclonal antibodies over the course of each RSV season. \n"
         contact:
@@ -260,7 +260,7 @@ hubs:
         aws: cdcepi-flusight-forecast-hub
         forecasts: https://reichlab.io/flusight-dashboard/forecast.html
         evals: https://reichlab.io/flusight-dashboard/eval.html
-        count: 128
+        count: 133
       - name: "COVID-19 Forecast Hub"
         description: |
           A repository run by the US CDC to collect forecasts of weekly
@@ -281,7 +281,7 @@ hubs:
             email: rsvhub@cdc.gov
         license: Apache License 2.0
         repo: CDCgov/rsv-forecast-hub
-        count: 20
+        count: 21
       - name: "Paraguay Forecast Hub"
         description: "The Paraguay Forecast Hub is designed to collect forecast data for weekly \nnew severe acute respiratory infection (SARI) hospitalizations during 2024 \ninfluenza season in Paraguay.\n"
         contact:
@@ -310,7 +310,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 34
+        count: 36
       - name: "European Covid-19 Forecasting Hub"
         description: |
           The European Covid-19 Forecasting Hub collates weekly
@@ -446,7 +446,7 @@ hubs:
         repo: dailypartita/China-COVID-19-Forecast-Hub
         forecasts: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/forecast.html
         evals: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html
-        count: 13
+        count: 16
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png
     name: "Northern Arizona University"
@@ -476,7 +476,7 @@ hubs:
         license: MIT License
         repo: "InsightNet-US/BDBV-Modeling-Hub"
         aws: bdbv-modeling-hub
-        count: 5
+        count: 9
   bleicham:
     logo: /includes/img/DMA-PRIME-Logo.png
     name: "DMA-PRIME"
