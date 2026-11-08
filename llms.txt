@@ -1,0 +1,13 @@
+# hubverse-site
+
+> Landing page for the hubverse
+
+## Core Resources
+
+- [GitHub Repository](https://github.com/hubverse-org/hubverse-site): Source code, documentation, and issue tracker.
+- [Website](https://hubverse.io): Official website and documentation.
+
+## AI Agent & LLM Indexing
+
+- Structured following the standard /llms.txt specification for AI search engines and coding assistants.
+- Validated via [AccessGuard AI-Readiness Suite](https://ronanchnlps-bit.github.io/).
