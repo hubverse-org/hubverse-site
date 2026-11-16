@@ -433,19 +433,20 @@ hubs:
     logo: /includes/img/dailypartita.png
     name: "Guangzhou Laboratory"
     description: |
-      Guangzhou Laboratory is a research institution in China focused on respiratory disease research, surveillance, and real-time forecasting.
+      Guangzhou Laboratory is a research institution in China focused on infectious disease research, surveillance, and real-time forecasting.
     hubs:
-      - name: "GZlab China COVID-19 Forecast Hub"
+      - name: "GZlab China Infectious Disease Forecast Hub"
         description: |
-          This collaborative hub is designed to collect real-time probabilistic nowcasts and forecasts of weekly SARS-CoV-2 positivity rates from
-          the Chinese sentinel hospital surveillance network (data from China CDC).
+          This collaborative hub is designed to collect real-time probabilistic nowcasts and forecasts for China of weekly SARS-CoV-2 and
+          influenza positivity rates among influenza-like illness cases (data from China CDC and the China National Influenza Center),
+          and of monthly reported dengue cases.
         contact:
           - name: Kaixin Yang
             email: yang_kaixin@gzlab.ac.cn
         license: MIT License
-        repo: dailypartita/China-COVID-19-Forecast-Hub
-        forecasts: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/forecast.html
-        evals: https://dailypartita.github.io/China-COVID-19-Forecast-Dashboard/eval.html
+        repo: dailypartita/China-Infectious-Disease-Forecast-Hub
+        forecasts: https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/forecast.html
+        evals: https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/eval.html
         count: 18
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png

@@ -12,8 +12,8 @@ CDCgov/covid19-forecast-hub,target-data,2054039
 CDCgov/rsv-forecast-hub,model-output,4781779
 CDCgov/rsv-forecast-hub,target-data,1146178
 cdphmodeling/wnvca-2024,model-output,61061
-dailypartita/China-COVID-19-Forecast-Hub,model-output,39930
-dailypartita/China-COVID-19-Forecast-Hub,target-data,8157
+dailypartita/China-Infectious-Disease-Forecast-Hub,model-output,39930
+dailypartita/China-Infectious-Disease-Forecast-Hub,target-data,8157
 european-modelling-hubs/ari-forecast-hub_archive,model-output,218844
 european-modelling-hubs/ari-forecast-hub_archive,target-data,261961
 european-modelling-hubs/flu-forecast-hub_archive,model-output,407938
