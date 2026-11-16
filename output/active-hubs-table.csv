@@ -7,7 +7,7 @@ uscdc,US Centers for Disease Control and Prevention,FluSight Forecast Hub,cdcepi
 uscdc,US Centers for Disease Control and Prevention,COVID-19 Forecast Hub,CDCgov/covid19-forecast-hub,,covid19-forecast-hub
 uscdc,US Centers for Disease Control and Prevention,RSV Forecast Hub,CDCgov/rsv-forecast-hub,,
 cadph,California Department of Public Health,West Nile Virus Forecasting Hub,cdphmodeling/wnvca-2024,,
-dailypartita,Guangzhou Laboratory,GZlab China COVID-19 Forecast Hub,dailypartita/China-COVID-19-Forecast-Hub,,
+dailypartita,Guangzhou Laboratory,GZlab China Infectious Disease Forecast Hub,dailypartita/China-Infectious-Disease-Forecast-Hub,,
 ecdc-archival,European Centre for Disease Prevention and Control (ECDC),Archival RespiCast ARI Hub (2023-2024),european-modelling-hubs/ari-forecast-hub_archive,,
 ecdc-archival,European Centre for Disease Prevention and Control (ECDC),Archival RespiCast Influenza Hub (2023-2024),european-modelling-hubs/flu-forecast-hub_archive,,
 ecdc,European Centre for Disease Prevention and Control (ECDC),European Covid-19 Forecasting Hub,european-modelling-hubs/RespiCast-Covid19,,
