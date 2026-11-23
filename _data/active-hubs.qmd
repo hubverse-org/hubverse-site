@@ -177,7 +177,7 @@ hubs:
         license: MIT License
         repo: ai4castinghub/hospitalization-forecast
         forecasts: https://4castinghub.uoguelph.ca/hospitalization/
-        count: 16
+        count: 17
         archived_dirs:
           - path: "auxiliary-data/target-data-archive/*"
             bucket: target-data
@@ -196,7 +196,7 @@ hubs:
         license: MIT License
         repo: ai4castinghub/rvdss-forecast
         forecasts: https://4castinghub.uoguelph.ca/respiratory-virus-detections/
-        count: 16
+        count: 17
         archived_dirs:
           - path: "auxiliary-data/target-data-archive/*"
             bucket: target-data
@@ -310,7 +310,7 @@ hubs:
         repo: european-modelling-hubs/RespiCast-SyndromicIndicators
         forecasts: https://respicast.ecdc.europa.eu/forecasts/?disease=4&target=1
         evals: https://respicast.ecdc.europa.eu/evaluations/?disease=4&target=1
-        count: 38
+        count: 39
       - name: "European Covid-19 Forecasting Hub"
         description: |
           The European Covid-19 Forecasting Hub collates weekly
@@ -447,7 +447,7 @@ hubs:
         repo: dailypartita/China-Infectious-Disease-Forecast-Hub
         forecasts: https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/forecast.html
         evals: https://dailypartita.github.io/China-Infectious-Disease-Forecast-Dashboard/eval.html
-        count: 18
+        count: 20
   sjfox:
     logo: /includes/img/Northern_Arizona_U_logo.png
     name: "Northern Arizona University"
@@ -477,7 +477,7 @@ hubs:
         license: MIT License
         repo: "InsightNet-US/BDBV-Modeling-Hub"
         aws: bdbv-modeling-hub
-        count: 16
+        count: 17
   bleicham:
     logo: /includes/img/DMA-PRIME-Logo.png
     name: "DMA-PRIME"
